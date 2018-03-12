@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+	<head>
+	<title>兰玉</title>
+	<meta content-type="text/html" charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<link href="css/base.css?1" rel="stylesheet" />
+    <link href="font_css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/swiper.min.css" rel="stylesheet" />
+	<link href="css/app.css?221" rel="stylesheet" />
+	</head>
+	<body>
+    <div class="container">
+      <!--头部 start-->
+      <header class="header">
+      	 <a href="javascript:;" class="logo"><img src="images/logo.png"></a>
+         <h1>LANYU</h1>
+         <a href="javascript:;" class="bar-btn"><img src="images/bar_btn.png"></a>
+      </header>
+      <div class="loading"><img src="images/loading.gif" /></div>
+      <div class="bar-list-mask"></div>
+      <div class="bar-list-fixed js-bar-list">
+      	<div class="header header-fixed">
+         <h1>LANYU</h1>
+         <a href="javascript:;" class="bar-btn bar-close-btn"><img src="images/bar_close_btn.png"></a>
+      	</div>
+        <div class="bar-list-box">
+        <ul class="bar-list">
+          <li><a class="list-level1" href="">LANYU高级定制</a>
+            <ul class="sub-list">
+              <li><a href="">秀款</a></li>
+              <li><a href="">明星款</a></li>
+              <li><a href="suxiu_list.html">苏绣</a></li>
+            </ul>
+          </li>
+          <li><a class="list-level1" href="">LANYU高级礼服</a>
+            <ul class="sub-list">
+              <li><a href="">新品发布</a></li>
+              <li><a href="">大礼服</a></li>
+              <li><a href="">小礼服</a></li>
+              <li><a href="">婚纱</a></li>
+              
+            </ul>
+          </li>
+          <li><a class="list-level1" href="">LANYU跨界</a>
+            <ul class="sub-list">
+              <li><a href="">LANYU X *****</a></li>
+              <li><a href="">LANYU X *****</a></li>
+              <li><a href="">LANYU X *****</a></li>
+            </ul>
+          </li>
+          <li><a class="list-level1" href="">设计总监</a></li>
+          <li><a class="list-level1" href="">品牌&大事记</a></li>
+          <li><a class="list-level1" href="video.html">视频</a></li>
+          <li><a class="list-level1" href="">兰精灵的爱</a></li>
+          <li><a class="list-level1" href="">设计手稿</a></li>
+          <li><a class="list-level1" href="">个人中心</a></li>
+          <li><a class="list-level1 gray" href="FAQ.html">常见问题</a></li>
+          <li><a class="list-level1 gray" href="">店铺信息</a></li>
+          <li><a class="list-level1 gray" href="">联系我们</a></li>
+        </ul>
+        </div>
+      </div>
+      <!--头部 end-->
+      <div class="main">
+        <div class="store-detail-box">
+            <ul class="store-info">
+                <li><em>Store</em><span>LANYU深圳店</span></li>
+                <li><em>Tel</em><span>0755-86531364</span></li>
+                <li><em>Add</em><span>深圳市南山区欢乐海岸购物中心F1层049-050商铺</span></li>
+            </ul>
+            <!--百度地图容器-->
+            <div class="map-box">
+            	<div style="width:100%;height:170px;border:#ccc solid 1px;" id="allmap"></div>
+            </div>
+            <div class="storel-img-detail">
+            	<img src="images/store_list_img01.jpg" />
+                <img src="images/store_list_img02.jpg" />
+            </div>
+            
+            
+        </div>
+      
+        <ul class="weibo-box">
+          <li class="phone"><a href="tel:4006-900-900">400-684-659</a></li>
+          <li><a href="">店铺信息</a></li>
+        </ul>
+        
+        <footer>
+          <p class="copyright">© 2015 LANYU Offical Website</p>
+        </footer>
+      </div>
+      
+    </div>
+    <script src="js/jquery1.7.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+    <script src="js/swiper.min.js"></script>
+	<script src="js/base.js"></script>
+    <script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap",{
+    	enableHighResolution: true //是否开启高清
+	});
+	var point = new BMap.Point(116.404, 39.915);
+	map.centerAndZoom(point, 12); //初始化地图
+	map.enableInertialDragging(); //开启关系拖拽
+	map.enableScrollWheelZoom();  //开启鼠标滚动缩放
+	// 创建地址解析器实例
+	var myGeo = new BMap.Geocoder();
+	// 将地址解析结果显示在地图上,并调整地图视野
+	myGeo.getPoint("深圳市南山区欢乐海岸购物中心F1层049-050商铺", function(point){
+		if (point) {
+			map.centerAndZoom(point, 16);
+			map.addOverlay(new BMap.Marker(point));
+		}else{
+			alert("您选择地址没有解析到结果!");
+		}
+	}, "深圳市");
+
+	/*// 添加定位控件
+	var geoCtrl = new BMap.GeolocationControl({
+		showAddressBar       : true //是否显示
+		, enableAutoLocation : false //首次是否进行自动定位
+		, offset             : new BMap.Size(0,25) 
+		//, locationIcon     : icon //定位的icon图标
+	});
+	
+	//监听定位成功事件
+	geoCtrl.addEventListener("locationSuccess",function(e){
+			console.log(e);
+	});
+	
+	//监听定位失败事件
+	geoCtrl.addEventListener("locationError",function(e){
+			console.log(e);
+	});
+	
+	// 将定位控件添加到地图
+	map.addControl(geoCtrl);
+	
+	//检索类型
+	var type = "";
+	type = LOCAL_SEARCH ;   //周边检索
+	//type = TRANSIT_ROUTE; //公交检索
+	//type = DRIVING_ROUTE; //驾车检索
+	
+	//创建鱼骨控件
+	var navCtrl = new BMap.NavigationControl({
+			anchor: BMAP_ANCHOR_TOP_LEFT //设置鱼骨控件的位置
+	});
+	// 将鱼骨添加到地图当中
+	map.addControl(navCtrl);
+	
+	
+	//创建检索控件
+	var searchControl = new BMapLib.SearchControl({
+		container : "searchBox" //存放检索控件的容器
+		, map     : map          //检索的关联地图
+		, type    : type        //检索类型
+	});
+	
+	document.getElementById("selectType").onchange = function () {
+		searchControl.setType(this.value);
+	};
+	*/
+
+  </script>
+  
+</body>
+</html>

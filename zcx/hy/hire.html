@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class='no-js' lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <!--[if IE]> <meta content='IE=edge' http-equiv='X-UA-Compatible'> <![endif]-->
+    <title>红与黑传媒</title>
+    <meta content='Designing and developing high quality websites and mobile apps since 2015.' name='description'>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport'>
+    <meta content='true' name='HandheldFriendly'>
+    <link href='css/main.css' rel='stylesheet'>
+    <script src='js/vendor/modernizr.js'></script>
+    <link rel="stylesheet" href="css/validationEngine.css">
+  </head>
+  <body class='init-page' data-title='红与黑传媒' data-url='index.html'>
+    <header class='l-header cf'>
+      <a class='logo ir js-link' href='index.html' title='Designing'>
+        红与黑传媒
+        <i class='logo-hover js-hover-state'></i>
+      </a>
+      <a class='nav-switch' href='#'>
+        <i class='icon-bar'></i>
+        <i class='icon-bar'></i>
+        <i class='icon-bar'></i>
+      </a>
+      <nav class='nav'>
+        <ul class='cf'>
+          <li>
+            <a class='js-page' data-page='work' href='index.html' title='Designing'>案例展示 | works</a>
+          </li>
+          <li>
+            <a class='js-page' data-page='about' href='about.html' title='Who we are'>关于我们 | about us</a>
+          </li>
+          <li>
+            <a class='js-page' data-page='services' href='services1.html' title='Web design'>服务内容 | services</a>
+          </li>
+          <li>
+           <a class='active js-page' data-page='contact' href='contact.html' title='Contact'>联系方式 | contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+    <div class='l-page-content' id='content'>
+      <div class='contact-view is-inactive l-view' id='contactView'>
+        <div class='l-content cf'>
+          <div class='l-title cf'>
+            <h1 class='content-title'>业务查询 </h1>
+            <div class='cf l-subnav'>
+              <div class='spinner-outer'>
+                <div class='spinner' id='spinner'></div>
+              </div>
+              <a class='subnav-switch' href='#'><i class="icon-arr-down"></i></a>
+              <p class='content-title-hidden font-condensed'>业务查询</p>
+              <div class='subnav'>
+                <!--<ul class='social'>
+                  <li>
+                    <a href='http://dribbble.com/KreativaStudio' target="_blank">
+                      <i class='icon-dribble normal-state'></i>
+                      <i class='icon-dribble-hover hover-state'></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href='https://www.facebook.com/pages/Kreativa-Studio/121917858691' target="_blank">
+                      <i class='icon-facebook normal-state'></i>
+                      <i class='icon-facebook-hover hover-state'></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href='https://twitter.com/KreativaStudio' target="_blank">
+                      <i class='icon-twitter normal-state'></i>
+                      <i class='icon-twitter-hover hover-state'></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href='https://plus.google.com/102175751449707929798/' target="_blank">
+                      <i class='icon-google normal-state'></i>
+                      <i class='icon-google-hover hover-state'></i>
+                    </a>
+                  </li>
+                </ul>-->
+              </div>
+            </div>
+          </div>
+          <div class='content'>
+            <form action='#' class='form' id="submit_form" method='post'>
+              <fieldset>
+                <div class='cf brd-btm pos-rel'>
+                  <div class='legend font-condensed'>让我们了解你</div>
+                  <a class='close js-close-contact' href='contact.html' title='Contact'>
+                    <i class='icon-close normal-state'></i>
+                    <i class='icon-close-hover hover-state'></i>
+                  </a>
+                </div>
+                <div class='cf'>
+                  <div class='l-col-1-2'>
+                    <label class='visuallyhidden' for='company'>公司/机构名称</label>
+                    <div class='required'>
+                      <input id='company' name='company' placeholder='公司/机构名称' class="validate[required]" data-prompt-position="topRight" type='text'>
+                    </div>
+                  </div>
+                  <div class='l-col-1-2'>
+                    <label class='visuallyhidden' for='email'>邮箱地址</label>
+                    <div class='required'>
+                      <input id='email' name='email' placeholder='邮箱地址' class="validate[required,custom[email]] " data-prompt-position="topRight" type='text'>
+                    </div>
+                  </div>
+                </div>
+                <div class='cf'>
+                  <div class='l-col-1-2'>
+                    <label class='visuallyhidden' for='contact-person'>联系人</label>
+                    <div class='required'>
+                      <input id='contact-person' name='contact-person' placeholder='联系人' class="validate[required]" data-prompt-position="topRight" type='text'>
+                    </div>
+                  </div>
+                  <div class='l-col-1-2'>
+                    <label class='visuallyhidden' for='website'>网站地址</label>
+                    <div class='required'>
+                      <input id='website' name='website' placeholder='网站地址' class="validate[required]" data-prompt-position="topRight" type='text'>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <div class='legend font-condensed'>告诉我们你所需要的</div>
+                <div class='cf brd-top hor-labels'>
+                    <label class='label required'>服务类型:</label>
+                    <div class='cf'>
+                    <label class='js-label'>
+                      <i class='icon-checkbox'></i>
+                      <input class='visuallyhidden validate[required] radio' name='service-type[]' type='checkbox' value='Design'>
+                      设计                   
+                    </label>
+                    <label class='js-label'>
+                      <i class='icon-checkbox'></i>
+                      <input class='visuallyhidden validate[required] radio' data-prompt-position="topLeft" name='service-type[]' type='checkbox' value='Development'>
+                      开发                    
+                    </label>
+                    <label class='js-label no-margin-b'>
+                      <i class='icon-checkbox'></i>
+                      <input class='visuallyhidden validate[required] radio' name='service-type[]' type='checkbox' value='Other'>
+                      其他                     
+                    </label>
+                   </div>
+                </div>
+                <div class='cf brd-top hor-labels'>
+                  <label class='label required'>项目的预算是多少?</label>
+                  <div class='cf'>
+                    <label class='js-label'>
+                      <i class='icon-radio'></i>
+                      <input class='visuallyhidden validate[required] radio' name='budget' data-prompt-position="topRight" type='radio' value='我不想说'>
+                      我不想说                   
+                    </label>
+                    <label class='js-label'>
+                      <i class='icon-radio'></i>
+                      <input class='visuallyhidden validate[required] radio' name='budget' data-prompt-position="topRight" type='radio' value=' 低于 ￥5.000'>
+                      低于 ￥5.000                    
+                    </label>
+                    <label class='js-label'>
+                      <i class='icon-radio'></i>
+                      <input class='visuallyhidden validate[required] radio' name='budget' data-prompt-position="topRight" type='radio' value='￥5.000 - ￥10.000'>
+                       ￥5.000 - ￥10.000                    
+                    </label>
+                    <label class='js-label'>
+                      <i class='icon-radio'></i>
+                      <input class='visuallyhidden validate[required] radio' name='budget' data-prompt-position="topRight" type='radio' value='￥10.000 或者更多'>
+                     ￥10.000 或者更多                    
+                    </label>
+                  </div>
+                </div>
+                <div class='cf brd-top'>
+                  <label class='label' for='requests'>告诉我们关于您的项目</label>
+                  <textarea id='requests' name='requests'></textarea>
+                </div>
+                <div class='cf'>
+                 <button class='l-right btn-white' id="form_button" type='submit'>发送邮件<i class="icon-mail"></i></button>
+                </div>
+              </fieldset>
+              <input type="hidden" value="1" name="form_type" />
+            </form>
+          </div>
+        </div>
+        <div class='msg font-condensed'></div>
+      </div>
+    </div>
+    
+    <div class='mobile-nav font-condensed'>
+      <ul class='cf'>
+        <li>
+          <a class='js-page' data-page='work' href='index.html' title='Designing'>案例展示 | works</a>
+        </li>
+        <li>
+          <a class='js-page' data-page='about' href='about.html' title='Who we are'>关于我们 | about us</a>
+        </li>
+        <li>
+          <a class='js-page' data-page='services' href='services1.html' title='Web design'>服务内容 | services</a>
+        </li>
+        <li>
+         <a class='active js-page' data-page='contact' href='contact.html' title='Contact'>联系方式 | contact</a>
+        </li>
+        <!--<li class='soc'>
+          <ul class='cf'>
+            <li>
+              <a href='http://dribbble.com/KreativaStudio' target="_blank">
+                <i class='icon-dribble-gray gray-icon'></i>
+                <i class='icon-dribble-color color-icon'></i>
+              </a>
+            </li>
+            <li>
+              <a href='https://www.facebook.com/pages/Kreativa-Studio/121917858691' target="_blank">
+                <i class='icon-facebook-gray gray-icon'></i>
+                <i class='icon-facebook-color color-icon'></i>
+              </a>
+            </li>
+            <li>
+              <a href='https://twitter.com/KreativaStudio' target="_blank">
+                <i class='icon-twitter-gray gray-icon'></i>
+                <i class='icon-twitter-color color-icon'></i>
+              </a>
+            </li>
+            <li>
+              <a href='https://plus.google.com/102175751449707929798/' target="_blank">
+                <i class='icon-google-gray gray-icon'></i>
+                <i class='icon-google-color color-icon'></i>
+              </a>
+            </li>
+          </ul>
+        </li>-->
+      </ul>
+    </div>
+    
+    <!--[if lt IE 8]> <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+    <script src='js/vendor/jquery-1.10.1.min.js'></script>
+    <!--<script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>-->
+    <script src='js/plugins.js'></script>
+    <script src='js/main.js'></script>
+    <script type="text/javascript" src="js/validation/languages/jquery.validationEngine-en.js"></script>
+    <script type="text/javascript" src="js/validation/validationEngine.js"></script>
+    <script>
+	$(document).ready(function() {
+		 //VALIDACIJA I SLANJE MAILA
+		jQuery("#submit_form").validationEngine('attach', {
+		  onValidationComplete: function(form, status){
+			if (status == true){
+				 $.post("/send_mail", $("#submit_form").serialize(),function(data) {
+					var resp= jQuery.parseJSON(data);
+					if(resp.response == 1){
+						$(".msg").html("谢谢你的电子邮件。我们将很快回复。");
+						document.getElementById('submit_form').reset();
+						showMsg();
+					}else{
+						$(".msg").html("谢谢你的电子邮件。我们将很快回复。");
+						showMsg();
+					}
+				});
+			}
+		  }
+		})
+	});
+	</script>
+  </body>
+</html>

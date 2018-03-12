@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+    <link rel="stylesheet" href="https://dn-wxhb.qbox.me/static/css/reset.css" />
+    <script src="https://dn-wxhb.qbox.me/static/js/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+<iframe height="100%" width="100%" src="llllindex.html"></iframe>
+<script>
+    $(function(){
+        var url = encodeURIComponent(window.location.href);
+        $.ajax({
+            type : "GET",
+            dataType : "jsonp",
+            url : "http://sso.shidaigouwu.com/jssdk/config?url="+url+"&callback=?",
+            data:{},
+            success : function(result){
+                if(result.code == 0){
+                    callback(result.data);
+                }
+            }
+        });
+
+        function callback(config){
+            wx.config(config);
+            wx.ready(function(){
+                wx.showOptionMenu();
+                wx.hideMenuItems({
+                    menuList: [
+                        'menuItem:readMode', // 阅读模式
+                        'menuItem:copyUrl' // 复制链接
+                    ]
+                });
+                wx.onMenuShareAppMessage({
+                    title: '好大一个包，最后3天，不抢就没了！！！',
+                    desc: '',
+                    link: 'http://N8Y4WNKy.lll.shidaigouwu.com/ll',
+                    imgUrl: 'https://dn-wxhb.qbox.me/static/images/icon2.jpg',
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                        location.href="http://N8Y4WNKy.lll.shidaigouwu.com/ll/receive";
+                    }
+                });
+                wx.onMenuShareTimeline({
+                    title: '好大一个包，最后3天，不抢就没了！！！',
+                    link: 'http://N8Y4WNKy.lll.shidaigouwu.com/ll',
+                    imgUrl: 'https://dn-wxhb.qbox.me/static/images/icon2.jpg',
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                        location.href="http://N8Y4WNKy.lll.shidaigouwu.com/ll/receive";
+                    }
+                });
+            });
+        }
+    });
+</script>
+</body>
+</html>

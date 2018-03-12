@@ -1,0 +1,119 @@
+funHome({
+  "data": {
+    "info1": [
+      {
+        "type": 1,
+        "greenFont": "123.5",
+        "value": "234.6",
+        "unitStr": "kg/kwh",
+        "ext": "M/E Fuel Efficiencty"
+      },
+      {
+        "type": 1,
+        "greenFont": "123.5",
+        "value": "234.6",
+        "unitStr": "kg/kwh",
+        "ext": "M/E Fuel Efficiencty"
+      },
+      {
+        "type": 1,
+        "greenFont": "123.5",
+        "value": "234.6",
+        "unitStr": "kg/kwh",
+        "ext": "M/E Fuel Efficiencty"
+      },
+      {
+        "type": 1,
+        "greenFont": "123.5",
+        "value": "234.6",
+        "unitStr": "kg/kwh",
+        "ext": "M/E Fuel Efficiencty"
+      },
+      {
+        "type": 1,
+        "greenFont": "123.5",
+        "value": "234.6",
+        "unitStr": "kg/kwh",
+        "ext": "M/E Fuel Efficiencty"
+      },
+      {
+        "type": 1,
+        "greenFont": "123.5",
+        "value": "234.6",
+        "unitStr": "kg/kwh",
+        "ext": "M/E Fuel Efficiencty"
+      },
+
+    ],
+    "ge": [
+      {
+        "title": "1# G/E Data",
+        "list": [
+          {
+            "value": "234.6",
+            "unitStr": "kg/kwh",
+            "ext": "1# diesel speed"
+          },
+          {
+            "value": "234.6",
+            "unitStr": "kg/kwh",
+            "ext": "1# diesel speed"
+          }
+        ]
+      },
+      {
+        "title": "2# G/E Data",
+        "list": [
+          {
+            "value": "234.6",
+            "unitStr": "kg/kwh",
+            "ext": "2# diesel speed"
+          },
+          {
+            "value": "234.6",
+            "unitStr": "kg/kwh",
+            "ext": "2# diesel speed"
+          }
+        ]
+      },
+      {
+        "title": "3# G/E Data",
+        "list": [
+          {
+            "value": "234.6",
+            "unitStr": "kg/kwh",
+            "ext": "3# diesel speed"
+          },
+          {
+            "value": "234.6",
+            "unitStr": "kg/kwh",
+            "ext": "3# diesel speed"
+          }
+        ]
+      }
+    ],
+    "health": [
+      {
+        "value": "123.6",
+        "unitStr": "kw",
+        "ext": "M/E Fuel Efficiencty"
+      },
+      {
+        "value": "1052.6",
+        "unitStr": "℃",
+        "ext": "intermediate bear"
+      },
+      {
+        "value": "634.6",
+        "unitStr": "kw",
+        "ext": "M/E Fuel Efficiencty"
+      },
+      {
+        "value": "334.6",
+        "unitStr": "℃",
+        "ext": "M/E Fuel Efficiencty"
+      }
+    ]
+  },
+  "status": 0
+})

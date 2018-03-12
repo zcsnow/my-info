@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			–°”Œœ∑
+		</title>
+	</head>
+	<body>
+	</body>
+<script type="text/javascript">
+var needImageCount = 0;
+var LoadObj = [];
+var Size = function(width,height){
+	this.Width = width;
+	this.Height = height;
+}
+var Point = function(x,y){
+	this.X = x;
+	this.Y = y;
+}
+var BitMap = function(file,_type){
+	this.img = new Image();
+	this.img.src = file;
+	this.Size = null;
+	this.clickAble = _type==1;
+	this.type = _type;
+	var _this = this;
+	this.img.onload = function(){
+		if(_this.Size==null){
+			_this.Size = new Size(this.width,this.height);
+		}
+	}
+	this.start_point = null;
+	this.show = function(ct){
+		ct.drawImage(this.img,this.start_point.X,this.start_point.Y);	
+	}
+	this.visiable = true;	
+}
+var Game = {
+	canvas_context : '',
+	canvas_id : '',
+	event_point : '',
+	init:function(){
+		var context = document.createElement('canvas');
+		context.setAttribute('width',360);
+		context.setAttribute('height',360);
+		this.canvas_id = this.guid();
+		context.setAttribute('id',this.canvas_id);
+		document.body.appendChild(context);
+		this.canvas_context = context.getContext('2d');
+		this.draw_grid(10,10);
+		var _this = this;
+		context.addEventListener('click',function(e){
+				_this.event_point = new Point(e.offsetX,e.offsetY);
+				_this.updateState();
+		},false);
+	},
+	recursionFindobj:function(_mapId,_step,_flag){
+		var _new_map_id;
+		if(_flag){
+			_new_map_id = _mapId - _step;
+		}else{
+			_new_map_id = _mapId + _step;
+		}
+		if(_new_map_id<0||_new_map_id>100){
+			return null;
+		}
+		var obj = LoadObj[_new_map_id];
+		if(obj.type!=1){
+			return obj;
+		}else if(_step==1){
+			if(_flag&&_new_map_id%10==0){
+					return null;
+			}else if((_new_map_id)%10==0){
+				return null;
+			}
+		}else if(_step==10){
+			if(_flag&&_new_map_id<10){
+					return null;
+			}else if(_new_map_id>=90){
+				return null;
+			}			
+		}
+		return this.recursionFindobj(_new_map_id,_step,_flag);				
+	},
+	up:function(_mapId){
+		return this.recursionFindobj(_mapId,10,true);
+	},
+	down:function(_mapId){
+		return this.recursionFindobj(_mapId,10,false);
+	},
+	left:function(_mapId){
+		return this.recursionFindobj(_mapId,1,true);
+	},
+	right:function(_mapId){
+		return this.recursionFindobj(_mapId,1,false);
+	},
+	updateState:function(){
+			var mapId = this.findMapByPoint(this.event_point);
+			var obj = null;
+			obj = LoadObj[mapId];
+			if(obj){
+				if(obj.clickAble){
+					var _up = null;
+					var _down = null;
+					var _left = null;
+					var _right = null;
+					if(mapId>=10)
+						_up = this.up(mapId);
+					if(mapId<90)
+						_down = this.down(mapId);
+					if(mapId%10!=0)
+						_left = this.left(mapId);
+					if((mapId+1)%10!=0)
+						_right = this.right(mapId);					
+					var _obj = {};
+					if(_up!=null){
+						_obj.top = _up;
+					}
+					if(_down!=null){
+						_obj.down = _down;
+					}
+					if(_left!=null){
+						_obj.left = _left;
+					}
+					if(_right!=null){
+						_obj.right = _right;
+					}
+					var result = {'left_down':true,'left_right':true,'left_top':true,'down_right':true,'down_top':true,'right_top':true};
+					var ok = {};
+					for(var _k in _obj){
+						for(var _k_ in _obj){
+							var k1 = _k+'_'+_k_;
+							var k2 = _k_+'_'+_k;
+							if(_obj[_k].type==_obj[_k_].type){
+								if(result[k1]){								
+									ok[_k] = _obj[_k];
+									ok[_k_] = _obj[_k_];
+									delete result[k1];
+								}else if(result[k2]){
+									ok[_k] = _obj[_k];
+									ok[_k_] = _obj[_k_];
+									delete result[k2];
+								}
+							}
+						}
+					}
+					for(var key in ok){
+						ok[key].visiable = false;
+					}
+					this.reflush();
+				}
+			}
+	},	
+	findPoint:function(_point){
+		var x = parseInt(_point.X/36);
+		var y = parseInt(_point.Y/36);
+		return new Point(x,y);
+	},
+	findMapByPoint:function(_point){
+		var point = this.findPoint(_point);
+		return point.Y*10+point.X;
+	},
+	reflush:function(){
+		//this.canvas_context.save();
+		this.canvas_context.clearRect(0,0,360,360);
+		this.draw_grid(10,10);
+		for(var i=0;i<LoadObj.length;++i){
+			if(LoadObj[i].visiable){
+				LoadObj[i].show(this.canvas_context);				
+			}else{
+				LoadObj[i].img.src = '1.png';
+				LoadObj[i].type = '1';
+				LoadObj[i].clickAble = true;
+				LoadObj[i].show(this.canvas_context);
+			}
+		}
+		//this.canvas_context.restore();
+	},
+	append_img:function(){
+		var img = '1234521453345324132353234121451145334512453235321132345234533111245321532113234523113345324532111131';		
+		for(var i=0;i<img.length;++i){
+			var size = new Size(0,0);
+			var obj = new BitMap(img[i]+'.png',img[i]);
+			var x = parseInt(i%10)*36;
+			var y = parseInt(i/10)*36;
+			obj.start_point = new Point(x,y);
+			obj.show(this.canvas_context);
+			LoadObj[i] = obj;
+		}
+	},
+	draw_grid:function(row,column){
+		var width=36,height = 36;
+		for(var i=0;i<=row;++i){
+			this.canvas_context.beginPath();
+			this.canvas_context.moveTo(0,i*height);
+			this.canvas_context.lineTo(row*width,i*height);
+			this.canvas_context.stokeStyle='rgba(255,0,0,0.25)';
+			this.canvas_context.closePath();
+			this.canvas_context.stroke();
+			
+		}		
+		for(var j=0;j<=column;++j){
+			this.canvas_context.beginPath();
+			this.canvas_context.moveTo(j*width,0);
+			this.canvas_context.lineTo(j*width,column*height);
+			this.canvas_context.stokeStyle='rgba(255,0,0,0.25)';
+			this.canvas_context.closePath();
+			this.canvas_context.stroke();			
+		}	
+	},
+	guid:function(){
+		var guid='';
+		for(var i=1;i<33;++i){
+			guid+=(parseInt(Math.random()*16)).toString(16);
+		}
+		return guid;
+	}
+};
+Game.init();
+var k=0;
+var interval = setInterval(function(){
+	if(k==2){
+		clearInterval(interval);
+	}
+	++k;
+	Game.append_img();
+},50);
+</script>
+</html>

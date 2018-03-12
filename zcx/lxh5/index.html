@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+<title>联想COC专家团</title>
+    <script src="lib/easeljs-0.8.0.min.js"></script>
+    <script src="lib/tweenjs-0.6.0.min.js"></script>
+    <script src="lib/movieclip-0.8.0.min.js"></script>
+    <script src="lib/preloadjs-0.6.0.min.js"></script>
+	<script src="OpenMeetingShow.js?r=20150914"></script>
+
+<script>
+        var canvas, stage, exportRoot;
+        var count=0;//loading百分比
+        var tipsTxt;//提示文本
+        var manifest,images;//图片加载列表
+        var isWap;
+        var loadingMc,loadingText;
+        var main;
+        //touch变量
+        var mainCurrentFrame=130;//当前所在帧数
+        var iniY=0;//初始y位置
+        var tempY=0;//临时y位置
+        var targetFrame=0;
+        var totalFrame=700;
+        var stepFrameArr=[170,80,80,80,80,80];
+        var stepFrame=170;
+        var iniTime=0;//初始时间
+        var nowTime=0;//当前时间
+        var pageCount=0;
+		var popHide = 1;
+        var audio_bg;
+        var reayAudio=false;
+        var firstPlay=true;
+        function init(){
+            initCjs();
+            iniUiScale();
+        }
+        //框架代码--------
+        function initCjs() {
+            //createjs.MotionGuidePlugin.install();
+            //audio_bg=getEl('music_audio_bg');
+            canvas = getEl('canvas');
+            stage = new createjs.Stage(mainCanvas);
+            exportRoot = new lib.OpenMeetingShow();
+            stage.addChild(exportRoot);
+            stage.update();
+            stage.enableMouseOver();
+
+            createjs.Ticker.setFPS(30);
+            createjs.Ticker.addEventListener('tick', stage);
+            images = images||{};
+            preloading();
+        }
+        //预载loading界面
+        function preloading(){
+            //alert('预载');
+            manifest = [
+                {src:"http://wap.relonline.cn/2015_OpenMeetingShow/images/p62.png", id:"p62"}
+            ];
+
+            var loader = new createjs.LoadQueue(false);
+            //loader.installPlugin(createjs.Sound);
+            loader.addEventListener('fileload', preloadingHandleFileLoad);
+            loader.addEventListener('complete', preloadingHandleComplete);
+            loader.loadManifest(manifest);
+        }
+        function preloadingHandleFileLoad(evt){
+            if (evt.item.type == 'image') { images[evt.item.id] = evt.result; }
+        }
+        function preloadingHandleComplete() {
+            loading();
+            //getEl('loading').style.display='none';
+        }
+        //loading
+        function loading(){
+            loadingMc=new lib.Loading();
+            loadingMc.x=0;
+            exportRoot.addChild(loadingMc);
+            manifest = [
+                {src:"images/bg01.jpg", id:"bg1"},
+                {src:"images/bg02.jpg", id:"bg2"},
+                {src:"images/arrow.png", id:"arrow"},
+                {src:"images/p11.png", id:"p11"},
+				{src:"images/p1_people.png", id:"p110"},
+				{src:"images/p1_effect1.png", id:"p111"},
+				{src:"images/p1_effect4.png", id:"p112"},
+                {src:"images/p12.png", id:"p12"},
+				{src:"images/p1_effect2.png", id:"p121"},
+                {src:"images/p13.png", id:"p13"},
+                {src:"images/p14.png", id:"p14"},
+				{src:"images/p15.png", id:"p15"},
+                {src:"images/p21.png", id:"p21"},
+                {src:"images/p22.png", id:"p22"},
+				{src:"images/p23.png", id:"p23"},
+                {src:"images/p24.png", id:"p24"},
+				{src:"images/p25.png", id:"p25"},
+                {src:"images/p26.png", id:"p26"},
+				{src:"images/p27.png", id:"p27"},
+                {src:"images/p28.png", id:"p28"},
+				{src:"images/p25_1.png", id:"p251"},
+                {src:"images/p26_1.png", id:"p261"},
+				{src:"images/p27_1.png", id:"p271"},
+                {src:"images/p28_1.png", id:"p281"},
+				{src:"images/p2_quan.png", id:"p2quan"},
+				{src:"images/p2_line.png", id:"p2line"},
+                {src:"images/p31.png", id:"p31"},
+                {src:"images/p32.png", id:"p32"},
+				{src:"images/p33.png", id:"p33"},
+                {src:"images/p41.png", id:"p41"},
+                {src:"images/p42.png", id:"p42"},
+				{src:"images/p43.png", id:"p43"},
+                {src:"images/p51.png", id:"p51"},
+                {src:"images/p52.png", id:"p52"},
+				{src:"images/p53.png", id:"p53"},
+                {src:"images/p61.png", id:"p61"},
+                {src:"images/p62.png", id:"p62"},
+                {src:"images/p63.png", id:"p63"},
+                {src:"images/p71.png", id:"p71"},
+				{src:"images/p72.png", id:"p72"},
+				{src:"images/p73.png", id:"p73"},
+				{src:"images/p74.png", id:"p74"},
+				{src:"images/p75.png", id:"p75"},
+				{src:"images/p76.png", id:"p76"},
+                {src:"images/p_quan.png", id:"quan"},
+            ];
+
+            var loader = new createjs.LoadQueue(false);
+            //loader.installPlugin(createjs.Sound);
+            loader.addEventListener('fileload', handleFileLoad);
+            loader.addEventListener('complete', handleComplete);
+            loader.loadManifest(manifest);
+        }
+        function handleFileLoad(evt) {
+            if (evt.item.type == 'image') { images[evt.item.id] = evt.result; }
+            count++;
+            //loadingMc.gotoAndStop(Math.floor(count/manifest.length*100)-1);
+            loadingMc.msg.text=''+String(Math.floor(count/manifest.length*100))+'%';
+            //loadingText=document.getElementById('loadingText');
+            //loadingText.innerHTML='Loading '+String(Math.floor(count/manifest.length*100))+'%';
+        }
+
+        function handleComplete() {
+            iniHome();
+        }
+
+        //初始化首页-------
+        function iniHome(){
+            checkDevice();
+            iniEvent();
+            //清除loading
+            exportRoot.removeChild(loadingMc);
+            loadingMc=null;
+            iniMain();
+            /*
+            if(firstPlay){
+                //alert('播放音乐');
+                audio_bg.play();
+                main.btn_sound.visible=true;
+                firstPlay=false;
+            }
+             */
+        }
+        function iniEvent(){
+            if (createjs.Touch.isSupported()) {
+                createjs.Touch.enable(stage);
+            }
+            stage.addEventListener("stagemousedown",stagemousedownHandle);
+        }
+        function iniMain(){
+            main=new lib.Main();
+            exportRoot.addChild(main);
+            main.gotoAndPlay(1);
+			
+			//main.p3.more3.addEventListener('mousedown',btnMousedownHandle);
+            main.p3.more3.addEventListener('click',popHandle);
+			//main.p4.more4.addEventListener('mousedown',btnMousedownHandle);
+            main.p4.more4.addEventListener('click',popHandle);
+			//main.p5.more5.addEventListener('mousedown',btnMousedownHandle);
+            main.p5.more5.addEventListener('click',popHandle);
+			//main.p6.more6.addEventListener('mousedown',btnMousedownHandle);
+            main.p6.more6.addEventListener('click',popHandle);
+			
+            main.p7.btn1.addEventListener('mousedown',btnMousedownHandle);
+            main.p7.btn1.addEventListener('pressup',replayUpHandle);
+            main.p7.btn2.addEventListener('mousedown',btnMousedownHandle);
+            main.p7.btn2.addEventListener('pressup',shareUpHandle);
+        }
+
+        //公用按钮按下事件
+        function btnMousedownHandle(evt){
+            if(checkPointID(evt)){
+                createjs.Tween.get(evt.currentTarget).to({scaleX: 0.9, scaleY: 0.9}, 100);
+            }
+        }
+        //链接
+        function linkUpHandle(evt){
+            if(checkPointID(evt)){
+                createjs.Tween.get(evt.currentTarget).to({scaleX: 1, scaleY: 1}, 200);
+                location.href='http://wap.relonline.cn/2015_OpenMeeting/index.html';
+            }
+        }
+		
+		function popHandle(){
+			popHide = 0;
+			getEl('popBox').style.display='block';
+
+		}
+		
+		
+		
+        //分享
+        function showShare(){
+            getEl('share').style.display='block';
+        }
+        //再玩一次
+        function replayUpHandle(evt){
+            if(checkPointID(evt)){
+                createjs.Tween.get(evt.currentTarget).to({scaleX: 1, scaleY: 1}, 200);
+                replayGame();
+            }
+        }
+        function replayGame(){
+            location.reload();
+        }
+        function shareUpHandle(evt){
+            if(checkPointID(evt)){
+                createjs.Tween.get(evt.currentTarget).to({scaleX: 1, scaleY: 1}, 200);
+                showShare();
+            }
+        }
+
+        function soundClickHandle(evt){
+            if(checkPointID(evt)){
+                if(evt.currentTarget.currentFrame==0){
+                    evt.currentTarget.gotoAndStop(1);
+                    audio_bg.pause();
+                }else{
+                    evt.currentTarget.gotoAndStop(0);
+                    audio_bg.play();
+                }
+            }
+        }
+
+        function goFrame(frame){
+            targetFrame=frame;
+            createjs.Ticker.addEventListener("tick", enterFrameHandle);
+        }
+        function enterFrameHandle(event){
+            //console.log(main.currentFrame);
+            if(main.currentFrame==targetFrame){
+                createjs.Ticker.removeEventListener("tick", enterFrameHandle);
+                mainCurrentFrame=targetFrame;
+                stage.addEventListener("stagemousedown",stagemousedownHandle);
+                main.arrow.visible=true;
+            }else{
+                main.arrow.visible=false;
+                stage.removeEventListener("stagemousedown",stagemousedownHandle);
+                stage.removeEventListener("stagemousemove",stagemousemoveHandle);
+                stage.removeEventListener("stagemouseup",stagemouseupHandle);
+
+                if(main.currentFrame<targetFrame){
+                    main.gotoAndStop(main.currentFrame+1);
+                }else{
+                    main.gotoAndStop(main.currentFrame-1);
+                }
+            }
+        }
+
+        function stagemousedownHandle(event){
+            event.preventDefault();
+            iniY=event.stageY;
+            tempY=event.stageY;
+            iniTime=new Date().getTime();
+
+            stage.addEventListener("stagemousemove",stagemousemoveHandle);
+            stage.addEventListener("stagemouseup",stagemouseupHandle);
+            //console.log(audio_bg.currentTime);
+            /*
+            if(firstPlay || audio_bg.currentTime==0){
+                audio_bg.play();
+                main.btn_sound.visible=true;
+                firstPlay=false;
+            }
+            */
+        }
+
+
+        function stagemousemoveHandle(event){
+            event.preventDefault();
+            //console.log(main.currentFrame);
+            if(main.currentFrame<totalFrame && event.stageY<tempY-10){
+                //console.log("向上"+main.currentFrame+"-"+tempY);
+                tempY=event.stageY;
+                main.gotoAndStop(main.currentFrame+1);
+            }
+            if(main.currentFrame>=120&& event.stageY>tempY+10){
+                //console.log("向下"+event.stageY+"-"+tempY);
+                tempY=event.stageY;
+                main.gotoAndStop(main.currentFrame-1);
+            }
+        }
+
+        function stagemouseupHandle(event){
+            event.preventDefault();
+
+            nowTime=new Date().getTime();
+            if(Math.abs(event.stageY-iniY)>200 ||(nowTime-iniTime)<500){
+                if(mainCurrentFrame>stepFrame && event.stageY>iniY && (event.stageY>iniY+200 || (nowTime-iniTime)<500)){
+                    //判断用户是否向下移动了足够远
+                    goFrame(mainCurrentFrame-stepFrame);
+                    console.log('pageCount='+pageCount+'stepFrame='+stepFrame);
+                    pageCount--;
+                    stepFrame=stepFrameArr[pageCount];
+
+                }
+                if(mainCurrentFrame<=totalFrame-stepFrame && event.stageY<iniY && (event.stageY<iniY-200 || (nowTime-iniTime)<500)){
+                    //判断用户是否向上移动了足够远
+                    goFrame(mainCurrentFrame+stepFrame);
+                    console.log('pageCount='+pageCount+'stepFrame='+stepFrame);
+                    pageCount++;
+                    stepFrame=stepFrameArr[pageCount];
+
+                }
+            }else{
+                goFrame(mainCurrentFrame);
+            }
+
+
+            iniY=event.stageY;
+            tempY=event.stageY;
+            iniTime=new Date().getTime();
+
+            stage.removeEventListener("stagemousemove",stagemousemoveHandle);
+            stage.removeEventListener("stagemouseup",stagemouseupHandle);
+        }
+        //控制ui自适应
+        function iniUiScale(){
+            var p=document.documentElement.clientWidth/640;
+            getEl('share').style.zoom=p;
+            //getEl('loading').style.zoom=p;
+        }
+        //----------终端检测------
+        function checkDevice(){
+            if(!navigator.userAgent.match(/mobile/i)) {
+                //alert("当前设备为pc");
+                isWap=false;
+            }else{
+                //alert("当前设备为移动");
+                isWap=true;
+            }
+        }
+        function checkPointID(evt){
+            if(isWap){
+                if(evt.pointerID!=-1){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                if(evt.pointerID==-1){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        }
+        //获取dom
+        function getEl(id) {
+            return document.getElementById(id);
+        }
+    </script>
+    <style>
+        html,body{ width:100%;height:100%;overflow: hidden;font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;}
+        body{margin:0px;padding:0px;}
+        #mainCanvas{position: absolute; left:0; top:0; z-index: 2; width:100%; height:100%; display:inline-block;}
+        p,span,a,dl,dt,dd,ul,li,input,form{margin: 0; padding: 0; list-style: none;}
+
+        /*share*/
+        .share{position: absolute;top:0; left:0; z-index: 100; width:640px; height: 1008px; background-color:rgba(0, 0, 0, 0.8); text-align: right; display: none;}
+        .share a{display: block; width:100%; height: 100%;}
+
+        .loading{width: 16px; height: 16px; margin: 0 auto; margin-top: 50%;}
+		.pop{ display:none; position:fixed; z-index:999; left:50%; top:45%; box-sizing:border-box; padding:40px 20px 20px; color:#fff;-webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%);width:280px; height:450px; background:url(images/pop_bg.png) no-repeat; background-size:280px 450px;}
+    	.pop h3{ font-size:14px; line-height:20px; padding-bottom:10px; margin:0 0 5px; border-bottom:1px solid rgba(255,255,255,0.3)}
+		.pop-con{overflow-y:auto;height:335px; }
+		.pop-con::-webkit-scrollbar {width:5px;}
+		.pop-con::-webkit-scrollbar-track{background:#252525;}
+		.pop-con::-webkit-scrollbar-thumb {background-color:#00a8ff;}
+		.pop-con p{ line-height:20px; font-size:12px; margin-top:5px;}
+		.pop-close-btn{ display:block; width:30px; height:30px; background:url(images/close_btn.png) no-repeat; background-size:30px 30px; position:absolute; right:-15px; top:15px; }
+		
+    </style>
+</head>
+
+<body onload="init();" style="background-color:#000">
+    <!--<div class="loading" id="loading">
+        <img src="images/loading.gif" />
+    </div>-->
+    <canvas id="mainCanvas" width="640" height="1008" style="background: transparent;"></canvas>
+    <!-- 分享 -->
+    <div class="share" id="share">
+        <a href="javascript:void(0);" onclick="getEl('share').style.display='none';"><img src="images/shareTips.png" /></a>
+    </div>
+    <!-- 音乐
+    <div style="display: none">
+        <audio id="music_audio_bg" preload="preload" loop="loop" style="display: none;">
+            <source src="bg.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    -->
+    <div class="pop" id="popBox">
+    	<a href="javascript:;" id="closeBtn" class="pop-close-btn" onclick="getEl('popBox').style.display='none';" ></a>
+    	<h3>《技术派》：没那么简单！<br>COC专家为你解读数据中心云化之路</h3>
+        <div class="pop-con">
+          <p>企业上云成为业界一大趋势，那么“云”到底是什么？企业部署云数据中心能获得哪些价值，部署中会经历几个阶段？COC专家，联想集团首席架构师毕巍为你解读。</p>
+          <p><img src="images/p3_img01.jpg" width="100%" /></p>
+          <p>毕巍<br>COC专家、联想集团首席架构师</p>
+          <p>专家眼里的“云”是这样的<br>怎样定义什么是“云”呢？毕巍站在专业角度解释到，在过去典型怎样定义什么是“云”呢？毕巍站在专业角度解释到，在过去典型怎样定义什么是“云”呢？毕巍站在专业角度解释到，在过去典型怎样定义什么是“云”呢？毕巍站在专业角度解释到，在过去典型怎样定义什么是“云”呢？毕巍站在专业角度解释到，在过去典型怎样定义什么是“云”呢？毕巍站在专业角度解释到，在过去典型</p>
+        </div>
+    </div>
+
+
+<script type="text/javascript">
+    document.body.ontouchmove=function(e){
+		if(popHide==1){
+        e.preventDefault();
+		}
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+funHomeChart({
+  "data": [
+    {
+      "date":"08/17",
+      "M/E":5,
+      "propeller":4,
+      "M/E-speed":2
+    },
+    {
+      "date":"08/18",
+      "M/E":8,
+      "propeller":2,
+      "M/E-speed":1
+    },
+    {
+      "date":"08/19",
+      "M/E":7,
+      "propeller":5,
+      "M/E-speed":2
+    }
+  ],
+  "status": 0
+})

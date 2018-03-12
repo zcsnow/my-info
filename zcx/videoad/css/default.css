@@ -1,0 +1,18 @@
+*{margin: 0; padding: 0; border: none;}
+html,body,div,p,ul,li,a,input,form,table,tr,td,th,span,i,strong,var,em,font,img,dl,dt,dd,textarea,cite,h1,h2,h3,h4,h5,h6,section,header,footer{font-family:"微软雅黑","Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB",STHeiti, "Microsoft Yahei", sans-serif;padding:0px;margin:0px;font-style:normal;font-size:12px}
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
+body{min-width:320px}
+html,body{ height: 100%; width: 100%; font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB",STHeiti, "Microsoft Yahei", sans-serif; color: #515151;}
+ul,li{list-style-type:none;}
+a{text-decoration:none;outline:none;}
+a:hover{text-decoration:underline;}
+a,img{border:none;}
+img{display:block}
+.floatleft{display:inline;float:left;}
+.floatright{float:right;}
+.cf:after{clear:both;content:".";display:block;height:0;visibility:hidden;}
+.cf{zoom:1;display:inline-block;display:block;}
+.b{font-weight:bold;}
+input,button,select,textarea{resize:none;outline:none;}
+i{font-style:normal}
+

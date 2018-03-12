@@ -1,0 +1,69 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>球球大作战</title>
+<link href="css/style.css?1" rel="stylesheet">
+<script src="js/jquery.js"></script>
+<script src="js/xmas.dialogs.js"></script>
+<script src="js/SAT.min.js"></script>
+
+</head>
+
+<body>
+	<div class="loading"><img src="img/loading.png" /></div>
+    <span class="add-speed" id="add_speed"><img src="img/speed_btn.png" /></span>
+	<canvas id="canvas"></canvas>
+    <div id="startMenuWrapper">
+    	<div class="box">
+            <div id="startMenu">
+                <!--<p>球球大作战</p>
+                <input type="text" tabindex="0" autofocus placeholder="输入您的名字" id="playerNameInput" />
+                <button id="startButton">开始游戏</button>-->
+                <div class="avatar-box"><img src="img/avatar.png" /></div>
+                <span id="playerNameInput">开坦克的青蛙</span>
+                <a href="javascript:;" id="startButton"><img src="img/start_btn.png" /></a>
+                
+                <a href="game_rule.html" style="color:#43D4EF; line-height:20px">游戏规则</a>
+                
+                
+            </div>
+        	<ul class="nav-list clr">
+              <li><a href="member.html"><img src="img/icon01.png" /><span>个人中心</span></a></li>
+              <li><a href="lottery.html"><img src="img/icon02.png" /><span>我的奖励</span></a></li>
+              <li><a href="rank.html"><img src="img/icon03.png" /><span>排行榜</span></a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="gameover">
+    	<div class="txt-box">
+        	<h3>你被敌人杀掉了</h3>
+            <ul class="score-txt clr">
+            	<li class="mass-info"><span>最大体重</span><em>10</em></li>
+                <li class="time-info"><span>存活时间</span><em>30</em></li>
+            </ul>
+            <div class="btn">
+            	<span class="restart-btn">重玩</span>
+            	<span class="revive-btn">复活</span>
+                <span class="share-btn">分享</span>
+            </div>
+        </div>
+	</div>
+    
+    <div class="mask"><img src="img/share-tips.png"></div>
+      
+      
+    
+
+    <script src="js/util.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

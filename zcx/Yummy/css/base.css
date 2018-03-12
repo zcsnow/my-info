@@ -1,0 +1,33 @@
+@charset "utf-8";
+html, body {-webkit-text-size-adjust:100%;  font-family:PingHei,PingFang SC,Helvetica Neue,Helvetica,STHeitiSC-Light,sans-serif}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { margin: 0; padding: 0 }
+body{background:#ebebeb;font-size:62.5%;line-height:1;-webkit-overflow-scrolling:touch}
+ul,ol{list-style:none}
+abbr, acronym { border: 0; font-variant: normal }
+del { text-decoration: line-through }
+address, caption, cite, code, dfn, em, th, var { font-style: normal; font-weight: 500 }
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+a,fieldset,img{display:block;border:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+fieldset, img { border: 0 }
+img,video{width:100%}
+b,i,em{font-style:normal}
+table { border-collapse: collapse; border-spacing: 0 }
+input,select{}
+input, select, textarea { font-size: 100%; -webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-appearance:none;appearance:none;outline:none;border-radius:0}
+input::-webkit-input-placeholder{color:#ccc}
+header,nav,section,footer{display:block}
+a,a:hover { text-decoration: none }
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+.hidden{display:none}
+.no-border{border:0}
+
+.container {max-width: 640px; margin: 0 auto; }
+
+
+
+
+
+
+
+
+

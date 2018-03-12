@@ -1,0 +1,64 @@
+﻿Build started 2014/7/5 11:15:25.
+     1>Project "C:\Users\Administrator\Desktop\Football\proj.win32\Football.vcxproj" on node 2 (build target(s)).
+     1>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets(1200,9): warning : The referenced project '..\..\..\cocos2dx\proj.win32\cocos2d.vcxproj' does not exist.
+     1>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets(1200,9): warning : The referenced project '..\..\..\CocosDenshion\proj.win32\CocosDenshion.vcxproj' does not exist.
+     1>InitializeBuildStatus:
+         Creating "Debug.win32\Football.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       PreBuildEvent:
+         Description: Copy js and resource files.
+         if not exist "C:\Users\Administrator\Desktop\Football\proj.win32\Debug.win32\" mkdir "C:\Users\Administrator\Desktop\Football\proj.win32\Debug.win32\"
+         if exist "C:\Users\Administrator\Desktop\Football\proj.win32\Debug.win32\\FootballRes" rd /s /q "C:\Users\Administrator\Desktop\Football\proj.win32\Debug.win32\\FootballRes"
+         mkdir "C:\Users\Administrator\Desktop\Football\proj.win32\Debug.win32\\FootballRes"
+         xcopy "C:\Users\Administrator\Desktop\Football\proj.win32\..\..\..\scripting\javascript\bindings\js\*.js" "C:\Users\Administrator\Desktop\Football\proj.win32\Debug.win32\\FootballRes\" /e /Y
+         xcopy "C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources" "C:\Users\Administrator\Desktop\Football\proj.win32\Debug.win32\\FootballRes\" /e /Y
+         :VCEnd
+         复制了 0 个文件
+         找不到文件 - *.js
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\cocos2d-jsb.js
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\f.zip
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\hello.js
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\.idea\.name
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\.idea\encodings.xml
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\.idea\misc.xml
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\.idea\modules.xml
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\.idea\Resources.iml
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\.idea\vcs.xml
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\.idea\workspace.xml
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\.idea\scopes\scope_settings.xml
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\res\ad.png
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\res\ball.png
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\res\bg.png
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\res\bg1.png
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\res\block.png
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\res\button.png
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\res\high_score_bg.png
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\res\score_bg.png
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\res\slider.png
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\src\failedScene.js
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\src\myApp.js
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\src\resource.js
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\src\.idea\.name
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\src\.idea\encodings.xml
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\src\.idea\misc.xml
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\src\.idea\modules.xml
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\src\.idea\src.iml
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\src\.idea\vcs.xml
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\src\.idea\workspace.xml
+         C:\Users\Administrator\Desktop\Football\proj.win32\..\Resources\src\.idea\scopes\scope_settings.xml
+         复制了 31 个文件
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\Users\Administrator\Desktop\Football\proj.win32\..\Classes /I"C:\Users\Administrator\Desktop\Football\proj.win32\..\..\..\scripting\javascript\spidermonkey-win32\include" /IC:\Users\Administrator\Desktop\Football\proj.win32\..\..\..\external\chipmunk\include\chipmunk /IC:\Users\Administrator\Desktop\Football\proj.win32\..\..\..\extensions /IC:\Users\Administrator\Desktop\Football\proj.win32\..\..\..\scripting\javascript\bindings /IC:\Users\Administrator\Desktop\Football\proj.win32\..\..\..\cocos2dx /IC:\Users\Administrator\Desktop\Football\proj.win32\..\..\..\cocos2dx\include /IC:\Users\Administrator\Desktop\Football\proj.win32\..\..\..\cocos2dx\kazmath\include /IC:\Users\Administrator\Desktop\Football\proj.win32\..\..\..\cocos2dx\platform\win32 /IC:\Users\Administrator\Desktop\Football\proj.win32\..\..\..\cocos2dx\platform\third_party\win32 /IC:\Users\Administrator\Desktop\Football\proj.win32\..\..\..\cocos2dx\platform\third_party\win32\OGLES /IC:\Users\Administrator\Desktop\Football\proj.win32\..\..\..\CocosDenshion\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D DEBUG /D _DEBUG /D XP_WIN /D JS_HAVE___INTN /D JS_INTPTR_TYPE=int /D COCOS2D_DEBUG=1 /D COCOS2D_JAVASCRIPT=1 /D CC_ENABLE_CHIPMUNK_INTEGRATION=1 /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\jsb_ls_auto.cpp ..\Leafsoar.cpp main.cpp ..\Classes\AppDelegate.cpp
+         AppDelegate.cpp
+     1>c:\users\administrator\desktop\football\classes\appdelegate.h(12): fatal error C1083: Cannot open include file: 'CCApplication.h': No such file or directory
+         main.cpp
+     1>c:\users\administrator\desktop\football\proj.win32\main.h(10): fatal error C1083: Cannot open include file: 'CCStdC.h': No such file or directory
+         Leafsoar.cpp
+     1>c:\users\administrator\desktop\football\leafsoar.cpp(8): fatal error C1083: Cannot open include file: 'ScriptingCore.h': No such file or directory
+         jsb_ls_auto.cpp
+     1>c:\users\administrator\desktop\football\jsb_ls_auto.h(12): fatal error C1083: Cannot open include file: 'jsapi.h': No such file or directory
+         Generating Code...
+     1>Done Building Project "C:\Users\Administrator\Desktop\Football\proj.win32\Football.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.94

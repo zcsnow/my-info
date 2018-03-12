@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+
+<html lang="zh-CN">
+
+	<head>
+
+	<title>举报人信息填写</title>
+
+	<meta content-type="text/html" charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<meta name="apple-touch-fullscreen" content="yes">
+
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<meta name="format-detection" content="telephone=no">
+
+	<link href="css/base.css?2015041500123" rel="stylesheet" />
+
+    <link href="font_css/font-awesome.min.css" rel="stylesheet" />
+
+	<link href="css/app.css?2015041500124" rel="stylesheet" />
+
+	</head>
+
+	<body>
+
+    <div class="container">
+
+      <!--头部 start-->
+
+      <!--<div class="topFix">
+
+        <section>
+
+          <div class="topBack"> 
+
+            <a href="javascript:history.go(-1);" class="backBtn"><img src="images/icon_back.jpg" width="30" height="30" alt=""></a> 
+
+            <span class="top-title">举报人信息填写</span>
+
+            <ul class="alUser_icon clr">
+
+              <li><a href="shopcar.html"><img src="images/icon_user.jpg" width="30" height="30" alt=""></a></li>
+
+            </ul>
+
+          </div>
+
+        </section>
+
+      </div>-->
+
+      <!--头部 end-->
+
+      <div class="main">
+
+            <div class="data-box">
+
+              <div class="form-data">
+
+                  <label>姓名</label>
+
+                  <input id="user_name" type="text" placeholder="请输入姓名" />
+
+                  <p class="prompt" id="user_name_tip"></p>
+
+              </div>
+
+              <div class="form-data">
+
+                 <label>证件号</label>
+
+                 <div class="relation-box clr">
+
+                 	<div class="ui-select">
+
+                       <span>— 身份证 —</span>
+
+                       <select class="select" id="credentials_name" name="credentialsname">  
+
+                          <option value="1">— 身份证 —</option>
+
+                          <option value="2" data-value="南字第03081055号">— 军官证 —</option>
+
+                          <option value="3" data-value="G32732811">— 护&#12288;照 —</option>
+
+                       </select>
+
+                   </div>  
+
+                   <input name="credentialsno" id="credentials_val" maxlength="20" type="text" placeholder="请输入相关证件号" data-value="130127198810065828" />
+
+                 </div> 
+
+                 <p class="prompt" id="credentials_tip"></p>
+
+                 
+
+              </div>
+
+              <div class="form-data"> 
+
+                  <label>联系方式</label>
+
+                  <div class="relation-box clr">
+
+                 	<div class="ui-select">
+
+                       <span>— 手机号—</span>
+
+                       <select class="select" id="contact_method">  
+
+                          <option value="1">— 手机号 —</option>
+
+                          <option value="2">— 邮&#12288;箱 —</option>
+
+                       </select>
+
+                   </div>
+
+                   <input id="contact_val" type="text" maxlength="11" placeholder="请输入手机号或邮箱" data-value="13800138000" />
+
+                 </div> 
+
+                 <p class="prompt" id="contact_tip"></p>
+
+              </div>
+
+              <a href="javascript:;" class="btn next-btn js-next-btn1">下一步</a> 
+
+           </div>
+
+      </div>
+
+      
+
+    </div>
+
+    <script src="js/jquery1.7.min.js"></script>
+
+	<script src="js/base.js"></script>
+
+</body>
+
+</html>

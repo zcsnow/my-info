@@ -1,0 +1,16 @@
+*{margin:0;padding:0;}
+img, object { max-width: 100%;border:0;}
+a{text-decoration:none;}
+ol,ul,li{list-style:none;}
+.clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{*+height:1%;}
+body{background:#fff;font: normal 62.5% "微软雅黑";-webkit-text-size-adjust:none }
+.container{ position:relative;}
+
+.main a{ display:block;}
+.main{max-width:640px; margin:0 auto; padding:0 10px 20px;}
+.all_title{padding-bottom: 10px;padding-top: 10px;margin-bottom: 4px;border-bottom: 1px solid #e7e7eb;line-height: 1.4;font-weight: 400;font-size: 24px;}
+.three-list{ margin-left:-5px;}
+.three-list li{box-sizing:border-box; padding-left:5px;margin-top:10px;width: 33.3%;float: left;}
+.four-list{margin-left:-5px;}
+.four-list li{box-sizing:border-box; padding-left:5px;margin-top:10px;width: 25%;float: left;}

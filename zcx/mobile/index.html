@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" class="height100">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="renderer" content="webkit">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body class="height100">
+<div class="container height100">
+    <nav class="header-box fixed">
+        <div class="header">
+            <a href="#" class="logo">
+                <img src="images/Tickmill_logo_white.png">
+            </a>
+            <span class="bar-btn">
+                <img src="images/bar_btn.png">
+            </span>
+        </div>
+        <ul class="nav-box fixed js-nav-box">
+            <li><a href="about.html">关于我们</a></li>
+            <li class="forth"><a href="javascript:;">账户类型</a></li>
+            <li class="thrid"><a href="javascript:;">在线交易</a></li>
+            <li><a href="login.html" class="color-red">登&#12288;&#12288;录</a></li>
+            <li><a href="sign_up.html" class="btn-red">注册</a></li>
+            <li>CH | EN</li>
+        </ul>
+
+    </nav>
+    
+    <div class="swiper-container slider" id="homeSlider">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide slide1">
+          	  <h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s">我们为全球超过20个国家 的机构客户以及超过50个国家 的零售客户提供世界级的交易体验</h3>
+              <div class="about_join_us clr">
+                  <a href="register_a.jsp" class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.8s">加入我们</a>
+                  <a href="aboutus.jsp" class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.8s">关于我们</a>
+              </div>
+              <div id="array">
+                  <img src="images/arrow_up.png" width="25">
+              </div>
+          </div>
+          <div class="swiper-slide slide2">
+              <div id="honfx_info">
+                  <h1 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s">HonFX</h1>
+                  <h3 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s">HonFX是一家全球性的证券，期货，外汇经纪商 </h3>
+                  <p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s">我们的团队成员来自世界各地，拥有从欧洲到北美所有主要金融市场买卖的交易经验,在HonFX我们追求的是提供最好的交易环境和交易经验,给我们所有的客户，成为客户梦寐以求的在线交易平台</p>
+              </div>
+              
+              <div class="honfx-right ani" id="computer" style="position: relative;" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s">
+                  <img src="images/460_370.png" />
+                  <div class="animate-num">
+                      <div class="rad-prg" id="indicatorContainer" style=" display: inline-block;" data-value="74"></div>
+                      <div class="rad-prg" id="indicatorContainer2" style=" display: inline-block;" data-value="46"></div>
+                      <div class="rad-prg" id="indicatorContainer3" style=" display: inline-block;" data-value="62"></div>
+                  </div>
+             </div>
+             
+             <div id="array">
+                  <img src="images/arrow_up.png" width="25">
+             </div>
+          </div>
+          
+          <div class="swiper-slide slide3" id="third">
+              <!-- quxian start -->
+              <div class="quxian" id="quxian">
+                  <div class="quxian-content">
+                      <div class="quxian-dialog ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s">
+                          <span></span>
+                          <h3>EURUSD</h3>
+                          <p>--</p>
+                          <table>
+                              <tbody>
+                              <tr>
+                                  <td style='padding-right:10px;'>最高：10.01</td>
+                                  <td>最低：9.08</td>
+                              </tr>
+                              </tbody>
+                          </table>
+                          <p>--</p>
+                          <a href="#" style=" color: #fff;">MORE</a>
+                      </div>
+                      
+                      <div class="quxian-content-right">
+                          <div id="container1"></div>
+                          <div class="quxin-position none" id="container2"></div>
+                          <div class="quxin-position none" id="container3"></div>
+                          <div class="quxin-position none" id="container4"></div>
+                      </div>
+                      
+                      <div class="quxian-content-left clr">
+                          <p class="current">EURUSD</p>
+                          <p>GBPUSD</p>
+                          <p>XAUUSD</p>
+                          <p>USDJPY</p>
+                      </div>
+                      
+                  </div>
+              </div>
+              <!-- quxian end -->
+              <div id="array">
+                  <img src="images/arrow_up.png" width="25">
+             </div>
+          </div>
+          
+          <div class="swiper-slide slide4" id="fourth">
+          
+              <!--account start-->
+                <div class="wrap-container clr" id="account">
+                                <div class="title-account ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s">账号类型</div>
+                                <p style="font-size:14px;" class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">选择一种账户类型开始您的外汇交易</p>
+                                <div class="account-item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s">
+                                  <a href="account.html">
+                                    <h4>微型账户</h4>
+                                    <strong>500$</strong>
+                                    <p>最小入金（最低点差1.3pips）</p>
+                                    <hr>
+                                    <p>简单的开始</p>
+                                  </a>
+                                </div>
+                                <div class="account-item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1.5s">
+                                  <a href="account.html">
+                                    <h4>标准账户</h4>
+                                    <strong>5000$</strong>
+                                    <p>最小入金（最低点差0.8pips）</p>
+                                    <hr>
+                                    <p>更低的成本，更多的服务</p>
+                                  </a>
+                                </div>
+                                <div class="account-item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="2s">
+                                  <a href="account.html">
+                                    <h4>VIP账户</h4>
+                                    <strong>20000$</strong>
+                                    <p>最小入金（最低点差0.1pips）</p>
+                                    <hr>
+                                    <p>适合有个性化交易需求的交易者</p>
+                                   </a>
+                                </div>
+                </div>
+                <!--account end-->
+                <div id="array">
+                  <img src="images/arrow_up.png" width="25">
+                </div>
+          
+          </div>
+          
+          <div class="swiper-slide slide5">
+          		<!--platform start-->
+                <div class="platform wrap-container" id="platform">
+                    
+                                <h2 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s">交易平台</h2>
+                                <div class="title-description ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+                                    只需要在HonFX开立一个账户，交易者即可在台式电脑，笔记本电脑或智能手机上进行<br>
+                                    股票，货币，商品，金属以及差价合约等200多种产品的交易
+                                </div>
+                                <p class="select-platform ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="0.5s">选择您的交易平台</p>
+                                <div class="loader clr ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="1.2s" style=" position:absolute; bottom:10%;">
+                                    <div class="line1">
+                                        <div class="system">
+                                            <a href="#" style="color:#fff"><i class="fa fa-apple"></i></a>
+                                        </div>
+                                        <div>mac</div>
+                                    </div>
+                                    <div class="line2">
+                                        <div class="system">
+                                            <a href="" style="color:#fff"><i class="fa fa-windows"></i></a>
+                                        </div>
+                                        <p>windows</p>
+                                    </div>
+                                    <div class="line3">
+                                        <div class="system">
+                                            <a href="" style="color:#fff"><i class="fa fa-apple"></i></a>
+                                        </div>
+                                        <p>ios</p>
+                                    </div>
+                                    <div class="line4">
+                                        <div class="system">
+                                            <a href="" style="color:#fff"><i class="fa fa-android"></i></a>
+                                        </div>
+                                        <p>android</p>
+                                    </div>
+                                </div>
+                </div>
+                <!--platform end-->
+                <div id="array">
+                  <img src="images/arrow_up.png" width="25">
+             	</div>
+          
+          </div>
+          
+          <div class="swiper-slide slide6">
+          		<!--progress start-->
+                <div id="progress">
+                        <div class="guocheng clr">
+                        	<img class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" src="images/273_2862.png">
+                            <img class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s" src="images/273_286.png">
+                            <img class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s" src="images/273_2863.png">
+                            <img class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="2s" src="images/273_2864.png">
+                            <div swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s" class="logoling ani"> <img src="images/logoling.png"></div>
+                        </div>
+                </div>
+                <!--progress end-->
+                <div id="array">
+                  <img src="images/arrow_up.png" width="25">
+             	</div>
+          </div>
+          
+          <div class="swiper-slide slide7">
+          
+          		<!---->
+                <div class="friend-link">
+                    <h3>流通性提供商:</h3>
+                    <div class="clr">
+                    	<a href="#"><img src="images/bank-of-america.png"></a>
+                        <a href="#"><img src="images/deutsche-bank.png"></a>
+                        <a href="#"><img src="images/citi-bank.png"></a>
+                        <a href="#"><img src="images/barclays.png"></a>
+                        <a href="#"><img src="images/jpm.png"></a>
+                          
+                    </div>
+                </div>
+                <!---->
+                <!--footer start-->
+                <div class="index-footer">
+                    <div style="font-size: 12px;text-align:left; line-height:18px;">            
+                        <span style="font-weight:bold;">风险披露:</span> 
+                        价差合约（CFD）是杠杆式的金融产品。差价合约（CFD）交易并非适合所有人，并且可导致您所投资资金的损失,因此请确保您充分了解所涉及到的风险<br>
+                        <a href="" style=" color:#337ab7" target="_blank">了解更多</a>
+                        HonFX 是 Havenson Global Ltd. 的商业名称。
+                    </div>
+                    <div style="font-size: 12px;text-align:left;line-height:18px;">
+                        Havenson Global Ltd. 注册在英国和塞舌尔（注册编号 181492），圣文森特（注册编号 23302）。 受FSA金融服务管理局（注册编号 23302）的认可和监督  <br>
+                        本网站上的信息不针对美国公民，并无意分发或供使用向任何在任何认为此信息违反当地法律的国家或管辖范围的人。<br></>Copyright © 2015-2016 HONFX ™ All rights reserved
+                    </div>
+                    <img src="images/top.png" class="back-top js-back-top">
+                </div>
+                <!--footer end-->
+          
+          </div>
+          
+      </div>
+      <!--<div class="swiper-pagination"></div>-->
+    </div>
+    
+    
+  
+</div>
+
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/highcharts.js"></script>
+<script src="js/highcharts-config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/radialIndicator.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/swiper.animate.min.js"></script>
+<script>
+var scaleW=window.innerWidth/320;
+var scaleH=window.innerHeight/480;
+var resizes = document.querySelectorAll('.resize');
+          for (var j=0; j<resizes.length; j++) {
+           resizes[j].style.width=parseInt(resizes[j].style.width)*scaleW+'px';
+		   resizes[j].style.height=parseInt(resizes[j].style.height)*scaleH+'px';
+		   resizes[j].style.top=parseInt(resizes[j].style.top)*scaleH+'px';
+		   resizes[j].style.left=parseInt(resizes[j].style.left)*scaleW+'px'; 
+	
+          }
+var scales = document.querySelectorAll('.txt');
+for (var i=0; i<scales.length; i++) {
+	ss=scales[i].style;
+	ss.webkitTransform = ss.MsTransform = ss.msTransform = ss.MozTransform = ss.OTransform =ss.transform='translateX('+scales[i].offsetWidth*(scaleW-1)/2+'px) translateY('+scales[i].offsetHeight*(scaleH-1)/2+'px)scaleX('+scaleW+') scaleY('+scaleH+') ';
+}
+
+
+
+//点击导航按钮
+$('.header-box').on('click','.bar-btn',function(e){
+	e.stopPropagation();
+	$('.js-nav-box').slideToggle();
+});
+$(document).on('click',function(e){
+	e.stopPropagation();
+	$('.js-nav-box').slideUp();
+});
+$('.js-nav-box').on('click','.forth',function(){
+	//$('html,body').animate({ scrollTop: 0 }, 500);
+	homeSwiper.slideTo(3, 1000, false);
+
+});
+
+$('.js-nav-box').on('click','.thrid',function(){
+	//$('html,body').animate({ scrollTop: 0 }, 500);
+	homeSwiper.slideTo(2, 1000, false);
+
+});
+
+
+$('.index-footer').on('click','.js-back-top',function(){
+	//$('html,body').animate({ scrollTop: 0 }, 500);
+	homeSwiper.slideTo(0, 1000, false);
+
+});
+
+
+//轮播图
+if($('#homeSlider .swiper-slide').length>1){
+var homeSwiper = new Swiper('#homeSlider',{
+	direction : 'vertical',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+	autoplayDisableOnInteraction : false, //swiper之后自动切换不会停止
+	pagination:'.swiper-pagination', //分页
+	paginationClickable: true,
+	onInit: function(swiper){
+	   //setTimeout(function(){
+		 swiperAnimateCache(swiper);
+		 swiperAnimate(swiper);
+	   //},1000);
+   },
+   onSetTransition: function(swiper,transiton){
+       swiperAnimate(swiper);
+    },
+
+   onSlideChangeEnd: function(swiper){
+	  swiperAnimate(swiper);
+	  if($('.honfx-right').hasClass('animated')){
+			console.log(1);
+			setTimeout(function () {
+				$('.rad-prg').each(function (i) {
+					var val = $(this).attr("data-value");
+					$(this).data('radialIndicator').animate(val);
+				});
+			},2000)
+		}else{
+		    setTimeout(function () {
+				$('.rad-prg').each(function (i) {
+					var val = $(this).attr("data-value");
+					$(this).data('radialIndicator').animate("0");
+				});
+			},2000)
+		}
+
+   },
+   onTransitionEnd: function(swiper){
+      swiperAnimate(swiper);
+    }	  
+
+});
+}
+
+
+var data1 = [
+	{
+		high:'10.1',
+		low:'9.08'
+	}
+];
+var data2 = [
+	{
+		high:'10.2',
+		low:'9.08'
+	}
+];
+var data3 = [
+	{
+		high:'10.3',
+		low:'9.08'
+	}
+];
+var data4 = [
+	{
+		high:'10.4',
+		low:'9.08'
+	}
+];
+
+
+        var _title = $(".quxian-content-left p");
+        _title.click(function(){
+            var index = $(".quxian-content-left p").index(this);
+            var title = $(this).text();
+            $(this).addClass("current").siblings("p").removeClass("current");
+            $(".quxian-content-right > div").eq(index).show().siblings().hide();
+
+            var html,data;
+            switch (index){
+                case 0:{
+                    data = data1;
+                    break;
+                }
+                case 1:{
+                    data = data2;
+                    break;
+                }
+                case 2:{
+                    data = data3;
+                    break;
+                }
+                case 3:{
+                    data = data4;
+                    break;
+                }
+            }
+            for(var attr in data){
+                html = html+"<tr><td style='padding-right:10px;'>最高："+data[attr].high+"</td><td>最低："+data[attr].low+"</td></tr>";
+            }
+
+            $(".quxian-dialog h3").text(title);
+            $(".quxian-dialog table").html(html);
+        });
+
+	   $('#indicatorContainer').radialIndicator({
+            barColor: '#ffe343',
+            radius: 15,
+            barWidth: 3,
+            initValue: 0,
+            roundCorner : true,
+            percentage: true
+        });
+        $('#indicatorContainer2').radialIndicator({
+            barColor: '#ff6260',
+            radius: 15,
+            barWidth: 3,
+            initValue: 0,
+            roundCorner : true,
+            percentage: true
+        });
+        $('#indicatorContainer3').radialIndicator({
+            barColor: '#8eedd2',
+            radius: 15,
+            barWidth: 3,
+            initValue: 0,
+            roundCorner : true,
+            percentage: true
+        });
+
+		
+		
+        
+
+</script>
+</body>
+</html>

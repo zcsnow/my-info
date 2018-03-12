@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>球球大作战</title>
+<link href="css/lottery.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="rule-bg">
+<header>
+	<a href="javascript:history.go(-1);" class="back-btn"><img src="img/back_btn.png"></a>
+</header>
+<div class="alContent">
+	<h1 class="title-top">游戏规则</h1>
+    <div class="rule-box">
+        <p>
+        在小球DuangDuang的世界里，你化身为一枚独特的球球。扫荡小球，躲避大球，只为找到那颗幸运的礼品球球。<br>
+        1.	用手指拖动或点击屏幕控制球球的行动方向，吃掉小球不断增加你的体重值，会获得好成绩。<br>
+        2.	被带刺的敌方球碰到则本轮游戏结束，碰撞礼品球则有机会获得各种惊喜礼品。<br>
+        3.	别忘了呼朋唤友来为你的排行榜点赞加油，最人气奖也许就是你的。<br>
+		</p>
+    </div>
+    
+</div>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+$('.share-btn').click(function(){
+	$('.mask').show();
+});
+$('.mask').click(function(){
+	$('.mask').hide();
+})
+</script>
+</body>
+</html>

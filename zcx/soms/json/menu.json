@@ -1,0 +1,42 @@
+fun({
+  "data":[
+    {
+      "title":"FO inlet press",
+      "path":"/index/pageHome",
+      "type":0,
+      "codeNumber":"10"
+    },
+    {
+      "title":"FO inlet temp",
+      "path":"/index/b",
+      "type":0,
+      "codeNumber":"08"
+    },
+    {
+    "title":"LO inlet press",
+    "path":"/index/c",
+    "type":0,
+    "codeNumber":"09"
+    },
+    {
+    "title":"LO inlet temp",
+    "path":"/index/stateEvaluation",
+    "type":0,
+    "codeNumber":"18"
+    },
+    {
+    "title":"LO inlet filter press",
+    "path":"#1",
+    "type":0,
+    "codeNumber":"10"
+    },
+    {
+      "title":"G/E 1",
+      "path":"#2",
+      "type":1,
+      "firstNumber":20,
+      "secondNumber":8
+    }
+  ],
+  "status":0
+})

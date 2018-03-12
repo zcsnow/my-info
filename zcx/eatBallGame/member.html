@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>球球大作战</title>
+<link href="css/lottery.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+	<a href="index.html" class="back-btn"><img src="img/back_btn.png"></a>
+</header>
+<div class="alContent">
+	<h1 class="title-top">玩家秀</h1>
+    <div class="member-box">
+    	<div class="avatar-box"><img class="avatar-img" src="img/avatar.png"><span class="change-avatar-btn">更换头像</span></div>
+    	<ul class="member-list">
+           <li><em>用&nbsp;&nbsp;户&nbsp;&nbsp;名：</em><span>开坦克的青蛙</span></li>
+           <li><em>最大体重：</em><span>10毫克</span></li>
+           <li><em>最长时间：</em><span>200秒</span></li>
+           <li><em>当前排名：</em><span>10</span></li>
+           <li><em>我的赞数：</em><span class="praise-btn" id="js_praise">282</span></li>
+        </ul>
+        <a class="share-btn">分享</a>
+    </div>
+	
+    <div class="mask"><img src="img/share-tips1.png"></div>
+    
+</div>
+<script src="js/jquery.js"></script>
+<script>
+$('.share-btn').click(function(){
+	$('.mask').show();
+});
+$('.mask').click(function(){
+	$('.mask').hide();
+});
+$('#js_praise').click(function(){
+	var oldNum = $('#js_praise').html();
+	oldNum++;
+	$('#js_praise').html(oldNum);
+});
+</script>
+</body>
+</html>

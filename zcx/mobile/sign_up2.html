@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="renderer" content="webkit">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css">
+    <link rel="stylesheet" href="css/css.css">
+	
+</head>
+<body>
+<div class="container">
+        <nav class="header-box">
+        	<div class="header">
+                <a href="#" class="logo">
+                    <img src="images/Tickmill_logo_white.png">
+                </a>
+                <span class="bar-btn">
+                    <img src="images/bar_btn.png">
+                </span>
+            </div>
+            <ul class="nav-box js-nav-box fixed">
+                <li><a href="about.html">关于我们</a></li>
+                <li class="forth"><a href="index.html">账户类型</a></li>
+                <li class="thrid"><a href="index.html">在线交易</a></li>
+                <li><a href="login.html" class="color-red">登&#12288;&#12288;录</a></li>
+                <li><a href="sign_up.html" class="btn-red">注册</a></li>
+                <li>CH | EN</li>
+            </ul>
+    
+        </nav>
+        
+        <div class="login-info register-box">
+            <div class="form-group form-title">
+                <h3>注册客户专区 2/2</h3>
+                <p>预计完成注册时间 3分钟</p>
+                <p>请仅使用英文字母填写如下表单，带*号为必填项</p>
+            </div>
+            <form id="form">
+                <div class="form-group">
+                    <label>居住地</label>
+                    <input type="text" class="form-control" id="first-name" style="padding-left:54px" name="first-name" isEng="true" required placeholder="">
+                    <div class="error_tip"></div>
+                </div>
+            
+                <div class="form-group">
+                    <label>邮编</label>
+                    <input type="text" class="form-control" id="youbian" name="youbian" required placeholder="" aria-required="true">
+                    <div class="error_tip"></div>
+                </div>
+                <div class="form-group">
+                    <label>教育程度</label>
+                    <select class="select" style="padding-left:67px">
+                    	<option>高中</option>
+                        <option>大专</option>
+                        <option>本科</option>
+                        <option>研究生</option>
+                        <option>博士</option>
+                    </select>
+                    <div class="error_tip"></div>
+                </div>
+            
+            
+                <div class="form-group">
+                    <label>是否为美国公民</label>
+                    <select class="select" style="padding-left:105px">
+                        <option>否</option>
+                        <option>是</option>
+                    </select>
+                    <div class="error_tip"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label>是否有工作</label>
+                    <select class="select" style="padding-left:80px">
+                        <option>是</option>
+                        <option>否</option>
+                    </select>
+                    <div class="error_tip"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>资金来源</label>
+                    <input type="text" class="form-control" id="where" style="padding-left:67px" name="where" required placeholder="" aria-required="true">
+                    <div class="error_tip"></div>
+                </div>
+            
+            
+                <div class="form-group">
+                    <label>总净资产</label>
+                    <input type="text" class="form-control" id="total" style="padding-left:67px" name="total" required placeholder="" aria-required="true">
+                    <div class="error_tip"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label>年总收入</label>
+                    <input type="text" class="form-control" style="padding-left:67px" required placeholder="" aria-required="true">
+                    <div class="error_tip"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label>交易目的</label>
+                    <input type="text" class="form-control" style="padding-left:67px" required placeholder="" aria-required="true">
+                    <div class="error_tip"></div>
+                </div>
+                <div class="form-group">
+                    <label>身份证上传</label>
+                    
+                  	<a class="upload-btn"><input  id="uploadImg" type="file"required="" placeholder="" aria-required="true"></a>
+                  	<div class="error_tip"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label>门户密码</label>
+                    <input type="text" class="form-control" id="password" style="padding-left:67px" name="password" required placeholder="" aria-required="true">
+                    <div class="error_tip"></div>
+                </div>
+                    
+                <div class="form-group">
+                    <label>再次输入密码</label>
+                    <input type="text" class="form-control" id="confirm-password" style="padding-left:94px" name="confirm-password" required placeholder="" aria-required="true">
+                    <div class="error_tip"></div>
+                </div>
+                
+                <div class="row text-right" style=" padding-right: 15px; padding-top: 20px; font-size:12px; line-height:16px; color:#777">
+                    我已经仔细阅读并理解<u><a href="#" style=" color: #06c">用户注册条款</a></u>，我接受并同意
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-register">
+                        确认无误 提交资料
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!--footer start-->
+        <footer class="footer" style=" color:#777">@2016-2016 honfx</footer>
+
+</div>
+
+<!--footer end-->
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/jquery.datetimepicker.js"></script>
+<script>
+$(function () {
+    $("#form").validate({
+        //自定义验证规则
+        rules:{
+            email: {
+                isEmail: true
+            }
+        },
+        //错误信息提示
+        errorPlacement:function(error,element){
+            error.appendTo(element.siblings(".error_tip"));
+        }
+    });
+    jQuery.validator.addMethod("isEng", function(value, element) {
+        var eng = /^[A-Za-z]+$/;
+        return this.optional(element) || (eng.test(value));
+    }, "请正确填写内容");
+
+
+
+    $("#birthday").datetimepicker({
+        lang:'ch',
+        timepicker:false,
+        format:'Y-m-d'
+    });
+})    
+
+//点击导航按钮
+$('.header-box').on('click','.bar-btn',function(e){
+	e.stopPropagation();
+	$('.js-nav-box').slideToggle();
+});
+$(document).on('click',function(e){
+	e.stopPropagation();
+	$('.js-nav-box').slideUp();
+});
+</script>
+</body>
+</html>

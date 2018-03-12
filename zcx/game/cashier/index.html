@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<title>超级收银员</title>
+<link rel="stylesheet" href="css/index.css?v=20141011b">
+</head>
+
+<body class="cashier">
+<!-- 加载中...[[ -->	
+<div class="popload" id="popload">
+	<div class="popload-main">
+	<span class="popload-main-ico"></span>
+	<p class="popload-main-txt">疯狂加载中...</p>
+	</div>
+</div>
+<!-- 加载中...]] -->
+
+<!-- 首页[[ -->	
+<article class="index" id="index">
+	<img src="img/index_bg.png" alt="超级收银员" width="300" height="280" class="index-img">
+	<a href="javascript:;" class="btn-red index-btn" data-stat="wxzf.action.cashier.play" id="index_btn">玩一把扫码收银 ></a>
+	<p class="index-info">
+		<a href="http://view.inews.qq.com/a/TEC2014091402289601?from=singlemessage&isappinstalled=0" target="_blank" class="index-info">什么是微信扫码刷卡？</a>
+	</p>
+</article>
+<!-- 首页]] -->
+
+<!-- 游戏中[[ -->	
+<article class="game hide" id="game">
+	<header class="game-head">
+		<strong class="order" id="game_order">0</strong>
+		<em class="time" id="game_time">60</em>
+	</header>
+	<!-- 
+		交互说明：
+		1.随机给其中一个 .game-main li 添加class: ico-bird 或 ico-card 或 ico-code
+		2.用户点击了class: ico-bird 或 ico-card 时间减少5秒
+		3.用户点击了class: ico-code 单加 1
+		4.点击 .game-main li 添加class:on
+	-->
+	<ul class="game-main">
+		<li class=""></li>
+		<li class=""></li>
+		<li class=""></li>
+		<li class=""></li>
+		<li class=""></li>
+		<li class=""></li>
+		<li class=""></li>
+		<li class=""></li>
+		<li class=""></li>
+	</ul>
+</article>
+<!-- 游戏中]] -->
+
+<!-- 游戏指引[[ -->	 
+<!-- 
+	交互说明：
+	1.游戏指引，3秒给.game-guide添加class:hide
+-->
+<div class="guide hide" id="guide">
+	<div class="guide-bg"></div>
+</div>
+<!-- 游戏指引]] -->	 
+
+<!-- 游戏结果[[ -->
+<!-- 
+	交互说明：
+	1.单数小于100，添加class:show-fail
+	1.单数大于100，添加class:show-suc
+-->
+<article class="state hide" id="state">
+	<div class="state-wrap">
+		<div class="state-fail"></div>
+		<div class="state-suc"></div>
+		<div class="state-order"<strong>125</strong>单</div>
+		<p class="state-info">以下门店可找到真正超级收银员体验微信扫码刷卡</p>
+		<div class="state-business">
+			<img src="img/business_logo.jpg" alt="商家图标" width="242" height="69">
+		</div>
+		<div class="state-btn flex flex-pack-justify">
+			<a href="javascript:;" class="btn-red state-btn-again" data-stat="wxzf.action.cashier.again" id="again">再玩一次</a>
+			<a href="javascript:;" class="btn-yellow state-btn-fail js-share-btn" data-stat="wxzf.action.cashier.share_fail">喊朋友挑战</a>
+			<a href="javascript:;" class="btn-yellow state-btn-suc js-share-btn" data-stat="wxzf.action.cashier.share_again">分享战绩</a>
+		</div>
+	</div>
+</article>
+<!-- 游戏结果]] -->
+
+<!-- 竖屏体验[[ -->
+<div class="lock flex flex-v flex-pack-center flex-align-center">
+<div class="lock-bg"></div>
+<p class="lock-txt">为了更好的体验，请使用竖屏浏览</p>
+</div>
+<!-- 竖屏体验]] -->
+
+<!-- 邀请好友参加提示层[[ -->
+<div class="mask share-mask hide" id="js_mask_layer">
+	<div class="ico-share"></div>
+	<p class="share-mask-txt">点此选择【发送给朋友】或【分享到朋友圈】</p>
+</div>
+<!-- 邀请好友参加提示层]] -->
+
+</body>
+
+<script type="text/javascript" src="js/zepto.min.js?v=20141011"></script>
+<script type="text/javascript" src="js/index.js?v=20141012"></script>
+<script language="javascript" src="js/ping.js"></script>
+<script type="text/javascript">
+	
+	//--------------config start
+	var config = {
+		statURL  : "/public/users/peunzhang/cashier/index.html",     //活动统计的地址
+		appMsgKey: "wxzf.action.cashier.appmessage",  //发送朋友消息统计的KEY
+		timelineKey : "wxzf.action.cashier.timeline",  //分享到朋友圈统计的KEY
+		//title    : "我是"+txt1+"，你敢挑战么？",    //分享出去的标题
+		//desc     : "我用微信扫码刷卡,60秒收银"+val+"单，超过全国“"+txt2+"%收银员”你呢？",	  //分享出去的描述
+		link     : "http://ol.weixin.qq.com/public/users/peunzhang/cashier/index.html",    //分享出去的地址
+		// imgUrl   : "http://ol.weixin.qq.com:8080/ui_static_wxzf/mobile/cashier/img/ico_share.jpg"	  //分享出去的图片
+	}	
+	//--------------config end
+
+	if(typeof(pgvMain) == 'function'){
+		pgvMain("", {virtualDomain: "action.weixin.qq.com",virtualURL:config.statURL});
+	}
+
+	function clickStat(adtag){
+        if(typeof(pgvSendClick) != "undefined"){
+            pgvSendClick({
+                "hottag"        : adtag,
+                "virtualDomain" : "action.weixin.qq.com"
+            }); 
+        }
+    }
+
+    //微信分享模块
+	var Wx = function(){
+
+		var _config = {
+			appId: "",
+			title: config.title,
+			desc : config.desc,
+			link : config.link,
+			imgUrl: config.imgUrl,
+			appMsgKey: config.appMsgKey,
+			timelineKey: config.timelineKey
+		}
+
+		 /**
+	     * 绑定微信的分享监听事件     
+	     */
+	    var _bindWeixinShare = function(){
+
+	        WeixinJSBridge.on('menu:share:appmessage', function (argv) { 	               
+
+	            WeixinJSBridge.invoke('sendAppMessage', _getShareConfig(1), function (resp) { 
+	                _handleShareCall(resp.err_msg,"appmessage");              
+	            });           
+	        });
+
+	        WeixinJSBridge.on('menu:share:timeline', function (argv) { 
+	        	WeixinJSBridge.invoke('shareTimeline',_getShareConfig(2), function (resp) {
+		            _handleShareCall(resp.err_msg,"timeline");           
+		        });
+	        });	       
+	    }
+
+	    /**
+	     * 获取分享的对象 
+	     * @return {Object}  分享的常量信息
+	     */
+	    var _getShareConfig = function(type){
+
+	        return {
+	            "appid"  : _config.appId ? _config.appId : '',
+	            "img_url": "http://ol.weixin.qq.com/public/users/peunzhang/cashier/img/"+share_img,
+	            "link"   : _config.link,
+	            "desc"   : share_txt,
+	            "title"  : type == 1 ? txt1 : share_txt,
+	            "img_width" :"120",
+	            "img_height":"120"
+	        }        
+	    }
+
+	    /**
+	     * 处理用户操作的回调事件
+	     * @param  {String} msg     用户操作的回调字符串
+	     * @param  {String} operate 用户操作类型 朋友圈或者是好友好戏
+	     */
+	    var _handleShareCall = function(msg,operate){
+	        var prefix = (operate == "timeline" ? "share_timeline" : "send_app_msg") + ":";
+	        var callback = _config.callback||{};
+
+	        if(msg == prefix + "cancel"){
+	            callback.cancel && callback.cancel();
+	        }else if(msg == prefix + "fail"){
+	            callback.fail && callback.fail();
+	        }else if(msg == prefix + "confirm" || msg == prefix + "ok"){
+	            callback.ok && callback.ok();
+
+	            clickStat(operate == "timeline" ? _config.timelineKey : _config.appMsgKey);
+	        }
+	    }
+
+	    return {
+	    	init: _bindWeixinShare
+	    }
+	}();
+
+	if (typeof window.WeixinJSBridge == "undefined"){
+        document.addEventListener('WeixinJSBridgeReady', Wx.init, false);
+    }else{
+        Wx.init();
+    }
+
+    //-------------------点击流统计的初始化
+    var stat_nodes = document.querySelectorAll("[data-stat]");
+
+    for(var i = 0 ,l = stat_nodes.length; i < l; i++){
+    	stat_nodes[i].addEventListener("click",function(e){
+    		clickStat(e.target.getAttribute("data-stat"));
+    	})
+    }
+
+    //分享的mask操作
+    var Share = function(){
+    	var _btns;
+
+    	var _init = function(){
+    		_btns = document.querySelectorAll(".js-share-btn");
+
+    		for(var i =0; i< _btns.length; i++){
+    			_btns[i].addEventListener("touchstart",_showMask);
+    		}
+    	}
+
+    	var _showMask = function(e){
+    		e.preventDefault();
+
+    		document.getElementById("js_mask_layer").classList.remove("hide");
+    		setTimeout(_hideMask,2000);
+    	}
+
+    	var _hideMask = function(){
+    		document.getElementById("js_mask_layer").classList.add("hide");
+    	}
+
+    	return {
+    		init: _init
+    	}
+
+    }();
+
+    Share.init();
+
+</script>
+
+
+</html>
+ 
+
+

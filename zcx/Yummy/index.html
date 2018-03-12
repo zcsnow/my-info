@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN" ng-app="leanmessageDemo">
+<head>
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta content="yes" name="apple-mobile-web-app-capable"> 
+<meta content="yes" name="apple-touch-fullscreen"> 
+<meta content="telephone=no,email=no" name="format-detection"> 
+<title>Yummy-付费直播间</title>
+<link href="css/base.css?0" rel="stylesheet" />
+<link href="css/index.css?5" rel="stylesheet" />
+<link href="css/pugin/video-js.css" rel="stylesheet" type="text/css">
+<script src="js/plugin/video.js"></script>
+</head>
+<body>
+<div class="container">
+
+	<header class="header-box" id="fixed-header">
+      <div class="header-menu" id="headerMenu">
+      	<h2 class="live-title js-menu-btn">辣妈生萌宝，孕期要健身 | 辣妈专题<p><img src="images/arrow_d.png"></p></h2>
+        <div class="host-info clr">
+          <div class="host-avatar"><img src="images/host_avatar.jpg"></div>
+          <div class="live-desc">
+              <h3><strong>十夜</strong><em>Yuummy 主播</em> </h3>
+              <p>这家伙很懒，什么都没留下。</p>
+              <div class="time-box">
+                <span><strong>【预告】</strong><time>07-01 21:00</time> 时长<time>1.5小时</time></span>
+                <em class="share-btn js-share-btn">分享此直播<img src="images/share_btn.png"></em>
+              </div>
+          </div> 
+        </div>
+      </div>   
+    </header>
+    
+    <div class="nofixed-box">
+	<!--视频-->
+	<video id="example_video_1" class="video-js vjs-16-9 vjs-default-skin vjs-big-play-centered" controls preload="auto"  poster="images/poster.jpg" data-setup=''>
+      <source src="video/oceans.mp4" type="video/mp4">
+      <source src="video/oceans.webm" type="video/webm">
+      <source src="video/oceans.ogv" type="video/ogg">
+      <p class="vjs-no-js">播放视频需要启用 JavaScript，推荐使用支持HTML5的浏览器访问。</p>
+    </video>
+  
+	<!-- header-box-->
+    <header class="header-box">
+      <div class="header-menu" id="headerMenu">
+      	<h2 class="live-title">辣妈生萌宝，孕期要健身 | 辣妈专题</h2>
+        <div class="host-info clr">
+          <div class="host-avatar"><img src="images/host_avatar.jpg"></div>
+          <div class="live-desc">
+              <h3><strong>十夜</strong><em>Yuummy 主播</em> </h3>
+              <p>这家伙很懒，什么都没留下。</p>
+              <div class="time-box">
+                <span><strong>【预告】</strong><time>07-01 21:00</time> 时长<time>1.5小时</time></span>
+                <em class="share-btn js-share-btn">分享此直播<img src="images/share_btn.png"></em>
+              </div>
+              <div class="pay-box js-pay-box">
+                <a href="javascript:;" class="pay-btn">赞助并参与直播(￥<b class="pay-money">199.99</b>)</a>
+                <h4 class="share-money js-no-share">暂无可用红包，<em class="red">分享即得5元红包</em></h4>
+                <h4 class="share-money js-shared"><em class="red">红包已抵扣5元</em> 更多红包？<em class="red help-btn">找朋友帮忙</em></h4>
+                   
+                <div class="join-box clr">
+                  <ul class="avatar-list">
+                      <li><img src="images/avatar01.jpg"></li>
+                      <li><img src="images/avatar02.jpg"></li>
+                      <li><img src="images/avatar03.jpg"></li>
+                      <li><img src="images/avatar04.jpg"></li>
+                      <li><img src="images/avatar05.jpg"></li>
+                  </ul>
+                  <span class="join-num">已有45人参与</span>
+                </div>
+              </div>
+              
+          </div> 
+        </div>
+      </div>   
+    </header>
+    
+    <!--直播内容介绍-->
+    <div class="live-text">
+      <p>“停止给自己打分，愉悦不分早晚”最爱这句！因为性高潮是女人的一个痛点，有人终身木有，有人在性爱中迟迟等不来高潮。而我们的生命只有一次，身为女性，应该好好爱自己的身体，探索她，了解她，使用她，以你喜欢的开心的任何方式。</p>
+      <span class="slide-click js-slide-click">全文<img src="images/arrow_d.png"></span>
+    </div> 
+    
+    </div>
+    
+    <!--聊天部分-->
+    <div class="chat-box">
+    
+      <!--聊天内容-->
+      <div id="print-wall" class="print-wall clr">
+
+      </div>
+      <div class="input-box js-input-box">
+        <a href="javascript:;" class="audio-btn" id="audio_btn"><img src="images/audio.png" /></a>
+        <div class="input">
+            <input type="text" maxlength="140" placeholder="请来，一起聊骚"  id="input-send" class="input-send" name="content">
+        </div>
+        <a href="javascript:;" class="uploadButton"><input id="photoFileUpload" type="file"></a>
+        <div class="action-box">
+            <button type="button" id="send-btn" class="send-btn">发布</button>
+            <!--<div id="send-btn-as-file" class="btn">作为文件发送</div>-->
+        </div>
+      </div>
+    </div>
+    
+    <!-- 分享弹出层 -->
+    <div class="js-share-pop"><img src="images/share_bg.png" /></div>
+    
+    <!--  找朋友弹出层 -->
+    <div class="js-help-pop1"><img src="images/share_bg2.png" /></div>
+    
+    <!-- 底部下载APP -->
+    <div class="bottom-app">			
+      <div class="app-box">				
+        <span class="app-url" red_url="">					
+          <img src="images/download_app.png">				
+        </span>	
+        <span class="close-app"><img src="images/app_close.png"></span>				
+      </div>			
+    </div>
+
+</div>
+<!-- LeanCloud 存储 SDK --> 
+<script src="./node_modules/leancloud-storage/dist/av.js"></script>
+<!-- LeanCloud 实时通信 SDK -->
+<script src="./node_modules/leancloud-realtime/dist/realtime.browser.js"></script>
+<!-- LeanCloud 实时通讯 TypedMessages -->
+<script src="./node_modules/leancloud-realtime-typed-messages/dist/typed-messages.js"></script>
+
+<script src="js/plugin/jquery.min.js"></script>
+<!-- 滑动某一位置导航浮动文件 -->
+<script src="js/plugin/fixed_public.js"></script>
+<!-- 页面交互文件 -->
+<script src="js/index.js?4"></script>
+<!-- 聊天文件 -->
+<script src="js/test.js?3"></script>
+
+</body>
+</html>
+
+
+
+
+

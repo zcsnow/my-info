@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="height100">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="renderer" content="webkit">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body class="height100">
+<div class="container login">
+        <nav class="header-box">
+        	<div class="header">
+                <a href="#" class="logo">
+                    <img src="images/Tickmill_logo_white.png">
+                </a>
+                <span class="bar-btn">
+                    <img src="images/bar_btn.png">
+                </span>
+            </div>
+            <ul class="nav-box fixed js-nav-box">
+                <li><a href="about.html">关于我们</a></li>
+                <li class="forth"><a href="index.html">账户类型</a></li>
+                <li class="thrid"><a href="index.html">在线交易</a></li>
+                <li><a href="login.html" class="color-red">登&#12288;&#12288;录</a></li>
+                <li><a href="sign_up.html" class="btn-red">注册</a></li>
+                <li>CH | EN</li>
+            </ul>
+
+        </nav>
+        
+        <div class="login-info">
+            <form>
+                <div class="form-group form-title">
+                <h3>用户注册
+                    <sub>还没有帐号？
+                        <u><a href="#">立刻注册</a></u>
+                    </sub>
+                </h3>
+                </div>
+                <div class="form-group">
+                    <i class="fa fa-user"></i>
+                    <input type="name" class="form-control" id="name" placeholder="登录">
+                </div>
+                <div class="form-group">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" class="form-control" id="password" placeholder="密码">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">
+                        立刻登录
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!--footer start-->
+        <footer class="footer">@2016-2016 honfx</footer>
+
+</div>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+//点击导航按钮
+$('.header-box').on('click','.bar-btn',function(e){
+	e.stopPropagation();
+	$('.js-nav-box').slideToggle();
+});
+$(document).on('click',function(e){
+	e.stopPropagation();
+	$('.js-nav-box').slideUp();
+});
+</script>
+</body>
+</html>

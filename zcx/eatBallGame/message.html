@@ -1,0 +1,50 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>球球大作战</title>
+<link href="css/lottery.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="winning-msg">
+    <div class="winning-msg-top">
+        <a href="index.html" class="back-btn"><img src="img/back_btn1.png"></a>
+        <span>支付编码:<br><strong class="coupon-num">848488888181818181</strong></span></div>
+        <h3>提交您的手机号码，我们的规则人员会在48小时内与您联系递送奖品。</h3>
+        <div class="input-box">
+            <p><em>姓&#12288;&#12288;名</em><input type="text" autofocus placeholder="请输入姓名" id="winName" /></p>
+            <p><em>手机号码</em><input type="text" autofocus placeholder="请输入手机号码" id="winMobile" /></p>
+            <span class="prompt"></span>
+        </div>
+        <button class="msg-submit-btn">提交</button>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+//点击领取按钮时验证输入内容是否正确
+		$(".msg-submit-btn").click(function(){
+			var mre = /^1\d{10}$/;
+			//姓名
+        	if ($.trim($("#winName").val()) == ""){
+				$(".prompt").html("姓名不能为空");
+        		return;
+			}	
+			//手机号码验证
+        	if ($.trim($("#winMobilm").val()) == "" || !mre.test($("#winMobil").val())){
+				$(".prompt").html("请输入正确手机号");
+        		return;
+			}	
+			
+				
+		});		
+</script>
+
+</body>
+</html>
