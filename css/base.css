@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;}
+body{ font-size:14px; -webkit-text-size-adjust:none; font-family:arial; background:#f9f9f9; line-height:1}
+ul, ol, li { list-style: none; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+a, fieldset, img { border: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+input, img { vertical-align: middle; }
+img { display:block; max-width: 100% }
+i, em { font-style: normal; }
+table { border-collapse: collapse; border-spacing: 0; }
+input,select{ font-size: 14px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-appearance: none; appearance: none; outline: none; -webkit-border-radius: 0; border-radius: 0; }
+input::-webkit-input-placeholder {color:#ccc;}
+textarea { font-size: 13px; border:1px solid #e4e4e4;}
+header, nav, section, footer { display: block; }
+a, a:hover { text-decoration: none; }
+.clr:after { content: ""; display: block; height: 0; clear: both; visibility: hidden; zoom: 1 }
+.white-body{ background:#fff;}
+.hidden { display: none;}
+.no-border { border: 0; }
+
+.container {max-width: 640px; margin: 0 auto; }
+
+
+/*tab menu样式*/
+.tab-menu-box{width:100%;background:#fff; position:relative; height:44px;}
+.tab-menu-box .tab-menu {position: relative;background:#fff;width: 100%;max-width:640px;border-bottom: 1px solid #e5e5e5; display: -webkit-box; display: -webkit-flex;
+display: flex; }
+.tab-menu-box .tab-menu li {line-height: 43px; height: 43px; -webkit-box-flex: 1; box-flex: 1;-webkit-flex: 1;flex: 1; text-align: center; color: #888;-webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;}
+.tab-menu-box .tab-menu li:before { content: ""; display: block; height: 16px; width: 1px; position: absolute; background: #e0e0e0; left: -1px; top: 50%; margin-top: -8px; }
+.tab-menu-box .tab-menu li em { font-size:11px ;color: #c62026; margin-left:3px;}
+.tab-menu-box .tab-menu li span { cursor: pointer; font-size: 13px; }
+.tab-menu-box .tab-menu li.curr { color: #c62026;}
+.tab-menu-box .tab-menu li a{display:block; color:#888;}
+.tab-menu-box .tab-menu li.curr a{ color: #c62026;}
+.tab-menu-box .tab-menu li.curr span { display:inline-block; line-height:24px; border-bottom: none; }
+.tab-menu-box .tab-menu li.curr span em { color: #c62026; }
+.tab-menu-box .tab-menu li.curr:after { position: absolute; content: ""; width: 70px; height: 3px; background: #c62026; bottom: -1px; left: 50%; margin-left: -35px; transform: scaleY(.5); -webkit-transform: scaleY(.5); }
+
+
+
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+html{font-size:112.5%}
+body{font-size:18px;line-height:1.45;color:#333;font-family:"Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif"}
+body,input,textarea,select,button{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+ol,ul{list-style:none}blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+table{border-collapse:collapse;border-spacing:0}
+.clearfix:after{clear:both;content:".";display:block;height:0;line-height:0;visibility:hidden}
+.ellipsis{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+span[id^=cnzz_stat_icon]{display:none}
+header h1{height:36px;line-height:36px;background:#323232;color:#fff;text-align:center}
+.in-wechat header h1{display:none}
+#bd{margin-top:20px}
+nav.tab{margin:20px 10px;display:-webkit-flex;display:flex;border:1px solid #eee}
+nav.tab>a{height:38px;line-height:38px;-webkit-flex:1;flex:1;text-align:center;border-left:1px solid #eee;color:#999}
+nav.tab>a:first-child{border:0}
+nav.tab>a.on{color:#ff8b66}
+footer{margin:10px 0;text-align:center;font-size:12px;color:#999}
+footer a{color:#999;text-decoration:none}
+footer p{line-height:1.8}
+footer p.copyright{color:#ccc}
+.mod-list{margin-top:20px}
+.mod-list>li{position:relative;margin:10px;border:1px solid #eee;padding:10px}
+.mod-list>li a{display:block;position:relative;height:0;padding-top:56%;background-position:center;background-repeat:no-repeat;background-size:cover}
+.mod-list>li h2{position:absolute;left:0;bottom:0;width:100%;height:30px;line-height:30px;text-align:center;background:rgba(0,0,0,.6);color:#fff;font-size:14px}
+.mod-list>li .author{margin-top:10px;color:#666;font-size:14px}
+.mod-list>li .visited{position:absolute;bottom:10px;right:10px;color:#666;font-size:14px;padding-left:18px;background:url(../images/prasie.png) no-repeat 0 center;background-size:16px}
+
+.mod-list>li.gzh{background:#f9f9f9;}
+.mod-list>li.gzh a{padding:6px;height:20px;line-height:20px;color:#ff8b66;text-align:center;font-size:16px}
+
