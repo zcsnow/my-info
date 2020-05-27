@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>有奖问卷</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link href="font_css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/app.css" />
+</head>
+<body>
+    <div class="container">
+        <!--头部 start-->
+        <header class="header">
+     <div class="header-logo"><a href="index.html"><img src="images/logo.png" width="54"></a><a href="index.html"><img src="images/logo1.png" width="31"></a></div>
+  </header>
+        <div class="menu-header">
+            <div class="mask-line js-bar-btn">
+            </div>
+            <div class="hand-btn">
+                <img src="images/hand_icon.png"></div>
+            <ul class="menu-list">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="download.html">白皮书下载</a></li>
+                <li><a href="product.html">产品家族</a></li>
+                <li><a href="questionnaire.html">有奖问卷</a></li>
+            </ul>
+        </div>
+        <div class="bar-list-fixed js-bar-list">
+            <div class="header-fixed">
+                <div class="mask-line fold js-bar-btn">
+                </div>
+                <a class="home-icon" href="index.html"><i>
+                    <img src="images/menu-icon0.png"></i>首页</a>
+            </div>
+            <div class="bar-list-box">
+                <ul class="bar-list">
+                    <li><a class="list-level1" href="download.html"><i>
+                        <img src="images/menu-icon7.png"></i>白皮书下载</a></li>
+                    <li><a class="list-level1" href="product.html"><i>
+                        <img src="images/menu-icon10.png"></i>产品家族</a> <a class="list-level2" href="product.html">
+                            企业级产品</a> <a class="list-level2" href="product.html#1">图形工作站产品</a> </li>
+                    <li><a class="list-level1" href="industry_use.html"><i>
+                        <img src="images/menu-icon8.png"></i>行业应用</a> <a class="list-level2" href="industry_use.html">
+                            企业级产品解决方案</a> <a class="list-level2" href="industry_use.html#1">图形工作站应用案例</a>
+                    </li>
+                    <li><a class="list-level1" href="info_focus.html"><i>
+                        <img src="images/menu-icon6.png"></i>资讯聚焦</a></li>
+                    <li><a class="list-level1" href="questionnaire.html"><i>
+                        <img src="images/menu-icon12.png"></i>有奖问卷</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--头部 end-->
+        <div class="main clr" style="background: url(images/product-img1.jpg) no-repeat top left;
+            background-size: 100% auto;">
+            <div class="test">
+                <div class="test_top">
+                    <h2>
+                        <strong>让天宫更高 离成功更近</strong><br>
+                        2016 神舟十一号任务-联想商用反馈表
+                    </h2>
+                </div>
+                <div class="user-box">
+                    <h3>
+                        &emsp;&emsp;尊敬的客户：<br>
+                        &emsp;&emsp;您好！为了更准确地了解您的需求，为您提供更好的产品、方案和服务，请您用几分钟的时间，协助我们完成下面的反馈表。只要您完整填写下面的反馈表和个人信息，即有机会获赠一份精美小礼品！我们保证您所提供信息的私密性，不提供给联想以外的单位或个人。
+                    </h3>
+                    <form id="form" class="form-box">
+                    <div class="form-group">
+                        <label>
+                            单位名称：</label>
+                        <input type="text" class="form-control" id="company" name="company" required placeholder=""
+                            aria-required="true">
+                    </div>
+                    <div class="error_tip">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            姓&emsp;&emsp;名：</label>
+                        <input type="text" class="form-control" id="name" name="name" required placeholder=""
+                            aria-required="true">
+                    </div>
+                    <div class="error_tip">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            部&emsp;&emsp;门：</label>
+                        <input type="text" class="form-control" id="department" name="department" required
+                            placeholder="" aria-required="true">
+                    </div>
+                    <div class="error_tip">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            职&emsp;&emsp;务：</label>
+                        <input type="text" class="form-control" id="post" name="post" required placeholder=""
+                            aria-required="true">
+                    </div>
+                    <div class="error_tip">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            联系电话：</label>
+                        <input type="text" class="form-control" id="phone" name="phone" phone="true" required
+                            placeholder="" aria-required="true">
+                    </div>
+                    <div class="error_tip">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            微信号&emsp;：</label>
+                        <input type="text" class="form-control" id="weChatId" name="weChatId" required placeholder=""
+                            aria-required="true">
+                    </div>
+                    <div class="error_tip">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            E-mail&emsp;：</label>
+                        <input type="text" class="form-control" id="email" name="email" email="true" required
+                            placeholder="" aria-required="true">
+                    </div>
+                    <div class="error_tip">
+                    </div>
+                    <span class="btn js-user-btn">确定提交</span>
+                    </form>
+                    <p class="fooer-note">
+                        <strong>10月30号前，参与联想商用官方微信平台有奖互动，同样有机会获得精美小礼品！</strong></p>
+                    <a href="" class="btn" style="background: #989898;">传送门</a>
+                </div>
+                <div class="test_middle">
+                    <div class="controls">
+                        <div class="progress">
+                        </div>
+                        <span class="number"><span class="number-current">1</span> <span class="number-total">
+                            8</span> </span>
+                    </div>
+                    <div class="test_box" id="test_box_1" style="display: block;">
+                        <h4>
+                            1、您在单位信息化决策中角色？</h4>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup1" value="高层" id="group1_1" />
+                            <label for="group1_1">
+                                高层</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup1" value="评估者" id="group1_2" />
+                            <label for="group1_2">
+                                评估者</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup1" value="技术决策人" id="group1_3" />
+                            <label for="group1_3">
+                                技术决策人</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup1" value="关键决策人" id="group1_4" />
+                            <label for="group1_4">
+                                关键决策人</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup1" value="采购执行人" id="group1_5" />
+                            <label for="group1_5">
+                                采购执行人</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup1" value="信息提供者" id="group1_6" />
+                            <label for="group1_6">
+                                信息提供者</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup1" value="产品使用人" id="group1_7" />
+                            <label for="group1_4">
+                                产品使用人</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup1" value="其他" id="group1_8" />
+                            <label for="group1_8">
+                                其他</label>
+                        </p>
+                    </div>
+                    <div class="test_box" id="test_box_2">
+                        <h4>
+                            2、您在单位的部门？</h4>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup2" value="技术部" id="group2_1" />
+                            <label for="group2_1">
+                                技术部</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup2" value="采购部" id="group2_2" />
+                            <label for="group2_2">
+                                采购部</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup2" value="销售部" id="group2_3" />
+                            <label for="group2_3">
+                                销售部</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup2" value="市场部" id="group2_4" />
+                            <label for="group2_4">
+                                市场部</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup2" value="行政部" id="group2_5" />
+                            <label for="group2_5">
+                                行政部</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup2" value="其他" id="group2_6" />
+                            <label for="group2_6">
+                                其他</label>
+                        </p>
+                    </div>
+                    <div class="test_box" id="test_box_3">
+                        <h4>
+                            3、贵单位的员工人数区间？</h4>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup3" value="1-100人" id="group3_1" />
+                            <label for="group3_1">1-100人</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup3" value="100-300人" id="group3_2" />
+                            <label for="group3_2">100-300人</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup3" value="300-500人" id="group3_3" />
+                            <label for="group3_3">300-500人</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup3" value="500-1500人" id="group3_4" />
+                            <label for="group3_4">500-1500人</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-radio" type="radio" name="radioGroup3" value=" 1500人以上" id="group3_5" />
+                            <label for="group3_5">1500人以上</label>
+                        </p>
+                        <p class="select-p">
+                           <label for="group3_6">详细人数：</label>
+                           <input class="select-input" type="text" id="group3_6">
+                        </p>
+                    </div>
+                    <div class="test_box clr" id="test_box_4">
+                        <h4>
+                            4、您对哪些解决方案更感兴趣？</h4>
+                        <p class="select-p select-p-50">
+                            <input class="select-input-checkbox" type="checkbox" name="CheckboxGroup4" value="联想教育云平台解决方案" id="group4_1" />
+                            <label for="group4_1">
+                                联想教育云平台解决方案
+                            </label>
+                        </p>
+                        <p class="select-p select-p-50">
+                            <input class="select-input-checkbox" type="checkbox" name="CheckboxGroup4" value="联想多媒体互动课堂解决方案" id="group4_2" />
+                            <label for="group4_2"> 联想多媒体互动课堂解决方案
+                            </label>
+                        </p>
+                        <p class="select-p select-p-50">
+                            <input class="select-input-checkbox" type="checkbox" name="CheckboxGroup4" value="联想教育云存储解决方案" id="group4_3" />
+                            <label for="group4_3">
+                                联想教育云存储解决方案
+                            </label>
+                        </p>
+                        <p class="select-p select-p-50">
+                            <input class="select-input-checkbox" type="checkbox" name="CheckboxGroup4" value="联想易捷HPC解决方案" id="group4_4" />
+                            <label for="group4_4">
+                                联想易捷HPC解决方案</label>
+                        </p>
+                        <p class="select-p select-p-50">
+                            <input class="select-input-checkbox" type="checkbox" name="CheckboxGroup4" value="联想云教室解决方案" id="group4_5" />
+                            <label for="group4_5">
+                                联想云教室解决方案</label>
+                        </p>
+                    </div>
+                    <div class="test_box" id="test_box_5">
+                        <div class="yes-box clr">
+                          <h4>5、如贵单位近期有IT设备的采购需求，是否会首选联想产品？</h4>
+                          <p class="select-p select-p-50" style="text-align: center;">
+                              <input class="select-input-radio yes-btn" type="radio" name="radioGroup5" value="是" id="group5_1" />
+                              <label for="group5_1">是</label>
+                          </p>
+                          <p class="select-p select-p-50" style="text-align: center;">
+                              <input class="select-input-radio no-btn" type="radio" name="radioGroup5" value="否" id="group5_2" />
+                              <label for="group5_2">否</label>
+                          </p>
+                          <br><br><br><br><br><br><br><br><br><br><br><br>
+                        </div>  
+                        <div class="yes-content-box clr">
+                          <div class="select-box clr">
+                              <h5>预计采购时间?</h5>
+                              <p class="select-p select-p-50">
+                                  <input class="select-input-radio" type="radio" name="radioGroup5" value="1个月内" id="group5_2_1" />
+                                  <label for="group5_2_1">1个月内</label>
+                              </p>
+                              <p class="select-p select-p-50">
+                                  <input class="select-input-radio" type="radio" name="radioGroup5" value="1季度内" id="group5_2_2" />
+                                  <label for="group5_2_2">1季度内</label>
+                              </p>
+                              <p class="select-p select-p-50">
+                                  <input class="select-input-radio" type="radio" name="radioGroup5" value="半年内" id="group5_2_3" />
+                                  <label for="group5_2_3">半年内</label>
+                              </p>
+                              <p class="select-p select-p-50">
+                                  <input class="select-input-radio" type="radio" name="radioGroup5" value="近期没有" id="group5_2_4" />
+                                  <label for="group5_2_4">近期没有</label>
+                              </p>
+                          </div>
+                          <div class="select-box clr">
+                              <h5>相关联想产品：（人民币）</h5>
+                              <p class="select-p">
+                                 <label for="group5_2_5">服务器需求预算：</label>
+                                 <input class="select-input" type="text" id="group5_2_5">万元
+                              </p>
+                              <p class="select-p">
+                                 <label for="group5_2_6">存储需求预算&emsp;：</label>
+                                 <input class="select-input" type="text" id="group5_2_6">万元
+                              </p>
+                              <p class="select-p">
+                                 <label for="group5_2_7">台机需求预算&emsp;：</label>
+                                 <input class="select-input" type="text" id="group5_2_7">万元
+                              </p>
+                              <p class="select-p">
+                                 <label for="group5_2_8">笔记本需求预算：</label>
+                                 <input class="select-input" type="text" id="group5_2_8">万元
+                              </p>
+                              <p class="select-p">
+                                 <label for="group5_2_9">平板需求预算&emsp;：</label>
+                                 <input class="select-input" type="text" id="group5_2_9">万元
+                              </p>
+                              <p class="select-p">
+                                 <label for="group5_2_10">备份一体机需求预算：</label>
+                                 <input class="select-input" type="text" id="group5_2_10">万元
+                              </p>
+						  </div>
+                          
+                        </div>   
+                        
+                    </div>
+                    <div class="test_box" id="test_box_6">
+                        <h4>
+                            6、您认为联想在教育信息化建设中是怎样的角色？</h4>
+                        <div class="select-box clr">
+                            <h5>
+                                联想是IT整合方案提供商：
+                            </h5>
+                            <p class="select-p select-p-inline first">
+                                <input class="select-input-radio" type="radio" name="radioGroup6_1" value="认同" id="group6_1_1" />
+                                <label for="group6_1_1">
+                                    认同</label>
+                            </p>
+                            <p class="select-p select-p-inline">
+                                <input class="select-input-radio" type="radio" name="radioGroup6_1" value="不认同" id="group6_1_2" />
+                                <label for="group6_1_2">
+                                    不认同</label>
+                            </p>
+                            <p class="select-p select-p-inline">
+                                <input class="select-input-radio" type="radio" name="radioGroup6_1" value="不确定" id="group6_1_3" />
+                                <label for="group6_1_3">
+                                    不认同</label>
+                            </p>
+                        </div>
+                        <div class="select-box clr">
+                            <h5>
+                                联想是云基础架构解决方案提供商：</h5>
+                            <p class="select-p select-p-inline first">
+                                <input class="select-input-radio" type="radio" name="radioGroup6_2" value="认同" id="group6_2_1" />
+                                <label for="group6_2_1">
+                                    认同</label>
+                            </p>
+                            <p class="select-p select-p-inline">
+                                <input class="select-input-radio" type="radio" name="radioGroup6_2" value="不认同" id="group6_2_2" />
+                                <label for="group6_2_2">
+                                    不认同</label>
+                            </p>
+                            <p class="select-p select-p-inline">
+                                <input class="select-input-radio" type="radio" name="radioGroup6_2" value="不确定" id="group6_2_3" />
+                                <label for="group6_2_3">
+                                    不认同</label>
+                            </p>
+                        </div>
+                        <div class="select-box clr">
+                            <h5>
+                                联想是教育信息化建设的推动者：</h5>
+                            <p class="select-p select-p-inline first">
+                                <input class="select-input-radio" type="radio" name="radioGroup6_3" value="认同" id="group6_3_1" />
+                                <label for="group6_3_1">
+                                    认同</label>
+                            </p>
+                            <p class="select-p select-p-inline">
+                                <input class="select-input-radio" type="radio" name="radioGroup6_3" value="不认同" id="group6_3_2" />
+                                <label for="group6_3_2">
+                                    不认同</label>
+                            </p>
+                            <p class="select-p select-p-inline">
+                                <input class="select-input-radio" type="radio" name="radioGroup6_3" value="不确定" id="group6_3_3" />
+                                <label for="group6_3_3">
+                                    不认同</label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="test_box" id="test_box_7">
+                        <h4>
+                            7、您认为联想是一家怎样的公司？</h4>
+                        <div class="select-box clr">
+                            <h5>
+                                联想是一家生产高品质产品的企业：
+                            </h5>
+                            <p class="select-p select-p-inline first">
+                                <input class="select-input-radio" type="radio" name="radioGroup7_1" value="认同" id="group7_1_1" />
+                                <label for="group7_1_1">
+                                    认同</label>
+                            </p>
+                            <p class="select-p select-p-inline">
+                                <input class="select-input-radio" type="radio" name="radioGroup7_1" value="不认同" id="group7_1_2" />
+                                <label for="group7_1_2">
+                                    不认同</label>
+                            </p>
+                            <p class="select-p select-p-inline">
+                                <input class="select-input-radio" type="radio" name="radioGroup7_1" value="不确定" id="group7_1_3" />
+                                <label for="group7_1_3">
+                                    不认同</label>
+                            </p>
+                        </div>
+                        <div class="select-box clr">
+                            <h5>
+                                联想是一家具有创新精神的企业：</h5>
+                            <p class="select-p select-p-inline first">
+                                <input class="select-input-radio" type="radio" name="radioGroup7_2" value="认同" id="group7_2_1" />
+                                <label for="group7_2_1">
+                                    认同</label>
+                            </p>
+                            <p class="select-p select-p-inline">
+                                <input class="select-input-radio" type="radio" name="radioGroup7_2" value="不认同" id="group7_2_2" />
+                                <label for="group7_2_2">
+                                    不认同</label>
+                            </p>
+                            <p class="select-p select-p-inline">
+                                <input class="select-input-radio" type="radio" name="radioGroup7_2" value="不确定" id="group7_2_3" />
+                                <label for="group7_2_3">
+                                    不确定</label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="test_box" id="test_box_8">
+                        <h4>
+                            8、您希望联想公司以何种方式与您联系？</h4>
+                        <p class="select-p">
+                            <input class="select-input-checkbox" type="checkbox" name="radioGroup8" value="上门面谈"
+                                id="group8_1" />
+                            <label for="group8_1">
+                                上门面谈</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-checkbox" type="checkbox" name="radioGroup8" value="电话沟通"
+                                id="group8_2" />
+                            <label for="group8_2">
+                                电话沟通</label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-checkbox" type="checkbox" name="radioGroup8" value="E-mail资料"
+                                id="group8_3" />
+                            <label for="group8_3">
+                                E-mail资料
+                            </label>
+                        </p>
+                        <p class="select-p">
+                            <input class="select-input-checkbox" type="checkbox" name="radioGroup8" value="直邮资料"
+                                id="group8_4" />
+                            <label for="group8_4">
+                                邮寄资料</label>
+                        </p>
+                        <p class="select-p">
+                           <label for="group8_5">其他：</label>
+                           <input class="select-input" type="text" id="group8_5">
+                        </p>
+                    </div>
+                    <div class="next-btn js-next-btn">
+                        下一个</div>
+                    <div class="next-btn js-submit-btn">
+                        提交信息</div>
+                </div>
+                <p class="fooer-note">
+                    联想集团 http://www.lenovo.com.cn</p>
+            </div>
+            <div class="tip-selected">
+                选项不能为空</div>
+        </div>
+        <div class="calculateing">
+            <p>
+                信息提交成功</p>
+            <span>非常感谢您的反馈！</span>
+        </div>
+    </div>
+    <script src="js/jquery1.7.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/test.js"></script>
+</body>
+</html>

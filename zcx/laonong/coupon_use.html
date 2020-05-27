@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<title>使用优惠卷</title>
+<meta content-type="text/html" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link href="css/base.css?0" rel="stylesheet" />
+<link href="font_css/font-awesome.min.css" rel="stylesheet" />
+<link href="css/page/coupon.css?0" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    
+     <div class="tab-coupon-box js-tab-menu-box">
+          <ul class="tab-coupon js-tab-menu" id="tab_menu">
+            <li class="curr"><span>可用优惠卷</span></li>
+            <li><span>不可用优惠卷</span></li>
+          </ul>
+      </div>
+      
+      <div class="tab-content js-tab-content tab-content-coupon">
+      
+          <div class="content-list  js-content-list">
+              <div class="no-coupon"><img src="images/no_coupon.png"><p>目前还没有优惠券</p></div>
+              <ul class="coupon_list user-coupon-list">
+                    <li class="clr cur">
+                        <span class="coupon-num"><sup>¥</sup><strong>200</strong><b>无限制</b></span>
+                        <section>
+                          <p>[老农部落]全平台使全平台使用全平台使用全平台使用用</p>
+                          <p>8个/盒  </p>
+                          <time>2017.4.3-2017.12.31</time>
+                        </section>
+                    </li>
+                    <li class="clr">
+                        <i class="icon"><img src="images/coupon_tag4.png"></i>
+                        <span class="coupon-num"><sup>¥</sup><strong>10</strong><b>无限制</b></span>
+                        <section>
+                          <p>[老农部落]全平台使用</p>
+                          <p>8个/盒  </p>
+                          <time>2017.4.3-2017.12.31</time>
+                        </section>
+                    </li>
+                    <li class="clr cur">
+                        <span class="coupon-num"><sup>¥</sup><strong>10</strong><b>无限制</b></span>
+                        <section>
+                          <p>[老农部落]全平台使全平台使用全平台使用全平台使用用</p>
+                          <p>8个/盒  </p>
+                          <time>2017.4.3-2017.12.31</time>
+                        </section>
+                    </li>
+                    <li class="clr">
+                        <i class="icon"><img src="images/coupon_tag4.png"></i>
+                        <span class="coupon-num"><sup>¥</sup><strong>5</strong><b>无限制</b></span>
+                        <section>
+                          <p>[老农部落]全平台使用</p>
+                          <p>8个/盒  </p>
+                          <time>2017.4.3-2017.12.31</time>
+                        </section>
+                    </li>
+                    <li class="clr cur">
+                        <span class="coupon-num"><sup>¥</sup><strong>10</strong><b>无限制</b></span>
+                        <section>
+                          <p>[老农部落]全平台使全平台使用全平台使用全平台使用用</p>
+                          <p>8个/盒  </p>
+                          <time>2017.4.3-2017.12.31</time>
+                        </section>
+                    </li>
+                    <li class="clr">
+                        <i class="icon"><img src="images/coupon_tag4.png"></i>
+                        <span class="coupon-num"><sup>¥</sup><strong>10</strong><b>无限制</b></span>
+                        <section>
+                          <p>[老农部落]全平台使用</p>
+                          <p>8个/盒  </p>
+                          <time>2017.4.3-2017.12.31</time>
+                        </section>
+                    </li>
+              </ul>
+          </div>
+          <div class="content-list  js-content-list" style="display:none">
+              <div class="no-coupon"><img src="images/no_coupon.png"><p>目前还没有优惠券</p></div>
+              <ul class="coupon_list">
+                  <li class="clr gray">
+                      <i class="icon"><img src="images/coupon_tag2.png"></i>
+                      <span class="coupon-num"><sup>¥</sup><strong>10</strong><b>无限制</b></span>
+                      <section>
+                        <p>[老农部落]全平台使用</p>
+                        <p>8个/盒  </p>
+                        <time>2017.4.3-2017.12.31</time>
+
+                      </section>
+                  </li>
+             </ul>
+          
+         </div>
+      </div>   
+     
+     <div class="coupon-use-btn">
+        <a href="javascript:;">确定</a>
+     </div>
+
+</div>
+
+<script src="js/jquery1.7.min.js"></script>
+<script>
+$(function(){
+//tab切换
+  $(".js-tab-menu").find("li").click(function(){
+	  var $this = $(this);
+	  var $thisIndex = $this.index();
+	  $(this).addClass("curr").siblings().removeClass("curr");
+	  $(".js-tab-content").find(".js-content-list").eq($thisIndex).show().siblings().hide();
+  });
+  
+  $(".content-list .coupon_list").on('click',"li",function(e){
+    $(this).addClass('cur').siblings().removeClass('cur');
+    
+});
+	
+});
+
+</script>
+</body>
+</html>

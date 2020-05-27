@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>书籍详情</title>
+  <script src="/libs/airpana.js"></script>
+  <script src="../js/epub.js"></script>
+  <!--<script src="../js/localforage.js"></script>-->
+  <script src="../js/zip.js"></script>
+  
+</head>
+<body>
+<div id="main" v-cloak>
+    <header-nav v-if="showNav" :title="title"></header-nav>
+    <section class="book" v-show="bookData.url_upload" :style="{'top':showNav?'.91rem':'0'}">
+      <div id="area"></div>
+      <div class="arrow flex">
+        <a class="flex-child" href="javascript:void(0)" @click="prevPage">上一页</a>
+        <a class="flex-child" href="javascript:void(0)" @click="nextPage">下一页</a>
+      </div>
+    </section>
+    <section v-if="!bookData.url_upload && !isWaiting" class="no-data">网络不给力，请检查后重试哦~<br /><a href="javascript:void(0)" onclick="window.location.reload()">点击刷新</a></section>
+    <!--加载中-->
+    <loading v-if="isWaiting" :status="2"></loading>
+    <!--执行toast弹出层-->
+    <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

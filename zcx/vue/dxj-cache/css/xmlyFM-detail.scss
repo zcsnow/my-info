@@ -1,0 +1,225 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin:0 auto;
+	background-color: #fff;
+}
+
+.list-box{
+	width: 100%;
+	position: relative;
+
+	nav{
+		padding: 0;
+		margin: .44rem;
+		width: auto;
+
+		a{
+			display: inline-block;
+			color: #807E7D;
+			margin: 0 .3rem;
+			font-size: .32rem;
+			line-height: .6rem;
+			border-bottom: 1px solid #fff;
+
+			&.active{
+				border-bottom: 1px solid #FA4723;
+				color: #F72F42;
+			}
+
+			&:first-child{
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+.radio-head{
+	padding: .44rem;
+	background-color: #f5f5f5;
+
+	a{
+		display: block;
+	}
+	p.img{
+		float: left;
+		width: 2rem;
+		height: 2rem;
+		@include bg2('Bitmap', 1.1rem, 1.1rem);
+		background-position: center;
+		background-color: #fff;
+		border-radius: .08rem;
+		overflow: hidden;
+		position: relative;
+		img{
+			width: 2rem;
+			height: 2rem;
+		}
+		span{
+			display: block;
+			position: absolute;
+			width: 100%;
+			left: 0;
+			bottom: 0;
+			height: .66rem;
+			background-image: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+
+			i{
+				display: block;
+				padding-left: .6rem;
+				margin-top: .16rem;
+				height: .5rem;
+				line-height: .5rem;
+				color: #fff;
+				@include bg2('FM_baisanjiaobofang', .26rem, .26rem);
+				background-position: .2rem center;
+				font-size: .24rem;
+			}
+		}
+	}
+	div{
+		float: right;
+		width: 4.32rem;
+		padding-top: .2rem;
+		h5{
+			height: .6rem;
+			font-size: .32rem;
+			line-height: .6rem;
+			font-weight: 400;
+			color: #181818;
+			overflow: hidden;
+			text-overflow:ellipsis;
+			white-space:nowrap;
+		}
+		p{
+			font-size: .24rem;
+			line-height: .6rem;
+			height: .6rem;
+			color: #666;
+			overflow: hidden;
+			text-overflow:ellipsis;
+			white-space:nowrap;
+		}
+		span{
+			display: block;
+			font-size: .24rem;
+			line-height: .4rem;
+			color: #666;
+		}
+	}
+}
+
+.table{
+	padding: 0 .44rem;
+	
+	>h3{
+		color: #333;
+		font-size: .32rem;
+	}
+	>p{
+		margin-top: .34rem;
+		color: #333;
+		line-height: .36rem;
+	}
+}
+
+.player{
+	width: 100%;
+	height: .5rem;
+	line-height: .5rem;
+
+	.play-btn{
+		padding-left: .72rem;
+		@include bg2('FM_xiaobofang', .4rem, .4rem);
+		background-position: left center;
+		color: #333;
+		font-size: .32rem;
+
+		&.active{
+			@include bg2('FM_xiaozanting', .4rem, .4rem);
+		}
+	}
+
+	.sort-btn{
+		text-align: right;
+		padding-right: .45rem;
+		@include bg2('FM_zhengxu', .3rem, .3rem);
+		background-position: right center;
+		color: #666;
+
+		&.active{
+			@include bg2('FM_daoxu', .3rem, .3rem);
+		}
+	}
+}
+
+.checked{
+	background-color: #FFFBF5;
+	border: 1px solid #FFF5E4;
+	height: 1rem;
+	line-height: 1rem;
+	margin-top: .3rem;
+	color: #F4A109;
+	padding-left: .24rem;
+}
+
+.radio-list{
+	padding-bottom: .7rem;
+
+	li{
+		a{display: block;}
+
+		dl{
+			padding: .7rem 0 0;
+
+			dt{
+				width: .68rem;
+				color: #999;
+				font-size: .36rem;
+				height: .5rem;
+				line-height: .5rem;
+
+				&.active{
+					text-indent: 9999px;
+					overflow: hidden;
+					@include bg2('FM_dangqianbofang', .44rem, .44rem);
+					background-position: left center;
+				}
+			}
+
+			dd{
+				h4{
+					font-size: .32rem;
+					font-weight: normal;
+					color: #333;
+					line-height: .44rem;
+					max-height: .88rem;
+					overflow: hidden;
+				}
+				p{
+					font-size: .24rem;
+					color: #999;
+					margin-top: .2rem;
+
+					span{
+						padding-left: .4rem;
+						margin-right: .2rem;
+						background-position: left center;
+
+						&.play{
+							@include bg2('FM_sanjiaobofang', .26rem, .26rem);
+						}
+
+						&.time{
+							@include bg2('FM_shijian', .26rem, .26rem);
+						}
+					}
+				}
+			}
+		}
+	}
+}

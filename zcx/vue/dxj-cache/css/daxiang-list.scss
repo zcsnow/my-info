@@ -1,0 +1,109 @@
+@import 'base';
+
+section {
+
+    h2{
+        width: 100%;
+
+        img{
+            width: 100%;
+            display: block;
+        }
+    }
+
+    ul.movie-list{
+        padding: 0 .44rem;
+
+        li{
+            width: 100%;
+            display: inline-block;
+            padding: .44rem 0;
+            border-bottom: 1px solid #ccc;
+
+            a{
+                display: block;
+
+                dl{
+                    display: flex;
+                    padding-bottom: .2rem;
+
+                    dt{
+                        width: .7rem;
+                        height: .7rem;
+                        border-radius: .4rem;
+                        overflow: hidden;
+                        margin-right: .2rem;
+
+                        img{
+                            width: .7rem;
+                            height: .7rem;
+                            display: block;
+                            @include bg2('Bitmap', .5rem, .5rem);
+                            background-position: center;
+                            background-color: #F5F5F5;
+                        }
+                    }
+
+                    dd{
+                        flex: 1;
+
+                        span{
+                            display: inline-block;
+                            font-size: .28rem;
+                            line-height: .32rem;
+                            height: .32rem;
+                            overflow: hidden;
+                            padding-right: .95rem;
+                            @include bg2('daoshangshi', .84rem, .3rem);
+                            background-position: center right;
+                        }
+
+                        p{
+                            width: 100%;
+                            font-size: .24rem;
+                            line-height: .24rem;
+                            height: .24rem;
+                            overflow: hidden;
+                            color: #B3B0AF;
+                        }
+                    }
+                }
+
+                div{
+                    float: left;
+                    width: 4.35rem;
+
+
+                    >h5{
+                        max-height: 1rem;
+                        font-size: .36rem;
+                        line-height: .5rem;
+                        overflow: hidden;
+                        font-weight: normal;
+                        color: #1A1919;
+                    }
+                    >p{
+                        font-size: .28rem;
+                        line-height: .32rem;
+                        margin-top: .1rem;
+                        color: #807E7D;
+                    }
+                }
+
+                >img{
+                    float: right;
+                    width: 2.06rem;
+                    height: 2.8rem;
+                    @include bg2('Bitmap', 1.1rem, 1.1rem);
+                    background-position: center;
+                    background-color: #F5F5F5;
+                }
+            }
+        }
+    }
+}
+
+.no-data{
+    padding-top: 4rem;
+    background-position: center 3rem;
+}

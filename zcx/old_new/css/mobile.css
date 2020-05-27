@@ -1,0 +1,70 @@
+body{ background:#fff;}
+.page1{  width:100%;background:url(../images/m_img01.jpg) no-repeat center 0; background-size:100% auto; padding-top:89%;}
+.page1 p{ margin:0 15px;color:#393939; font-size:12px; border:1px solid #bababa; padding:10px 12px; border-radius:5px; line-height:20px;}
+.page1 span{ width:62%; display:block; margin:15px auto 0;}
+.btn{display:block; width:82%; background:#23abf1; margin:15px auto 0; font-size:16px; line-height:38px; color:#fff;text-align:center; border-radius:5px;border:none;}
+.p4{ padding:25px 0; font-size:12px;text-align:center;color:#393939;}
+.page2{  width:100%;background:url(../images/m_img03.jpg) no-repeat center 0; background-size:100% auto; padding-top:33%;}
+.page2 h2{ text-align:center; font-size:18px;}
+.page2 p{ text-align:center; margin:0 22px;color:#393939; font-size:11px; line-height:18px;}
+.page2 .p1{ margin-top:15px;}
+.page2 .p2{ text-align:left;border:1px solid #bababa; background:#fffdf5; padding:10px 12px; border-radius:5px; margin:12px 22px; }
+.page2 .p3{ margin:12px 25px 18px;text-align:left;}
+
+.page3,.page4{  width:100%;background:url(../images/m_img04.jpg) no-repeat center 0; background-size:100% auto; padding-top:33%;}
+.form-box .msg-title{ text-align:center;font-size:15px; color:#000; line-height:20px; font-weight:normal; padding:10px 0;}
+.page3 .form-group{ position:relative; width:100%; box-sizing:border-box; margin-top:16px; display:-webkit-box;display:-webkit-flex;display:flex; padding:0 45px;}
+.page3 .form-group>label{ display:block; color:#858585; font-size:13px; line-height:30px;width:54px; margin-right:10px; text-align:right;}
+.page3 .form-group .form-control {display: block; width: 80%; flex:1; -webkit-flex:1;-webkit-box-flex:1; box-sizing:border-box;padding: 5px 10px;font-size: 13px;line-height: 18px;color: #555;background:#f8f8f8;border:1px solid #aaaaaa;}
+.page3 .form-box .error_tip{padding:0 45px;}
+.page3 .form-box .error_tip>label{ display:block; margin:5px 0 0 64px; font-size:12px; color:#f00;}
+.page3 .hope-select{ margin:27px 0; text-align:center; font-size:14px; color:#858585; line-height:20px;}
+.page3 .hope-select>input{ width:20px; height:20px;display:inline-block; margin-right:10px;}
+
+.page4 .form-group{ position:relative;width:100%; box-sizing:border-box;  margin:5px 0 12px; padding:0 30px;}
+.page4 .form-group>label{ display:block; color:#858585; font-size:13px;}
+.page4 .form-group .textarea-example{ font-size:11px; color:#a8a8a8; line-height:14px; margin-top:4px;}
+.page4 .form-group .textarea{width:100%;min-height:100px; padding:5px; box-sizing:border-box; margin-top:4px;outline: none; resize:none;font-size: 13px;border: 1px solid #aaaaaa; background:#f8f8f8; line-height:18px;}
+.page4 .form-box .error_tip>label{ display:block; margin-top:8px; font-size:12px; color:#f00;}
+
+
+
+.form-group>h4{ font-size:15px; color:#858585; font-weight:normal;width:70%;margin:15px auto 0; }
+.fuc{display:block;width:70%;height:130px; margin:10px auto 0; text-align:center; border:1px solid #aaa; position:relative;}
+.fuc .real-btn, .fuc .btn-take-photo{position: absolute;width:100%; left:0;background:#f8f8f8;height:130px;}
+.fuc .real-btn{opacity: 0;}
+.btn-take-photo{pointer-events:none; display:block;  }
+.btn-take-photo img{ width:50px; margin:40px auto;}
+
+.rule-box{position: fixed; top:10px; bottom:10px; left:10px; right:10px; z-index: 9999; background: rgba(0, 0, 0, 0.9); padding:10px; box-sizing:border-box;}
+.rule-box .upload-img-rule{ margin:10px 5px; font-size:12px; line-height:16px;color:#fff; }
+.rule-box h3{color:#fff; font-size:17px; margin:15px 0 20px; text-align:center;}
+.rule-box h5{ margin-left:7px; margin-top:5px;color:#fff; font-size:14px; }
+.rule-box .standard-list{ padding:0 2px;}
+.rule-box .standard-list li{ float:left; width:50%; box-sizing:border-box; padding:6px 4px 0; font-size:12px;color:#fff; }
+.rule-box .standard-list li p{ margin-top:4px; display:block;}
+.rule-box .rule-close-btn{ position:absolute; bottom:10px; width:30px; left:50%; margin-left:-15px;}
+
+.upload-list { width:70%; max-height:120px; margin:0 auto; overflow:hidden;}
+.upload-list li{ float:left; width:23%; box-sizing:border-box; margin:0 1%; height:50px; overflow:hidden; margin-top:10px; border:1px solid #ccc; position:relative}
+.delete-btn{ display:block; width:15px; height:15px; position:absolute; right:0px;top:0px;}
+
+.img-num-box{ font-size:15px; margin-top:25px; text-align:center;}
+.img-num-box>span{ display:inline-block;}
+.img-num-box .fuc2{display:inline-block; width:70px;height:16px;position:relative; line-height:21px;}
+.img-num-box .fuc2 .real-btn2,.img-num-box  .fuc2 .btn-take-photo2{position: absolute;width:100%;left:0; color:#2fb0d1;height:17px; text-decoration:underline;}
+.img-num-box .fuc2 .real-btn2{opacity: 0;}
+.img-num-box .btn-take-photo2{pointer-events:none; display:block;  }
+
+.rule-btn{font-size:15px;color:#0066e4;text-decoration:underline; text-align:center; margin-top:10px;}
+
+
+
+/*弱提示*/
+.js-pop{position: fixed; top: 0px; height: 100%; width: 100%; z-index: 9999; background: rgba(0, 0, 0, 0.7);display:none}
+.js-pop .pop { background:#fff; width: 250px; padding:85px 0 20px; margin:40% auto; border-radius:5px; position:relative;}
+.js-pop .pop .bai-icon{position:absolute; top:-17px; width:90px; left:50%; margin-left:-45px;}
+.js-pop .pop .close-btn{ position:absolute; width:28px; right:10px;top:10px;}
+.js-pop .pop h3{font-size: 15px;color: #000;font-weight: normal;margin-bottom: 10px;padding-top: 10px;padding-bottom: 10px;text-align: center;line-height: 22px;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;}
+.js-pop .pop p{ font-size:12px; color:#444; line-height:20px; margin:15px 15px 0;}
+

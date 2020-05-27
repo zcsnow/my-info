@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+	<head>
+	<title>启辰智跑团</title>
+	<meta content-type="text/html" charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<link href="css/base.css?2" rel="stylesheet" />
+    <link href="font_css/font-awesome.min.css" rel="stylesheet" />
+	<link href="css/app.css?1" rel="stylesheet" />
+	</head>
+	<body class="bg2">
+    <div class="container">
+      <!--头部-->
+      <header class="header">
+         <div class="header-logo"><a href="index.html"><img src="images/logo.png"></a></div>
+         <div class="mask-line js-bar-btn"><img src="images/bar-btn.png"></div>
+      </header>
+      
+      <div class="nav-box js-nav-box">
+        <header class="header-open">
+         	<div class="header-logo"><a href="index.html"><img src="images/logo.png"></a></div>
+         	<div class="mask-line js-bar-btn"><img src="images/bar-btn.png"></div>
+        </header>
+        <ul class="nav clr">
+            <li><a href="signin.html">登录</a></li>
+            <li><a href="register.html">注册</a></li>
+            <li><a href="active.html">活动咨询</a></li>
+            <li><a href="member.html">个人中心</a></li>
+          </ul>
+      </div>
+
+      <div class="main">
+			<div class="sign-box">
+            	<h2>用户登陆</h2>
+                
+                <section class="form-box">
+          
+                  <form id="form" novalidate>
+                      <div class="form-group">
+                          <label>手机号：</label>
+                          <input type="text" class="form-control" id="phone" name="phone" required placeholder="请在此处填写11位手机号" aria-required="true" maxlength="11">
+                      </div>
+                      <div class="error_tip"></div>
+                      
+                      <div class="form-group">
+                          <label>密码：</label>
+                          <input class="form-control" type="password" id="psw" name="psw" required placeholder="请在此处填写登录密码" aria-required="true">
+                      </div>
+                      <div class="error_tip"></div>
+					  
+                      <a class="sign-txt" href="modify.html">忘记密码？</a>
+                      
+                      <span class="btn sign-btn-submit"><img src="images/btn5.png"></span>
+                    </form>
+              
+                </section>
+            </div>
+
+        
+        <div class="pop-tip-box">
+            <p class="pop-tip-msg"></p>
+        </div> 
+      
+        
+      </div>
+      
+    </div>
+    <script src="js/jquery1.7.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
+	<script src="js/base.js?3"></script>
+</body>
+</html>

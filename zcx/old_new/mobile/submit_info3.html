@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>以旧换新</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="renderer" content="webkit">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+</head>
+<body>
+<div class="container">
+<img class="upload-img" src="" style="display:none">
+      <div class="page4 page5">
+      	<form id="form" class="form-box">
+          <h3 class="msg-title">请上传参加以旧换新的<br>
+			联想刀片服务器和机箱照片（3/3）</h3>
+          
+          <div class="form-group">
+              <h4>点击方框上传照片：</h4>
+              <div class="fuc">
+                  <input id="file" type="file" class="real-btn" name="file" required>
+                  <div class="error_tip" style="position:absolute; bottom:-18px"></div>
+                  <span class="btn-take-photo"><img src="../images/icon03.png" /></span>
+              </div>
+              <ul class="upload-list clr"></ul>
+              <div class="img-num-box">
+                  <span>已选择<strong class="img-num">6</strong>张，</span>
+                  <a href="javascript:;" class="fuc2">
+                      <input id="file2" type="file" class="real-btn2" name="file2">
+                      <span class="btn-take-photo2">继续上传</span>
+                  </a>
+              </div>
+              <p class="rule-btn">了解照片上传规范</p>
+              
+          </div>
+          <span class="btn">确认提交</span>
+          <p class="p4">本活动最终解释权归联想所有</p>
+        </form>
+      </div>
+      
+      <div class="rule-box">
+          <h3>上传照片规范：</h3>
+          <p class="upload-img-rule">1、请提供6张机器图（包含：刀箱全图、刀箱正面、刀箱背面、刀片全图、刀片内图、型号和系列号标签）；<br>
+          2、尺寸：上传照片最小不低于300K，最大不超过3M；<br>
+          3、清晰度：logo及文字得拍摄需保证可读性；
+          </p>
+          <h5>照片示例:</h5>
+          <ul class="standard-list clr">
+              <li>
+                  <img src="../images/m_img05.jpg" />
+                  <p>▲刀箱全图</p>
+              </li>
+              <li>
+                  <img src="../images/m_img06.jpg" />
+                  <p>▲刀箱正面</p>
+              </li>
+              <li>
+                  <img src="../images/m_img07.jpg" />
+                  <p>▲刀箱背面</p>
+              </li>
+              <li>
+                  <img src="../images/m_img08.jpg" />
+                  <p>▲刀片全图</p>
+              </li>
+              <li>
+                  <img src="../images/m_img09.jpg" />
+                  <p>▲刀片内图</p>
+              </li>
+              <li>
+                  <img src="../images/m_img10.jpg" />
+                  <p>▲型号和系列号标签</p>
+              </li>
+          </ul>
+      	  <a href="javascript:;" class="rule-close-btn"><img src="../images/icon02.png" /></a>
+      </div>
+      
+      <div class="js-pop">
+        <div class="pop">
+            <img class="bai-icon" src="../images/icon05.png" />
+            <a href="javascript:;" class="close-btn"><img src="../images/icon04.png" /></a>
+            <h3>感谢您参与联想刀片服务器<br>以旧换新活动！</h3>
+            <p>我们会在两个工作日内，对您上传的信息进行审核，
+            如无误会及时将换新券以邮件形式发放给您，请耐心等待！</p>
+        </div>
+     </div>  
+      
+</div>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery.validate.js"></script>
+<script>
+
+$(".btn").click(function(){
+    if(li_length>0){
+	 $('.js-pop').show();
+	 
+	}else{
+		alert('请上传图片');
+	}
+});  
+
+//点击规则关闭
+$('.rule-close-btn').on('click',function(e){
+	e.stopPropagation();
+	$('.rule-box').hide();
+});
+
+//点击规则
+$('.rule-btn').on('click',function(e){
+	e.stopPropagation();
+	$('.rule-box').show();
+});
+
+//点击关闭
+$('.close-btn').on('click',function(e){
+	e.stopPropagation();
+	$('.js-pop').hide();
+});
+
+var li_length = 0;
+$('.img-num').text(li_length);
+$('#file,#file2').change(function() { 
+	if(li_length<10){
+		var file = this.files[0]; 
+		console.log(file);
+		var r = new FileReader(); 
+		r.readAsDataURL(file); 
+		$(r).load(function() { 
+		
+        $('.upload-img').attr('src',this.result);  
+		console.log($('.upload-img').width(),$('.upload-img').height());
+			var li = '<li><img src="' + this.result + '" alt="" /><a href="javascript:;" class="delete-btn"><img src="../images/icon02.png" /></a></li>';
+			$('.upload-list').append(li);
+			li_length = $('.upload-list li').length;
+			$('.img-num').text(li_length);
+			
+		});
+	}else{
+	  alert('最多能上传10张图片');
+	}
+});
+
+$('.upload-list').on('click','.delete-btn',function(e){
+  e.stopPropagation();
+  $(this).parent().remove();
+  li_length = $('.upload-list li').length;
+  $('.img-num').text(li_length);
+});
+
+
+</script>
+</body>
+</html>

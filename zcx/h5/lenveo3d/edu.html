@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>联想教育行业</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link href="css/base.css" rel="stylesheet" />
+        <link href="css/animate.min.css" rel="stylesheet" />
+        <link href="css/app.css?21" rel="stylesheet" />
+	</head>
+	<body onLoad="initScripts()">
+        <div class="pro-container edu-bg">
+            <header class="header">
+                <div class="header-logo"><a href="index.html"><img src="img/logo1.png?1"></a></div>
+                <div class="mask-line"><a href="menu.html"><img src="img/back_btn.png"></a></div>
+            </header>
+            <div class="box" id="deviceBox">
+                <div class="ele1"><img src="img/educate_pro_txt1.png" /></div>
+                <div class="ele2"><img src="img/educate_pro_txt2.png" /></div>
+                <div class="ele3"><img src="img/finish_img1.jpg" /></div>
+
+                
+                <div class="pro-box">
+                <div class="ellipse-box">
+                    <div id="Ellipse">
+                     <img class="RotatingIcon layer" data-depth="0.3"  src="img/educate_pro_img1.png" data-href="http://h5.hyh6.com/CompanyProject/lenovo3d/menu.html" data-title="教学终端 / 联想一体机" data-desc="简约一体设计，以最简洁优化的线路连接方式，减少了复杂的线缆连接，一根电源线即可使用。简于外强于内，兼具完整PC的高性能使用体验。人体工学设计，让IT管理更加简单快捷。">
+                     <img class="RotatingIcon layer" data-depth="0.4"  src="img/proImg/educate_pro_img2.png" data-href="http://h5.hyh6.com/CompanyProject/lenovo3d/menu.html" data-title="服务器端 / 联想工作站" data-desc="旗舰台式定位，工作站级性能。联想 ThinkStation P320 工作站拥有全新人性化简洁设计、更高效表现，塔式和小机箱两款机型均可配备英特尔®至强TM处理器；支持 DDR4 ECC内存，台式机价位满足专业工作需求。">
+                     <img class="RotatingIcon layer" data-depth="0.5" name="eduIcon1"  src="img/educate_pro_icon1.png" data-href="" data-title="智能云教室管理软件" data-desc="软件方式实现系统部署、集中管理和硬盘保护功能。智能云部署，镜像集中管理和压缩上传，有效减轻电子教室的部署维护负担。<br>支持跨网段多机房集中管理，不停机后台自动部署，不影响学生端上课；支持学生终端控制，锁定键盘鼠标、USB、网口等。">
+                     <img class="RotatingIcon layer" data-depth="0.3"  name="eduIcon2"  src="img/educate_pro_icon2.png" data-href="" data-title="LanSchool软件" data-desc="单一软件负荷率高，可同时外挂200台设备。实现对学生用机的实时在线管理，便于老师了解学生状况，促进师生互动。">
+                     
+                    </div>
+                </div>
+                	<!--<span class="control-btn stop-btn" onclick="IRJS_StopRotation('Ellipse');">暂停</span>-->
+                    <span class="control-btn prev-btn" onclick="IRJS_StartRotation('Ellipse',1);"><img src="img/prev_btn.png"></span>
+                    <span class="control-btn next-btn" onclick="IRJS_StartRotation('Ellipse',-1);"><img src="img/next_btn.png"></span>
+                </div>
+            </div>
+        </div>
+        <div class="tip" data-txt="IT技术的日臻成熟，以电子教室为代表的信息化教学手段迅速普及：但在电子课堂教学里，教师往往肩负着授课、管理、部署维护等多重压力。管理和维护跟不上，学生的使用体验自然会缺失，教学效率和效果更是大打折扣。<br><br>联想认为，只有将教师从繁琐复杂的设备维护中解放出来，才能让信息化教学重新回归到教育的本质上，并从根本上提升教学竞争力。"><img src="img/educate_pro_tip.png" /></div>
+         <!--大图预览弹层-->
+		<div class="blur-mask"></div>
+         <div class="pop-mask">
+             <div class="pop-box js-pop-box"></div>
+         </div>
+
+        </div>
+        
+        
+        <script src="js/jquery1.7.min.js"></script>
+        <script src="js/jquery.parallax.js"></script>
+        <script src="js/lazysizes.min.js"></script>
+        <script src="js/ImageRotator-min.js"></script>
+        <script src="js/proPage.js"></script>
+        
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+        <script src="/Resources/wxShare.js" type="text/javascript"></script>
+		<script src="/Resources/JSCookie.js" type="text/javascript"></script>
+        <script type="text/javascript">
+		var fromcon = getUrlParam("from")
+        if (fromcon != "" && fromcon != null) {
+            window.location.href = "http://h5.hyh6.com/CompanyProject/lenovo3d/"; 
+        }
+        //微信分享
+        var sharLink = window.location.href; 
+        var shareInfo = {
+            title:'联想教育行业',     
+            desc:'联想教育行业',
+            imgUrl:'http://h5.hyh6.com/CompanyProject/lenovo3d/img/share.jpg', 
+        }; 
+        wxShare(sharLink,shareInfo);
+        //百度统计
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?5b0cf71f192cb25508340a5c87eaff37";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+		</script>
+	</body>
+</html>

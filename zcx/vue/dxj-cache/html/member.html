@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>个人中心</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak>
+  <section>
+    <i @click="goBack"></i>
+    <img src="../images/tmp/icon_member_logo.png" />
+    <span v-if="!isLogin">登录后可使用更多功能</span>
+    <span class="active" v-if="isLogin">{{phone}}</span>
+    <a v-if="!isLogin" href="login.html?pageUrl=member.html">登录注册</a>
+  </section>
+  <div class="form">
+    <!-- <a v-if="isLogin" href="orders-list.html" class="wddd">我的订单</a> -->
+    
+    <a v-if="isLogin && isNative" href="javascript:void(0)" @click="enterShoppingCard" class="mycard">我的抵用券</a>
+    <!--<a v-if="isLogin" href="bank-card.html" class="wdyhk">我的银行卡</a>-->
+    <span class="line"></span>
+    <a href="aboutUs.html" :class="isLogin?'yjfk':'yjfk no'">关于我们</a>
+    
+  </div>
+  <a v-if="isLogin" class="loginOut" @click="loginOut()">退出登录</a>
+</div>
+</body>
+</html>

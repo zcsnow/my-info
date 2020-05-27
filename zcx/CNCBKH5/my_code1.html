@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <title>我的推广码</title>
+    <meta content-type="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link href="css/base.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+    	<div class="my-code">
+          <h3>亲，把此二维码分享出去，<br>您将自动成为注册用户的推荐人哦！</h3>
+          <div class="my-code-img">
+          	<img src="">
+          </div>
+          <p class="my-code-txt">
+          	<em>我的推荐链接：</em>
+          	<span id="target"></span>
+          </p>
+          
+          <span class="my-copy-btn js-copy-btn" data-clipboard-action="copy" data-clipboard-target="#target" id="copy_btn">复制分享</span>
+          
+        </div>
+    </div>
+    
+    <script src="js/jquery1.7.min.js"></script>
+    <script src="js/page/config.js"></script>
+    <script src="js/plugin/clipboard.min.js"></script>    
+    <script>    
+    $(document).ready(function(){   
+	    var userId = GetQueryString("user_id") ;
+		my_code(userId)
+		
+        var targetText=$("#target").text();    
+        /*var clipboard = new Clipboard('#copy_btn');    
+    
+        clipboard.on('success', function(e) {    
+            console.info('Action:', e.action);    
+            console.info('Text:', e.text);    
+            console.info('Trigger:', e.trigger);      
+            e.clearSelection();    
+        });*/
+		
+		function my_code(userId) {
+			var json_data = $.ajax({
+				type: "GET",
+				async: false,
+				url: baseUrl+"Member.aspx?op=MemberRQCode&user_id=" + userId,
+				dataType: "jsonp", //数据类型为jsonp  
+				jsonp: "callback", //服务端用于接收callback调用的function名的参数  
+				jsonpCallback: "callback",
+				success: function (data) {
+					var codeData = data.result;
+					var codeHref = codeData.url;
+					var codeImgSrc = codeData.File;
+					$('.my-code-img img').attr('src',codeImgSrc);
+					$('#target').html(codeHref);
+				}
+			});
+		}      
+		
+		//复制按钮
+		$('.js-copy-btn').on('click',function(e){
+			  
+			  if(isAndroid){
+				   //alert("Android");
+				   test.copyAddress(targetText);
+			  }else{
+				  //alert("ios");
+				  window.webkit.messageHandlers.copyAddress.postMessage(targetText);
+			  }
+		});
+		
+		
+		
+    }); 
+	
+	
+</script>    
+    
+</body>
+</html>

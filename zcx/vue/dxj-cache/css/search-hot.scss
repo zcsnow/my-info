@@ -1,0 +1,99 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin:0 auto;
+	background-color: #fff;
+	padding-top: 0.91rem;
+}
+
+.search-list{
+	>ul{
+    margin: .33rem 0;
+		>li{
+			margin: 0 auto;
+			width: 6.9rem;
+			height: .97rem;
+			overflow: hidden;
+			line-height: .97rem;
+      font-size: .3rem;
+			color: #333333;
+      border-bottom: 1px solid #E6E6E6;
+			a{
+				display: block;
+				span{
+          display: block;
+          width: .4rem;
+          float: left;
+          margin-left: .1rem;
+          margin-right: .35rem;
+          text-align: center;
+					font-family: Arial-BoldMT;
+          font-size: .36rem;
+          color: #FB674B;
+        }
+        h4{
+          float: left;
+          width: 5.3rem;
+          overflow: hidden;
+          word-break: break-all;
+          word-wrap: break-word;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          font-size: .3rem;
+          color: #333333;
+          font-weight: 400;
+        }
+        i{
+          display: block;
+          float: right;
+          margin-top: .33rem;
+          margin-right: .1rem;
+          width: .32rem;
+          height: .32rem;
+          &.icon_1{
+            @include bg2('hot search-bao', .32rem, .32rem);
+          }
+          &.icon_2{
+            @include bg2('hot search-re', .32rem, .32rem);
+          }
+          &.icon_3{
+            @include bg2('hot search-jian', .32rem, .32rem);
+          }
+          &.icon_4{
+            @include bg2('hot search-new', .32rem, .32rem);
+          }
+        }
+			}
+		}
+	}
+}
+.list-box {
+    width: 100%;
+    &.border-top{
+    	border-top: .2rem solid #F5F5F5;
+    }
+    h3 {
+        text-align: right;
+        font-weight: normal;
+        height: 1rem;
+        line-height: 1rem;
+        padding-right: .3rem;
+        margin: .2rem 0 0 0;
+        background-position: .44rem center;
+
+        a {
+            color: #807E7D;
+            font-size: .28rem;
+            padding-right: .4rem;
+            @include bg2('icon_more', .16rem, .26rem);
+            background-position: .65rem;
+        } //特殊CSS处理
+        &.resou {
+            @include bg2('resou', 1.74rem, .44rem);
+        }
+    }
+}

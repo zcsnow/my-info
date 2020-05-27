@@ -1,0 +1,229 @@
+@import 'base';
+
+.clr:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    zoom: 1
+}
+
+body {
+    font-family: PingFangSC-Regular;
+    font-size: .28rem;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.banner {
+    width: 7.5rem;
+    height: 3.2rem;
+    overflow: hidden;
+    @include bg2('Bitmap', 1.1rem, 1.1rem);
+    background-position: center;
+    background-color: #F5F5F5;
+
+    img {
+        display: block;
+        width: 7.5rem;
+        height: 3.2rem;
+        @include bg2('Bitmap', 1.1rem, 1.1rem);
+        background-position: center;
+        background-color: #F5F5F5;
+    }
+}
+
+section {
+    nav {
+        background-color: #FAFAFA;
+        line-height: .8rem;
+        display: flex;
+
+        a {
+            flex: 1;
+            text-align: center;
+            color: #4D4B4B;
+            position: relative;
+
+            &.active {
+                font-size: .32rem;
+                color: #F72F42;
+
+                i {
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    margin: 0 0 0 -.2rem;
+                    width: .4rem;
+                    line-height: 0;
+                    border-bottom: .06rem solid #F72F42;
+                }
+            }
+        }
+    }
+
+    .list-box {
+        width: 100%;
+        border-bottom: .2rem solid #fff;
+        h3 {
+            text-align: right;
+            font-weight: normal;
+            height: 1rem;
+            line-height: 1rem;
+            padding-right: .3rem;
+            margin: .2rem 0;
+            background-position: .44rem center;
+
+            a {
+                color: #807E7D;
+                font-size: .28rem;
+                padding-right: .4rem;
+                @include bg2('icon_more', .16rem, .26rem);
+                background-position: .65rem;
+            } //特殊CSS处理
+            &.jinghuajiexuan {
+                @include bg2('zaixiandushu', 2.6rem, .44rem);
+            }
+            &.shupingtuijian {
+                @include bg2('shuping', 1.72rem, .44rem);
+            }
+        }
+    }
+
+    ul.book-list {
+        width: 6.62rem;
+        margin-top: .1rem;
+        padding: 0 .44rem .4rem;
+        display: inline-block;
+
+        li {
+            display: inline-block;
+            width: 33.333%;
+            >div {
+                width: 2rem;
+                margin: 0 auto;
+            }
+
+            a {
+                display: block;
+
+                >img {
+                    width: 2rem;
+                    height: 2.8rem;
+                    display: block;
+                    margin: 0 auto;
+                    @include bg2('Bitmap', 1.1rem, 1.1rem);
+                    background-position: center;
+                    background-color: #F5F5F5;
+                    border: 1px solid #F5F5F5;
+                }
+
+                p {
+                    padding: .2rem 0 0 0;
+                    color: #807E7D;
+                    line-height: .32rem;
+                    font-size: .24rem;
+                    b {
+                        display: block;
+                        font-weight: 0;
+                        color: #1A1919;
+                        font-size: .28rem;
+                        height: .64rem;
+                        margin-bottom: .1rem;
+                        overflow: hidden;
+
+                        >img {
+                            width: .66rem;
+                            height: .28rem;
+                            vertical-align: top;
+                            margin-right: .08rem;
+                            @include bg2('Bitmap', 1.1rem, 1.1rem);
+                            background-position: center;
+                            background-color: #F5F5F5;
+                        }
+                    }
+                    span {
+                        display: inline-block;
+                        width: 100%;
+                        height: .24rem;
+                        font-size: .24rem;
+                        line-height: .24rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+            }
+            .button{
+                display: block;
+                margin: .2rem auto 0rem auto;
+                width: 1.5rem;
+                height: .56rem;
+                color: #F72F42;
+                line-height: .56rem;
+                border: 1px solid #F72F42;
+                text-align: center;
+                border-radius: 50px;
+            }
+        }
+    }
+    ul.book-tj-list{
+        padding: 0 .44rem;
+        li{
+            width: 100%;
+            display: inline-block;
+            padding: .4rem 0;
+            border-bottom: 1px solid #E6E6E6;
+            a{
+                display: block;
+
+            }
+            &:first-child{
+                padding-top: 0;
+            }
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        div{
+            float: left;
+            width: 4.82rem;
+            h5{
+                max-height: .8rem;
+                font-size: .32rem;
+                line-height: .4rem;
+                overflow: hidden;
+                font-weight: 100;
+                color: #1A1919;
+            }
+            p{
+                font-size: .28rem;
+                line-height: .32rem;
+                height: .62rem;
+                overflow: hidden;
+                margin-top: .2rem;
+                color: #807E7D;
+            }
+            span{
+                display: inline-block;
+                font-size: .24rem;
+                line-height: .24rem;
+                margin-top: .36rem;
+                color: #807E7D;
+                i{
+                    color: #FF7733;
+                }
+            }
+        }
+        img{
+            float: right;
+            width: 1.6rem;
+            height: 2.24rem;
+            @include bg2('Bitmap', 1.1rem, 1.1rem);
+            background-position: center;
+            background-color: #F5F5F5;
+            border: 1px solid #F5F5F5;
+        }
+    }
+}

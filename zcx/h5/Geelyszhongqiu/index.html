@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <title>今秋，中国月亮才更圆</title>
+    <meta content-type="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link href="css/base.css?0" rel="stylesheet" />
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link href="css/style.css?23147" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <audio src="images/music.mp3" id="media" loop preload="auto"></audio>
+        <div class="bg bgRotate">
+        </div>
+        <div class="btm-img">
+            <img src="images/loading-img2.png"></div>
+        <div class="loading_bg" id="loading">
+            <div class="loading_wrp">
+                <div class="loading">
+                    <div class="frame frameAnimate">
+                    </div>
+                    <!--<span class="loading-img"><img src="images/loading-img1.png"></span>-->
+                </div>
+                <div class="loading-text-img">
+                    <img src="images/loading-text.png"></div>
+                <div id="loading_text">
+                    0%</div>
+            </div>
+        </div>
+        <div class="rainbow">
+            <div class="red">
+            </div>
+            <div class="yellow">
+            </div>
+            <div class="green">
+            </div>
+        </div>
+
+        <div class="sports sports_2">
+            <span><i><img src="images/page1-img4.png"></i></span>
+        </div>
+		
+        
+        <!--<p class="feichuan">
+            <img src="images/page1-img4.png"></p>-->
+        <div class="page page1">
+            <p class="p1">
+                <img src="images/page1-img1.png"></p>
+            <p class="p2">
+                <img src="images/page1-img2.png"></p>
+            <p class="p3">
+                <img src="images/page1-img3.png"></p>
+            <p class="p4">
+                <img src="images/page2-img2.png"></p>
+            <p class="p5">
+                <img src="images/page2-img3.png"></p>
+            <p class="yueliang">
+                <img src="images/page2-img1.png"></p>
+            <div class="canvas-box">
+            	<div class="dashed-box"></div>
+                <canvas id="canvas" resize stats hidpi="on" style="background: transpant"></canvas>
+                <div class="tip-box tip-show">
+                    <img class="tip-text" src="images/tip-text.png"></div>
+            </div>
+            <input type="hidden" id="baifenbi" />
+            <div class="result-box">
+                <div id="imgDiv">
+                </div>
+                <h3 class="js-result-text">
+                    亲，你确定你画的是圆？<br>
+                    不到50%的圆度，跟80年代国内企业和消费者对品牌理解的一知半解有一拼。</h3>
+                <div class="btn-box">
+                    <img src="images/btn-bg.png">
+                    <span class="btn-text js-selected-btn">就这个了</span>
+                </div>
+                <div class="btn-box">
+                    <img src="images/btn-bg.png">
+                    <span class="btn-text js-again-btn">再画一次</span>
+                </div>
+            </div>
+        </div>
+        <div class="tip">
+            <img style="margin: 0 auto;" width="50" src="images/loading.gif">
+            <p>月亮比较大<br>正在绘制中...</p>
+        </div>
+    </div>
+    <script src="js/jquery1.7.min.js"></script>
+    <script src="js/paper-full.min.js"></script>
+    <script type="text/paperscript" canvas="canvas" src="js/page/circle_origin.js?6"></script>
+    <!--<script src="js/page/base.js"></script>-->
+    <script src="js/page/base1.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+    <script src="/Resources/JSCookie.js" type="text/javascript"></script>
+    <script src="js/wxShare.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(function () {  
+     var wexinopenid = getUrlParam("openid");
+            if (wexinopenid == null || wexinopenid == "") {
+                var OpenID = getCookie("newweixinOpenID");
+                if (OpenID == null) {
+                    window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx93ed718e869344bc&redirect_uri=http%3a%2f%2fservices.hyh6.com%2fAuthorize%2fweixin%2fWapWeixinBackglzq.htm&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect";
+                }
+                else {
+                    var res_reslut = $.ajax({ url: "/CompanyProject/Geelyszhongqiu/GetHardUrl.ashx?newweixinOpenID="+OpenID, async: true });
+                }
+            } else {
+                setCookie("newweixinOpenID", wexinopenid);
+                var res_reslut = $.ajax({ url: "/CompanyProject/Geelyszhongqiu/GetHardUrl.ashx?newweixinOpenID="+wexinopenid, async: true });
+            } 
+	    var sharLink = window.location.href; 
+	    var shareInfo = {
+		    title:'今秋，中国月亮才更圆',     
+		    desc:'我画了一个圆度接近90%的月亮',
+            pyq:'我画了一个圆圈是多少的圆呢',
+		    imgUrl:'http://h5.hyh6.com/CompanyProject/Geelyszhongqiu/images/fenxiang.jpg', 
+	    }; 
+        wxShare(sharLink,shareInfo);
+     });
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?5b0cf71f192cb25508340a5c87eaff37";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

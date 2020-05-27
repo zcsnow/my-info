@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>砼习网</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:#fff;">
+    <div class="header" style=" background:#edf1f2; height:80px">
+        <div class="content clr">
+            <a href="" class="logo" style=" margin-top:20px;"><img src="images/logo.png" /></a>
+        </div>
+    </div>
+    
+    <div class="login-block">
+    	<div class="form-box">
+            <form id="form">
+            
+                <div class="form-group">
+                    <label>用户名</label>
+                    <input type="text" class="form-control" id="mobile" name="mobile" required placeholder="请输入手机号">
+                    <div class="error_tip"></div>
+                </div>
+                <div class="form-group">
+                    <label>密&emsp;码</label>
+                    <input type="password" class="form-control" id="password" name="password" required placeholder="请输入密码">
+                    <div class="error_tip"></div>
+                </div>
+                <div class="form-group" style="margin-left:68px; margin-top:14px">
+                    <input type="checkbox" id="auto_login" />&nbsp;<label style="font-size:14px; width:280px; line-height:16px;">下次自动登录</label>
+                    <div class="error_tip"></div>
+                </div>
+                <span class="btn-submit">登 录</span>
+                <div class="other_login">
+                    其他方式登录<a href=""><img src="images/weixin.png" /></a><a href=""><img src="images/qq.png" /></a></p>
+                </div>
+                <div class="other_login">
+                    快捷登录<a href="" style="vertical-align:-22px"><img src="images/longin_phone.png" /></a></p>
+                </div>
+            </form>
+        </div>
+        <div class="ewm-box">
+        	<img src="images/erweima.png" />
+            <p>扫描二维码登录砼习网</p>
+        </div>
+    </div>
+    
+    <!--footer-->
+    <p class="copyright">© 2016 shirengong.com All Rights Reserved 京ICP备 13046642号</p>
+              
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    
+    <script>
+	$(function(){
+		
+		 /*$('.follow').hover(function(){
+				$('.wx-code').show();
+			},function(){
+				$('.wx-code').hide();
+			}
+		);
+		*/
+		
+		$("#form").validate({
+			//错误信息提示
+			errorPlacement:function(error,element){
+				error.appendTo(element.siblings(".error_tip"));
+			}
+		});
+		//内容提交
+		$(".btn-submit").on("click",function (){
+			if($("#form").valid()){
+				alert('成功');
+			}
+		});
+		
+	
+	});
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿{
+    "code": 1,
+    "msg": "成功",
+    "result": {
+        "list": [
+            {
+                "id": 1,
+                "type": "股权众筹",
+                "title": "活动标题活动标题",
+                "images": "images/home_img5.png",
+                "status": "待开始",
+                "time": "01-29 12:00 开始",
+                "address": "北京朝阳区"
+            },
+            {
+                "id": 2,
+                "type": "商品众筹",
+                "title": "活动标题活动标题",
+                "images": "images/home_img6.png",
+                "status": "进行中",
+                "time": "01-29 12:00 开始",
+                "address": "线上活动"
+            },
+            {
+                "id": 3,
+                "type": "股权众筹",
+                "title": "活动标题活动标题",
+                "images": "images/home_img7.png",
+                "status": "已结束",
+                "time": "01-29 12:00 开始",
+                "address": "北京朝阳区"
+            }
+        ],
+        "count": 12
+    }
+}

@@ -1,0 +1,91 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>奔跑融e购</title>
+<link href="css/lottery.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="alContent">
+	<h1 class="title-top">我的奖品</h1>
+    <div class="content_info">
+          <div class="content_list">
+          
+          	   <!--<div class="none-tip">
+                   <img src="images/none_tip.png">
+                   <p>暂无奖品</p>
+                </div>-->
+                
+		       <ul class="coupons-box">
+               	 <li>
+                 	<img src="images/logo1.png">
+                 	<h3>20元代金卷</h3>
+                    <p><em>序列号：</em><span>13412341234123412341234123412341234123412</span></p>
+                    <p><em>密码：</em><span>1435345346</span></p>
+                    <a href="javascript:;" class="c-delete-btn"><img src="images/delete_icon.png"/></a>
+                 </li>
+                 
+                 <li>
+                 	<img src="images/logo1.png">
+                 	<h3>20元代金卷</h3>
+                    <p><em>序列号：</em><span>13412341234123412341234123412341234123412</span></p>
+                    <p><em>密码：</em><span>1435345346</span></p>
+                    <a href="javascript:;" class="c-delete-btn"><img src="images/delete_icon.png"/></a>
+                 </li>
+                 <li>
+                 	<img src="images/logo1.png">
+                 	<h3>20元代金卷</h3>
+                    <p><em>序列号：</em><span>13412341234123412341234123412341234123412</span></p>
+                    <p><em>密码：</em><span>1435345346</span></p>
+                    <a href="javascript:;" class="c-delete-btn"><img src="images/delete_icon.png"/></a>
+                 </li>
+
+               </ul>
+               <a href="javascript:;" class="use-text">使用说明</a>
+               <div class="mask">
+                  <div class="coupon-messages">
+                      <h2><span>电子券使用说明</span><a href="javascript:;" class="close-btn"><img src="images/close_btn.png"></a></h2>
+                      <p class="coupon-msg">
+请您在激活期限内登录融e购商城，通过“我的融e购-我的电子券-激活电子券”功能将电子券激活。具体操作方法可通过以下链接查看：<a href="http://mall.icbc.com.cn/help/getHelpInfo.jhtml?fid=0000010150&parentId=0000010148">
+http://mall.icbc.com.cn/help/getHelpInfo.jhtml?fid=0000010150&parentId=0000010148</a>
+                      </p>
+                  </div>
+                 </div>
+              
+          </div>
+      </div>
+
+</div>
+<script src="js/jquery1.7.min.js"></script>
+<script>
+	$('.c-delete-btn').click(function(){
+		$(this).parent().remove();
+	});
+	
+	$('.use-text').click(function(){
+		$('.mask').show();
+	});
+
+	$('.mask').click(function(e){
+		e.stopPropagation();
+		e.preventDefault();
+		$('.mask').hide();
+	});
+	$('.coupon-messages').click(function(e){
+		e.preventDefault();
+		e.stopPropagation();
+	});
+	$('.close-btn').click(function(){
+		$('.mask').hide();
+	});
+</script>
+</body>
+</html>

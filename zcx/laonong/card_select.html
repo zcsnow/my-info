@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<title>购物卡</title>
+<meta content-type="text/html" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link href="css/base.css?0" rel="stylesheet" />
+<link href="font_css/font-awesome.min.css" rel="stylesheet" />
+<link href="css/page/shopping_card.css?0" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+
+    <div class="shopping-card-bind">
+       <div class="card-rule">
+          <p><strong>购物卡使用规则：</strong><br><br>
+          1、购物卡不记名、不退换、不可兑换现金、不挂失，请妥善保管；<br>
+          2、每张订单限用一张购物卡，结算金额超出卡余额部分可用其他支付方式补齐；<br>
+          3、发生退货时，购物卡支付部分退回卡内，其他支付方式部分原路|返回；<br>
+          4、购物卡限有效期内使用，过期作废，在每张卡背面印有有效期；<br>
+          5、购买本购物卡时可开具发票，发票开出后，在购物时购物卡支付金额将不再重复开具发票；<br>
+          </p>
+        </div>
+        <ul class="coupon_list select-card js-select-card">
+           
+            <li>
+            	<i class="icon"><img src="images/shopping-card-icon01.png"></i>
+                <i class="select-icon"></i>
+                <span>
+                    <strong>余额</strong><sup>¥</sup><b>5000.00</b>
+                    <em class="tag"><img src="images/card_tag1.png"></em>
+                </span>
+                <p>面　值：￥10000.00</p>
+                <p>有效期：2016/03/01 - 2019/03/01</p>
+            </li>
+            <li>
+            	<i class="icon"><img src="images/shopping-card-icon01.png"></i>
+                <i class="select-icon"></i>
+                <span>
+                    <strong>余额</strong><sup>¥</sup><b>5000.00</b>
+                    <em class="tag"><img src="images/card_tag2.png"></em>
+                </span>
+                <p>面　值：￥10000.00</p>
+                <p>有效期：2016/03/01 - 2019/03/01</p>
+            </li>
+            <li>
+            	<i class="icon"><img src="images/shopping-card-icon01.png"></i>
+                <i class="select-icon"></i>
+                <span>
+                    <strong>余额</strong><sup>¥</sup><b>5000.00</b>
+                </span>
+                <p>面　值：￥10000.00</p>
+                <p>有效期：2016/03/01 - 2019/03/01</p>
+            </li>
+        </ul>
+
+        <a href="order.html" class="footer-back-btn">确定</a>
+
+    </div>
+
+</div>
+
+<script src="js/jquery1.7.min.js"></script>
+<script>
+$('.js-select-card li').on('click',function(){
+	$(this).addClass('cur').siblings('li').removeClass('cur');
+
+});
+</script>
+</body>
+</html>

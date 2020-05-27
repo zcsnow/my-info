@@ -1,0 +1,256 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin:0 auto;
+	background-color: #f5f5f5;
+}
+
+section{
+	width: 100%;
+	padding-top: .3rem;
+
+	.swiper-container {
+		padding: 0 .44rem;
+		height: 100%;
+	}
+
+	.list-box{
+		width: 100%;
+
+		h3{
+			text-align: right;
+			font-weight: normal;
+			height: .64rem;
+			line-height: .64rem;
+			padding-right: .3rem;
+			margin-bottom: .2rem;
+			background-position: .44rem center;
+
+			a{
+				color: #666;
+				font-size: .28rem;
+				padding-right: .4rem;
+				@include bg2('icon_more', .16rem, .26rem);
+				background-position: .65rem center;
+				display: inline-block;
+			}
+
+			//特殊CSS处理
+			&.today{
+				@include bg2('FM_today', 1.41rem, .34rem);
+			}
+			&.pingshu{
+				@include bg2('FM_pingshu', .69rem, .34rem);
+			}
+			&.finance{
+				@include bg2('FM_finance', .7rem, .34rem);
+			}
+			&.radio{
+				@include bg2('FM_radio', 1.42rem, .34rem);
+			}
+		}
+
+		.more{
+			float: right;
+			padding-left: .58rem;
+			padding-right: 0.14rem;
+			text-align: center;
+			line-height: .64rem;
+			@include bg2('FM_huanyihuan', .44rem, .44rem);
+			background-position: left center;
+			color: #666;
+		}
+
+		ul.list{
+			padding: 0 .44rem;
+
+			li{
+				float: left;
+				width: 2rem;
+				margin-left: .3rem;
+
+				a {
+					display: block;
+					width: 100%;
+
+					p.img{
+						display: block;
+						width: 2rem;
+						height: 2rem;
+						@include bg2('Bitmap', 1.1rem, 1.1rem);
+						background-position: center;
+						background-color: #fff;
+						border-radius: .08rem;
+						overflow: hidden;
+						position: relative;
+						img{
+							width: 2rem;
+							height: 2rem;
+						}
+						span{
+							display: block;
+							position: absolute;
+							width: 100%;
+							left: 0;
+							bottom: 0;
+							height: .66rem;
+							background-image: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+
+							i{
+								display: block;
+								padding-left: .6rem;
+								margin-top: .16rem;
+								height: .5rem;
+								line-height: .5rem;
+								color: #fff;
+								@include bg2('FM_baisanjiaobofang', .26rem, .26rem);
+								background-position: .2rem center;
+								font-size: .24rem;
+							}
+						}
+					}
+
+					h5 {
+						color: #666;
+						font-size: .32rem;
+						font-weight: normal;
+						height: .8rem;
+						margin: .2rem 0 .44rem;
+						line-height: .4rem;
+						overflow: hidden;
+						text-overflow:ellipsis;
+					}
+				}
+
+				&:nth-child(4n),&:first-child{
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
+	.banner{
+		width: 100%;
+		height: 3rem;
+
+		.swiper-slide {
+			width: 6.62rem;
+			height: 2.6rem;
+			background-color: #fff;
+			border-radius: .08rem;
+			overflow: hidden;
+			box-shadow: 0 2px 10px 4px rgba(0,0,0,0.04);
+
+			/* Center slide text vertically */
+			display: flex;
+			//-webkit-box-pack: center;
+			//-ms-flex-pack: center;
+			//-webkit-justify-content: center;
+			justify-content: center;
+			//-webkit-box-align: center;
+			//-ms-flex-align: center;
+			//-webkit-align-items: center;
+			//align-items: center;
+		}
+
+
+		a {
+			display: block;
+			width: 100%;
+
+			img {
+				display: block;
+				width: 6.62rem;
+				height: 2.6rem;
+				@include bg2('Bitmap', 1.1rem, 1.1rem);
+				background-position: center;
+				background-color: #F5F5F5;
+			}
+		}
+	}
+
+
+	ul.today-list{
+		padding: 0 .44rem;
+		padding-bottom: .2rem;
+		li{
+			width: 100%;
+			padding-bottom: .34rem;
+			a{
+				display: block;
+			}
+		}
+		p.img{
+			float: left;
+			width: 2rem;
+			height: 2rem;
+			@include bg2('Bitmap', 1.1rem, 1.1rem);
+			background-position: center;
+			background-color: #fff;
+			border-radius: .08rem;
+			overflow: hidden;
+			position: relative;
+			img{
+				width: 2rem;
+				height: 2rem;
+			}
+			span{
+				display: block;
+				position: absolute;
+				width: 100%;
+				left: 0;
+				bottom: 0;
+				height: .66rem;
+				background-image: linear-gradient(-180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+
+				i{
+					display: block;
+					padding-left: .6rem;
+					margin-top: .16rem;
+					height: .5rem;
+					line-height: .5rem;
+					color: #fff;
+					@include bg2('FM_baisanjiaobofang', .26rem, .26rem);
+					background-position: .2rem center;
+					font-size: .24rem;
+				}
+			}
+		}
+		div{
+			float: right;
+			width: 4.32rem;
+			padding-top: .2rem;
+			h5{
+				height: .6rem;
+				font-size: .32rem;
+				line-height: .6rem;
+				font-weight: 400;
+				color: #181818;
+				overflow: hidden;
+				text-overflow:ellipsis;
+				white-space:nowrap;
+			}
+			p{
+				font-size: .24rem;
+				line-height: .6rem;
+				height: .6rem;
+				color: #666;
+				overflow: hidden;
+				text-overflow:ellipsis;
+				white-space:nowrap;
+			}
+			span{
+				display: block;
+				font-size: .24rem;
+				line-height: .4rem;
+				color: #666;
+			}
+		}
+	}
+
+}
+

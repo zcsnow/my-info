@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Tencent-TGideas">
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="stylesheet" href="css/upload.css?8">
+<title>我的安全宣言</title>
+<script src="js/zepto.min.js"></script>
+<script src="js/image-editor.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+
+  <img id="img3" src="img/default-img.jpg" alt="" style="display:none">
+  <img id="img2" src="" alt="" style="display:none">
+  <div class="main">
+     
+        <div class="input-box clr">
+          <input type="text" class="js-input" id="mytxt1" value="" maxlength="40" placeholder="此处输入您的安全宣言...">
+          <button class="js-sure-btn" type="button" id="send" >确定</button>
+          <button class="btn-add" style=" background:#818181;" ontouchend="eidtor.addImage({img: document.querySelector('#img3')})">随机</button>
+        </div>
+        <div id="container" class="editor">
+           <div class="default-img" >
+               <img src="img/default-img.jpg">
+            </div>
+            <!--<div class="val-box"><span class="val-txt"></span></div>-->
+            <canvas id="textCanvas" ></canvas>
+        </div>
+
+        <!--<div class="fuc">
+            <input id="file" type="file" class="real-btn" />
+            <button class="btn-take-photo"></button>
+        </div>-->
+        
+        <div class="fuc">
+            <input id="file" type="file" class="real-btn" />
+            <button class="btn-take-photo">点击上传照片</button>
+        </div>
+        
+        <span class="btn-save">生成我的安全宣传海报</span>
+        
+  </div>
+  
+</div>
+
+<script>
+    $(function(){
+        
+        var canvasWidth = ($('#container').width()-20);
+        var canvasHeight = ($('#container').height()-20);
+        eidtor = new mo.ImageEditor({
+            trigger: $('#file'),
+            container: $('#container'),
+            width: canvasWidth*2,
+            height: canvasHeight*2,
+            stageX:  $('#container')[0].offsetLeft,
+            iconScale: {
+                url: 'img/icon1.jpg',
+                rect: [0, 0, 50, 50]
+            },
+            iconClose: {
+                url: 'img/icon1.jpg',
+                rect: [50, 0, 50, 50]
+            },
+            event: {
+                beforechange: function(){
+                },
+                change: function(){
+                    //default img
+                    $('.default-img').hide();
+                    //$('#textCanvas').hide();
+                    var self = this;
+                    eidtor.addImage({img: document.querySelector('#img2'),'pos': [10, canvasHeight*2-140]});
+                    
+                    /*var self = this;
+                    var logoImg = new Image();
+                    logoImg.onload = function(){
+                        self.addImage({'img': logoImg, 'disable': true, 'pos': [10, 10]});
+                    };
+                    logoImg.src = 'img/logo.png';*/
+
+
+                     
+                }
+            }
+        });
+        
+
+        var textCanvas=document.getElementById("textCanvas");
+        textCanvas.width = 560;
+        textCanvas.height =80;
+        $('.js-sure-btn').on('touchend', function(){
+            
+            var text = $('.js-input').val();
+            if( text=="")
+            {
+                alert('请填写内容');return false;
+            }
+            $('.default-img').hide();
+            //$('#textCanvas').show().css({'transform':'scale(0.5,0.5)'});
+            var ctx=textCanvas.getContext("2d");
+            ctx.clearRect(0,0,textCanvas.width, textCanvas.height);
+            
+            var ctx=textCanvas.getContext("2d");
+            ctx.font=30+"px 黑体";
+            ctx.fillStyle="rgba(0,0,0,0.5)";
+            ctx.fillRect(0,0,textCanvas.width, textCanvas.height);
+            ctx.fillStyle="rgba(255,255,255,1)";
+            ctx.fillText(text,15,50);
+            ctx.restore();
+            textImgUrl = textCanvas.toDataURL();
+            $('#img2').attr('src',textImgUrl);
+            
+            eidtor.addImage({img: document.querySelector('#img2'),'pos': [10, canvasHeight*2-140]});
+            
+        });
+        
+        
+        //setTimeout(function(){eidtor.addImage({img: document.querySelector('#img2'), disScale: true, disMove: true,iconScale:'Close'});},10);
+        $('.btn-save').on('touchend', function(){
+            //$('#textCanvas').hide();
+            if($('#file').val()=="")
+            {
+                alert('请上传图片');return false;
+            }
+            eidtor.toDataURL(function(data){
+                document.write('<img style="width:100%" src="' + data + '"/>');
+                
+            });
+        });
+        
+        
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>播放</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+  <header-nav v-if="showNav" :title="title"></header-nav>
+
+  <div id="white-player">
+
+    <div id="white-player-center">
+      <div data-amplitude-song-info="title" class="song-meta-data"></div>
+      <img data-amplitude-song-info="cover_art_url" class="main-album-art"/>
+
+      <div class="time-progress">
+        <div id="progress-container">
+          <input type="range" class="amplitude-song-slider" id="amplitude-song-slider" @click="songSliderClick(e)"/>
+          <progress id="song-played-progress" class="amplitude-song-played-progress"></progress>
+          <progress id="song-buffered-progress" class="amplitude-buffered-progress" value="0"></progress>
+        </div>
+
+        <div class="grid-x">
+            <span class="current-time">
+              <span class="amplitude-current-minutes"></span>:<span class="amplitude-current-seconds"></span>
+            </span>
+            <span class="duration">
+              <span class="amplitude-duration-minutes"></span>:<span class="amplitude-duration-seconds"></span>
+            </span>
+        </div>
+      </div>
+    </div>
+
+    <div id="white-player-controls">
+      <div class="">
+        <div class="">
+          <div class="show-playlist" id="showPlaylist" @click="playlistShow"><span>播放列表</span></div>
+          <div class="amplitude-prev" id="previous"></div>
+          <div class="amplitude-play-pause" id="play-pause"></div>
+          <div class="amplitude-next" id="next"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mask"></div>
+    <div id="white-player-playlist-container">
+        <div class="white-player-playlist-top">播放列表</div>
+        <div class="white-player-playlist">
+            <ul style=" position:relative">
+                <li class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="0">
+                    <em>1</em>
+                    <div class="music active"><i></i><i></i><i></i><i></i></div>
+                    <span class="playlist-song-name">新手创业前需要先了解什么东西？</span>
+                </li>
+                <li class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="1">
+                    <em>2</em>
+                    <div class="music active"><i></i><i></i><i></i><i></i></div>
+                    <span class="playlist-song-name">众生颠倒，人们认为错误的东西反而是正确的</span>
+                </li>
+                <li class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="2">
+                    <em>3</em>
+                    <div class="music active"><i></i><i></i><i></i><i></i></div>
+                    <span class="playlist-song-name">能盈利你才是合格的商人</span>
+                </li>
+                <li class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="3">
+                    <em>4</em>
+                    <div class="music active"><i></i><i></i><i></i><i></i></div>
+                    <span class="playlist-song-name">只要你把自己锻炼的很优秀，自然会有强者来,自然会有强者来</span>
+                </li>
+                <li class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="4">
+                    <em>5</em>
+                    <div class="music active"><i></i><i></i><i></i><i></i></div>
+                    <span class="playlist-song-name">尊重客户，掏心掏肺的为用户服务，我们才能尊重客户</span>
+                </li>
+                <li class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="5">
+                    <em>6</em>
+                    <div class="music active"><i></i><i></i><i></i><i></i></div>
+                    <span class="playlist-song-name">新手创业前需要先了解什么东西？</span>
+                </li>
+                <li class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="6">
+                    <em>7</em>
+                    <div class="music active"><i></i><i></i><i></i><i></i></div>
+                    <span class="playlist-song-name">众生颠倒，人们认为错误的东西反而是正确的</span>
+                </li>
+                <li class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="7">
+                    <em>8</em>
+                    <div class="music active"><i></i><i></i><i></i><i></i></div>
+                    <span class="playlist-song-name">能盈利你才是合格的商人</span>
+                </li>
+                <li class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="8">
+                    <em>9</em>
+                    <div class="music active"><i></i><i></i><i></i><i></i></div>
+                    <span class="playlist-song-name">只要你把自己锻炼的很优秀，自然会有强者来,自然会有强者来</span>
+                </li>
+                <li class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="9">
+                    <em>10</em>
+                    <div class="music active"><i></i><i></i><i></i><i></i></div>
+                    <span class="playlist-song-name">尊重客户，掏心掏肺的为用户服务，我们才能尊重客户</span>
+                </li>
+            </ul>
+        </div>
+        <div class="white-player-close close-playlist" @click="playlistHide">关闭</div>
+    </div>
+
+  </div>
+  <!--加载中-->
+  <loading v-if="isWaiting" :status="2"></loading>
+  <!--执行toast弹出层-->
+  <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<title>相机和视频控制与HTML5</title>
+<style>
+*{ padding: 0; border: 0 }
+body { font-size: 22px;  color: rgba(0,0,0,.8); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility;  background: #fff}
+.main { margin: 40px 0; max-width: 1240px;padding: 0 20px; position: relative}
+
+video { border: 1px solid #ccc; display: block; margin: 0 0 20px 0; }
+#canvas { margin-top: 20px; border: 1px solid #ccc; display: block; }
+</style>
+</head>
+<body>
+
+<!-- content wrapper -->
+<div class=main>
+    <p>使用Opera Next或Chrome Canary，使用此页面来拍照！</p>
+    <!--理想情况下，这些元素不会被创建，直到它被确认 客户端支持视频/摄像头，但为了说明说明 涉及的元素，它们是用标记（而不是JavaScript）创建的-->
+    <video id="video" width="640" height="480" autoplay></video>
+    <button id="snap" class="sexyButton">快照</button>
+    <canvas id="canvas" width="640" height="480"></canvas>    
+</div>
+
+<script>
+	// 将事件侦听器放入位置
+	window.addEventListener("DOMContentLoaded", function() {
+		// 抓取元素，创建设置等
+		// 拍摄快照的元素
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext('2d');
+		var video = document.getElementById('video');
+		var mediaConfig =  { video: true };
+		var errBack = function(e) {
+			console.log('An error has occurred!', e)
+		};
+
+		 // 访问相机！
+		if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+			 // 不添加 `{ audio: true }` 因为我们现在只想要视频
+			navigator.mediaDevices.getUserMedia(mediaConfig).then(function(stream) {
+				video.src = window.URL.createObjectURL(stream);
+				video.play();
+			});
+		}
+
+		/* 下面的遗留代码 */
+		else if(navigator.getUserMedia) { // Standard
+			navigator.getUserMedia(mediaConfig, function(stream) {
+				video.src = stream;
+				video.play();
+			}, errBack);
+		} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+			navigator.webkitGetUserMedia(mediaConfig, function(stream){
+				video.src = window.webkitURL.createObjectURL(stream);
+				video.play();
+			}, errBack);
+		} else if(navigator.mozGetUserMedia) { // Mozilla-prefixed
+			navigator.mozGetUserMedia(mediaConfig, function(stream){
+				video.src = window.URL.createObjectURL(stream);
+				video.play();
+			}, errBack);
+		}
+
+		// 触发照片拍摄
+		document.getElementById('snap').addEventListener('click', function() {
+			context.drawImage(video, 0, 0, 640, 480);
+		});
+	}, false);
+
+</script> 
+
+</body>
+</html>

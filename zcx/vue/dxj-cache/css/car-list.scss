@@ -1,0 +1,65 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin:0 auto;
+	background-color: #fff;
+}
+.banner{
+	width: 7.5rem;
+	height: 3.2rem;
+	overflow: hidden;
+	@include bg2('Bitmap', 1.1rem, 1.1rem);
+	background-position: center;
+	background-color: #F5F5F5;
+
+	img{
+		display: block;
+		width: 7.5rem;
+		height: 3.2rem;
+		@include bg2('Bitmap', 1.1rem, 1.1rem);
+		background-position: center;
+		background-color: #F5F5F5;
+	}
+}
+
+.car-list{
+	padding-top: .44rem;
+	ul{
+		display: inline-block;
+		padding: 0 0.44rem;
+		li{
+			width: 3.2rem;
+			margin-right: .22rem;
+			padding-bottom: .44rem;
+			float: left;
+
+			&:nth-child(2n){
+				margin-right: 0;
+			}
+
+			a{
+				display: block;
+				img{
+					width: 3.2rem;
+					height: 2.1rem;
+					display: block;
+					@include bg2('Bitmap', 1.1rem, 1.1rem);
+					background-position: center;
+					background-color: #F5F5F5;
+				}
+				p{
+					margin-top: 0.22rem;
+					color: #1A1919;
+					font-size: 0.28rem;
+					line-height: 0.32rem;
+					height: 0.64rem;
+					overflow: hidden;
+				}
+			}
+		}
+	}
+}

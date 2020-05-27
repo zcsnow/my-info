@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>文章列表</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+   <header-nav v-if="showNav" :title="title"></header-nav>
+   <section>
+
+  <div class="list-box" v-if="articleListData.length">
+    <br>
+    <ul class="article-list">
+      <li v-for="(item,index) in articleListData" :class="{ 'imgType': coverShape }">
+        <a :href="'article.html?tag='+item.tag+'&contentType='+title+'&contentTitle='+item.title" class="clearfix"  @click="eventLog({eventId:'article-'+item.tag,eventType:'1',contentType:title,contentTitle:item.title})">
+          <div>
+            <h5>{{item.title}}</h5>
+            <p>{{item.titleSecond}}</p>
+             <span><i>{{item.views}}</i>浏览</span>
+          </div>
+          <img v-lazy="baseUrl+item.image" />
+        </a>
+      </li>
+    </ul>
+    <p v-show="isLoad" class="updata_loading">
+      <i></i>加载中...
+    </p>
+  </div>
+  </section>
+  <section v-if="!articleListData.length && noData" class="no-data">暂无内容~<br /></section>
+  <!--加载中-->
+  <!-- <loading v-if="isWaiting" :status="2"></loading> -->
+  <!--执行toast弹出层-->
+  <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+.category-box{position:absolute;top:0; bottom:0; width:100%; overflow:hidden;max-width:640px; }
+.category-left {width: 85px;box-sizing: border-box;  height:100%; position:absolute;background:#f2f2f2;}
+.category-menu{border-top: 1px solid #e5e5e5;}
+.category-menu li {position: relative; width:84px;height: 49px;border-bottom: 1px solid #e5e5e5;text-align: center;background:#f2f2f2;}
+.category-menu li a {display: block;position: absolute;width: 100%;padding:15px 0;color: #222;}
+.category-menu li a strong{ display:block; line-height:20px; font-size:13px; font-weight:normal;}
+.category-menu li a em{ display:block;line-height:20px; color:#999;font-size:9px}
+.category-menu li.cur{border-right: 1px solid #fff;}
+.category-menu li.cur a{color: #d57274;background: #fff;}
+.category-menu li.cur a em{color: #d57274;}
+.category-right {margin-left: 85px; height:100%;box-sizing: border-box; }
+.category-right h2{line-height:24px; font-size:18px;}
+
+.tabs_cell{padding:0 0 10px;min-height:390px; display:none; padding-bottom:48px; }
+.tabs_cell:first-of-type{ display:block}
+
+
+
+/*Pull Up styles*/
+#pullUp {height:30px;line-height:30px;padding:5px 10px;font-size:14px;color:#666; text-align:center; margin-top:-48px; display:none;}
+#pullUp .pullUpIcon  {display:inline-block; width:30px; height:30px;-webkit-transition-property:-webkit-transform;-webkit-transition-duration:250ms;	}
+#pullUp .pullUpIcon  {-webkit-transform:rotate(-180deg) translateZ(0);}
+#pullUp.flip .pullUpIcon {-webkit-transform:rotate(0deg) translateZ(0);}
+#pullUp.pull-loading{ display:block;}
+#pullUp.pull-loading .pullUpIcon {
+	background:url(../../images/loading.png) 0 0 no-repeat;
+    background-size:30px;
+	-webkit-transform:rotate(0deg) translateZ(0);
+	-webkit-transition-duration:0ms;
+	-webkit-animation-name:pull-loading;
+	-webkit-animation-duration:2s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+}
+.pullUpLabel{ display:inline-block; vertical-align:top}
+
+@-webkit-keyframes pull-loading {
+	from { -webkit-transform:rotate(0deg) translateZ(0); }
+	to { -webkit-transform:rotate(360deg) translateZ(0); }
+}
+

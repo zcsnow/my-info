@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>砼习网</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:#fff;">
+    <div class="header" style=" background:#edf1f2; height:80px">
+        <div class="content clr">
+            <a href="" class="logo" style=" margin-top:20px;"><img src="images/logo.png" /></a>
+        </div>
+    </div>
+    
+    <div class="login-block">
+    	<div class="form-box">
+            <form id="form">
+                <div class="form-group">
+                    <label>用户名</label>
+                    <input type="text" class="form-control" id="mobile" name="mobile" required placeholder="请输入手机号">
+                    <div class="error_tip"></div>
+                </div>
+                <div class="form-group">
+                    <label>密&emsp;码</label>
+                    <input type="password" class="form-control" id="password" name="password" required placeholder="请输入密码">
+                    <div class="error_tip"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label>验证码</label>
+                    <input type="text" class="form-control" style="width:170px" id="yzm" name="yzm" required placeholder="请输入验证码">
+                    <span style="width:114px; background:#e6eaeb; display:inline-block; text-align:center; line-height:40px;">获取短信验证码</span>
+                    <div class="error_tip"></div>
+                </div>
+                
+                <span class="btn-submit">注册</span>
+                <div class="form-group" style="margin-left:68px; margin-top:14px">
+                    <input type="checkbox" id="auto_login" checked />&nbsp;<label style="font-size:12px; width:280px; line-height:16px;">我已阅读并接受《砼习网用户协议》</label>
+                    <div class="error_tip"></div>
+                </div>
+            </form>
+        </div>
+        <div class="ewm-box">
+        	<div style=" border:1px solid #ccc; color:#000;">
+            	<h3 style=" font-size:16px; font-weight: normal; border-bottom:1px solid #ccc; padding:10px 15px;">手机快速注册</h3>
+                <div style="padding:15px 15px; line-height:20px;">1.请使用中国大陆手机号<br>
+                  2.手机号即为登录帐号<br>
+                  3.手机号用于密码
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--footer-->
+    <p class="copyright">© 2016 shirengong.com All Rights Reserved 京ICP备 13046642号</p>
+              
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/index.js"></script>
+    
+    <script>
+	$(function(){
+		
+		 /*$('.follow').hover(function(){
+				$('.wx-code').show();
+			},function(){
+				$('.wx-code').hide();
+			}
+		);
+		*/
+		
+		$("#form").validate({
+			//错误信息提示
+			errorPlacement: function (error, element) {
+				error.appendTo(element.siblings(".error_tip"));
+			}
+		});
+		//内容提交
+		$(".btn-submit").on("click",function (){
+			if ($("#form").valid()) {
+				alert('成功');
+			}
+		});
+
+	});
+    </script>
+    
+</body>
+</html>

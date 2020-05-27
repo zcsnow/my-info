@@ -1,0 +1,7 @@
+{
+	"state" : 1, 
+        "times" : 2, 
+	"stopNum1" : 3, 
+	"stopNum2" : 3,
+	"stopNum3" : 3
+}  

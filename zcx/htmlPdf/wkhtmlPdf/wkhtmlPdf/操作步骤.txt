@@ -1,0 +1,4 @@
+1、打开https://wkhtmltopdf.org/downloads.html 下载地址 安装适合系统版本的wkhtmltopdf
+2、在文件夹内 npm/cnpm install wkhtmltopdf
+3、运行 node example.js ./index.html AA    //意思为打开本地index.html或网址转换为AA.pdf文件
+       node example.js https://www.baidu.com/ AA

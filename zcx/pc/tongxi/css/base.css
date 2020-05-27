@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;}
+html{ overflow-x:hidden}
+body{ font-size:14px; font-family:"Microsoft Yahei"; background:#f3f1f2; line-height:1}
+ul, ol, li { list-style: none; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+a, fieldset, img { border: none; }
+input, img { vertical-align: middle; }
+img { display:block;}
+i, em { font-style: normal; }
+table { border-collapse: collapse; border-spacing: 0; }
+input{ font-size: 14px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /*-webkit-appearance: none; appearance: none; */outline: none; border-radius: 0; }
+input::-webkit-input-placeholder {color:#777;}
+textarea { font-size: 13px; border:1px solid #e4e4e4;}
+header, nav, section, footer { display: block; }
+a, a:hover { text-decoration: none;  }
+.clr:after { content: " "; display: block; height: 0; clear: both; visibility: hidden; zoom: 1 }
+.white-body{ background:#fff;}
+.hidden { display: none;}
+.no-border { border: 0; }
+
+.container { margin: 0 auto; }
+
+.content{ width:980px; margin: 0 auto; position:relative; padding:0 10px}
+
+/*header*/
+.header{height:38px; padding:36px 0 12px;}
+.header .logo{ display:block; float:left;}
+.header.par-btn{ display:block; float:right;width:160px; margin-top:15px; height:40px; line-height:40px; background:#23acf2; border-radius:5px; color:#fff; font-size:18px; text-align:center}
+.header .right-nav{width:210px; position:absolute; right:10px;top:-24px;}
+.header .login-nav{ float:right;line-height:24px; position:relative;  padding-right:44px;}
+.header .login-nav a{line-height:24px; font-size:12px; color:#616161;}
+.header .login-nav .ewm{ position:absolute; right:0; top:0}
+.header .phone-nav{ height:26px; float:right; width:210px; line-height:26px; margin-top:10px;}
+.header .phone-nav i{ display:block; float:left;}
+.header .phone-nav span{ display:block;float:right; color:#00498e;font-size:16px;}
+.header .phone-nav span strong{ font-weight:normal; color:#868686;font-size:14px;}
+.header .nav{float:left; margin-left:80px; padding-top:10px;}
+.header .nav li{ float:left; font-size:16px; margin-right:30px;}
+.header .nav li a{ color:#505151; line-height:18px; display:inline-block; padding:5px 20px; border-radius:5px;}
+.header .nav li a.cur,.header .nav li a:hover{ color:#fff; background:#566375;}
+
+
+.forum-header{background:#272727;}
+.forum-header .login-nav a{color:#8c8c8c; }
+.forum-header .phone-nav span{color:#46a2f9; }
+.forum-header .nav li a{color:#8c8c8c; }
+.forum-header .nav li a.cur,.forum-header .nav li a:hover{ color:#fff; background:transparent}
+
+
+
+/*footer*/
+.footer{ background:#222; padding-top:24px; padding-bottom:38px; color:#fff; font-size:12px;}
+.footer .f-link{display:block; float:left; width:460px; margin-left:20px;}
+.footer .f-link-list{ margin-top:15px }
+.footer .f-link-list a{ color:#fff; line-height:18px;}
+.footer .f-about{display:block; float:left;width:180px;margin-left:40px;}
+.footer .f-about .list{ margin-top:24px;}
+.footer .f-about .list li{width:60px;float:left;}
+.footer .f-about .list li a{ display:block; width:41px; height:41px; margin: 0 auto; background-position:0 0; background-repeat:no-repeat;}
+.footer .f-about .list li a.wechat{ background-image:url(../images/footer_dot_weixin.png);}
+.footer .f-about .list li a.wechat:hover{background-image:url(../images/footer_dot_weixin_1.png);}
+.footer .f-about .list li a.webo{ background-image:url(../images/footer_dot_weibo.png);}
+.footer .f-about .list li a.webo:hover{background-image:url(../images/footer_dot_weibo_1.png);}
+.footer .f-about .list li a.collect-btn{ background-image:url(../images/footer_dot_shoucang.png);}
+.footer .f-about .list li a.collect-btn:hover{background-image:url(../images/footer_dot_shoucang_1.png);}
+.footer .f-about .list li span{ display:block;text-align:center; line-height:20px; margin-top:5px;}
+.footer .f-phone{display:block; float:left;width:180px;margin-left:90px;}
+.footer .f-phone .phone{ margin-top:8px; margin-bottom:15px;}
+.footer .f-phone .phone img{ display:block;float:left; margin-right:10px;}
+.footer .f-phone .phone span{display:block; font-size:18px; line-height:21px;}
+.footer h3{ font-size:16px; color:#a1a1a1; font-weight:normal;}
+.footer p{ color:#a1a1a1;line-height:14px; margin-top:15px}
+.footer .f-phone p{ margin-top:10px;}
+

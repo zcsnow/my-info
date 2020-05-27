@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>作品展览</title>
+    <script src="/libs/airpana.js"></script>
+  </head>
+  <body>
+    <div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+      <header-nav v-if="showNav" title="作品展览" page-url="artwork-list.html"></header-nav>
+      <div class="list-box">
+          <nav>
+              <a :class="{'active':item.active}" href="javascript:void(0)" @click="tabFn(index)" v-for="(item,index) in artworkTypes">{{item.title}}</a>
+          </nav>
+          <div>
+          <ul class="artwork-item-list">
+            <li v-for="(item,index) in artworkList" @click="lookWorkDetail(item)">
+              <a href="javascript:void(0)" >
+                <!-- <span><img v-lazy="apiHost+dxjApi+item.image" /></span> -->
+                <span><img v-lazy="baseUrl+item.smallImage" /></span>
+                <dl>
+                  <dt>{{item.title}}</dt>
+                  <dd>{{item.authorName}} {{item.createTime}}</dd>
+                </dl>
+              </a>
+            </li>
+          </ul>
+          <div v-if="listNoDataIShow" class="no-data">暂无数据，请查看其它</div>
+        </div>
+        <p v-show="isLoad" class="updata_loading">
+          <i></i>加载中...
+        </p>
+      </div>
+      <!--网络不给力或无数据时提示-->
+      <div v-if="noDataIShow" class="no-data">网络不给力，请检查后重试哦~<br /><a href="javascript:void(0)" onclick="window.location.reload()">点击刷新</a></div>
+      <!--加载中-->
+      <!-- <loading v-if="isWaiting" :status="2"></loading> -->
+      <!--执行toast弹出层-->
+      <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+      <!--小图片点击放大预览-->
+      <img-preview v-if="isImgPreviewShow"  @closeimgpreview="hideImgPreview" :preview-data="previewData"></img-preview>
+    </div>
+  </body>
+</html>

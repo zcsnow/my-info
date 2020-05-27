@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>娱乐影音</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+  <header-nav v-if="showNav" title="娱乐影音" page-url="index.html"></header-nav>
+    <section>
+      <div class="list-box" v-if="AudioVideoData.banner">
+        <div class="travel-list">
+          <div class="swiper-container" id="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" v-for="(item,index) in AudioVideoData.banner" @click="eventLog({eventId:'EntertainmentVideo_adbanner_'+ (parseInt(index)+1) +'_click',eventType:'1',eventIsAD:'1'})">
+                <a :href="item.url?item.url:'javascript:void(0)'">
+                  <img :src="baseUrl+item.image" />
+                </a>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+        </div>
+      </div>
+      
+      <div class="noticeswiper clr"  v-if="AudioVideoData.notice.length">
+          <i></i>
+          <div class="swiper-container" id="noticeSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide swiper-no-swiping" v-for="(item,index) in AudioVideoData.notice">
+                <a :href="item.url?item.url:'javascript:void(0)'">{{item.title}}</a>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+      <div :class="isFixed?'list-box nav-list-box fixed':'list-box nav-list-box'">
+        <div class="movie"></div>
+        <div class="nav">
+          <nav>
+            <a :class="curType==index?'active':''" href="javascript:void(0)" @click="tabFn(index)" v-for="(item,index) in AudioVideoData.column">{{item.title}}</a>
+          </nav>
+          <span></span>
+        </div>
+        <video-swiper v-if="curType==0" v-for="(item,index) in AudioVideoData.columnNameList" :column-title="item.title" :column-style="item.style" :column-content="item.contentList" :index="index+1" :base-url="baseUrl"></video-swiper>
+        <div v-if="curType!=0" id="movie-list" class="movie-list2">
+          <div v-if="curType!=0" class="container clr">
+            <a v-for="(item,index) in AudioVideoColumnData" href="javascript:void(0)"  @click="enterVideoEventLog(item)">
+              <img v-lazy="baseUrl+item.image" />
+              <h5>{{item.title}}</h5>
+              <span>{{item.titleSecond}}</span>
+            </a>
+          </div>
+        </div>
+        <!--网络不给力或无数据时提示-->
+        <div v-if="noDataIShow" class="no-data">暂无数据，请查看其它</div>
+      </div>
+      <div class="footer"></div>
+        
+        <p v-show="isLoad" class="updata_loading">
+          <i></i>加载中...
+        </p>
+
+        <!--网络不给力或无数据时提示-->
+        <!-- <div v-if="noDataIShow" class="no-data">暂无数据，请查看其它</div> -->
+
+      </div>
+    </section>
+
+    
+    <!--加载中-->
+    <loading v-if="isWaiting" :status="2"></loading>
+    <!--执行toast弹出层-->
+    <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="renderer" content="webkit" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+		<title>支付成功</title>
+		<link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/orderLogin.css" />
+  		<link rel="shortcut icon" href="img/logo.ico" type="image/x-icon" />
+	</head>
+	<body>
+		<div class="header-box">
+            <div class="order-login clr">
+              	<div class="logo"><img src="img/logo.jpg" /></div>
+            	<div class="welcome-txt">欢迎小明</div>
+                <div class="red-line"></div>
+            </div>
+		</div>
+
+    <div class="pay-notice-box js-ay-notice-box">
+      <div class="pay-notice"><img src="img/success_icon.png"/></div>
+      <h4>支付成功！</h4>
+      <p>3s  后自动跳到首页</p>
+      <p>24小时后，可在个人中心查看您的订单</p>
+    </div>
+
+    <script>
+        setTimeout(function(){
+           window.location.href="";
+        },3000);
+    </script>   
+	</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>内容简介</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+  <header-nav v-if="showNav" :title="title"></header-nav>
+
+  <div class="radio-head">
+    <a href="javascript:void(0)" class="clearfix">
+      <p class="img">
+        <img v-lazy="apiHost+'/app/dxj'+radioHead.image" />
+        <span><i>{{radioHead.views}}</i></span>
+      </p>
+      <div>
+        <h5>{{radioHead.title}}</h5>
+        <p>{{radioHead.title_second}}</p>
+        <span>{{radioHead.author}}</span>
+      </div>
+    </a>
+  </div>
+  <div class="list-box">
+    <nav>
+      <a :class="{'active':item.active}" href="javascript:void(0)" @click="tabFn(index)" v-for="(item,index) in tabTypes">{{item.title}}</a>
+    </nav>
+    <div v-show="tabTypes[0].active==true" class="table">
+      <h3>内容简介</h3>
+      <p>让大家少走弯路，节约时间，节约钱，快速达到创业成功的目的。全面的创业经验分享，人生经验分享，团队管理经验分享。创业改变命运，励志照亮人生。创业改变命运，励志照亮人生。</p>
+      <p>每天分享最新最实用的互联网创业项目解析与商业思维。</p>
+    </div>
+    <div v-show="tabTypes[1].active==true" class="table">
+      <div class="player flex" v-if="radio.length">
+        <a href="javascript:void(0)" :class="isPlay?'play-btn flex-child active':'play-btn flex-child'" @click="playFn">{{playText}}</a>
+        <a href="javascript:void(0)" :class="isSort?'sort-btn flex-child active':'sort-btn flex-child'" @click="sortFn">{{sortText}}</a>
+      </div>
+      <div class="checked" v-show="checkedText">{{checkedText}}</div>
+      <ul class="radio-list" v-if="radio.length">
+        <li v-for="(item,index) in radio">
+          <a href="javascript:void(0)">
+            <dl class="flex">
+              <dt :class="{'active':item.active}">{{index+1}}</dt>
+              <dd class="flex-child">
+                <h4>{{item.title}}</h4>
+                <p>
+                  <span class="play">1006.0万</span>
+                  <span class="time">10:08</span>
+                </p>
+              </dd>
+            </dl>
+          </a>
+        </li>
+      </ul>
+      <div v-else class="no-data">暂无视频数据</div>
+    </div>
+  </div>
+  <!--加载中-->
+  <loading v-if="isWaiting" :status="2"></loading>
+  <!--执行toast弹出层-->
+  <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

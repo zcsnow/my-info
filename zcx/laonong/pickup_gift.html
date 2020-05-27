@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<title></title>
+<meta content-type="text/html" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link href="css/base.css?0" rel="stylesheet" />
+<link href="font_css/font-awesome.min.css" rel="stylesheet" />
+<link href="css/page/pickup.css?0" rel="stylesheet" />
+</head>
+<body class="white-body">
+<div class="container">
+
+    <div class="pickup-pay">
+        <div class="header-tip">
+            <img src="images/pickup_bg2.jpg"/>
+            <h2>老农部落礼品卡</h2>
+        </div>
+        
+        <ul class="card-order card-order1">
+        	<li><strong>商品名称：</strong><sup><img src="images/k-left.png" /></sup>老农部落<sup><img src="images/k-right.png" /></sup>自营番茄 </li>
+            <li><strong>有&ensp;效&ensp;期：</strong>2016-10-01</li>
+            <li><strong>验&ensp;证&ensp;码：</strong>54215458422</li>
+            <li><strong>状&emsp;&emsp;态：</strong>已领取<em class="r-info">领取人：锤锤哥</em></li>
+        </ul>
+        
+        <ul class="card-order card-order1">
+        	<li><strong>商品名称：</strong>[老农部落]自营番茄1   </li>
+            <li><strong>有&ensp;效&ensp;期：</strong>2016-10-08</li>
+            <li><strong>验&ensp;证&ensp;码：</strong>54215458411</li>
+            <li><strong>状&emsp;&emsp;态：</strong>已领取 <em class="r-info"><img class="js-share-btn" src="images/pickup_share_btn1.png"><img src="images/pickup_share_btn1.png"></em></li>
+        </ul>
+        
+        <ul class="card-order card-order1">
+        	<li><strong>商品名称：</strong>[老农部落]自营番茄   </li>
+            <li><strong>有&ensp;效&ensp;期：</strong>2016-10-01</li>
+            <li><strong>验&ensp;证&ensp;码：</strong>54215458422</li>
+            <li><strong>状&emsp;&emsp;态：</strong>已领取<em class="r-info"><img class="js-share-btn" src="images/pickup_share_btn.png"></em></li>
+        </ul>
+        
+        <div class="verify-code">
+            <a href="javascript:;" style=" margin-top:20px">继续送礼</a>
+        </div>
+        
+        <!-- 分享弹出层 -->
+    	<div class="js-share-pop">
+        	<img src="images/share-img.png" />
+        	<div class="order-info">
+            	<p>商品名称：[老农部落]自营番茄</p>
+				<p>有  效 期：2016-10-01</p>
+				<p>验  证 码：54215458422</p>
+            </div>
+        </div>
+        
+    </div>
+
+
+</div>
+
+<script src="js/jquery1.7.min.js"></script>
+<script>
+$(function() {
+	 //分享弹层
+	  $('body').on("click",'.js-share-btn',function(e){
+		  var prod_name = $(this).parents().find('li').eq(0).text();
+		  var prod_date = $(this).parents().find('li').eq(1).text();
+		  var prod_code = $(this).parents().find('li').eq(2).text();
+		  $('.order-info p').eq(0).text(prod_name);
+		  $('.order-info p').eq(1).text(prod_date);
+		  $('.order-info p').eq(2).text(prod_code);
+		  $('.js-share-pop').show();	
+		  
+	  });
+	  $('body').on("click",'.js-share-pop',function(e){
+		  $('.js-share-pop').hide();	
+	  });
+	
+});
+</script>
+
+</body>
+</html>

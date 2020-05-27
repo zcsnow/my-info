@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<title>提货卡结算</title>
+<meta content-type="text/html" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link href="css/base.css?0" rel="stylesheet" />
+<link href="font_css/font-awesome.min.css" rel="stylesheet" />
+<link href="css/page/pickup.css?0" rel="stylesheet" />
+</head>
+<body class="white-body">
+<div class="container">
+	
+    <div class="pickup-pay">
+    	<h2 style="padding:20px 10px 0; color:#5e5e5e; font-size:16px;">订单信息</h2>
+        <ul class="card-order">
+        	<li><span>名称：</span>[老农部落]自营番茄</li>
+            <li><span>单价：</span>￥<b class="unit-price">388</b></li>
+            <li><span>商品清单：</span>XL号番茄6个*1<br>L号番茄8个*1</li>
+            <li class="clr">
+            	<span>数量：</span>
+            	<div class="fillNumber clr">
+                  <a href="javascript:;" class="cut">-</a>
+                  <span class="prodNum">1</span>
+                  <a href="javascript:;" class="add">+</a>
+                  <input type="hidden" class="numberVal" value="5">
+                </div>
+            </li>
+            <li><span>总价：</span><strong style="color:#c62026">￥<b class="total-price">388</b></strong></li>
+        </ul>
+        <div class="rule-box">
+            <img src="images/pickup_up.png">
+            <p>提示：每一单只能生成一个提货码，不能根据购买数量多少进行调整分配数量，若发给多个朋友请多次购买。</p>
+            <img src="images/pickup_down.png">
+        </div>
+        <div class="verify-code">
+            <a href="javascript:;" style="margin-top:20px">立即支付</a>
+        </div>
+        
+    </div>
+
+
+</div>
+
+<script src="js/jquery1.7.min.js"></script>
+<script>
+$(function() {
+	var prodNumVal;
+	var unitPrice=$('.unit-price').html();
+	//删除商品数量
+	$(".fillNumber .cut").click(function(){
+		var $this = $(this);
+		var prodNum = $this.parents(".fillNumber").find(".prodNum");
+		var maxNumVal = Number($this.parent(".fillNumber").find(".numberVal").val());
+		prodNumVal = Number(prodNum.html());
+
+		if(prodNumVal >1){
+			$this.parent(".fillNumber").find(".add").removeClass("disabled");
+			//selectNumAmountFun();
+			prodNum.html(--prodNumVal);
+			$('.total-price').html((unitPrice*prodNumVal).toFixed(2));
+		}else{
+			
+			$this.addClass("disabled");
+			//selectNumAmountFun();
+			
+			//计算总金额
+			
+			
+		
+		}
+		
+	});
+
+	//添加商品数量
+	$(".fillNumber .add").click(function(){
+		var $this = $(this);
+		var prodNum = $this.parent(".fillNumber").find(".prodNum");
+		var maxNumVal = Number($this.parent(".fillNumber").find(".numberVal").val());
+		prodNumVal = Number(prodNum.html());
+
+		$this.parent(".fillNumber").find(".cut").removeClass("disabled");
+		
+		if(prodNumVal < maxNumVal){
+			prodNum.html(++prodNumVal);
+			//selectNumAmountFun();
+			$('.total-price').html((unitPrice*prodNumVal).toFixed(2));
+		}else if(prodNumVal == maxNumVal){
+			$this.addClass("disabled");
+			
+		}
+	});
+
+});
+</script>
+</body>
+</html>

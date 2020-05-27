@@ -1,0 +1,99 @@
+.f5-bg{ background: #f5f5f5;}
+
+/*顶部导航栏 */
+.header-box{ width:100%; max-width:720px; position:fixed; padding:10px 5px;border-bottom:1px solid #d2d2d2; z-index:100; background:#fafafa;}
+.header-box span{display: block;white-space: nowrap;overflow: hidden; text-align:center;font-size: 16px; color:#444; line-height:24px;}
+.header-box a{display:block; width:8px; height:16px; padding:14px 18px;position:absolute;top:0; }
+.header-box a.left-icon{ left:0;}
+.header-box a.right-icon{right:0; }
+
+
+.support{width: 100%; height: 44px;position: fixed; bottom: 0;max-width:720px;border-top: 2px solid #f8f8f8; background-color: #fff; z-index: 100; }
+.support .but{position: absolute; width: 49%; text-align: center; top: 0; right: 0; font-size: 16px; line-height: 44px; color: #fff; background-color: #E83828}
+.support .invest-val{position: absolute;width: 41%;padding:0 5%; font-size: 12px; line-height: 42px; color: #999; top:0px}
+
+.confirm-invest-box{padding: 45px 0;}
+
+.order-section.circle-box {padding:15px 0;}
+.order-section.circle-box .ln-title{display:block;position:relative;height:45px;margin:0 4% 5px;text-align: center; overflow: hidden;}
+.order-section.circle-box .ln-title span{width:auto;display:inline-block;text-align:center; padding:12px 10px 3px;font-size:12px;background:#fff;font-weight:normal;color: #666; position: relative;z-index:10;}
+.order-section.circle-box .ln-title span strong{font-size: 14px;font-weight: normal;}
+.order-section.circle-box .ln-title em{height:1px;display:block;background:#ec6877;position:absolute;top:22px;z-index:0; left:10px; right:10px;}
+
+.order-section.circle-box .ul-01{padding: 25px 8% 0;position: relative;margin-top: 20px;}
+.order-section.circle-box .ul-01 .li-01{float: left;width: 30%;z-index: 10;position: relative;}
+.order-section.circle-box .ul-01 .li-02{width: 40%;position: absolute;left: 30%;top: -11px;}
+.order-section.circle-box .ul-01 .li-03{float: right; width: 30%;z-index: 10;position: relative;}
+.order-section.circle-box .ul-01 li .circle-small{box-sizing: border-box;position: relative;width: 65px;height: 65px;border-radius: 50%;border: 4px solid #F8B2B8;margin:0 auto;}
+.order-section.circle-box .ul-01 li .circle-small span{display: block;text-align: center;color: #666;font-size: 12px;line-height: 57px;}
+.order-section.circle-box .ul-01 li .circle-small span i{font-size: 13px;font-style: normal;}
+.order-section.circle-box .ul-01 li p{color: #666;font-size: 12px;text-align: center;margin-top: 10px;}
+.order-section.circle-box .ul-01 .li-02 .circle-small{box-sizing: border-box; position: relative; width: 100px; height:100px; border-radius: 50%; border: 4px solid #e83828; margin:0 auto;}
+.order-section.circle-box .ul-01 .li-02 .circle-small span{line-height: 88px;}
+
+.order-section.circle-box .ul-02{margin: 20px 5% 0; padding-top: 10px; border-top: 1px solid #f5f5f5; }
+.order-section.circle-box .ul-02 li{float: left; width: 50%;}
+.order-section.circle-box .ul-02 li .p1{color: #de2f44; font-size: 15px; line-height: 25px; text-align: center}
+.order-section.circle-box .ul-02 li .p1 i{font-size: 24px; line-height: 25px;font-style: normal;}
+.order-section.circle-box .ul-02 li .p2{text-align: center}
+.order-section.circle-box .ul-02 li .p2 span{color: #666; font-size: 12px; line-height: 25px}
+.order-section.circle-box .ul-02 li .p2 i{font-size: 14px; line-height: 25px;font-style: normal;}
+
+.order-section.cost-info p{ margin: 0;}
+.cost-info-help{display: block; width: 18px;height:18px; padding:10px; top:3px;position: absolute;right: 5px;}
+
+.invest-title{ background: #fff; display: block;text-align: center; color: #666; line-height: 18px; padding:15px 0;border-bottom: 10px solid #f5f5f5; }
+.invest-title span{ display: block; font-size: 12px;}
+.invest-title span strong{font-size: 14px;font-weight: normal;}
+
+.order-section{ background: #fff; position: relative; border-bottom: 10px solid #f5f5f5; }
+.default-box{ padding:15px 5%;line-height: 18px;position:relative;}
+.default-arrow{background: url(../../images/right_icon.png) no-repeat 95% center; background-size: 8px 16px; }
+.default-down-arrow{background: url(../../images/down_icon.png) no-repeat 95% center; background-size: 8px 16px; }
+.default-box .invest-price{font-size: 14px; color:#444; font-weight: normal; line-height: 24px;padding-bottom: 10px; border-bottom: 1px solid #eee; margin-bottom: 10px;}
+.default-box .invest-price em{font-size: 18px; color:#e83828; display: inline-block;}
+.default-box .ads-info{font-size: 13px; color:#444; font-weight: normal; position: relative; }
+.default-box .ads-info em{font-size: 13px; color:#666666; float: right;margin-right: 20px;color:#444;  }
+.default-box .ads-info em strong{font-weight: normal;font-size: 14px; display: inline-block;}
+.default-box .ads-info em b{font-weight: normal;font-size: 14px; display: inline-block; margin-left: 20px; }
+.default-box .ads-info em.select-tip{font-size: 13px; color:#666666;  margin-right:20px; }
+.default-box .ads-txt{font-size: 12px; color:#999;margin-right: 20px;margin-top:5px; }
+
+.order-section.support-info .default-box .ads-info:nth-of-type(2){ margin-top: 10px;}
+.order-section.support-info .default-box .ads-info em{margin-right: 0;}
+.order-section.support-info .default-box .ads-info em.gray{color: #999;}
+.order-section.support-info .default-box .ads-info em.red{color: #e83828; font-size: 18px}
+
+.order-section.risk-info{}
+.order-section.risk-info .risk-info-txt{font-size: 12px; color:#999;    white-space: normal;margin-top:5px; line-height: 18px; max-height: 18px; overflow: hidden;text-overflow: ellipsis; }
+.order-section.risk-info .risk-arrow{display: block; width: 16px;height:8px; padding:8px 6px; top:-3px;position: absolute;right: 0;}
+.order-section.risk-info .risk-arrow.cur{transform: rotate(180deg);-webkit-transform: rotate(180deg);}
+
+.order-section.hope-select{padding:10px 5%;line-height: 18px;position:relative; background: #f5f5f5;}
+.order-section.hope-select .hope-select-btn{ position: absolute; top: 3px;left: 5%; width: 20px; height:36px; background-image:url(../../images/select_icon.png); background-repeat:no-repeat;background-position: 0 center; background-size:20px;}
+.order-section.hope-select .hope-select-btn.cur{ background-image:url(../../images/select_icon_cur.png);}
+.order-section.hope-select>div{ display: block;margin-left: 25px;font-size: 12px; color:#666; }
+.order-section.hope-select>div a{ color: #666;text-decoration: underline;}
+
+
+/* 删除提示框 */
+#popup_container{width: 280px; background-color: #fff;border-radius: 0.3em; box-shadow: 0 0.1em 5px rgba(0, 0, 0, 0.4);text-align:center;}
+#popup_container .title_closeBtn{width:25px;line-height:25px; position:absolute; top:5px;right:5px;font-size:28px; color:#333; background:rgba(153,153,153,0.7); border-radius:50%;}
+#popup_container #popup_content{padding: 12px 20px; }
+#popup_container #popup_message{ padding:10px 0;}
+#popup_container #popup_message p {line-height: 1.2; }
+#popup_container #popup_panel{ margin:10px 0 20px;}
+#popup_container #popup_panel button{width:90px;line-height:30px;margin:0 5px;font-size:14px; border-radius: 2px;background: #de4747; color: #fff; border:1px solid #de4747; outline:0; }
+#popup_container #popup_panel #popup_cancel {background: #f2f2f2; color: #555; border: 1px solid #aaa; }
+
+/*弱提示*/
+#popup_container.tip_pop { background: #323232; color: #fff; width: 180px }
+#popup_container.tip_pop #popup_message { font-size: 14px; padding: 0; }
+
+.mask{ position:fixed; left:0; width:100%; top:0; height:100%; background:#000; background:rgba(0,0,0,0.7); opacity:0.8; z-index:999;display:none;}
+.pop-box{position:fixed; width:90%;left:5%;top:50%; transform:translateY(-50%) scale(0.7);-webkit-transform:translateY(-50%) scale(0.7); z-index:1001;opacity: 0;-webkit-transition: all 0.3s;transition: all 0.3s; visibility: hidden;-webkit-backface-visibility: hidden;backface-visibility: hidden;}
+.pop-box.show {-webkit-transform:translateY(-50%) scale(1);transform:translateY(-50%) scale(1);opacity: 1;visibility: visible;}
+.pop-content{width: 80%; position: absolute;left:50%;top:45%; transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);  padding:5%;border-radius: 3px;background-color: #fff}
+.pop-txt {line-height: 18px; color: #999; font-size: 12px;}
+.pop-close-btn{ display: block; color: #e83828;text-align: center;font-size: 13px; border-top: 1px solid #ebebeb; padding-top:10px; margin-top: 10px;}
+

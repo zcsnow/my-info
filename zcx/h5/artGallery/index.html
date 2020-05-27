@@ -1,0 +1,417 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>听说美术馆</title>
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css?11" />
+</head>
+<body>
+  <audio src="images/bgmusic.mp3?7" id="bgMusic" loop preload="auto"></audio>
+  <!--<audio src="images/p2_voice1.mp3" id="p2Voice" preload="auto"></audio>-->
+  <!--<audio src="images/p2_voice2.mp3" id="p2Voice2" preload="auto"></audio>
+  <audio src="images/p2_voice3.mp3" id="p2Voice3" preload="auto"></audio>-->
+  <div class="music on"><img src="images/music0.png?2"></div>
+  <div class="loading-box">
+      <div class="load-img upMove0"><img src="images/p7_img.png"></div>
+      <div class="loading-bar">
+          <div id="progressbar"></div>
+      </div>
+      
+      <!--<div class="load-txt" id="progressText"></div>-->
+      <div class="load-txt" id="progressText">Loading<span class="dotting"></span></div>
+  </div>
+  
+
+  <div class="page page1">
+  	  <div class="bg page1bgAni"></div>
+      <div class="ele1"><img src="images/p1_img1.png"></div>
+      <div class="ele2 titleFlash1"><img src="images/p1_img2.png"></div>
+      <div class="ele3 titleFlash2"><img src="images/p1_img3.png"></div>
+      <div class="ele4 upMove1"><img src="images/p1_img4.png"></div>
+      <div class="ele5 handAni"><img src="images/p1_btn.png"></div>
+      
+  </div>
+  
+  <div class="page page1-wall">
+    <div class="bg"></div>
+  	<div class="txt"><img src="images/p1_wall_txt.png"></div>
+    <div class="voice-hand"><img src="images/voice_hand.png"></div>
+  </div>
+  
+  <div class="page page2-black">
+  	<div class="text"><img src="images/page2_black_txt.gif"></div>
+	<!--<div class="text">汴梁城郊外</div>-->
+  </div>
+
+  <div class="page page2">
+      <div class="bg"></div>
+      <div class="bg2"><img src="images/p2_bg3.png"></div>
+      <div class="last-bg"></div>
+      <div class="voice-hand"><img src="images/voice_hand.png"></div>
+      <div class="ele-box">
+        <div class="ele1"><img src="images/p2_img1.png"></div>
+        <div class="ele2 armMove1"><img src="images/p2_img2.png"></div>
+        <div class="ele3"><img src="images/p2_img3.png"></div>
+        <div class="ele4"><img src="images/p2_img4.png"></div>
+        <div class="ele5"><img src="images/p2_img5.png"></div>
+		<div class="end-pass-btn upMove1"><img src="images/end_btn.gif?2"></div>
+        <div class="headset-box">
+            <div class="headset-btn"><img src="images/ear_btn.png"></div>
+            <div class="quan-box">
+              <div class="quan-tip quan-tip1"><img src="images/p2_quan1.png"></div>
+              <div class="quan-tip quan-tip2"><img src="images/p2_quan2.png"></div>
+              <div class="quan-tip quan-tip3"><img src="images/p2_quan3.png"></div>
+            </div>
+        </div>
+        <div class="txt txt1"><img src="images/p2_txt1.png"></div>
+        <div class="txt txt2"><img src="images/p2_txt2.png"></div>
+        <div class="txt txt3"><img src="images/p2_txt3.png"></div>
+        <div class="txt txt4"><img src="images/p2_txt4.png"></div>
+        
+        <!--<div class="last-title p2-last-title"><img src="images/p2_title.png"></div>-->
+
+      </div>
+      
+      <div class="end">
+      	<div class="end-txt1"><img src="images/p2_bg2_img1.png"></div>
+        <div class="end-txt2"><img src="images/p2_bg2_img2.png"></div>
+        <div class="end-btn"><img src="images/p2_bg2_img3.png"></div>
+        
+        <div class="end-line line1"></div>
+        <div class="end-line line2"></div>
+        <div class="end-line line3"></div>
+        <div class="end-line line4"></div>
+        <div class="end-line line5"></div>
+        <div class="end-line line6"></div>
+      </div>
+ 
+  </div>
+  
+  <div class="page page2-wall">
+    <div class="mouth"></div>
+  	<div class="txt"><img src="images/p2_wall_txt.png"></div>
+  </div>
+  
+  <div class="page page3-black">
+  	<div class="text"><img src="images/page3_black_txt.gif"></div>
+	<!--<div class="text">汴梁城郊外</div>-->
+  </div> 
+  
+  <div class="page page3">
+      <div class="bg"></div>
+      <div class="last-bg"></div>
+      <div class="voice-hand"><img src="images/voice_hand.png"></div>
+      <div class="ele-box">
+        <div class="ele1"><img src="images/p3_people.png"></div>
+        <div class="ele2"><img src="images/p3_arm1.png"></div>
+        <div class="ele3"><img src="images/p3_mouth1.png"></div>
+        <div class="ele4"><img src="images/p3_eye.png"></div>
+        <div class="ele5"><img src="images/p3_eye_bg.png"></div>
+        <div class="ele6"><img src="images/p3_arm2.png"></div>
+        <div class="ele7"><img src="images/p3_clothes.png"></div>
+        <div class="ele8"><img src="images/p3_mouth2.png"></div>
+        
+        
+        <div class="txt txt1"><img src="images/p3_txt1.png"></div>
+        <div class="txt txt2"><img src="images/p3_txt2.png"></div>
+        <div class="txt txt3"><img src="images/p3_txt3.png"></div>
+        <div class="txt txt4"><img src="images/p3_txt4.png"></div>
+        <div class="txt txt5"><img src="images/p3_txt5.png"></div>
+        <div class="txt txt6"><img src="images/p3_txt6.png"></div>
+        <div class="txt txt7"><img src="images/p3_txt7.png"></div>
+
+      </div>
+      <div class="end-pass-btn upMove1"><img src="images/end_btn.gif?2"></div>
+      <div class="headset-box">
+          <div class="headset-btn"><img src="images/p3_headphones.png"></div>
+          <div class="quan-box">
+            <div class="quan-tip quan-tip1"><img src="images/p3_quan1.png"></div>
+            <div class="quan-tip quan-tip2"><img src="images/p3_quan2.png"></div>
+            <div class="quan-tip quan-tip3"><img src="images/p3_quan3.png"></div>
+          </div>
+      </div>
+      <!--<div class="last-title p3-last-title"><img src="images/p3_title.png"></div>-->
+      <div class="end">
+      	<div class="end-txt1"><img src="images/p3_bg2_img1.png"></div>
+        <div class="end-txt2"><img src="images/p3_bg2_img2.png"></div>
+        <div class="end-btn"><img src="images/p3_bg2_img3.png"></div>
+        
+        <div class="end-line line1"></div>
+        <div class="end-line line2"></div>
+        
+        <div class="end-line line4"></div>
+        <div class="end-line line5"></div>
+        <div class="end-line line6"></div>
+      </div>
+      <div class="people-img"></div>
+      
+      
+  </div>
+  
+  <div class="page page3-wall">
+  	<div class="txt"><img src="images/p3_wall_txt.png"></div>
+  </div>
+  
+  <div class="page page4-black">
+  	<div class="text"><img src="images/page4_black_txt.gif"></div>
+	<!--<div class="text">汴梁城郊外</div>-->
+  </div>
+  
+  <div class="page page4start">
+      <div class="bg"></div>
+      <div class="voice-hand"><img src="images/voice_hand.png"></div>
+      <div class="ele-box">
+        <div class="ele1"><img src="images/p4_img1.png"></div>
+        <div class="ele3"><img src="images/p4_mouth1.png"></div>
+        <div class="ele4"><img src="images/p4_eye1.png"></div>
+        <div class="ele5"><img src="images/p4_eye1_bg.png"></div>
+        <div class="headset-box">
+            <div class="headset-btn"><img src="images/p4_quan1.png"></div>
+            <div class="quan-box">
+              <div class="quan-tip quan-tip1"><img src="images/p4_quan1.png"></div>
+              <div class="quan-tip quan-tip2"><img src="images/p4_quan2.png"></div>
+              <div class="quan-tip quan-tip3"><img src="images/p4_quan3.png"></div>
+            </div>
+        </div>
+
+      </div>
+      <div class="txt txt1"><img src="images/p4_txt1.png"></div>
+      <div class="txt txt2"><img src="images/p4_txt2.png"></div>
+      <div class="txt txt3"><img src="images/p4_txt3.png"></div>
+      <div class="txt txt4"><img src="images/p4_txt4.png"></div>
+      
+  </div>
+  
+  <div class="page page4">
+      <div class="bg bgAni"></div>
+      <div class="last-bg"></div>
+      <div class="voice-hand"><img src="images/voice_hand.png"></div>
+      <div class="ele-box">
+        <div class="ele1"><img src="images/p4_img2.png"></div>
+        <div class="ele2 armMove1"><img src="images/p4_img5.png"></div>
+        <div class="ele3 mouthMove1"><img src="images/p4_mouth2.png"></div>
+        <div class="ele4 eyeMove1"><img src="images/p4_img3.png"></div>
+        <div class="ele5"><img src="images/p4_img4.png"></div>
+        <div class="ele6 armMove2"><img src="images/p4_img6.png"></div>
+        <div class="end-pass-btn upMove1"><img src="images/end_btn.gif?2"></div>
+        <div class="headset-box">
+            <div class="quan-box">
+              <div class="quan-tip quan-tip1"><img src="images/p4_quan4.png"></div>
+              <div class="quan-tip quan-tip2"><img src="images/p4_quan5.png"></div>
+              <div class="quan-tip quan-tip3"><img src="images/p4_quan6.png"></div>
+            </div>
+        </div>
+
+      </div>
+      <div class="txt txt5"><img src="images/p4_txt5.png"></div>
+      <div class="txt txt6"><img src="images/p4_txt6.png"></div>
+      <div class="txt txt7"><img src="images/p4_txt7.png"></div>
+      
+      <div class="quan-box1">
+        <div class="quan-tip quan-tip1"><img src="images/p4_quan4.png"></div>
+        <div class="quan-tip quan-tip2"><img src="images/p4_quan5.png"></div>
+        <div class="quan-tip quan-tip3"><img src="images/p4_quan6.png"></div>
+      </div>
+      <!--<div class="last-title p4-last-title"><img src="images/p4_title.png"></div>-->
+      <div class="end">
+      	<div class="end-txt1"><img src="images/p4_bg2_img1.png"></div>
+        <div class="end-txt2"><img src="images/p4_bg2_img2.png"></div>
+        <div class="end-btn"><img src="images/p4_bg2_img3.png"></div>
+        
+        <div class="end-line line1"></div>
+        <div class="end-line line2"></div>
+        <div class="end-line line3"></div>
+        <div class="end-line line4"></div>
+        <div class="end-line line5"></div>
+        <div class="end-line line6"></div>
+      </div>
+      
+  </div>
+  
+  <div class="page page4-wall">
+    <div class="mouth"></div>
+  	<div class="txt"><img src="images/p4_wall_txt.png"></div>
+  </div>
+  
+  <div class="page page5-black">
+  	<div class="text"><img src="images/page5_black_txt.gif"></div>
+	<!--<div class="text">汴梁城郊外</div>-->
+  </div>
+  
+  <div class="page page5">
+      <div class="bg"></div>
+      <div class="last-bg"></div>
+      <div class="voice-hand"><img src="images/voice_hand.png"></div>
+      <div class="ele-box animated fadeInLeft">
+        <div class="ele1"><img src="images/p5_man.png"></div>
+        <div class="ele2 armMove1"><img src="images/p5_arm1.png"></div>
+        <div class="ele3"><img src="images/p5_mouth1.png"></div>
+        <div class="ele6 armMove2"><img src="images/p5_arm2.png"></div>
+        <div class="end-pass-btn upMove1"><img src="images/end_btn.gif?2"></div>
+        <div class="headset-box">
+            <div class="headset-btn"><img src="images/p5_headphones.png"></div>
+            <div class="quan-box">
+              <div class="quan-tip quan-tip1"><img src="images/p5_quan1.png"></div>
+              <div class="quan-tip quan-tip2"><img src="images/p5_quan2.png"></div>
+            </div>
+        </div>
+
+      </div>
+      
+      <div class="txt txt1"><img src="images/p5_txt1.png"></div>
+      <div class="txt txt2"><img src="images/p5_txt2.png"></div>
+      <div class="txt txt3"><img src="images/p5_txt3.png"></div>
+      <div class="txt txt4"><img src="images/p5_txt4.png"></div>
+      <div class="txt txt5"><img src="images/p5_txt5.png"></div>
+      <div class="txt txt6"><img src="images/p5_txt6.png"></div>
+      
+      <!--<div class="last-title p5-last-title"><img src="images/p5_title.png"></div>-->
+      <div class="quan-box1">
+        <div class="quan-tip quan-tip1"><img src="images/p5_quan1.png"></div>
+        <div class="quan-tip quan-tip2"><img src="images/p5_quan2.png"></div>
+      </div>
+      
+      <div class="end">
+      	<div class="end-txt1"><img src="images/p5_bg2_img1.png"></div>
+        <div class="end-txt2"><img src="images/p5_bg2_img2.png"></div>
+        <div class="end-btn"><img src="images/p5_bg2_img3.png"></div>
+        
+        <div class="end-line line1"></div>
+        <div class="end-line line2"></div>
+        <div class="end-line line3"></div>
+        <div class="end-line line4"></div>
+        <div class="end-line line5"></div>
+        <div class="end-line line6"></div>
+      </div>
+      
+  </div>
+  
+  <div class="page page5-wall">
+  	<div class="txt"><img src="images/p5_wall_txt.png"></div>
+  </div>
+  
+  <div class="page page6-black">
+  	<div class="text"><img src="images/page6_black_txt.gif"></div>
+	<!--<div class="text">汴梁城郊外</div>-->
+  </div>
+  
+  <div class="page page6">
+      <div class="bg"></div>
+      <div class="last-bg"></div>
+      <div class="voice-hand"><img src="images/voice_hand.png"></div>
+      <div class="ele-box">
+        <div class="ele1"><img src="images/p6_boy1.png"></div>
+        <div class="ele3 mouthMove1"><img src="images/p6_boy_mouth.png"></div>
+        <div class="end-pass-btn upMove1"><img src="images/end_btn.gif?2"></div>
+        <div class="headset-box">
+            <div class="headset-btn"><img src="images/p6_headphones.png"></div>
+            <div class="quan-box">
+              <div class="quan-tip quan-tip1"><img src="images/p6_quan1.png"></div>
+              <div class="quan-tip quan-tip2"><img src="images/p6_quan2.png"></div>
+            </div>
+        </div>
+        <div class="musical-box">
+          <div class="musical musical1"><img src="images/p6_yinfu01.png"></div>
+          <div class="musical musical2"><img src="images/p6_yinfu02.png"></div>
+          <div class="musical musical3"><img src="images/p6_yinfu03.png"></div>
+        </div>
+
+      </div>
+      <div class="txt txt1"><img src="images/p6_txt1.png"></div>
+      <div class="txt txt2"><img src="images/p6_txt2.png"></div>
+      <div class="txt txt3"><img src="images/p6_txt3.png"></div>
+		
+      <!--<div class="last-title p6-last-title"><img src="images/p6_title.png"></div>-->
+      <div class="end">
+      	<div class="end-txt1"><img src="images/p6_bg2_img1.png"></div>
+        <div class="end-txt2"><img src="images/p6_bg2_img2.png"></div>
+        <div class="end-btn"><img src="images/p6_bg2_img3.png"></div>
+        
+        <div class="end-line line1"></div>
+        <div class="end-line line2"></div>
+        <div class="end-line line3"></div>
+        <div class="end-line line4"></div>
+        <div class="end-line line5"></div>
+        <div class="end-line line6"></div>
+      </div>
+      
+      <div class="quan-box1">
+        <div class="quan-tip quan-tip1"><img src="images/p6_quan1.png"></div>
+        <div class="quan-tip quan-tip2"><img src="images/p6_quan2.png"></div>
+      </div>
+  </div>
+  
+   <div class="page page6-wall">
+  	<div class="txt"><img src="images/p6_wall_txt.png"></div>
+  </div>
+
+  <!-- 结果页 -->
+  <div class="page page7">
+      <div class="bg"></div>
+  	  <div class="ele1 upMove1"><img src="images/p7_img.png"></div>
+      <div class="ele2"><img src="images/p7_txt.png"></div>
+      <div class="ele3"><img src="images/p7_logo1.png"></div>
+      <div class="ele4"><img src="images/p7_logo2.png"></div>
+      <div class="btn-box clr">
+         <span class="btn"><a href="https://m.jr.jd.com/zc/jdzcShare/productWeChat.html?productId=95177"><img src="images/p7_btn1.png"></a></span>
+         <span class="btn js-share-btn"><img src="images/p7_btn2.png"></span>
+      </div>
+      
+  </div>
+  
+  
+  
+  <div class="js-share-pop"><img src="images/share_img.png"></div>
+  <div class="mask"></div>
+
+  <div class="pop-tip-box">
+      <p class="pop-tip-msg"></p>
+  </div>
+  
+<!--<script src="js/createjs-2015.11.26.min.js"></script>  
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>  -->
+<script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
+<script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
+<script src="js/jquery-1.7.js"></script> 
+<script src="js/test.js"></script> 
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+<script src="/Resources/wxShare.js" type="text/javascript"></script>
+<script src="/Resources/JSCookie.js" type="text/javascript"></script>
+<script type="text/javascript">
+var shareTitleArr = [
+	'世界名画纷纷跑出画框？竟然是因为使用了全球首款全语音人工智能耳机！', 
+	'听说梵高用了全球首款全语音人工智能耳机，不画向日葵改用宣纸画牡丹了！', 
+	'听说阿尔分尼夫妇用了全球首款全语音人工智能耳机，竟然穿越至中国吃上了豆腐！', 
+	'听说蒙娜丽莎用了全球首款全语音人工智能耳机后，成功减肥50斤！',
+	'听说用了全球首款全语音人工智能耳机，呐喊的他再也不迷路了！',
+	'听说吹笛子的男孩和牧童来了场东西方音乐大battle！'
+];
+var randomKey = Math.floor(Math.random() * shareTitleArr.length);
+var shareTitle = shareTitleArr[randomKey];
+console.log(shareTitle);
+
+//微信分享
+var sharLink = window.location.href; 
+var shareInfo = {
+	title: '听说美术馆',     
+	desc:shareTitle,
+	imgUrl:'http://h5.hyh6.com/CompanyProject/artGallery/images/fenxiang.jpg', 
+}; 
+wxShare(sharLink,shareInfo);
+
+//百度统计
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5b0cf71f192cb25508340a5c87eaff37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

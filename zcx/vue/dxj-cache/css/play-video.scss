@@ -1,0 +1,69 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin:0 auto;
+	background-color: #000;
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+	padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+a.goBack{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 50px;
+	height: 40px;
+	@include bg2('back', 12px, 19px);
+	background-position: center;
+	/* background-color: rgba(0,0,0,.6);
+	border-radius: 12px; */
+	text-indent: -9rem;
+	z-index: 9999;
+}
+i{
+	display: block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 1.04rem;
+	height: 1.04rem;
+	transform: translate3d(-50%,-50%,0);
+	z-index: 10;
+	@include bg2('icon_play', 1.04rem, 1.04rem);
+	background-position: center;
+	&.active{
+		display: none;
+	}
+}
+video::-webkit-media-controls{background:rgba(0,0,0,0)}
+
+video::-webkit-media-controls-enclosure{ overflow: hidden; background:rgba(0,0,0,0)}
+video::-webkit-media-controls-panel{ margin-right: -10px; background:rgba(0,0,0,0)}
+
+
+#player{position: absolute;;
+    top: 0;
+	width: 100%;
+	height: 100%;
+	//transform: translate3d(0,-45%,0);
+	z-index: 9;
+}
+.video-header{    
+	width: 100%;
+	//display: flex;
+	height: 40px;
+	//padding: .2rem 0 .12rem;
+	background: #000;
+}
+.video-box{position: fixed;
+    top: 40px;
+	bottom: 0;
+	width: 100%;
+	z-index: 9;
+}

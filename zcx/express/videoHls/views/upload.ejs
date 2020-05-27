@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>上传</title>
+        <link rel="stylesheet" type="text/css" href="libs/webuploader/webuploader.css">
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <style>
+        #upload-file{display: none}
+        #upload-file .center-block{width: 960px}
+        #upload-file .close{position: static}
+        #upload-file [type=radio]{outline: 0}
+        #upload-file input[type=search]{padding-left: 10px}
+        #upload-file .ui-select-match-item{height: 30px;line-height: 30px}
+        #upload-file .upload-area{border: 1px solid #dcdfe5;border-radius: 4px;overflow-y: scroll;height: 440px}
+        #upload-file .upload-area .upload-progress{position: relative;height: 45px;border-top: 1px solid #dcdfe5;background-color: #f5f7fa}
+        #upload-file .upload-area .upload-progress:first-child{border-top: none}
+        #upload-file .upload-area .upload-progress .progress-bg{background-color: #e5f2ff;height: 100%;margin-bottom: 0}
+        #upload-file .upload-area .upload-progress .progress-bg.success{background-color: #e5ffef}
+        #upload-file .upload-area .upload-progress .progress-bg.exist,#upload-file .upload-area .upload-progress .progress-bg.in-queue,#upload-file .upload-area .upload-progress .progress-bg.max-size,#upload-file .upload-area .upload-progress .progress-bg.sensitive{background-color: #fff6e5}
+        #upload-file .upload-area .upload-progress .progress-bg.cancel{background-color: transparent}
+        #upload-file .upload-area .upload-progress .progress-bg.error{background-color: #ffe5ea}
+        #upload-file .upload-area .upload-progress .progress-info{position: absolute;top: 0;height: 100%;padding: 10.5px 16px;width: 100%;color: #666f80;line-height: 24px}
+        #upload-file .upload-area .upload-progress .progress-info .file-info{display: inline-block;width: 75%}
+        #upload-file .upload-area .upload-progress .progress-info .file-info .file-name{font-weight: 500;display: inline-block;width: 70%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap}
+        #upload-file .upload-area .upload-progress .progress-info .file-info .file-size{color: #8f9bb3;font-weight: 400;display: inline-block;vertical-align: top;max-width: 130px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap}
+        #upload-file .upload-area .upload-progress .progress-info .upload-status{width: 100px;display: inline-block;vertical-align: top}
+        #upload-file .upload-area .upload-progress .progress-info .cancel-upload,#upload-file .upload-area .upload-progress .progress-info .remove-upload,#upload-file .upload-area .upload-progress .progress-info .success-upload{float: right;width: 20px;text-align: center;font-size: 16px;line-height: 24px;color: #8f9bb3}
+        #upload-file .upload-area .upload-progress .progress-info .cancel-upload{font-size: 12px}
+        #upload-file .upload-area .upload-progress .progress-info .success-upload{color: #26ad58}
+        #upload-file .prefix-area .dropdown-menu{min-width: 300px}
+        #upload-file .prefix-area .trsnacode-select{margin-top: 18px}
+        #upload-file .prefix-area .clear{clear: both}
+        #upload-file .prefix-area .control-label{font-weight: 500;margin: 0}
+        #upload-file .prefix-area .ftype-select{margin: 18px 0}
+        #upload-file .prefix-area .prefix-desc{color: #666f80;margin: 18px 0;font-size: 14px;font-weight: 400;line-height: 24px}
+        #upload-file .prefix-area .prefix-desc .prfix-example{color: #fff;background-color: #8F9BB4}
+        #upload-file .policy-area{margin-top: 56px}
+        #upload-file .policy-area h6{font-size: 14px;margin: 0}
+        #upload-file .policy-area h6 .qi{margin-right: 10px}
+        #upload-file .policy-area p{color: #8f9bb3;font-size: 12px;line-height: 24px;margin: 18px 0}
+        #upload-file .upload-tip{color: #5e6166;padding-left: 0;line-height: 24px}
+        #upload-file .upload-tip li{list-style: none}
+        .ng-hide{display: none}
+
+    </style>
+    <body>
+        <h1>视频切片加密(HLS + NodeJS + FFmpeg) —— 上传视频</h1>
+        
+        <!-- <form method="post" enctype="multipart/form-data" action="/upload-video" onsubmit="return check()">
+            <input id="upload-file" type="file" name="file">
+            <input type="submit" class="button blue" value="上传视频">
+        </form> -->
+
+        <div id="uploader" class="wu-example">
+            <!--用来存放文件信息-->
+            <div id="thelist" class="uploader-list"></div>
+            <div class="btns">
+                <div id="picker">选择文件</div>
+                <button id="ctlBtn" class="btn btn-default">开始上传</button>
+            </div>
+        </div>
+        <p class="text"></p>
+        <div class="show"></div>
+
+        <div id="upload-file">
+            <div class="upload-area">
+                <div class="upload-progress ng-scope" >
+                    <div class="progress-info">
+                        <a href="" class="cancel-upload">
+                            <i class="qi qi-delete">取消</i>
+                        </a> 
+                        <span href="" class="success-upload ng-hide">
+                            <i class="qi qi-success">完成</i>
+                        </span> 
+                        <a href="" class="remove-upload ng-hide"><i class="qi qi-remove">删除</i></a> 
+                        <!-- ngIf: p.status == 'pending' || p.status == 'success' || p.status == 'cancel' -->
+
+                        <span class="file-info ng-scope">
+                            <span title="1080.mp4" class="file-name ng-binding">1080.mp4</span> 
+                            <span class="file-size ng-binding">90.03 MB</span>
+                        </span>
+                        <!-- end ngIf: p.status == 'pending' || p.status == 'success' || p.status == 'cancel' --> 
+                        <!-- ngIf: p.status == 'exist' --> 
+                        <!-- ngIf: p.status == 'sensitive' --> 
+                        <!-- ngIf: p.status == 'max-size' --> 
+                        <!-- ngIf: p.status == 'in-queue' --> 
+                        <!-- ngIf: p.status == 'error' --> 
+                        <span class="upload-status">
+                            <!-- ngIf: p.status == 'pending' -->
+                            <span class="ng-binding ng-scope">10.97%</span>
+                            <!-- <span ng-if="p.status == 'cancel'" class="ng-scope" style="">网络故障或取消</span> -->
+                            <!-- end ngIf: p.status == 'pending' --> 
+                            <!-- ngIf: p.status == 'success' --> 
+                            <!-- ngIf: p.status == 'cancel' -->
+                        </span>
+                        
+                    </div>
+                    <div class="progress-bg pending" style="width: 10.97%;"></div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/md5.min.js"></script>
+    <script src="libs/webuploader/webuploader.js"></script>
+    <!-- <script src="libs/webuploader/webuploader.html5only.js"></script> -->
+    <script src="javascripts/upload.js"></script>
+    <script>
+
+        
+
+        var uploader = WebUploader.create({
+            //auto: false,// [默认值：false] 设置为 true 后，不需要手动调用上传，有文件选择即开始上传。
+            // runtimeOrder: 'flash', // [默认值：html5,flash] 指定运行时启动顺序。默认会想尝试 html5 是否支持，如果支持则使用 html5, 否则则使用 flash.可以将此值设置成 flash，来强制使用 flash 运行时。
+            // prepareNextFile:false, // [默认值：false] 是否允许在文件传输时提前把下一个文件准备好。 对于一个文件的准备工作比较耗时，比如图片压缩，md5序列化。 如果能提前在当前文件传输期处理，可以节省总体耗时。 
+            //swf: 'libs/webuploader//Uploader.swf',// swf文件路径
+            server: '/upload_chunks',// 文件接收服务端。
+            // 选择文件的按钮。可选。
+            // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+            pick: {
+                id: '#picker',
+                label: '点击选择文件'
+            },
+            // pick:'#filePicker',//也可以用下面的方式详细配置  
+            // // {Selector, Object}  [默认值：undefined] 指定选择文件的按钮容器，不指定则不创建按钮。  
+            // pick: {  
+            //     id: '#filePicker',//Seletor|dom 指定选择文件的按钮容器，不指定则不创建按钮。注意 这里虽然写的是 id, 但是不是只支持 id, 还支持 class, 或者 dom 节点。  
+            //     label: '点击选择图片',//请采用 innerHTML 代替  
+            //     innerHTML: "点击选择图片",// 指定按钮文字。不指定时优先从指定的容器中看是否自带文字。  
+            //     multiple:true //是否开起同时选择多个文件能力。  
+            // },  
+            // 设置缩略图。  
+            // thumb: {  
+            //     width: 110,  
+            //     height: 110,  
+            //     // 图片质量，只有type为`image/jpeg`的时候才有效。  
+            //     quality: 70,  
+            //     // 是否允许放大，如果想要生成小图的时候不失真，此选项应该设置为false.  
+            //     allowMagnify: true,  
+            //     // 是否允许裁剪。是否采用裁剪模式。如果采用这样可以避免空白内容。  
+            //     crop: true,  
+            //     // 为空的话则保留原有图片格式。  
+            //     // 否则强制转换成指定的类型。  
+            //     type: 'image/jpeg'  
+            // },  
+            // fileNumLimit: 8, //限制上传个数
+            // fileSingleSizeLimit: 2048000, //限制单个上传图片的大小
+            // formData: {"data":"value","data":"value"}, // [默认值：{}] 文件上传请求的参数表，每次发送都会发送此对象中的参数。
+            // fileVal:"file", // [默认值：'file'] 设置文件上传域的name。  
+            // method :"POST", // [默认值：'POST'] 文件上传方式，POST或者GET。 
+            // sendAsBinary :false, // [默认值：false] 是否已二进制的流的方式发送文件，这样整个上传内容php://input都为文件内容， 其他参数在$_GET数组中。  
+            // fileNumLimit :10, // [默认值：undefined] 验证文件总数量, 超出则不允许加入队列。  
+            // fileSizeLimit : 200 * 1024 * 1024,    // 200 M  [默认值：undefined] 验证文件总大小是否超出限制, 超出则不允许加入队列。  
+            // fileSingleSizeLimit: 50 * 1024 * 1024,    // 50 M [默认值：undefined] 验证单个文件大小是否超出限制, 超出则不允许加入队列。  
+            // duplicate :true, // [默认值：undefined] 去重， 根据文件名字、文件大小和最后修改时间来生成hash Key.  
+            // disableWidgets: {String, Array}, // [默认值：undefined] 默认所有 Uploader.register 了的 widget 都会被加载，如果禁用某一部分，请通过此 option 指定黑名单。 
+            //headers: {'userName': 'emi', 'token': '123456'},
+            // 配置压缩的图片的选项。如果此选项为false, 则图片在上传前不进行压缩。  
+            // compress: {  
+            //     width: 1600,  
+            //     height: 1600,  
+            //     // 图片质量，只有type为`image/jpeg`的时候才有效。  
+            //     quality: 90,  
+            //     // 是否允许放大，如果想要生成小图的时候不失真，此选项应该设置为false.  
+            //     allowMagnify: false,  
+            //     // 是否允许裁剪。  
+            //     crop: false,  
+            //     // 是否保留头部meta信息。  
+            //     preserveHeaders: true,  
+            //     // 如果发现压缩后文件大小比原来还大，则使用原来图片  
+            //     // 此属性可能会影响图片自动纠正功能  
+            //     noCompressIfLarger: false,  
+            //     // 单位字节，如果图片大小小于此值，不会采用压缩。  
+            //     compressSize: 0  
+            // },   
+
+            // 拖拽配置
+            //dnd: '.dndArea',// [默认值：undefined] 指定Drag And Drop拖拽的容器，如果不指定，则不启动。  
+            //disableGlobalDnd: false,// [默认值：false] 是否禁掉整个页面的拖拽功能，如果不禁用，图片拖进来的时候会默认被浏览器打开 
+            
+            // 只允许选择图片文件。
+            // accept: {
+            //     title: 'Images',
+            //     extensions: 'gif,jpg,jpeg,bmp,png',// {String} 允许的文件后缀，不带点，多个用逗号分割。  
+            //     mimeTypes: 'image/*'  //'image/jpg,image/jpeg,image/png'   // 多个用逗号分割。 
+            // }
+
+            //paste: document.body, // [默认值：undefined] 指定监听paste事件的容器，如果不指定，不启用此功能。此功能为通过粘贴来添加截屏的图片。建议设置为document.body.  
+            // 分片上传配置
+            chunked: true,// [默认值：false] 是否要分片处理大文件上传。  
+            chunkSize: 1*1024*1024,// [默认值：5242880] 如果要分片，分多大一片？ 默认大小为5M.  
+            chunkRetry:2, // [默认值：2] 如果某个分片由于网络问题出错，允许自动重传多少次？  
+            threads: 1,//[默认值：3] 上传并发数。允许同时最大上传进程数。 
+            fileNumLimit: 1,//验证文件总数量，超出则不允许加入队列
+            // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+            resize: false
+        });
+
+
+        //加入上传队列之前   
+        uploader.on('beforeFileQueued', function(file) {
+            if(!file.size) {  
+                alert('文件大小为空');  
+                return false;
+            }    
+            
+        })
+
+        // 当有文件被添加进队列的时候
+        uploader.on( 'fileQueued', function( file ) {
+            var that = this;
+            var $list = $(".uploader-list");
+            console.log('fileQueued')
+            console.log(file)
+            var item = '<div id="' + file.id + '" class="item">' +
+                '<div class="file-info">' +
+                '<h4 class="info">' + file.name + '<span class="file-size">' + file.size.formatBytes() + '</span>' + '</h4>' +
+                '<span class="file-percentage">0%</span>'+
+                '<p class="state">等待上传...</p>' +
+                '</div>' +
+                '</div>';
+
+            $list.append(item);
+        });
+
+        // 某个文件开始上传前触发,一个文件只触发一次
+        uploader.on('uploadStart', function (file) {
+            console.log('uploadStart')
+            uploader.options.formData.guid = md5([file.id, file.name, file.size, file.type, file['__hash']].join(''));
+            console.log(uploader.options.formData.guid)
+        });
+
+        // 文件上传过程中创建进度条实时显示。
+        uploader.on( 'uploadProgress', function( file, percentage ) {
+            console.log('uploadProgress')
+            console.log(file,percentage)
+            
+            var $li = $( '#'+file.id ),
+                $percent = $li.find('.progress .progress-bar');
+                $filePercentage = $li.find('.file-percentage');
+            // 避免重复创建
+            if ( !$percent.length ) {
+                $percent = $('<div class="progress progress-striped active">' +
+                '<div class="progress-bar" role="progressbar" style="width: 0%">' +
+                '</div>' +
+                '</div>').appendTo( $li ).find('.progress-bar');
+            }
+            $li.find('p.state').text('上传中');
+            $percent.css( 'width', percentage * 100 + '%' );
+
+            $filePercentage.html(((percentage)* 100).toFixed(0) + '%' )
+            
+        });
+
+        // 不是分片上传时，uploadAccept相当于uploadSuccess
+        //获取服务端返回的数据(每个分片会触发一次)
+        uploader.on('uploadAccept', function(obj, ret) { 
+            console.log('uploadAccept')
+            console.log('data:'+ret._raw)
+            
+        })
+
+        
+        //文件上传成功回调(所有分片上传成功后触发，哪个分片最慢，它就会在这里触发)  
+        uploader.on( 'uploadSuccess', function( file,data ) {
+            console.log('uploadSuccess')
+            console.log(data)
+            
+            var that = this;
+            $( '#'+file.id ).find('p.state').text('已上传');
+            // uploader.reset();// 如果出现问题，一定要加上这一句    
+
+            // 如果是分片上传,文件上传成功后执行分片合并并返回Get文件的url
+            if (uploader.options.chunked) {
+                console.log(11)
+                $.post('/merge_chunks', {
+                    'hash': md5([file.id, file.name, file.size, file.type, file['__hash']].join('')),
+                    'name': file.name,
+                    'size': file.size
+                }, function (data) {
+                    console.log(222)
+                    if (data.status) {
+                        $('#' + file.id).find('p.state').text('已上传');
+                        $('#' + file.id).find('.progress-bar').css({
+                            'background-image': 'url(' + data.url + ')',
+                            'background-size': 'cover',
+                            'background-repeat': 'no-repeat'
+                        });
+                        console.log(data.data);
+                        setTimeout(function(){
+                            window.location.href = 'encrypt?type='+data.data.type+'&encryptPath='+data.data.encryptPath+'&fileName='+data.data.fileName+'&noencryptPath='+data.data.noencryptPath;
+                        },1000)
+                    } else {
+                        $('#' + file.id).find('p.state').text('上传错误!');
+                    }
+                }, 'json');
+            }
+        });
+        
+        //文件上传失败
+        uploader.on( 'uploadError', function( file ) {
+            console.log('uploadError')
+            $( '#'+file.id ).find('p.state').text('上传出错');
+        });
+        
+        //文件上传完成(不管成功或者失败，在文件上传完后都会触发)
+        uploader.on( 'uploadComplete', function( file ) {
+            console.log('uploadComplete')
+            $( '#'+file.id ).find('.progress').fadeOut();
+        });
+
+        //点击上传  
+        $('#ctlBtn').on('click', function (e) {
+            e.stopPropagation();
+            uploader.upload();
+        });
+         
+
+        //暂停上传    
+        $('.stop').on('click', function() {  
+            uploader.stop(true);    
+        })
+
+
+        /* var upload_file = document.getElementById('upload-file');
+        function check(){
+            if(upload_file.value.length>0){
+                return true;
+            }else{
+                alert('请选择上传文件！');
+                return false;
+            }
+        } */
+
+
+        //将字节格式转化为最合适单位(KB, MB, GB).
+        Number.prototype.formatBytes = function() {
+            var units = ['B', 'KB', 'MB', 'GB', 'TB'],
+                bytes = this,
+                i;
+        
+            for (i = 0; bytes >= 1024 && i < 4; i++) {
+                bytes /= 1024;
+            }
+        
+            return bytes.toFixed(2) + units[i];
+        }
+       
+    </script>
+</html>

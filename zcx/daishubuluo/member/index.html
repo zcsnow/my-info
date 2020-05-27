@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta content="telephone=no,email=no" name="format-detection">
+  <script src="../js/flexible.js"></script>
+  <title>袋鼠部落</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/public.css" />
+  <link rel="stylesheet" href="../css/page/member.css">
+</head>
+<body>
+    <div class="container"  id="container">
+        <header>
+          <span class="go-back"></span>
+          个人资料
+        </header>
+        <div class="main">
+          <div class="member-box">
+
+            <div class="member-menu">
+              <a href="javacript:;" class="clr">
+                <h3>头像</h3>
+                <span class="select-img"><img src="../images/user-picture@2x.png" class="user-icon"><i><img src="../images/right_icon.png"></i></span>
+              </a>
+              <a href="javacript:;" class="clr">
+                <h3>昵称</h3>
+                <span>love<i><img src="../images/right_icon.png"></i></span>
+              </a>
+              <a href="javacript:;" class="clr">
+                <h3>性别</h3>
+                <span>男<i><img src="../images/right_icon.png"></i></span>
+              </a>
+              <a href="javacript:;" class="clr">
+                <h3>生日</h3>
+                <span>2017-02-05<i><img src="../images/right_icon.png"></i></span>
+              </a>
+            </div>
+
+            <div class="member-menu">
+              <a href="javacript:;" class="clr">
+                <h3>邮箱</h3>
+                <span>934479901@qq.com<i><img src="../images/right_icon.png"></i></span>
+              </a>
+              <a href="javacript:;" class="clr">
+                <h3>收货地址</h3>
+                <span>&nbsp;<i><img src="../images/right_icon.png"></i></span>
+              </a>
+            </div>
+
+            <div class="member-menu">
+              <a href="javacript:;" class="clr">
+                <h3>公司</h3>
+                <span>广州袋鼠众筹网络科技有限公司<i><img src="../images/right_icon.png"></i></span>
+              </a>
+              <a href="javacript:;" class="clr">
+                <h3>职位</h3>
+                <span>产品<i><img src="../images/right_icon.png"></i></span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+    <!-- 弹出层 -->
+    <div id="select_layer">
+      <ul>
+        <li><a href="javacript:;">相册</a></li>
+        <li><a href="javacript:;">拍照</a></li>
+        <li class="cancel-btn"><a href="javacript:;">取  消</a></li>
+      </ul>
+    </div>
+
+    <script src="../js/jquery1.7.min.js"></script>
+    <script src="../js/plugin/fastclick.min.js"></script>
+
+    <script type="text/javascript">
+      //显示
+      $(".select-img").on('click',function(e){
+        $("#select_layer").show();
+      });
+      //隐藏
+      $("#select_layer .cancel-btn").on('click',function(e){
+        $("#select_layer").hide();
+      });
+    </script>
+    
+   
+</body>
+</html>

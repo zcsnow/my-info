@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>log-in</title>
+		<link rel="stylesheet" href="css/ie-layout.css" />
+		<style type="text/css">
+			html, body, ul {
+				margin: 0;
+				padding: 0;
+				font-family: "微软雅黑", "宋体", "arial, helvetica, sans-serif";
+			}
+			.login-bg {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				overflow: hidden;
+				background: url(img/login-bg.png) no-repeat scroll center center;
+				background-size: cover;
+			}
+			.login-wrap {
+				position: absolute;
+				width: 440px;
+				height: 476px;
+				top: 50%;
+				right: 50%;
+				bottom: 50%;
+				left: 50%;
+				margin-top: -238px;
+				margin-left: -220px;
+				background-color: rgba(4, 4, 4, .8);
+				background-color: #040404;
+				opacity: 0.8;
+	            /* older safari/Chrome browsers */  
+	            -webkit-opacity: 0.8;  
+	            /* Netscape and Older than Firefox 0.9 */  
+	            -moz-opacity: 0.8;  
+	            /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/  
+	            -khtml-opacity: 0.8;  
+	            /* IE9 + etc...modern browsers */  
+	            opacity: .8;  
+	            /* IE 4-9 */  
+	            filter:alpha(opacity=80);  
+	            /*This works in IE 8 & 9 too*/  
+	            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";  
+	            /*IE4-IE9*/  
+	            filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+				z-index: 1;
+			}
+			.login-inner {
+				width: 294px;
+				margin: 0 auto;
+				padding-top: 54px;
+			}
+			.login-logo, .user, .pass {
+				width: 100%;
+				position: relative;
+			}
+			.logo-img {
+				margin-left: -40px;
+				border: none;
+				/*height: 60px;*/
+			}
+			.login-logo-lang {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				height: 32px;
+				width: 70px;
+				color: #f7f7f7;
+				background-color: transparent;
+				outline: none;
+				border: none;
+				cursor: pointer;
+				border-top: 1px solid transparent;
+				border-right: 1px solid transparent;
+				border-left: 1px solid transparent;
+			}
+			.login-logo-lang.active {
+				background-color: rgba(30, 30, 36, .6);
+				background-color: #1e1e24;
+				opacity: 0.6;
+	            /* older safari/Chrome browsers */  
+	            -webkit-opacity: 0.6;  
+	            /* Netscape and Older than Firefox 0.9 */  
+	            -moz-opacity: 0.6;  
+	            /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/  
+	            -khtml-opacity: 0.6;  
+	            /* IE9 + etc...modern browsers */  
+	            opacity: .6;  
+	            /* IE 4-9 */  
+	            filter:alpha(opacity=60);  
+	            /*This works in IE 8 & 9 too*/  
+	            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";  
+	            /*IE4-IE9*/  
+	            filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+				border-top: 1px solid #2899da;
+				border-right: 1px solid #2899da;
+				border-left: 1px solid #2899da;
+			}
+			.logo-lang-content {
+				display: none;
+				height: 64px;
+				position: absolute;
+				right: 0;
+				top: 100%;
+				z-index: 1;
+				border-bottom-left-radius: 4px;
+				border-bottom-right-radius: 4px;
+				border-right: 1px solid #2899da;
+				border-bottom: 1px solid #2899da;
+				border-left: 1px solid #2899da;
+			}
+			.logo-lang-content a {
+				display: block;
+				height: 32px;
+				line-height: 32px;
+				width: 68px;
+				color: #fff;
+				font-size: 14px;
+				text-align: center;
+				text-decoration: none;
+				background-color: rgba(30, 30, 36, .6);
+				background-color: #1e1e24;
+				opacity: 0.6;
+	            /* older safari/Chrome browsers */  
+	            -webkit-opacity: 0.6;  
+	            /* Netscape and Older than Firefox 0.9 */  
+	            -moz-opacity: 0.6;  
+	            /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/  
+	            -khtml-opacity: 0.6;  
+	            /* IE9 + etc...modern browsers */  
+	            opacity: .6;  
+	            /* IE 4-9 */  
+	            filter:alpha(opacity=60);  
+	            /*This works in IE 8 & 9 too*/  
+	            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";  
+	            /*IE4-IE9*/  
+	            filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+			}
+			.button-caret {
+				display: inline-table;
+				vertical-align: baseline;
+				width: 10px;
+				height: 6px;
+				background: url(img/login-caret.png) no-repeat scroll top left;
+			}
+			.user {
+				margin-top: 48px;
+			}
+			.pass {
+				margin-top: 22px;
+			}
+			.user-ipt, .pass-ipt {
+				width: 256px;
+				padding: 12px 0 12px 38px;
+				height: 16px;
+				background-color: #2f2f33;
+				color: #fff;
+				border: none;
+			}
+			.user-span, .pass-span {
+				width: 38px;
+				height: 40px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: url(img/user-img.png) no-repeat scroll center center;
+			}
+			.pass-span {
+				background: url(img/pass-img.png) no-repeat scroll center center;
+			}
+			.prompt {
+				width: 294px;
+				position: relative;
+				height: 20px;
+				font-size: 12px;
+				line-height: 20px;
+				margin-top: 10px;
+				color: #fff;
+			}
+			/*checkbox自定义框*/
+			/*为了兼容ie,暂时放弃*/
+			/*.prompt-checkbox {
+				display: none;
+			}
+			.prompt-checkbox + label {
+				background-color: transparent;
+				border: 1px solid #fff;
+				width: 12px;
+				height: 12px;
+				border-radius: 2px;
+				display: inline-block;
+				position: relative;
+				top: 2px;
+			}
+			.prompt-checkbox:checked + label {
+				background-color: transparent;
+				border: 1px solid #fff;
+			}
+			.prompt-checkbox:checked + label:after {
+				content: '\2714';
+				position: absolute;
+				top: -5px;
+				left: 0px;
+				color: #fff;
+				width: 100%;
+				text-align: center;
+				padding-top: 1px;
+				vertical-align: text-top;
+			}*/
+			/*checkbox自定义框*/
+			/*阉割版输入框样式*/
+			.prompt-checkbox {
+				margin-top: -2px \9;
+				vertical-align: middle;
+			}
+			.prompt-forget {
+				position: absolute;
+				right: 0;
+				text-decoration: none;
+				color: #0070b0;
+			}
+			.login-submit {
+				display: block;
+				margin-top: 20px;
+				width: 100%;
+				height: 36px;
+				font-size: 18px;
+				color: #fff;
+				border: none;
+				border-radius: 4px;
+				background-color: #2899da;
+				cursor: pointer;
+			}
+			.login-sign {
+				display: block;
+				margin-top: 16px;
+				width: 292px;
+				height: 34px;
+				line-height: 34px;
+				font-size: 16px;
+				color: #fff;
+				text-align: center;
+				text-decoration: none;
+				border: 1px solid #2899da;
+				border-radius: 4px;
+				background-color: transparent;
+			}
+			.popup {
+				color: #fff;
+				list-style: none;
+				position: absolute;
+				right: -270px;
+				/*left: 100%;*/
+				top: 20px;
+			}
+			.popup-inner {
+				position: relative;
+				right: 0;
+				font-size: 18px;
+				font-weight: 700;
+				width: 260px;
+				height: 50px;
+				line-height: 50px;
+				padding-left: 30px;
+				box-shadow: 0 0 5px #000;
+				background-color: rgba(0, 0, 0, .5);
+				background-color: #000;
+				opacity: 0.5;
+	            /* older safari/Chrome browsers */  
+	            -webkit-opacity: 0.5;  
+	            /* Netscape and Older than Firefox 0.9 */  
+	            -moz-opacity: 0.5;  
+	            /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/  
+	            -khtml-opacity: 0.5;  
+	            /* IE9 + etc...modern browsers */  
+	            opacity: .5;  
+	            /* IE 4-9 */  
+	            filter:alpha(opacity=50);  
+	            /*This works in IE 8 & 9 too*/  
+	            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";  
+	            /*IE4-IE9*/  
+	            filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+				border: 1px solid transparent;
+				cursor: pointer;
+				margin-bottom: 20px;
+				z-index: 2;
+			}
+			.popup-inner:hover {
+				border: 1px solid #fff;
+			}
+			@media screen and (max-width: 750px) {
+				.login-wrap {
+					position: absolute;
+					top: 50%;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					margin-top: -238px;
+					margin-left: 0;
+					width: 100%;
+					height: auto;
+					transform: translate(0, 0);
+					background-color: rgba(4, 4, 4, .8);
+					background-color: #040404;
+					opacity: 0.8;
+		            /* older safari/Chrome browsers */  
+		            -webkit-opacity: 0.8;  
+		            /* Netscape and Older than Firefox 0.9 */  
+		            -moz-opacity: 0.8;  
+		            /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/  
+		            -khtml-opacity: 0.8;  
+		            /* IE9 + etc...modern browsers */  
+		            opacity: .6;  
+		            /* IE 4-9 */  
+		            filter:alpha(opacity=80);  
+		            /*This works in IE 8 & 9 too*/  
+		            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";  
+		            /*IE4-IE9*/  
+		            filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+					z-index: 1;
+				}
+				.login-inner {
+					margin: 0 auto;
+					padding-top: 54px;
+				}
+				.logo-img {
+				    margin-left: -6px;
+				    border: none;
+				    /*height: 60px;*/
+				}
+				.login-submit {
+					display: block;
+					margin-top: 20px;
+					width: 292px;
+					height: 36px;
+					font-size: 18px;
+					color: #fff;
+					border: none;
+					border-radius: 4px;
+					background-color: #2899da;
+					cursor: pointer;
+				}
+				.login-logo-lang {
+					position: absolute;
+					right: 0;
+					bottom: 0;
+					color: #f7f7f7;
+					background-color: transparent;
+					outline: none;
+					border: none;
+					cursor: pointer;
+				}
+				.logo-lang-content {
+					display: none;
+					position: absolute;
+					right: 0;
+					top: 100%;
+				}
+				.msg-hidden {
+					display: none;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="login-bg">
+			<ul class="popup">
+				<!--<li class="popup-inner">请输入账户信息1</li>
+				<li class="popup-inner">请输入账户信息</li>
+				<li class="popup-inner">请输入账户信息</li>
+				<li class="popup-inner">请输入账户信息</li>
+				<li class="popup-inner">请输入账户信息</li>
+				<li class="popup-inner">请输入账户信息</li>
+				<li class="popup-inner">请输入账户信息</li>
+				<li class="popup-inner">请输入账户信息</li>
+				<li class="popup-inner">请输入账户信息</li>
+				<li class="popup-inner">请输入账户信息</li>
+				<li class="popup-inner">请输入账户信息</li>-->
+			</ul>
+		</div>
+		<div class="login-wrap">
+			<form action="#" method="post" class="login-inner">
+				<div class="login-logo">
+					<a href="#">
+						<img class="logo-img" src="img/logo.png" alt="" />
+						<!--LOGO-->
+					</a>
+					<button class="login-logo-lang" type="button">
+						中文
+						<span class="button-caret"></span>
+					</button>
+					<div class="logo-lang-content">
+						<a href="#">English</a>
+						<a href="#">中文</a>
+					</div>
+				</div>
+				<div class="user">
+					<input class="user-ipt placeholder" type="text" placeholder="账号/手机号" />
+					<input class="placeholder-hidden" type="text" value="账号/手机号" tabindex="-1" />
+					<span class="user-span"></span>
+				</div>
+				<div class="pass">
+					<input class="pass-ipt placeholder" type="password" placeholder="密码" />
+					<input class="placeholder-hidden" type="text" value="密码" tabindex="-1" />
+					<span class="pass-span"></span>
+				</div>
+				<!--为了兼容ie取消输入框特殊样式-->
+				<!--<div class="prompt">
+					<input id="prompt-checkbox" class="prompt-checkbox" type="checkbox" />
+					<label for="prompt-checkbox"></label>
+					<label for="prompt-checkbox">记住我</label>
+					<a class="prompt-forget" href="#">忘记密码？</a>
+				</div>-->
+				<!--阉割版输入框-->
+				<div class="prompt">
+					<!--<input id="prompt-checkbox" class="prompt-checkbox" type="checkbox" />
+					<label for="prompt-checkbox">记住我</label>-->
+					<a class="prompt-forget" href="#">忘记密码？</a>
+				</div>
+				<input class="login-submit" type="submit" value="登录" />
+				<a class="login-sign" href="">免费注册</a>
+			</form>
+		</div>
+		<div class="msg-hidden">账号错误。。。</div>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/ie-log-in.js"></script>
+		<!--<script src="js/placeholder.js"></script>-->
+		<script>
+			$(function () {
+				//判断是否为IE浏览器
+				if (!(!!window.ActiveXObject || "ActiveXObject" in window)) {
+					$('.login-logo-lang').click (function () {
+						$('.logo-lang-content').toggle();
+						$('.login-logo-lang').toggleClass('active');
+					});
+					//阻止默认事件
+					function stopDefault(event) {
+						var ev = event || window.event;
+					    // 阻止默认浏览器动作(W3C)
+					    if (ev && ev.preventDefault) {
+					        ev.preventDefault();
+					    } else {
+					        // IE中阻止函数器默认动作的方式
+					        window.event.returnValue = false;
+					    }
+					    return false;
+					}
+					function intervalHide () {
+						clearTimeout(timer1);
+						clearTimeout(timer2);
+						var timer1 = setTimeout(function () {
+							$('.popup-inner').eq(0).slideUp(500);
+						}, 500);
+						var timer2 = setTimeout(function () {
+							$('.popup').find('.popup-inner').first().remove();
+						}, 1000);
+					}
+					var msg = $('.msg-hidden').text();
+					$('.login-submit').click(function (event) {
+						if ($('.user-ipt').val() == '') {
+							clearInterval();
+							var li = document.createElement('li');
+							li.setAttribute('class', 'popup-inner');
+							li.innerHTML = '请输入账号';
+							$('.popup').append(li);
+							$(".popup-inner").animate({right: 300}, "500", 'swing');
+							$(".popup-inner").animate({opacity: 1}, "500", 'swing');
+							setTimeout(function () {
+								intervalHide();
+							}, 2000);
+							stopDefault();
+						} else if ($('.pass-ipt').val() == '') {
+							clearInterval();
+							var li = document.createElement('li');
+							li.setAttribute('class', 'popup-inner');
+							li.innerHTML = '请输入密码';
+							$('.popup').append(li);
+							$(".popup-inner").animate({right: 300}, "500", 'swing');
+							$(".popup-inner").animate({opacity: 1}, "500", 'swing');
+							setTimeout(function () {
+								intervalHide();
+							}, 2000);
+							return false;
+						} else if ($('.msg-hidden').text() != '') {
+							clearInterval();
+							var li = document.createElement('li');
+							li.setAttribute('class', 'popup-inner');
+							li.innerHTML = msg;
+							$('.popup').append(li);
+							$(".popup-inner").animate({right: 300}, "500", 'swing');
+							$(".popup-inner").animate({opacity: 1}, "500", 'swing');
+							setTimeout(function () {
+								intervalHide();
+							}, 2000);
+							return false;
+						}
+					});
+				}
+			});
+		</script>
+	</body>
+</html>

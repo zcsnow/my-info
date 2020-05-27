@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<title>添加地址</title>
+<meta content-type="text/html" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link href="css/base.css?0" rel="stylesheet" />
+<link href="font_css/font-awesome.min.css" rel="stylesheet" />
+<link href="css/page/order.css?0" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+
+      <div class="add-address-box">
+          
+          <p>
+              <label for="userName">姓名：</label>
+              <input type="text" id="J_userName" name="userName" placeholder="请填写姓名" required />
+          </p>
+          <p class="select-sex">
+              <em>性别</em>
+              <span class="cur">男</span>
+              <span>女</span>
+          </p>
+          <p>
+              <label for="mobileNum">联系电话：</label>
+              <input type="tel" id="J_mobileNum" name="mobileNum" placeholder="请输入11位手机号码" required maxlength="11" />
+          </p>
+          <p class="p-arrow"><a href="#" id="select_area">省份 / 市 / 区县 / 乡镇街道</a></p>
+          <p>
+              <label for="addr">详细地址：</label>
+              <input type="text" id="J_addr" name="addr" placeholder="请输入详细街道地址" required />
+          </p>
+          
+          <p class="agreement"><em class="cur"></em><span>设置默认地址</span></p>
+
+          <a href="javascript:;" class="address-submit-btn">确认</a>
+              
+      </div>
+  
+      <div id="area_overlay"></div>
+      <div id="area_layer">
+          <a href="javascript:;" class="prev_btn">返回</a>
+          <a href="javascript:;" class="close_btn">关闭</a>
+          <h3>省份</h3>
+          <dl id="area_province" title="省份">
+              <dd><a href="#">北京</a></dd>
+              <dd><a href="#">上海</a></dd>
+              <dd><a href="#">广东</a></dd>
+              <dd><a href="#">天津</a></dd>
+              <dd><a href="#">河北</a></dd>
+              <dd><a href="#">安徽</a></dd>
+          </dl>
+          <dl id="area_city" title="城市">
+              <dd><a href="#">北京</a></dd>
+              <dd><a href="#">上海</a></dd>
+              <dd><a href="#">深圳</a></dd>
+              <dd><a href="#">广州</a></dd>
+              <dd><a href="#">天津</a></dd>
+              <dd><a href="#">重庆</a></dd>
+          </dl>
+          <dl id="area_county" title="地区">
+              <dd><a href="#">朝阳区</a></dd>
+              <dd><a href="#">海淀区</a></dd>
+              <dd><a href="#">东城区</a></dd>
+              <dd><a href="#">西城区</a></dd>
+              <dd><a href="#">昌平区</a></dd>
+              <dd><a href="#">房山区</a></dd>
+          </dl>
+          <dl id="area_street" title="街道">
+              <dd><a href="#">中关村</a></dd>
+              <dd><a href="#">常营乡</a></dd>
+              <dd><a href="#">管庄</a></dd>
+              <dd><a href="#">双桥</a></dd>
+              <dd><a href="#">十里堡</a></dd>
+              <dd><a href="#">劲松</a></dd>
+          </dl>
+      </div>
+
+  
+</div>
+<script src="js/jquery1.7.min.js"></script>
+<script src="js/plugin/j.dialogs.js"></script>
+<script src="js/page/address.js"></script>
+</body>
+</html>

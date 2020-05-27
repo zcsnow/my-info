@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title></title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+    <div id="main" v-cloak >
+        <div class="nav" v-if="showNav"><a class="goBack"  @click="goBack()">返回</a> <span>{{movieName}}</span></div>
+        
+        <section class="m-video-player">
+            <!-- 片头广告Ui -->
+            <div v-if="adStartUiShow" class="ad-start">
+                <!-- 广告倒计时按钮 -->
+                <div class="ad-theme public-time" >
+                    <span class="cd-time">{{adCurrTime}}</span>秒
+                </div>
+                <div class="ad-theme public-skip" @click="adSkip()">点击跳过</div>
+                <!-- 广告了解详情按钮 -->
+                <div class="ad-theme ad-learn-more" @click="adDetail(adStartDetailUrl)">了解详情</div>
+                <!-- 广告提示-->
+                <div class="ad-theme ad-text">广告</div>
+                <!-- 声音控制-->
+                <div class="ad-theme ad-voice" :class="adVoiceClose?'close':''" @click="adVoice()"></div>
+            </div>
+            <!-- 默认图片 -->
+            <div v-if="moviePosterShow" class="m-video-poster">
+                <img :src="moviePoster">
+            </div>
+            <!-- 播放按钮 -->
+            <div v-if="isPlayBtnShow" class="c-video-play-button"  id="playBtn" @click="playStart()"></div>
+
+            <!-- 播放器 -->
+            <!-- x5-video-player-fullscreen="true" x5-video-orientation="landscape" portraint  x5-playsinline webkit-playsinline playsinline  -->
+            <video  id="movie" ref="player" class="m-player video-js vjs-default-skin vjs-big-play-centered videoCentered" autobuffer  controlsList="nodownload" preload="metadata" webkit-playsinline playsinline   x-webkit-airplay="allow" >    
+                 <source id="source" src=""  type="application/x-mpegURL" controlslist="nodownload"></source>
+                <!--<source id="source" src="../images/tmp/ad/ad1.mp4" ></source> -->
+            </video>
+
+        </section>
+
+        <!-- 暂停广告Ui -->
+        <div v-if="adStopUiShow" class="ad-stop">
+            <div class="swiper-container" id="adStopSwiper">
+                <div class="swiper-wrapper" v-if="adStopList.length>1">
+                    <div class="swiper-slide" v-for="(item,index) in adStopList" @click="adDetail(item.url)">
+                        <img :src="apiHost+dxjAdDir+item.adurl" />
+                    </div>
+                </div>
+                <div class="swiper-wrapper" v-else>
+                    <div class="swiper-slide" v-for="(item,index) in adStopList"  @click="adDetail(item.url)">
+                        <img :src="apiHost+dxjAdDir+item.adurl" />
+                    </div>
+                </div>
+                <div class="swiper-pagination" ></div>
+            </div>
+            <!-- 广告提示-->
+            <div class="ad-swiper-text">广告</div>
+            <span class="ad-swiper-close" @click="adSwiperClose()"></span>
+        </div>
+
+        <!-- 广告专题弹层 -->
+        <div class="ad-pop-box">
+            <div class="pop-header">
+                <h3>{{adTitle}}</h3>
+                <span class="close-btn" @click="closeAdPage()">返回</span>
+            </div>
+            <article class="ad-detail" v-html="adDetails"></article>
+            <!-- <iframe :src="adIframeUrl"></iframe> -->
+        </div>
+
+        <!--加载中-->
+        <loading v-if="isWaiting" :status="2" :type="1"></loading>
+        <!--执行toast弹出层-->
+        <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+    </div>
+</body>
+</html>

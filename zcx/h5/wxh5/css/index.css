@@ -1,0 +1,248 @@
+#index, #content, #page1, #page2, #page4 { position: absolute; width: 100%; height: 100%; top: 0; left: 0; -webkit-animation: shows .4s linear 0s 1; }
+@-webkit-keyframes shows {  
+from {opacity: 0;}
+to { opacity: 1; }
+}
+/*#f-page {display: none;}*/
+.global_button { display: none; }
+#index { display: none; }
+#page1 { position: absolute; width: 100%; height: 100%; left: 0; }
+#wxMsg{ display:none;}
+#page2 { display: none;background:#efeff4; }
+#page3 { display: none; background:#ebebeb; padding-bottom:50px;}
+#page4 { display: none; }
+#page5 { display: none; }
+#content { display: none; }
+#content { background: url("./../img/banner-b2g.jpg") no-repeat; background-size: cover; }
+.global_button { position: absolute; z-index: 5; height: 12%; width: 100%; top: 0; left: 0; }
+
+#loading, #video { position: absolute; top: 0; width:100%; height: 100%; z-index: 0; }
+#loading { left: 0; }
+#video { left: 0;}
+#myVideo { display:none; position: absolute; top: 0; width:100%; height: 100%; z-index: 99; }
+#video img, #video video { position: absolute; top: 0; left: 0; }
+#video img { z-index: 2; }
+/*#loading img {display: block}*/
+.load-top{position: absolute; width:100%; top:0;z-index: 4;}
+.load-bottom{position: absolute; width:100%; bottom:0;z-index: 4;}
+.time { position: absolute; width: 50%; top: 8%; left:50%; text-align: center;-webkit-transform: translateX(-50%); transform: translateX(-50%); }
+.msg{ position: absolute; width: 100%; top: 30%; text-align: center; visibility:hidden;}
+#hours { font-size: 80px; color: #ffffff; margin: 0; height: 100px; overflow: hidden; }
+#month { font-size: 16px; color: #ffffff; margin: 0; }
+.open { font-size: 24px; color: #ffffff; margin: 0; position: absolute; bottom: 8%; width: 80%; height: 50px; text-align: center; left: 10%; background: url("./../img/jiesuos1.png") no-repeat center; background-size: 40%; }
+.unlock-mask{width: 200%; display:block;position: absolute; bottom: 0%;}
+.leftright{-webkit-animation: leftRight 3s linear infinite both;animation: leftRight 3s linear infinite both;}
+.open span { display: inline-block; width: 24px; height: 42px; background: url("./../img/jiesuo.png") no-repeat left center; background-size: 58%; }
+.open .img { }
+ @-webkit-keyframes banner_img {  
+ 0% {-webkit-transform: scale(1);}
+ 40% {-webkit-transform: scale(1.1);}
+ 45% {-webkit-transform: scale(1.1);}
+ 95% {-webkit-transform: scale(1);}
+ 100% {-webkit-transform: scale(1);}
+}
+
+.slideInDown {-webkit-animation: slideInDown .3s ease-in-out forwards;}
+@-webkit-keyframes slideInDown { 
+0% {-webkit-transform:translateY(-50%);transform:translateY(-50%);}
+100% {-webkit-transform:translateY(0);transform:translateY(0);visibility:visible}
+}
+
+@-webkit-keyframes sizeChange{
+0% {opacity:0;-webkit-transform: scale(0.8,0.8)}
+50% {opacity:1;-webkit-transform: scale(1.1,1.1)}
+100% {opacity:1;-webkit-transform: scale(1,1)}
+}
+.sizeChange {-webkit-animation: sizeChange 1s linear forwards infinite; opacity:1 }
+.hand-btn{position:absolute; width:25px; top:5%; left:40%;z-index:10; opacity:0;}
+.hand-btn1{position:absolute; width:25px; padding:50px; top:40%; left:40%;z-index:10;opacity:0;}
+.hand-btn2{position:absolute; width:25px; top:50%; left:70%;z-index:10;opacity:0;}
+.dialogue-box{ }
+.dialogue{display:none;position:relative;}
+.bottom-icon{ position:fixed; bottom:0; z-index:999}
+/*@-webkit-keyframes leftRight {
+   0% {-webkit-transform:translateX(-40%);transform:translateX(-40%);}
+   100% {-webkit-transform:translateX(0);transform:translateX(0);}
+}*/
+
+
+.frame{ width:100%; height:100%; position:absolute; top:0; background-image:url(../img/frame/30001.png); background-position:0 0; background-repeat:no-repeat; background-size:contain;z-index:4 }
+.frameAnimate{-webkit-animation: frameAnimate 4s linear forwards;animation: frameAnimate 4s linear forwards;}
+.frameAnimate1{-webkit-animation: frameAnimate1 2s linear forwards;animation: frameAnimate 2s linear forwards;}
+
+.frame1{ width:100%; height:100%; position:absolute; top:0; background-image:url(../img/frame/30026.png); background-position:0 0; background-repeat:no-repeat; background-size:contain; z-index:5 }
+/*@-webkit-keyframes frameAnimate{
+0% { background-image:url(../img/frame/30001.png);}
+4% { background-image:url(../img/frame/30003.png);}
+
+8% { background-image:url(../img/frame/30005.png);}
+
+12% { background-image:url(../img/frame/30007.png);}
+
+16% { background-image:url(../img/frame/30009.png);}
+
+20% { background-image:url(../img/frame/30011.png);}
+
+24% { background-image:url(../img/frame/30013.png);}
+
+28% { background-image:url(../img/frame/30015.png);}
+
+32% { background-image:url(../img/frame/30017.png);}
+
+36% { background-image:url(../img/frame/30019.png);}
+
+40% { background-image:url(../img/frame/30021.png);}
+
+44% { background-image:url(../img/frame/30023.png);}
+
+48% { background-image:url(../img/frame/30025.png);}
+
+52% { background-image:url(../img/frame/30027.png);}
+
+56% { background-image:url(../img/frame/30029.png);}
+
+60% { background-image:url(../img/frame/30031.png);}
+
+64% { background-image:url(../img/frame/30033.png);}
+
+68% { background-image:url(../img/frame/30035.png);}
+
+72% { background-image:url(../img/frame/30037.png);}
+
+76% { background-image:url(../img/frame/30039.png);}
+
+80% { background-image:url(../img/frame/30041.png);}
+
+84% { background-image:url(../img/frame/30043.png);}
+
+88% { background-image:url(../img/frame/30045.png);}
+
+92% { background-image:url(../img/frame/30047.png);}
+
+96% { background-image:url(../img/frame/30049.png);}
+
+100% { background-image:url(../img/frame/30050.png);}
+}*/
+
+/*@-webkit-keyframes frameAnimate{
+0% { background-image:url(../img/frame/30001.png);}
+4% { background-image:url(../img/frame/30002.png);}
+8% { background-image:url(../img/frame/30003.png);}
+12% { background-image:url(../img/frame/30004.png);}
+16% { background-image:url(../img/frame/30005.png);}
+20% { background-image:url(../img/frame/30006.png);}
+24% { background-image:url(../img/frame/30007.png);}
+28% { background-image:url(../img/frame/30008.png);}
+32% { background-image:url(../img/frame/30009.png);}
+36% { background-image:url(../img/frame/30010.png);}
+40% { background-image:url(../img/frame/30011.png);}
+44% { background-image:url(../img/frame/30012.png);}
+48% { background-image:url(../img/frame/30013.png);}
+52% { background-image:url(../img/frame/30014.png);}
+56% { background-image:url(../img/frame/30015.png);}
+60% { background-image:url(../img/frame/30016.png);}
+64% { background-image:url(../img/frame/30017.png);}
+68% { background-image:url(../img/frame/30018.png);}
+72% { background-image:url(../img/frame/30019.png);}
+76% { background-image:url(../img/frame/30020.png);}
+80% { background-image:url(../img/frame/30021.png);}
+84% { background-image:url(../img/frame/30022.png);}
+88% { background-image:url(../img/frame/30023.png);}
+92% { background-image:url(../img/frame/30024.png);}
+96% { background-image:url(../img/frame/30025.png);}
+100% { background-image:url(../img/frame/30025.png);}
+}
+
+@-webkit-keyframes frameAnimate1{
+0% { background-image:url(../img/frame/30026.png);}
+4% { background-image:url(../img/frame/30027.png);}
+8% { background-image:url(../img/frame/30028.png);}
+12% { background-image:url(../img/frame/30029.png);}
+16% { background-image:url(../img/frame/30030.png);}
+20% { background-image:url(../img/frame/30031.png);}
+24% { background-image:url(../img/frame/30032.png);}
+28% { background-image:url(../img/frame/30033.png);}
+32% { background-image:url(../img/frame/30034.png);}
+36% { background-image:url(../img/frame/30035.png);}
+40% { background-image:url(../img/frame/30036.png);}
+44% { background-image:url(../img/frame/30037.png);}
+48% { background-image:url(../img/frame/30038.png);}
+52% { background-image:url(../img/frame/30039.png);}
+56% { background-image:url(../img/frame/30040.png);}
+60% { background-image:url(../img/frame/30041.png);}
+64% { background-image:url(../img/frame/30042.png);}
+68% { background-image:url(../img/frame/30043.png);}
+72% { background-image:url(../img/frame/30044.png);}
+76% { background-image:url(../img/frame/30045.png);}
+80% { background-image:url(../img/frame/30046.png);}
+84% { background-image:url(../img/frame/30047.png);}
+88% { background-image:url(../img/frame/30048.png);}
+92% { background-image:url(../img/frame/30049.png);}
+96% { background-image:url(../img/frame/30050.png);}
+100% { background-image:url(../img/frame/30050.png);}
+}*/
+
+@-webkit-keyframes frameAnimate{
+0% { background-image:url(../img/frame/30001.png);}
+2% { background-image:url(../img/frame/30002.png);}
+4% { background-image:url(../img/frame/30003.png);}
+6% { background-image:url(../img/frame/30004.png);}
+8% { background-image:url(../img/frame/30005.png);}
+10% { background-image:url(../img/frame/30006.png);}
+12% { background-image:url(../img/frame/30007.png);}
+14% { background-image:url(../img/frame/30008.png);}
+16% { background-image:url(../img/frame/30009.png);}
+18% { background-image:url(../img/frame/30010.png);}
+20% { background-image:url(../img/frame/30011.png);}
+22% { background-image:url(../img/frame/30012.png);}
+24% { background-image:url(../img/frame/30013.png);}
+26% { background-image:url(../img/frame/30014.png);}
+28% { background-image:url(../img/frame/30015.png);}
+30% { background-image:url(../img/frame/30016.png);}
+32% { background-image:url(../img/frame/30017.png);}
+34% { background-image:url(../img/frame/30018.png);}
+36% { background-image:url(../img/frame/30019.png);}
+38% { background-image:url(../img/frame/30020.png);}
+40% { background-image:url(../img/frame/30021.png);}
+42% { background-image:url(../img/frame/30022.png);}
+44% { background-image:url(../img/frame/30023.png);}
+46% { background-image:url(../img/frame/30024.png);}
+48% { background-image:url(../img/frame/30025.png);}
+50% { background-image:url(../img/frame/30026.png);}
+52% { background-image:url(../img/frame/30027.png);}
+54% { background-image:url(../img/frame/30028.png);}
+56% { background-image:url(../img/frame/30029.png);}
+58% { background-image:url(../img/frame/30030.png);}
+60% { background-image:url(../img/frame/30031.png);}
+62% { background-image:url(../img/frame/30032.png);}
+64% { background-image:url(../img/frame/30033.png);}
+66% { background-image:url(../img/frame/30034.png);}
+68% { background-image:url(../img/frame/30035.png);}
+70% { background-image:url(../img/frame/30036.png);}
+72% { background-image:url(../img/frame/30037.png);}
+74% { background-image:url(../img/frame/30038.png);}
+76% { background-image:url(../img/frame/30039.png);}
+78% { background-image:url(../img/frame/30040.png);}
+80% { background-image:url(../img/frame/30041.png);}
+82% { background-image:url(../img/frame/30042.png);}
+84% { background-image:url(../img/frame/30043.png);}
+86% { background-image:url(../img/frame/30044.png);}
+88% { background-image:url(../img/frame/30045.png);}
+90% { background-image:url(../img/frame/30046.png);}
+92% { background-image:url(../img/frame/30047.png);}
+94% { background-image:url(../img/frame/30048.png);}
+96% { background-image:url(../img/frame/30049.png);}
+98% { background-image:url(../img/frame/30050.png);}
+100% { background-image:url(../img/frame/30050.png);}
+}
+
+
+
+.flash{ position: absolute; top: 0; width:100%; height: 100%; z-index:1000; opacity:0 }
+.note{ position: absolute; top: 0; width:100%; height: 100%; z-index:300; display:none; background:#000; }
+.note img{ width:60%; margin:60% auto 0; display:none}
+@-webkit-keyframes flash{
+0%{ opacity: 0; } 
+100%{ opacity: 1; } 
+}
+.flashAnimate {-webkit-animation: flash .6s 2 linear; }

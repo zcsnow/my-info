@@ -1,0 +1,183 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+html,body{overflow-x: hidden;}
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin:0 auto;
+	background-color: #fff;
+}
+
+.list-box {
+    display:flex;/*设为伸缩容器*/  
+    flex-flow:row;/*伸缩项目单行排列*/
+    .border-bottom{
+        border-bottom: 1px solid #ECECEC;
+    }
+    .brand{
+        padding-top: .48rem;
+        padding-left: .52rem;
+        padding-bottom: .24rem;
+        .brand-list {
+            margin-top: .34rem;
+            >div {
+                display: inline;
+            }
+            a {
+                display: inline-block;
+                width: 1.28rem;
+                margin-right: .32rem;
+                overflow: hidden;
+                img {
+                    width: 1.28rem;
+                    height: 1.28rem;
+                    @include bg2('Bitmap', 1.1rem, 1.1rem);
+                    background-position: center;
+                    background-color: #F5F5F5;
+                }
+                span {
+                    display: block;
+                    color: #666666;
+                    font-size: .24rem;
+                    width: 1.28rem;
+                    height: .28rem;
+                    margin-top: .13rem;
+                    line-height: .28rem;
+                    text-align: center;
+                    overflow: hidden;
+                }
+            }
+            .line{
+                width: 100%;
+                display: block;
+                height: .48rem;
+                text-align: right;
+                span{
+                    display: inline-block;
+                    width: 4.9rem;
+                    height: .24rem;
+                    border-bottom: 1px solid #ECECEC;
+                }
+            }
+        }
+    }
+    .goods{
+        margin-top: .24rem;
+        padding-top: .68rem;
+        padding-left: .52rem;
+        padding-bottom: .67rem;
+    }
+    h3{
+        font-weight: normal;
+        font-size: .36rem;
+        line-height: .36rem;
+        padding-right: .3rem;
+        margin-bottom: .24rem;
+        color: #181818;
+        position: relative;
+        a{
+            color: #666;
+            font-size: .28rem;
+            padding-right: .4rem;
+            @include bg2('icon_more', .16rem, .26rem);
+            background-position: .65rem center;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            right: 0.3rem;
+        }
+    }
+}
+.free-goods-menu {
+	width: 2.06rem;
+    height: 100%;
+	position:fixed;
+	background: #f5f5f5;
+    overflow-y: scroll; 
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+	
+	ul {
+		width: 100%;
+		padding-bottom: 0.91rem;
+		li {
+			height: 1.36rem;
+			line-height: 1.36rem;
+			text-align: center;
+			color: #333333;
+			font-size: .32rem;
+			border-bottom: 1px solid #E6E6E6;
+			padding: 0 0.2rem;
+			cursor: pointer;
+			&.active {
+				background-color: #fff;
+				a {
+					color: #F72F42;
+					font-weight: bold;
+				}
+			}
+			a {
+				display: block;
+				width: 100%;
+				height: 1.36rem;
+				overflow: hidden;
+			}
+		}
+	}
+	
+}
+.free-goods-list-box{
+	width: 5.44rem;
+    height: 100%;
+    position:fixed;
+	/* right:0; */
+	margin-left:2.06rem;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+
+ul.free-goods-list {
+	position: relative;
+	padding-bottom: .44rem;
+	li{
+        display: inline-block;
+        width: 100%;
+        color: #333333;
+        margin-top: .44rem;
+		a{
+			>img{
+				width: 1.28rem;
+				height: 1.28rem;
+                float: left;
+                margin-right: .2rem;
+				@include bg2('Bitmap', 1.1rem, 1.1rem);
+				background-position: center;
+				background-color: #F5F5F5;
+            }
+            p{
+                width: 3rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                &.h3{
+                    margin-top: .11rem;
+                    font-size: .32rem;
+                    line-height: .38rem;
+                }
+                &.h5{
+                    font-size: .28rem;
+                    line-height: .34rem;
+                }
+            }
+			
+            span{
+                display: block;
+                margin-top: .28rem;
+                font-size: .32rem;
+                line-height: .28rem;
+            }
+		}
+	}
+}

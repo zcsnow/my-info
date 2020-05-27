@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" id="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, target-densitydpi=device-dpi">
+<title>Core M</title>
+<link href="css/css.css?222" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/skrollr.min.js"></script>
+<script type="text/javascript" src="js/PxLoader.js"></script>
+<script type="text/javascript" src="js/PxLoaderImage.js"></script>
+<script type="text/javascript" src="js/tools.js"></script>
+<script type="text/javascript" src="js/weixin.js"></script>
+<script type="text/javascript" src="js/game.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+<!--
+
+var viewport = document.getElementById("viewport");
+
+if (window.devicePixelRatio >= 2)
+{
+	viewport.content = "width=640, minimum-scale=0.5, maximum-scale=0.5";
+	
+}else
+{
+	viewport.content = "width=device-width, minimum-scale=1, maximum-scale=1, target-densitydpi=device-dpi";
+}
+
+-->
+</script>
+</head>
+
+<body>
+
+<!--  loading -->
+<div id="loading">
+	<span id="unmbers">0%</span><br/>
+LOADING...
+</div>
+
+<div id="msg_help" class="ts">	
+	<div id="ts_1"></div>
+	<div class="black"></div>
+</div>
+
+<div id="msg_success" class="ts"   >
+	<div id="ts_2fx"></div>
+	<div id="ts_2">
+    	<div id="ts_2btn"></div>
+    </div>
+	<div  class="black"></div>
+</div>
+<div id="msg_over" class="ts"   >
+	<div id="ts_3fx"></div>
+	<div id="ts_3">
+    	<div id="ts_3btn"></div>
+    </div>
+	<div  class="black"></div>
+</div>
+<div id="msg_time" class="ts">
+	<div id="ts_4">
+    	<div id="ts_4btn"></div>
+    </div>
+	<div  class="black"></div>
+</div>
+
+<div id="anim">
+
+    <!--  LOGO  页脚 -->
+    <div id="logo"></div>
+    <div id="logo1"></div>
+    <div id="xianjiao"></div>
+    <div id="indextext"></div>
+    <div id="gif"></div>
+    <div id="hdts"></div>
+     
+    <!--  次页 -->  
+    <div id="e"></div>
+    <div id="c"></div>
+    <div id="_s"></div>
+    <div id="low"></div>
+    <div id="qu"></div>
+    <div id="yd"></div>
+    <div id="cor"></div>
+    <div id="setext"></div>
+    <div id="btn1"></div>
+
+</div>
+ 
+<!-- 开始游戏 -->
+<div id="game">
+	<div id="num_num">10/<span>1</span></div>
+    <div id="shalou"></div>
+    <div id="timebox">
+		<div id="time"></div>
+    </div>
+    <div id="timetext">6秒</div>
+   	<div id="helpbtn"></div>
+   	<div id="text">请找出图中的超薄笔记本</div>
+    <div id="imgs">
+    	<ul>
+        	<li id="gbg"></li>
+        </ul>
+	</div>
+</div>
+
+<div id="box1"></div>
+<div id="box2"></div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48003246-28', 'buzzopt.com');
+  setTimeout(function(){ga('send', 'pageview')}, 500);
+
+  var openid = Tools.getURL('openid');
+  ga('set', 'dimension1', openid);
+
+  var onBridgeReady = function(){
+    var dataForWeixin = {
+      appId: "",
+      TLImg: "http://intel515.buzzopt.com/intel515/img/coreM_logo.jpg",
+      url: "http://intelweixin.buzzopt.com/index.php/wapActivity/index/subject/CoreM",
+      title: "哎呀，还有一个到底在哪里，快来帮我找找看！",
+      desc: "哎呀，还有一个到底在哪里，快来帮我找找看！"
+    };
+    WeixinJSBridge.on('menu:share:appmessage', function(argv){
+      WeixinJSBridge.invoke('sendAppMessage', {
+        "appid": dataForWeixin.appId,
+        "img_url": dataForWeixin.TLImg,
+        "img_width": "120",
+        "img_height": "120",
+        "link": dataForWeixin.url,
+        "title": dataForWeixin.title,
+        "desc": dataForWeixin.desc
+      });
+      ga('send', 'event', 'share', 'click', '个人消息'); //分享给朋友触发的方法
+    });
+    WeixinJSBridge.on('menu:share:timeline', function(argv){
+      WeixinJSBridge.invoke('shareTimeline', {
+        "appid": dataForWeixin.appId,
+        "img_url":dataForWeixin.TLImg,
+        "img_width": "120",
+        "img_height": "120",
+        "link": dataForWeixin.url,
+        "title": dataForWeixin.title,
+        "desc": dataForWeixin.desc
+      });
+      ga('send', 'event', 'share', 'click', '朋友圈');//分享到朋友圈触发的方法
+    });
+  };
+ 
+  if(document.addEventListener){
+    document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+  }else if(document.attachEvent){
+    document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+    document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+  }
+</script>
+
+</body>
+</html>

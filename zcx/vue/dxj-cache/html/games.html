@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>游戏</title>
+    <script src="/libs/airpana.js"></script>
+</head>
+<body>
+    <div id="main" v-cloak>
+        <header-nav v-if="showNav" title="游戏"  page-url="index.html"></header-nav>
+        <section v-if="hotArray.length" :style="{'padding-top':showNav?'.91rem':'0'}">
+            <div class="banner" v-if="banner.length">
+                <div class="swiper-container" id="swiper1">
+                    <div class="swiper-wrapper" v-if="banner.length>1">
+                        <div class="swiper-slide" v-for="(item,index) in banner"  :data-title="item.title" :data-url="item.url" >
+                            <a href="javascript:void(0)">
+                                <img :src="baseUrlAd+item.image" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-wrapper" v-else>
+                        <div class="swiper-slide" v-for="(item,index) in banner" @click="eventLog({eventId:'game_adbanner_'+ (parseInt(index)+1) +'_click',eventType:'1',eventIsAD:'1',contentType:'焦点图',contentTitle:item.title})" >
+                            <a :href="item.url?item.url:'javascript:void(0)'">
+                                <img :src="baseUrlAd+item.image" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <h3 class="gameTitle"><img src="../images/icon_hot@2x.png" />热门推荐</h3>
+            <ul class="gameList clearfix">
+                <li v-for="(item,index) in hotArray">
+                    <a href="javascript:void(0)" @click="playGame(item.game_link,item.id,item.game_name,'热门推荐')">
+                        <img :src="item.pictures" />
+                        <p>{{item.game_name}}</p>
+                        <span>开始玩</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="list-box" v-if="qipaiArray.length">
+                <h3><span>棋牌</span></h3>
+                <ul class="typeList">
+                    <li v-for="(item,index) in qipaiArray">
+                        <a class="clearfix" href="javascript:void(0)" @click="playGame(item.game_link,item.id,item.game_name,'棋牌')">
+                            <img :src="item.pictures" />
+                            <p>{{item.game_name}}<i>{{item.description}}</i></p>
+                            <span>开始玩</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="list-box" v-if="xiuxianArray.length">
+                <h3><span>休闲</span><a href="game-list.html?type=3">&nbsp;</a></h3>
+                <ul class="typeList">
+                    <li v-for="(item,index) in xiuxianArray">
+                        <a class="clearfix" href="javascript:void(0)" @click="playGame(item.game_link,item.id,item.game_name,'休闲')">
+                            <img :src="item.pictures" />
+                            <p>{{item.game_name}}<i>{{item.description}}</i></p>
+                            <span>开始玩</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="list-box" v-if="jingjiArray.length">
+                <h3><span>竞技</span><a href="game-list.html?type=4">&nbsp;</a></h3>
+                <ul class="typeList">
+                    <li v-for="(item,index) in jingjiArray">
+                        <a class="clearfix" href="javascript:void(0)" @click="playGame(item.game_link,item.id,item.game_name,'竞技')">
+                            <img :src="item.pictures" />
+                            <p>{{item.game_name}}<i>{{item.description}}</i></p>
+                            <span>开始玩</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="list-box" v-if="yizhiArray.length">
+                <h3><span>益智</span><a href="game-list.html?type=1">&nbsp;</a></h3>
+                <ul class="typeList">
+                    <li v-for="(item,index) in yizhiArray">
+                        <a class="clearfix" href="javascript:void(0)" @click="playGame(item.game_link,item.id,item.game_name,'益智')">
+                            <img :src="item.pictures" />
+                            <p>{{item.game_name}}<i>{{item.description}}</i></p>
+                            <span>开始玩</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+        <!--加载中-->
+        <!-- <loading v-if="isWaiting" :status="2"></loading> -->
+        <!--执行toast弹出层-->
+        <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+    </div>
+</body>
+</html>

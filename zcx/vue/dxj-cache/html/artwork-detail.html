@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>艺术品</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak>
+    <a v-if="showNav" class="goBack" @click="goBack()">返回</a>
+    <div :class="isFixed?'art-detail-box fixed':'art-detail-box'"  v-if="Object.keys(artData).length!=0">
+      <div class="top-img"><img v-lazy="baseUrl+artList.bgImage" /></div>
+      <div class="art-info">
+        <h3 >{{artList.name}}</h3>
+        <span>{{artList.achievement}}</span>
+        <!-- <span>{{artList.title}}</span>
+        <p>{{artList.achievement}}</p> -->
+        <i><img :src="baseUrl+artList.image" alt=""></i>
+      </div>
+      <nav class="flex">
+        <!-- <a :class="item.active?'active':''" v-for="(item,index) in tabTypes" @click='changeTabTypes($event)' :data-index="index">{{item.title}}</a> -->
+        <a :class="{'active':item.active}" href="javascript:void(0)" @click='tabFn(index)' v-for="(item,index) in tabTypes">{{item.title}}</a>
+      </nav>
+      <div v-show="tabTypes[0].active==true" class="tab-content">
+          <article class="article" v-html="artList.content"></article>
+      </div>
+
+      <div v-show="tabTypes[1].active==true" class="tab-content">
+          <ul class="art-list" v-if="arts.length">
+              <li v-for="(item,index) in arts" @click="lookWorkDetail(item)">
+                  <img v-lazy="baseUrl+item.smallImage" />
+                  <h3>{{item.title}}</h3>
+                  <p>{{item.authorName}} {{item.createTime}} {{item.size}}</p>
+              </li>
+          </ul>
+      </div>
+
+      
+    </div>
+    <!--网络不给力或无数据时提示-->
+    <div v-if="noDataIShow" class="no-data">网络不给力，请检查后重试哦~<br /><a href="javascript:void(0)" onclick="window.location.reload()">点击刷新</a></div>
+    <!--加载中-->
+    <!-- <loading v-if="isWaiting" :status="2"></loading> -->
+    <!--执行toast弹出层-->
+    <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+    <!--小图片点击放大预览-->
+    <img-preview v-if="isImgPreviewShow"  @closeimgpreview="hideImgPreview" :preview-data="previewData"></img-preview>
+</div>
+</body>
+</html>

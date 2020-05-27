@@ -1,0 +1,466 @@
+html, body, ul, p {
+				margin: 0;
+				padding: 0;
+				font-family: "å¾®è½¯é›…é»‘", "å®‹ä½“", "arial, helvetica, sans-serif";
+			}
+			.clr:after { content: ""; display: block; height: 0; clear: both; visibility: hidden; zoom: 1 }
+            .clr{zoom:1}
+			li {
+				list-style: none;
+			}
+			a {
+				text-decoration: none;
+			}
+			.popup {
+				color: #fff;
+				list-style: none;
+				position: fixed;
+				right: -300px;
+				top: 20px;
+				z-index: 8;
+				opacity: .5;
+				
+			}
+			.popup-inner {
+				position: relative;
+				font-size: 18px;
+				font-weight: 700;
+				width: 260px;
+				height: 50px;
+				line-height: 50px;
+				box-shadow: 0 0 5px #000;
+				background-color: rgb(0, 0, 0);
+				filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+				background-color: rgba(0, 0, 0, .7);
+				border: 1px solid transparent;
+				cursor: pointer;
+				margin-bottom: 20px;
+				z-index: 2;
+				text-align:center;
+			}
+			.popup-inner:hover {
+				border: 1px solid #fff;
+			}
+			.container{
+				width: 1200px;
+				margin: 0 auto;
+			}
+			.sign-up-all {
+				position: absolute;
+				min-height: 100%;
+				top: 0;
+				right: 0;
+				left: 0;
+				background: url(../img/login-bg.png) no-repeat scroll center center;
+				background-size: cover;
+				margin: 0 auto;
+			}
+			.box-center{
+				position: absolute;
+				top: 49%;
+				left: 50%;
+				transform: translate3d(-50%,-50%,0)
+			}
+
+			.logo-wrapper {
+				margin: 0 auto 50px;
+			    text-align: center;
+			}
+			.logo-wrapper img{ width: 200px;}
+			.sign-up-wrap {
+			    width: 100%;
+			    border-radius: 4px;
+			    background-color: rgb(0, 0, 0);
+			    background-color: rgba(0,0,0,.5);
+			    filter:alpha(opacity=50); 
+			    font-size: 1.2rem;
+			    border-top: 5px solid #43BCFF;
+			    height: 480px;
+				/*transform: translate(-50%, -50%);*/
+				width: 394px;
+				margin: 0 3px;
+				float: left;
+				position: relative;
+				padding-bottom:10px;
+				/* margin: 0 auto; */
+
+			}
+			.logo {
+				position: absolute;
+				top: 15px;
+				right: 40px;
+				color: #fff;
+				font-size: 16px;
+				color: #007ac0;
+			}
+			.logo-img {
+				vertical-align: middle;
+			}
+			.sign-up-inner {
+				width: 300px;
+				margin: 0 auto;
+				color: #fff;
+			}
+			.sign-up {
+				position: relative;
+				margin-top: 34px;
+				margin-bottom: 26px;
+				height: 32px;
+				font-size: 22px;
+			}
+			.sign-up-p {
+				float: left;
+			}
+			
+			.login-logo-lang {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				height: 32px;
+				width: 82px;
+				color: #f7f7f7;
+				background-color: transparent;
+				outline: none;
+				border: none;
+				cursor: pointer;
+				border-top: 1px solid transparent;
+				border-right: 1px solid transparent;
+				border-left: 1px solid transparent;
+			}
+			.login-logo-lang.active {
+				background-color: rgba(30, 30, 36, .6);
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+				border-top: 1px solid #2899da;
+				border-right: 1px solid #2899da;
+				border-left: 1px solid #2899da;
+			}
+			.logo-lang-content {
+				display: none;
+				height: 64px;
+				position: absolute;
+				right: 0;
+				top: 100%;
+				z-index: 1;
+				border-bottom-left-radius: 4px;
+				border-bottom-right-radius: 4px;
+				border-right: 1px solid #2899da;
+				border-bottom: 1px solid #2899da;
+				border-left: 1px solid #2899da;
+			}
+			.logo-lang-content a {
+				display: block;
+				height: 32px;
+				line-height: 32px;
+				width: 80px;
+				color: #fff;
+				font-size: 14px;
+				text-align: center;
+				text-decoration: none;
+				background-color: rgb(30, 30, 36);
+				background-color: rgba(30, 30, 36, .8);
+			}
+			.button-caret {
+				display: inline-table;
+				vertical-align: baseline;
+				width: 10px;
+				height: 6px;
+				background: url(../img/login-caret.png) no-repeat scroll top left;
+			}
+			.ipt-name, .ipt-mail, .ipt-area, .ipt-bank, .ipt-phone, .references {
+				position: relative;
+				/*margin-bottom: 22px;*/
+			}
+			.ipt-name:after,
+			.ipt-mail:after,
+			.ipt-area:after,
+			.ipt-bank:after,
+			.ipt-phone:after {
+				content: '';
+				display: block;
+				height: 0;
+				clear: both;
+				visibility: hidden;
+			}
+			.ipt-section {
+				float: left;
+				width: 294px;
+				height: 40px;
+			}
+			.ipt-section input,.ipt-section2 input{
+				width: 270px;
+				height: 20px;
+				padding: 10px 12px;
+				background-color: #fff;
+				border-radius: 4px;
+				color: #666;
+				border: none;
+				outline: 0;
+			}
+			.ipt-section2 {
+				float: right;
+				width: 294px;
+				height: 40px;
+			}
+			.ipt-section-select {
+				width: 294px;
+				height: 40px;
+				*height: 24px;
+				line-height:40px;
+				padding: 10px 12px;
+				*padding: 0 12px;
+				background-color: #fff;
+				border-radius: 4px;
+				color: #666;
+				border: none;
+			}
+			.ipt-identify {
+				position: relative;
+			}
+			.ipt-identify-input {
+				float: right;
+				width: 274px;
+				height: 20px;
+				padding: 10px 12px;
+				background-color: #2f2f33;
+				color: #fff;
+				border: none;
+			}
+			.ipt-identify-code {
+				position: absolute;
+				top: 14px;
+				height: 15px;
+				line-height: 12px;
+				right: 10px;
+				color: #007ac0;
+				background-color: transparent;
+				border: none;
+				border-left: 1px solid #007ac0;
+				outline: none;
+				cursor: pointer;
+			}
+			.upload {
+				font-size: 18px;
+				/* margin-top: 30px; */
+				/* margin-bottom: 20px; */
+				line-height: 40px;
+				vertical-align: 14px;
+				font-size: 14px;
+				margin-right: 12px;
+				display: inline-block;
+			}
+			.idcard {
+				overflow: hidden;
+				display: inline-block;
+				width: 100%;
+			}
+			.idcard-positive, .idcard-opposite {
+				/* height: 156px; */
+				width: 294px;
+				float: left;
+				font-size: 14px;
+				color: #f1f1f1;
+				overflow: hidden;
+			}
+			.idcard-opposite {
+				float: right;
+			}
+			.idcard-spinner {
+				position: absolute;	
+				top: 26px;
+				left: 0;
+				width: 180px;
+				height: 130px;
+				line-height: 130px;
+				background-color: #fff;
+				text-align: center;
+				font-size: 50px;
+				z-index: 1;	
+				display: none;	
+			}
+			/*.idcard-file {
+				position: absolute;	
+				margin-left: -100px;
+				top: 26px;
+				left: 0;
+				width: 280px;
+				height: 130px;
+				opacity: 0;
+				z-index: 2;		
+				cursor: pointer;
+				font-size: 180px;	
+				overflow: hidden;
+			}
+			.idcard-img {
+				position: absolute;
+				top: 26px;
+				left: 0;
+				width: 180px;
+				height: 130px;
+			}*/
+			.sign-up-submit {
+				display: block;
+				margin: 40px auto 20px;
+				width: 294px;
+				height: 36px;
+				border-radius: 2px;
+				border: none;
+				outline: none;
+				font-size: 18px;
+				color: #fff;
+				cursor: pointer;
+				background-color: #00A3FE;
+			}
+			.submit-tip{
+				font-size: 14px;
+				color: #dacb45;
+			}
+			/*å…¼å®¹IE*/
+			img {
+				border: none;
+			}
+			/*ç­‰å¾…æ—¶æ—‹è½¬å›¾ç‰‡*/
+			/*@keyframes spinnerImg{
+				from {
+					transform: rotate(0deg);
+				}
+				to {
+					transform: rotate(360deg);
+				}
+			}
+			.idcard-spinner-img {
+			    -moz-animation: spinnerImg 2s infinite linear;
+			    -o-animation: spinnerImg 2s infinite linear;
+			    -webkit-animation: spinnerImg 2s infinite linear;
+			    animation: spinnerImg 2s infinite linear;
+			}*/
+			#global_location select {
+				height: 40px;
+				*height: 24px;
+				background-color: #fff;
+				border-radius: 4px;
+				color: #666;
+    			border: none;
+				font-size:13px;
+    			padding: 10px 12px;
+				*padding: 0 12px;
+			}
+			#file-list, #file-list2 {
+			    width: 294px;
+			    height: 28px;
+			    color: #666;
+			}
+			#file-list img, #file-list2 img {
+				width: 100%;
+				height: auto;
+			}
+			
+.ipt-box{margin-bottom: 22px;}
+			
+.upload-btn{display:block;width: 180px;height: 40px;background: #fff;margin-top:7px;border-radius: 4px;cursor: pointer;}
+.upload-btn>input{width: 180px;background:none;display:block;height: 40px;opacity:0;filter:alpha(opacity=0);font-size: 40px;cursor: pointer;position:absolute;z-index:2;} 
+.privacy-policy {
+				margin-top: 14px;
+				vertical-align: middle;
+			}
+			.privacy-policy-span {
+				font-size: 14px;
+			}
+			.privacy-policy-span1, .privacy-policy-span2 {
+				/* color: #0366d6; */
+				color: #ddd;
+				cursor: pointer;
+				text-decoration: underline;
+				display: inline-block;
+				margin-left: 1px
+			}
+			.privacy-policy-mask {
+				display: none;
+				position: fixed;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background-color: #000;
+				opacity: 0.8;
+				filter: alpha(opacity=80);
+				z-index: 10;
+			}
+			.privacy-policy-pop, .privacy-policy-pop2 {
+				display: none;
+				position: fixed;
+				top: 10%;
+				left: 20%;
+				height: 80%;
+				width: 60%;
+				padding: 20px;
+				background-color: #fff;
+				color: #000;
+				z-index: 20;
+				overflow-y: auto;
+			}
+			.privacy-policy-pop h1 {
+				font-size: 22px;
+				text-align: center;
+			}
+			.privacy-policy-pop p, .privacy-policy-pop2 p {
+				text-indent: 2em;
+				margin-bottom: 10px;
+				text-align: left;
+				color: #333;
+			}
+			.privacy-policy-checkbox {
+				vertical-align: middle;
+			}
+			.user-agreement {
+				margin-top: 20px; 
+				min-width: 240px; 
+				font-size: 16px; 
+				padding: 10px 12px; 
+				border-radius: 6px; 
+				background-color: #c00417;
+				color: #fff;
+				margin-left: auto;
+				display: block;
+				border: none;
+				margin-right: auto;
+			}
+
+		#mpanel1{position: relative; height: 40px;}
+		#mpanel1 .cerify-code-panel{position: relative; height: 40px;}
+		#mpanel1 .verify-code{position: absolute; width: 100px;left: 110px; top: 0;height: 40px;border: none;border-radius: 4px;}
+		#mpanel1 .verify-code-area{ position: absolute; width: 100px;left: 0; top: 0;height: 40px;}
+		#mpanel1 .verify-code-area .verify-input-area{width: 100%;}
+		#mpanel1 .verify-code-area .verify-input-area input
+		{
+			width: 100%;
+			height: 40px;
+			padding: 10px;
+			box-sizing: border-box;
+			background-color: #fff;
+			border-radius: 4px;
+			color: #666;
+			border: none;
+			outline: 0;}
+		#mpanel1 .verify-change-area{position: absolute; width: 74px;left: 220px; top: 0;height: 40px; line-height: 40px; background-color: #fff;
+			border-radius: 4px;font-size:16px; text-align: center;color: #00A3FE;}
+
+			.loading{position: fixed;width: 100%;height: 100%;left: 0;top: 0;background: rgba(0,0,0,.9); display: none}
+			.loading img{position: absolute;width: 14%;left:50%;top:50%;transform: translate3d(-50%,-50%,0);}
+			@media screen and (max-width: 640px) {
+				.logo-wrapper {margin: 5% auto 0;}
+				.logo-wrapper img{ width: 140px;}
+				.sign-up-all{ background: url(../img/login-bg.png) no-repeat fixed center center;background-size: cover;}
+				.box-center{position: static; top:0;left: 0; transform: translate3d(0,0,0);}
+				.container{ width: 100%;}
+				.sign-up-wrap{width: 100%; float:none; height: auto;background-color: rgba(0,0,0,0);border-top: none;margin:0;padding-bottom:0;}
+				/* .sign-up-inner{ width: 100%;} */
+				.sign-up{margin-top:5%;margin-bottom:2%;font-size: 18px;}
+				.ipt-box {
+					margin-bottom: 12px;
+				}
+				.submit-tip {font-size: 12px;}
+				.privacy-policy{ margin-top: 0;}
+				.privacy-policy-span {font-size: 12px;}
+				.logo{top:0;}
+			}

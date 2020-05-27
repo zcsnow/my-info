@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <title>升级成功</title>
+    <meta content-type="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link href="css/base.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body style="background:#f5f5f5;">
+    <div class="container">
+    	<div class="pay_success">
+        	<h2 style="background:#f5f5f5"><i><img src="images/pay_sucess_icon.png"></i>充值成功</h2>
+
+            <!--<div class="payment_submit clr">
+                <button class="btn1 js-fill-btn1" style="margin:0 auto; float:none">查看积分</button>
+                
+            </div>-->
+        </div>
+    </div>
+    
+    <script src="js/jquery1.7.min.js"></script>
+    <script src="js/page/config.js"></script>
+    <script>
+	  $(function () { 
+          var userId = GetQueryString('user_id');
+		  //查看订单
+		  $('.js-fill-btn1').on('click',function(){
+
+		  		if(isAndroid){
+					 //alert("Android");
+					 test.lookFillScore(userId);
+				}else{
+					//alert("ios");
+					window.webkit.messageHandlers.lookFillScore.postMessage(userId);
+				}
+		  });
+		  
+	  });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>旅行频道</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+   <header-nav v-if="showNav" title="旅行频道"></header-nav>
+   <section>
+    <nav>
+      <a href="javascript:;" :class="{'active':travelType=='travel'}" @click="selectQ('travel')">热门<i></i></a>
+      <a href="javascript:;" :class="{'active':travelType=='subject'}" @click="selectQ('subject')">专题<i></i></a>
+    </nav>
+   </section>
+   <div class="banner">
+      <div class="swiper-container" id="swiper1">
+          <div class="swiper-wrapper" v-if="banner.length>1">
+              <div class="swiper-slide" v-for="(item,index) in banner"  :data-title="item.title" :data-url="item.url" >
+                <a href="javascript:void(0)">
+                    <img :src="item.image?baseUrlAd+item.image:'../images/e.gif'" />
+                </a>
+              </div>
+          </div>
+          <div class="swiper-wrapper" v-else>
+              <div class="swiper-slide" v-for="(item,index) in banner" @click="eventLog({eventId:'trip_adbanner_'+ (parseInt(index)+1) +'_click',eventType:'1',eventIsAD:'1',contentType:'焦点图',contentTitle:item.title})" >
+                <a :href="item.url?item.url:'javascript:void(0)'">
+                    <img :src="item.image?baseUrlAd+item.image:'../images/e.gif'" />
+                </a>
+              </div>
+          </div>
+          <div class="swiper-pagination"></div>
+      </div>
+   </div>
+   <div>
+   	<ul v-show="travelType=='travel'" class="travel-list">
+   		<li v-for="(item,index) in jsonArray">
+ 				<a :href="'article.html?tag='+item.tag+'&contentType=旅行-热门&contentTitle='+item.title">
+ 					<img v-lazy="baseUrl+item.image" alt="">
+     			<h3>
+   					<p>{{item.title}}</p>
+   				</h3>
+          <article>
+            {{item.title_second}}
+          </article>
+        </a>
+   		</li>
+   	</ul>
+    <ul v-show="travelType=='subject'" class="topic-list">
+      <li v-for="(item,index) in topicArray">
+        <a :href="'travel-topic.html?tag='+item.tag">
+          <img v-lazy="baseUrl+item.image">
+          <h4><span>{{item.title}}</span></h4>
+          <p v-if="item.description">{{item.description}}</p>
+        </a>
+      </li>
+    </ul>
+    <p v-show="isLoad" class="updata_loading">
+      <i></i>加载中...
+    </p>
+   </div>
+    <!--加载中-->
+    <!-- <loading v-if="isWaiting" :status="2"></loading> -->
+    <!--执行toast弹出层-->
+    <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

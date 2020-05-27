@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>选择支付方式</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+        <div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'.1rem'}">
+        <header-nav v-if="showNav" :page-url="'movie-detail.html?tag='+movieID" title="选择支付方式"></header-nav>
+
+        <div v-if="payWayList.length>0">
+            <div class="payWay-list-box">
+                <div class="order-countdown">请在<em>{{orderCountdown}}</em>内完成支付，否则系统将自动取消本次交易。</div>
+                <ul class="payWay-list">
+                    <!-- <li v-for="(item,index) in payWayList"> -->
+                    <li :class="{active:index==current}" v-for="(payWay,index) in payWayList" @click="payWaySelect(index,payWay)">
+                        <span>{{payWay}}</span>
+                        <div v-if='payWay=="已绑卡快捷支付"'>
+                            <em>{{cardSelected}}</em>
+                            <select class="card-list" name="card-list" v-model="cardSelected">
+                                <option :value="card.cardNum" v-for="card in cardList" >{{card.issuer}} ({{card.cardNum}})</option>
+                            </select>
+                        </div>
+                    </li>
+                    
+                </ul>
+
+                <p>选择微信支付需先连接网络  <a href="http://www.ce-air.com/?inet=1&browse=hmouter">立即连接</a></p>
+                <!-- <p>选择微信、支付宝支付需先链接网络  <a href="http://www.ce-air.com/?inet=1&browse=hmouter">立即连接</a></p> -->
+                
+            </div>
+
+            <!--支付宝支付form-->
+            <div style="display:none" v-html="alipayForm"></div>
+
+            <!--东航银行卡支付form-->
+            <form method="post" :action="redirectInfo" id="airpayForm"  @submit.prevent="submit"  style="display: none;">
+                <input type="hidden" name="fltno" data-name="航班号" id="fltno" :value="flightInfo.flightNum">
+                <input type="hidden" name="tail" data-name="机号" id="tail" :value="flightInfo.tailNum">
+                <input type="hidden" name="dep" data-name="出发地" id="dep" :value="flightInfo.origin">
+                <input type="hidden" name="arr" data-name="到达地" id="arr" :value="flightInfo.arrival">
+                <input type="hidden" name="fltdate" data-name="航班日期" id="fltdate" :value="flightInfo.flightDate">
+                <input type="hidden" name="ftag" data-name="航班标签" id="ftag" :value="flightInfo.flightTag">
+            </form>
+
+            
+            
+
+            <div class="pay-btn"  @click="payStart">同意协议并支付￥{{moviePrice}}</div>
+
+
+            <div class="protocol-box">
+                <a href="service.html" class="clause"><span></span>同意<em>《东行记支付用户协议》</em> </a>
+            </div>
+            
+        </div>
+
+        
+        <!--加载中-->
+        <loading v-if="isWaiting" :status="2" :type="1"></loading>
+        
+        <!--执行toast弹出层-->
+        <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+{
+  "name": "vue3-templateh5",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "core-js": "^2.6.5",
+    "element-ui": "^2.4.5",
+    "node-sass": "^4.12.0",
+    "pug": "^2.0.4",
+    "pug-html-loader": "^1.1.5",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^7.1.0",
+    "scss": "^0.2.4",
+    "scss-loader": "^0.0.1",
+    "swiper": "^4.5.0",
+    "vue": "^2.6.10",
+    "vue-axios": "^2.1.4",
+    "vue-router": "^3.0.3",
+    "vue-seamless-scroll": "^1.1.16",
+    "vuedraggable": "^2.23.0",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "postcss-plugin-px2rem": "^0.8.1",
+    "vue-cli-plugin-element": "^1.0.1",
+    "vue-cli-plugin-pug": "^1.0.7",
+    "vue-cli-plugin-pxtorem": "^1.1.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {},
+      "postcss-plugin-px2rem": {
+        "exclude": {}
+      }
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

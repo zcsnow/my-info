@@ -1,0 +1,58 @@
+﻿{
+	"Data":[
+		{ 
+	        "userHead" : "images/prod_detail/avatar04.jpg",
+	        "userName" : "测试一",
+	        "starLevel":"0",
+	        "dataTime":"2015-01-20",
+	        "userComment":"喜欢，终于能在国内买到TOPSHOP的衣服了，好开心，穿上也有范儿。",
+	        "commentTag" : [
+	        	{"text":"包装精美"},
+	        	{"text":"口感好"}
+	        ]
+	    },
+	    { 
+	        "userHead" : "images/prod_detail/avatar05.jpg",
+	        "userName" : "测试二",
+	        "starLevel":"2",
+	        "dataTime":"2015-02-20",
+	        "userComment":"喜欢，终于能在国内买到TOPSHOP的衣服了，好开心，穿上也有范儿。",
+	        "commentTag" : []
+	    },
+	    { 
+	        "userHead" : "images/prod_detail/avatar06.jpg",
+	        "userName" : "测试三",
+	        "starLevel":"3",
+	        "dataTime":"2015-03-20",
+	        "userComment":"喜欢，终于能在国内买到TOPSHOP的衣服了，好开心，穿上也有范儿。",
+	        "commentTag" : []
+	    },
+	    { 
+	        "userHead" : "images/prod_detail/avatar07.jpg",
+	        "userName" : "测试四",
+	        "starLevel":"4",
+	        "dataTime":"2015-04-20",
+	        "userComment":"喜欢，终于能在国内买到TOPSHOP的衣服了，好开心，穿上也有范儿。",
+	        "commentTag" : [
+	        	{"text":"包装精美"},
+	        	{"text":"口感好"},
+				{"text":"精美"},
+	        	{"text":"好"}
+	        ]
+	    },
+	    { 
+	        "userHead" : "images/prod_detail/avatar08.jpg",
+	        "userName" : "测试五",
+	        "starLevel":"5",
+	        "dataTime":"2015-05-20",
+	        "userComment":"喜欢，终于能在国内买到TOPSHOP的衣服了，好开心，穿上也有范儿。",
+	        "commentTag" : [
+	        	{"text":"精美"}
+	        ]
+	    }
+	]
+}
+
+
+
+

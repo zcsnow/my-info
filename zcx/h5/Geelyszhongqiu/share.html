@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <title>今秋，中国月亮才更圆</title>
+    <meta content-type="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link href="css/base.css?0" rel="stylesheet" />
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link href="css/style.css?1123" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <audio src="/CompanyProject/Geelyszhongqiu/images/music.mp3" id="media" loop preload="auto"></audio>
+        <div class="bg bgRotate">
+        </div>
+        <div class="btm-img">
+            <img src="/CompanyProject/Geelyszhongqiu/images/loading-img2.png"></div>
+        <div class="rainbow">
+            <div class="red">
+            </div>
+            <div class="yellow">
+            </div>
+            <div class="green">
+            </div>
+        </div>
+        <div class="page share-page">
+            <p class="feichuan">
+                <img src="/CompanyProject/Geelyszhongqiu/images/page1-img4.png"></p>
+            <div class="result-box">
+                <div id="imgDiv">
+                    <img id="yuan2" src="$YuanImage"></div>
+                <h3>
+                    心有不甘，想要更圆？<br>
+                    分享朋友圈，集齐4个赞<br>
+                    就可召唤一轮完美的圆月</h3>
+                <div class="btn-box js-share-btn">
+                    <img src="/CompanyProject/Geelyszhongqiu/images/btn-bg.png">
+                    <span class="btn-text">分享朋友圈</span>
+                </div>
+                <p class="share-tip">分享即有机会前往杭州G20峰会场馆<br>参与9月20日吉利帝豪GL上市发布会</p>
+            </div>
+        </div>
+        <div class="form-page" style="display: none">
+            <p>
+                <img src="/CompanyProject/Geelyszhongqiu/images/pop-img1.png"></p>
+            <p>
+                <img src="/CompanyProject/Geelyszhongqiu/images/pop-img2.png"></p>
+            <form id="form">
+            <div class="form-group">
+                <label>
+                    姓名：</label>
+                <input type="text" class="form-control" id="name" name="name" iseng="true" maxlength="4"
+                    required placeholder="输入您的姓名">
+                <div class="error_tip">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>
+                    电话：</label>
+                <input type="text" class="form-control" id="phone" name="phone" required placeholder="输入您的电话">
+                <div class="error_tip">
+                </div>
+            </div>
+            <!--                <div class="form-group">
+                    <span class="btn btn-submit">确定 </span>
+                </div>-->
+            <div class="btn-box btn-submit" style="margin-top: 5%">
+                <img src="/CompanyProject/Geelyszhongqiu/images/btn-bg.png">
+                <span class="btn-text ">提交信息</span>
+            </div>
+            <span class="js-close-btn">
+                <img src="/CompanyProject/Geelyszhongqiu/images/pop-img4.png"></span>
+            </form>
+        </div>
+        <div class="page praise-page">
+            <p class="feichuan">
+                <img src="/CompanyProject/Geelyszhongqiu/images/page1-img4.png"></p>
+            <div class="result-box">
+                <div id="imgDiv">
+                    <img id="yuan1" src="$YuanImage"></div>
+                <h3>
+                    我画了一个圆度为{$baifenbi}%的月亮，集齐4个赞，可召唤一轮完美的圆月。快为我点赞吧！</h3>
+                <div class="btn-box js-like-btn">
+                    <img src="/CompanyProject/Geelyszhongqiu/images/btn-bg.png">
+                    <span class="btn-text ">为他点赞</span>
+                </div>
+                <div class="btn-box" style="margin-top: 10px;">
+                    <img src="/CompanyProject/Geelyszhongqiu/images/btn-bg.png">
+                    <a href="/CompanyProject/Geelyszhongqiu/index.html" class="btn-text">我也要玩</a>
+                </div>
+                <div class="btn-box">
+                    <img src="/CompanyProject/Geelyszhongqiu/images/btn-bg1.png">
+                    <h6>
+                        已有<strong class="like-num">0</strong>人为他点赞</h6>
+                    <div class="avatar-list">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="js-share-pop" style="position: fixed; background: rgba(0, 0, 0, 0.7);
+            top: 0px; height: 100%; width: 100%; z-index: 9999; display: none">
+            <img src="/CompanyProject/Geelyszhongqiu/images/share-img.png"></div>
+        <div class="tip">
+            <img style="margin: 0 auto;" width="50" src="/CompanyProject/Geelyszhongqiu/images/loading.gif"><p
+                style="margin-top: 15px;">
+                数据提交中...</p>
+        </div>
+        <input type="hidden" id="cfopenid" />
+        <input type="hidden" id="cfhtmlid" value="{$htmlname}" />
+    </div>
+    <script src="/CompanyProject/Geelyszhongqiu/js/jquery1.7.min.js"></script>
+    <script src="/CompanyProject/Geelyszhongqiu/js/plugin/jquery.validate.js"></script>
+    <script src="/CompanyProject/Geelyszhongqiu/js/page/share.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+    <script src="/CompanyProject/Geelyszhongqiu/js/wxShare.js" type="text/javascript"></script>
+    <script src="/Resources/JSCookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(function () {  
+        var forms=getUrlParam("from");
+        if(forms!=null)
+        {
+            $(".praise-page").show();
+            $(".share-page").hide();
+        }
+        else
+        {
+            $(".praise-page").hide();
+            $(".share-page").show();
+        }
+        var htmlname = $("#cfhtmlid").val();
+        var imagestr=$.ajax({ url:"/CompanyProject/Geelyszhongqiu/GetImageList.ashx?htmlid="+htmlname,async:false});
+        var imagelist=imagestr.responseText;
+        if (imagelist!=" ") {
+            var imagesz=imagelist.split(',');
+            $(".like-num").text(imagesz.length);
+            if (imagesz.length>=4) {
+                $("#yuan1").attr("src","/CompanyProject/Geelyszhongqiu/Images/page2-img1.png");
+            }
+            for (var i = 0; i < imagesz.length; i++) {
+                var avatarImg = "<span><img src='/Photo/" + imagesz[i] + ".jpg'></span>";
+                $('.avatar-list').prepend(avatarImg);
+            }
+        }
+
+            var wexinopenid = getUrlParam("openid");
+            if (wexinopenid == null || wexinopenid == "") {
+                var OpenID = getCookie("newweixinOpenID");
+                if (OpenID == null) {
+                    window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx93ed718e869344bc&redirect_uri=http%3a%2f%2fservices.hyh6.com%2fAuthorize%2fweixin%2fWapWeixinglyqh.htm%3fhtml%3d{$htmlname}&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect";
+                }
+                else {
+                 $("#cfopenid").val(OpenID);
+                    var res_reslut = $.ajax({ url: "/CompanyProject/Geelyszhongqiu/GetHardUrl.ashx?newweixinOpenID="+OpenID, async: false });
+                    var hardurl = res_reslut.responseText;
+                }
+            } else {
+                setCookie("newweixinOpenID", wexinopenid);
+                var res_reslut = $.ajax({ url: "/CompanyProject/Geelyszhongqiu/GetHardUrl.ashx?newweixinOpenID="+wexinopenid, async: false });
+                var hardurl = res_reslut.responseText;
+               $("#cfopenid").val(wexinopenid); 
+            } 
+	    var sharLink = window.location.href; 
+	    var shareInfo = {
+		    title:'今秋，中国月亮才更圆',     
+		    desc:'我画了一个圆度为{$baifenbi}%的月亮',
+            pyq:'我画了一个圆度为{$baifenbi}%的月亮',
+		    imgUrl:'http://h5.hyh6.com/CompanyProject/Geelyszhongqiu/images/fenxiang.jpg', 
+	    }; 
+        wxShare(sharLink,shareInfo);
+     });
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?5b0cf71f192cb25508340a5c87eaff37";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

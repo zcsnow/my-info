@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+	<head>
+	<title>同方律师事务所</title>
+	<meta content-type="text/html" charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<link href="css/base.css?2" rel="stylesheet" />
+    <link href="font_css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/swiper.min.css" rel="stylesheet" />
+	<link href="css/app.css?1" rel="stylesheet" />
+	</head>
+	<body>
+    <div class="container">
+      <!--头部 start-->
+      <header class="header">
+         <div class="header-logo"><a href="index.html"><img src="images/logo.png"></a></div>
+         <div class="mask-line js-bar-btn"></div>
+      </header>
+      
+      <div class="bar-list-fixed js-bar-list">
+      	<div class="header-fixed">
+         <div class="mask-line fold js-bar-btn"></div>
+         <a class="home-icon" href="index.html">同方律师事务所</a>
+      	</div>
+        <div class="bar-list-box">
+        <ul class="bar-list">
+          <li><a class="list-level1" href="index.html"><i><img src="images/menu-icon1.png"></i>首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+          <li><a class="list-level1" href="about.html"><i><img src="images/menu-icon2.png"></i>关于同方</a></li>
+          <li><a class="list-level1" href="field.html"><i><img src="images/menu-icon3.png"></i>专业领域</a></li>
+          <li><a class="list-level1" href="team.html"><i><img src="images/menu-icon4.png"></i>律师团队</a></li>
+          <li><a class="list-level1" href="discuss.html"><i><img src="images/menu-icon5.png"></i>专业讨论</a></li>
+          <li><a class="list-level1" href="party.html"><i><img src="images/menu-icon6.png"></i>党团建设</a></li>
+          <li><a class="list-level1" href="culture.html"><i><img src="images/menu-icon7.png"></i>同方文化</a></li>
+          <li><a class="list-level1" href="join.html"><i><img src="images/menu-icon8.png"></i>加入同方</a></li>
+          </ul>
+        </div>
+      </div>
+      <!--头部 end-->
+      <div class="main">
+      	<div class="sub-content">
+        	<h3 class="detail-title">联系同方</h3>
+          <div class="contact-box clr">
+              <h5>沈阳</h5>
+              <div class="map-box">
+                <div  class="map-con" id="allmap1"></div>
+              </div>
+              <ul class="map-info clr">
+                <li><i><img src="images/icon1.png"></i><em>电话：</em><span>0312-123456</span></li>
+                <li><i><img src="images/icon2.png"></i><em>传真：</em><span>0312-123465</span></li>
+                <li><i><img src="images/icon3.png"></i><em>地址：</em><span>沈阳新中街188号</span></li>
+              </ul>
+          </div>
+          <div class="contact-box clr">
+              <h5>北京</h5>
+              <div class="map-box">
+                <div  class="map-con" id="allmap2"></div>
+              </div>
+              <ul class="map-info clr">
+                <li><i><img src="images/icon1.png"></i><em>电话：</em><span>0312-123456</span></li>
+                <li><i><img src="images/icon2.png"></i><em>传真：</em><span>0312-123465</span></li>
+                <li><i><img src="images/icon3.png"></i><em>地址：</em><span>北京新中街188号</span></li>
+              </ul>
+          </div>
+          <div class="contact-box clr">
+              <h5>大连</h5>
+              <div class="map-box">
+                <div  class="map-con" id="allmap3"></div>
+              </div>
+              <ul class="map-info clr">
+                <li><i><img src="images/icon1.png"></i><em>电话：</em><span>0312-123456</span></li>
+                <li><i><img src="images/icon2.png"></i><em>传真：</em><span>0312-123465</span></li>
+                <li><i><img src="images/icon3.png"></i><em>地址：</em><span>大连新中街188号</span></li>
+              </ul>
+          </div>
+        </div>
+		
+        
+       <!--
+        <footer>
+          <p class="copyright">备案号：辽ICP备11020633号-1<br>
+          Copyright © 2011-2013 All Rights Reserved. 
+          </p>
+         
+          
+      </footer>-->
+      
+   
+        
+      </div>
+      
+    </div>
+    <script src="js/jquery1.7.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+	<script src="js/base.js?3"></script>
+  <script type="text/javascript">
+    // 地图功能
+    var map1 = new BMap.Map("allmap1",{
+      enableHighResolution: true //是否开启高清
+    });
+    var point1 = new BMap.Point(116.404, 39.915);
+    map1.centerAndZoom(point1, 12); //初始化地图
+    map1.enableInertialDragging(); //开启关系拖拽
+    map1.enableScrollWheelZoom();  //开启鼠标滚动缩放
+    // 创建地址解析器实例
+    var myGeo1 = new BMap.Geocoder();
+    // 将地址解析结果显示在地图上,并调整地图视野
+    myGeo1.getPoint("沈阳市", function(point){
+    if (point) {
+      map1.centerAndZoom(point, 16);
+      map1.addOverlay(new BMap.Marker(point));
+    }else{
+      alert("您选择地址没有解析到结果!");
+    }
+    }, "沈阳市");
+    // 地图功能
+    var map2 = new BMap.Map("allmap2",{
+      enableHighResolution: true //是否开启高清
+    });
+    var point2 = new BMap.Point(116.404, 39.915);
+    map2.centerAndZoom(point2, 12); //初始化地图
+    map2.enableInertialDragging(); //开启关系拖拽
+    map2.enableScrollWheelZoom();  //开启鼠标滚动缩放
+    // 创建地址解析器实例
+    var myGeo2 = new BMap.Geocoder();
+    // 将地址解析结果显示在地图上,并调整地图视野
+    myGeo2.getPoint("北京市", function(point){
+    if (point) {
+      map2.centerAndZoom(point, 16);
+      map2.addOverlay(new BMap.Marker(point));
+    }else{
+      alert("您选择地址没有解析到结果!");
+    }
+    }, "北京市");
+    // 地图功能
+    var map3 = new BMap.Map("allmap3",{
+      enableHighResolution: true //是否开启高清
+    });
+    var point3 = new BMap.Point(116.404, 39.915);
+    map3.centerAndZoom(point3, 12); //初始化地图
+    map3.enableInertialDragging(); //开启关系拖拽
+    map3.enableScrollWheelZoom();  //开启鼠标滚动缩放
+    // 创建地址解析器实例
+    var myGeo3 = new BMap.Geocoder();
+    // 将地址解析结果显示在地图上,并调整地图视野
+    myGeo3.getPoint("大连市", function(point){
+    if (point) {
+      map3.centerAndZoom(point, 16);
+      map3.addOverlay(new BMap.Marker(point));
+    }else{
+      alert("您选择地址没有解析到结果!");
+    }
+    }, "大连市");
+
+  </script>
+</body>
+</html>

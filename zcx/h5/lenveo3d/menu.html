@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>联想商用</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link href="css/base.css" rel="stylesheet" />
+        <link href="css/app.css?1" rel="stylesheet" />
+	</head>
+	<body style="background-color:#fff">
+        <div class="last-page">
+            <div class="finish-box">
+                
+                <div class="ele1"><img src="img/finish_img1.png" /></div>
+                <div class="ele2"><img src="img/finish_img2.png" /></div>
+                <div class="ele3"><img src="img/finish_img3.png" /></div>
+                <div class="ele4"><img src="img/finish_img4.png" /></div>
+                <div class="ele5"><img src="img/finish_img5.png" /></div>
+                <div class="logo"><img src="img/logo1.png" /></div>
+            </div>
+            <ul class="guide-list">
+            	<li><a href="bank.html"><img src="img/guide_img1.jpg" /><span><img src="img/more_btn.png" /></span></a></li>
+                <li><a href="edu.html"><img src="img/guide_img2.jpg" /><span><img src="img/more_btn.png" /></span></a></li>
+                <li><a href="energy.html"><img src="img/guide_img3.jpg" /><span><img src="img/more_btn.png" /></span></a></li>
+            </ul>
+        </div>
+
+        <script src="js/jquery1.7.min.js"></script>
+        <script src="js/lazysizes.min.js"></script>
+        <script>
+		$(document).ready(function(){
+			var tool={
+				  defaultScroll:function(e){e.preventDefault();},
+				  disabledScroll:function(){document.addEventListener("touchmove",this.defaultScroll,false);},
+				  enabledScroll:function(){document.removeEventListener("touchmove",this.defaultScroll,false);},
+			};
+			//滚动条不可滚动、高度100%
+			tool.disabledScroll();
+			
+        	$('.last-page').fadeIn(1000);
+		});
+        </script>
+        
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+        <script src="/Resources/wxShare.js" type="text/javascript"></script>
+		<script src="/Resources/JSCookie.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        var fromcon = getUrlParam("from")
+        if (fromcon != "" && fromcon != null) {
+            window.location.href = "http://h5.hyh6.com/CompanyProject/lenovo3d/"; 
+        }
+        //微信分享
+        var sharLink = window.location.href;  
+        var shareInfo = {
+            title:'联想商用',     
+            desc:'联想商用',
+            imgUrl:'http://h5.hyh6.com/CompanyProject/lenovo3d/img/share.jpg', 
+        }; 
+        wxShare(sharLink,shareInfo);
+        //百度统计
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?5b0cf71f192cb25508340a5c87eaff37";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+		</script>
+	</body>
+</html>

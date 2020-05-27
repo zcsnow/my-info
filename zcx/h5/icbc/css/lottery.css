@@ -1,0 +1,91 @@
+@charset "utf-8";
+* { margin: 0; padding: 0; }
+body {font-size: 14px; font-family: arial; background: #fff; }
+ul, ol, li { list-style: none; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+a, fieldset, img { border: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+input, img { vertical-align: middle; }
+img { max-width: 100% }
+i, em { font-style: normal; }
+table { border-collapse: collapse; border-spacing: 0; }
+input { font-size: 14px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-appearance: none; appearance: none; outline: none; -webkit-border-radius: 0; border-radius: 0; }
+select { font-size: 16px; height: 30px; line-height: 30px; }
+textarea { font-size: 14px; border: 1px #ccc solid; -webkit-box-shadow: inset 0 2px 2px #999; box-shadow: inset 0 2px 2px #999; }
+header, nav, section, footer { display: block; }
+a, a:hover { text-decoration: none; }
+.clr:after { content: ""; display: block; height: 0; clear: both; visibility: hidden; zoom: 1 }
+
+body { background: #fff }
+.back-btn{ display:block; width:16px; height:28px; padding:15px}
+
+.alContent { margin-top: 0; min-width: 320px; max-width: 640px; margin: 0 auto; }
+.title-top { color: #333; font-size: 30px; text-align: center; padding: 30px 0 0; font-weight:normal }
+.tab_info {padding: 0 10px; display: -webkit-box; display: -moz-box; display: box;font-size: 15px;  }
+.tab_info li { line-height: 37px; height: 37px; -webkit-box-flex: 1; -moz-box-flex: 1; box-flex: 1; text-align: center; color: #878889; }
+.tab_info li span{display:inline-block; padding:0 30px; line-height:30px }
+.tab_info li.curr { color: #43d4ef }
+.tab_info li.curr span { border-bottom: 1px solid #43d4ef;  }
+.content_info{ margin:20px 30px 20px;}
+.coupons-box li{ margin-bottom:20px;  border:2px solid #fec7e2; border-radius:3px; text-align:center; padding:10px 30px; position:relative;}
+.coupons-box li img{ display:block; width:80%; margin:0 auto 10px;}
+.coupons-box li h3{ line-height:20px;}
+.coupons-box li p{ line-height:20px;overflow:hidden; white-space:nowrap;}
+.coupons-box li p em{ text-align:left;}
+.coupons-box li p span{ }
+.c-delete-btn{ position:absolute; top: 5px; right: 3px; width: 30px; height: 30px; text-align:center;}
+.none-tip{ width:115px; height:80px; margin:100px auto 20px;}
+.none-tip p{color:#dbdddd;font-size: 20px; text-align:center; margin-top:10px;}
+
+.con { text-align: center; margin-top: 30px; }
+.con .coupon { font-size: 18px; color: #e71f21; line-height: 30px; }
+.con span { color: #707677; line-height: 20px; font-size: 13px; }
+.btn-box { margin: 10% auto 5%; width: 240px; }
+.btn-box  a{display: inline-block; padding: 10px 20px; border-radius: 5px; font-size: 18px; }
+
+.rule-btn { background: #ff9800; color: #fff; margin-right: 5px; }
+.winning-btn { background: #43d4ef; color: #fff; margin-left: 5px; }
+
+.turntable { position: relative; z-index: 3; overflow: hidden; margin:20px 0; }
+.turntable-box { width: 222px; height: 222px; margin: 0px auto; position: relative; }
+.turntable-box #turntable_img { width: 222px; height: 222px; }
+#turntable_btn { position: absolute; z-index: 3; top: 50%; left: 50%; margin-left: -45px; margin-top: -92px; cursor: pointer; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-image: url(../images/turntable_btn.png); width: 90px; height: 137px; background-size: 100%; }
+#turntable_btn:active { }
+
+#popup_container { opacity: 1; color: #000; background: #fff; border-radius: 5px;width:290px;/* height:170px;*/}
+#popup_container #popup_content { padding:20px 20px 0}
+#popup_container #popup_message { height: auto;}
+#popup_container #popup_message h3 { color: #e71f21; line-height: 30px; font-size: 17px; font-weight: normal;margin-top: 5px;text-align:center  }
+#popup_container #popup_message p { color: #707677; font-size: 15px; line-height: 24px; text-align:center }
+.win-prize{font-size: 18px; color: #e71f21; line-height: 30px; }
+#popup_container #popup_panel {background: #fff;margin:20px 0;   }
+#popup_container #popup_panel button { display: inline-block; margin-right: 20px;border:1px solid #b5b5b6;border-radius: 5px; font-size: 18px; padding: 10px; background:#fff; outline:0; text-align:center;  color: #b5b5b6; }
+#popup_container #exchange_btn { background: #43d4ef; color: #fff;display: inline-block;border-radius: 5px; font-size: 18px;padding: 10px;}
+
+
+.rule-bg{ background: url(../images/loading_bg.jpg) center bottom no-repeat; background-size:100% auto; left: 0; right: 0; top: 0; bottom: 0; position: fixed; z-index: 999; }
+.rule-box{ margin:0 30px;}
+
+.rule-box>p{ line-height:24px; font-size:13px}
+
+
+.mask{ background:rgba(0,0,0,0.8); position:fixed; top:0; bottom:0; left:0; right:0; z-index:998; display:none;}
+.coupon-messages{ width:280px; margin:0 auto; border-bottom:5px solid #43d4ef; border-radius:5px;position: absolute; left: 50%; top:50%; transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%); background:#fff; overflow:hidden;}
+.coupon-messages>h2{ text-align:center; position:relative; color:#fff; background:#43d4ef; padding:15px 0; font-weight:normal;line-height:30px; font-size:18px; margin:0;}
+.coupon-messages>h2 span{ display:block; }
+.coupon-messages>h2 .close-btn{ display:block; width:20px; height:20px; position:absolute; right:15px; top:10px;}
+.coupon-messages>p{ color:#787879; line-height:20px; font-size:12px; padding: 20px; margin:0;min-height: 200px; max-height: 300px;  overflow-y: auto; }
+.use-text{ display:block; text-align:center; margin-top:40px; font-size:20px; color:#f00;}
+
+/*屏幕适配*/
+@media screen and (min-width: 360px) {
+.turntable-box { width: 260px; height: 260px; }
+.turntable-box #turntable_img { width: 260px; height: 260px; }
+}
+ @media screen and (min-width: 375px) {
+.turntable-box { width: 270px; height: 270px; }
+.turntable-box #turntable_img { width: 270px; height: 270px; }
+}
+@media screen and (min-width: 414px) {
+.turntable-box { width: 290px; height: 290px; }
+.turntable-box #turntable_img { width: 290px; height: 290px; }
+}

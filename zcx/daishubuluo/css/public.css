@@ -1,0 +1,112 @@
+body{max-width: none; background-color: #f5f5f5;}
+html, body{height: 100%;}
+
+/*header*/
+.go-back-noheader{ width: 0.25rem; position: absolute; top: 0.23rem; left: 0.21rem; padding: 0.1rem 0.2rem;}
+header {
+    width: 100%;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    background: #f9f9f9;
+    border-bottom: 1px solid #d2d2d2;
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    color: #666;
+    font-size: .43rem;
+    vertical-align: middle;
+}
+.go-back{
+    position: absolute;
+    top: .37rem;
+    left: .52rem;
+    width: .2rem;
+    height: .4rem;
+    display: block;
+    background: url("../images/16@2x.png") no-repeat 0 center;
+    background-origin:content-box;
+    background-size: auto 100%;
+}
+/*page_loading*/
+.page_loading{
+    height: 0.8rem;
+    line-height: 0.8rem;
+    padding: .4rem 0;
+    text-align: center;
+}
+.page_loading i{
+    display: inline-block;
+    vertical-align: middle;
+    width: .667rem;
+    height: .7rem;
+    /*border-radius: 50%;*/
+    /*border: 2px solid #666;*/
+    /*border-bottom-color: transparent;*/
+    background: url("../images/loading@2x.png") no-repeat 0 center;
+    background-origin:content-box;
+    background-size: auto 100%;
+    animation: rotate 0.75s linear infinite;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.container, .main{width: 100%;}
+
+.select-overlay {
+    display: -webkit-box;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.select-overlay .show_window_con {
+    padding: 0.2rem 0.58rem;
+    border-radius: 0.07rem;
+    background-color: #323232;
+    display: none;
+}
+
+.select-overlay .show_window_con p {
+    color: #fff;
+    font-size: 0.32rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.select-overlay.active {
+    position: fixed;
+    z-index: 9999;
+}
+
+.select-overlay.active .show_window_con {
+    display: block;
+}
+pre{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
+}

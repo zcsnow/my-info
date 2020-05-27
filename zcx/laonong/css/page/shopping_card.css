@@ -1,0 +1,92 @@
+.height100{height: 100%; overflow:hidden;/**/}
+
+
+.shopping-card-bind{ padding-bottom:50px;}
+.shopping-card-bind .header-tip{ position:relative; border:1px solid #d9d9d9; background:#fff; padding:50px 0; margin:15px;}
+.shopping-card-bind .header-tip h2{text-align:center;font-size:20px; color:#393a3f;font-weight:normal;}
+.shopping-card-bind .header-tip h2 i{ display:inline-block; width:35px; margin-right:10px; vertical-align:-9px;}
+.shopping-card-bind .enter-btn{ display:block; margin:18px 15px; line-height:40px; background:#c62026; color:#fff;text-align:center;font-size:14px;}
+
+.shopping-card-bind .ewm-img{width:60%; margin:-20px auto 30px}
+.shopping-card-bind .ewm-text{ padding:0 25px; line-height:26px; color:#393a3f;}
+.shopping-card-bind .ewm-text strong{ font-size:18px;}
+.shopping-card-bind .tip-follow-text{ display:block; text-align:center; color:#ff0000; font-size:17px; margin-top:40px; font-weight:bold;}
+
+.card-invite-share{position:fixed; border:1px solid #d9d9d9; background:#fff; top:12px; bottom:12px; left:12px; right:12px;}
+.card-invite-share>h3{ font-size:17px; color:#2c2c2c; text-align:center; padding-top:40px; padding-bottom:20px;}
+.card-invite-share>p{ width:100%;font-size:12px; color:#353535; text-align:center;  padding:0 20px; box-sizing:border-box; line-height:20px;}
+.card-invite-share>.coupon_list li{ width:256px; height:95px;background-size:256px 95px;}
+
+.bind-new-card{ margin:15px;}
+.bind-new-card h3{ font-size:15px; font-weight:normal;margin-bottom:14px; color:#393a3f;}
+.bind-new-card input.tip-input{display:block; border:1px solid #b1b1b1; width:100%; line-height:30px; padding:0 10px; box-sizing:border-box;font-size:12px}
+.bind-new-card p{font-size:12px; line-height:20px; color:#393a3f;}
+.bind-new-card p strong{ font-size:14px; font-weight:normal}
+.bind-new-card>.enter-btn{ margin:18px 0;}
+
+.form-box { line-height: 24px; color: #2d2d2d;position:relative;  padding-top:2px;}
+.form-box  strong { color: #c62026; font-weight: normal }
+.form-box .prompt { font-size: 12px; color: #f00; padding: 0 3px;-webkit-transition:all ease 0.5s; transition:all ease 0.5s; height:0; overflow:hidden; line-height:20px; }
+.form-box .tip-input { display: block; border: 1px solid #b1b1b1; width: 100%; line-height: 45px; padding: 0 25px; box-sizing: border-box; margin-bottom: 15px; font-size: 13px }
+.yzm-box { display: -webkit-box;}
+.yzm-box .login_list { -webkit-box-flex: 8; overflow: hidden; position: relative; }
+.yzm-box .login_list input { background: #fff; border: 1px solid #b1b1b1; width: 100%;padding: 0 10px; box-sizing: border-box; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); line-height: 30px; outline: none; font-size: 13px; }
+.yzm-box > em { -webkit-box-flex: 2; display: block; background: #fff; width: 130px; height: 30px; background:#dedede; margin-left: 10px; line-height: 30px; text-align: center; color: #000; font-size: 13px; }
+.yzm-box > em.btn_gradient_gray{background:#eee;color:#666}
+
+
+
+.coupon_list{padding:0 8px;}
+.coupon_list li{margin:6.6% auto 0;padding:10px;width:280px;height:97px;background-color:#ffba4a;background-image:url(../../images/shopping-card-bg.png); background-repeat:no-repeat; background-position:10px 10px; background-size:280px 97px; position:relative; border-radius:3px}
+
+
+.coupon_list li>.icon{ width:50px; position:absolute; left:-5px; top:-5px; display:none;}
+.coupon_list li span{padding:5% 15px;overflow:hidden;display:block;margin-right:10px; margin-bottom:6px; position:relative;}
+.coupon_list li span strong{color:#986d29;font-size:20px;}
+.coupon_list li span sup{font-size:16px;color:#f81111; font-weight:normal; margin-right:5px; margin-left:12px;}
+.coupon_list li span b{font-size:26px;color:#f81111;font-weight:normal;}
+.coupon_list li span em{display:block;font-size:12px;}
+.coupon_list li p{padding:5px 15px 0;color:#87590f;font-size:12px;}
+
+/*.coupon_list li.selected{ background-color:#ffba4a;}*/
+.coupon_list li.selected i{display:block;}
+.coupon_list li span em.tag{ position:absolute; left:62px; top:35px; width:50%;}
+/*.coupon_list li.selected span strong{ color:#6d6d6d;}
+.coupon_list li.selected span sup{ color:#6d6d6d;}
+.coupon_list li.selected span b{ color:#6d6d6d;}
+.coupon_list li.selected p{ color:#6d6d6d;}*/
+
+.card-rule{margin:3%;border:1px solid #d9d9d9; background:#fff; padding:10px 15px;}
+.card-rule p{font-size:11px; line-height:20px; color:#393a3f;}
+.coupon_list.select-card li{background-position:40px 10px; background-size:250px 97px; padding-left:40px; width:250px;margin-top:3%}
+.coupon_list.select-card .select-icon{width:21px; height:40px; position:absolute; left:10px; top:50%; margin-top:-20px;background-image:url(../../images/radio.png);  background-repeat:no-repeat;background-position:0 0;background-size:21px 80px;}
+.coupon_list.select-card li.cur .select-icon{background-position:0 -40px;}
+
+.footer-back-btn{ position:fixed; bottom:0; width:100%; max-width:640px; display:block; background:#fff;border-top:1px solid #d8d8d8; color:#777;font-size:15px; line-height:20px;padding:10px 0; text-align:center; z-index:4}
+
+@media screen and (min-width: 360px) {
+.coupon_list li{width:309px;height:108px;background-size:309px 108px;}
+.coupon_list li span{padding:5.8% 15px}
+.coupon_list li span em.tag{ top:39px;}
+.coupon_list.select-card li{background-size:279px 108px;width:279px;}
+.card-rule{margin:4.4%;}
+.card-invite-share>.coupon_list li{ width:309px;height:108px;background-size:309px 108px;}
+}
+
+@media screen and (min-width: 375px) {
+.coupon_list li{width:309px;height:108px;background-size:309px 108px;}
+.coupon_list li span{padding:5.8% 15px}
+.coupon_list li span em.tag{top:39px;}
+.coupon_list.select-card li{background-size:279px 108px;width:279px;}
+.card-rule{margin:6%;}
+.card-invite-share>.coupon_list li{ width:309px;height:108px;background-size:309px 108px;}
+
+}
+@media screen and (min-width: 414px) {
+.coupon_list li{width:350px;height:122px;background-size:350px 122px;}
+.coupon_list li span{padding:6.8% 15px}
+.coupon_list li span em.tag{top:45px;}
+.coupon_list.select-card li{background-size:320px 122px;width:320px; }
+.card-rule{margin:5%;}
+.card-invite-share>.coupon_list li{ width:350px;height:122px;background-size:350px 122px;}
+}

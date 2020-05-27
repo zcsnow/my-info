@@ -1,0 +1,71 @@
+/*container*/
+.top_no{
+    padding-top: 1.2rem;
+}
+.top_notice{
+    background-color: #ffeced;
+    color:#ed1c24;
+    font-size: .3rem;
+    line-height: .44rem;
+    padding: .22rem .533rem;
+}
+.content{
+    background-color: #fff;
+    padding: .24rem .533rem .667rem;
+}
+.content h3{
+    color: #363636;
+    font-size: .37rem;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.17rem;
+}
+.content p{
+    color: #666;
+    font-size: .32rem;
+    line-height: .48rem;
+    padding-bottom: .26rem;
+}
+
+
+.check_btn {
+    font-size: .32rem;
+    line-height: .48rem;
+    color: #666;
+    margin: 0 .533rem;
+    padding: .24rem 0 .24rem .56rem;
+    position: relative;
+
+}
+.check_btn::before {
+    content: "";
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-right: 0.15rem;
+    width: 0.41rem;
+    height: 0.41rem;
+    border-radius: 50%;
+    vertical-align: middle;
+    position: absolute;
+    left:0;
+    top: .24rem;
+}
+.check_btn.on::before {
+    border: 1px solid #e83828;
+    background: #e83828 url("../../images/check-icon.png") no-repeat center center;
+    background-size: 70% auto;
+}
+
+.sbumit_btn{
+    display: block;
+    width: 100%;
+    height: 1.16rem;
+    line-height: 1.16rem;
+    background-color: #ccc;
+    text-align: center;
+    color: #fff;
+    font-size: .37rem;
+}
+.sbumit_btn.on{
+    background-color: #e83828;
+}
+

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="/Resources/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="/Resources/JSCookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var wexinopenid = getUrlParam("openid");
+        var htmlname = getUrlParam("htmlname"); 
+        var htmltype = getUrlParam("htmltype");
+        if (wexinopenid == null || wexinopenid == "") {
+            var OpenID = getCookie("newweixinOpenID");
+            if (OpenID == null) {
+                window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx93ed718e869344bc&redirect_uri=http%3a%2f%2fservices.hyh6.com%2fAuthorize%2fweixin%2fWapWeixinBackglzq.htm&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect";
+            }
+        } else {
+            setCookie("newweixinOpenID", wexinopenid);
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+<body>
+<!--此页面为微信授权后回调页面
+    页面参数：
+    openid:微信授权后的用户id
+    htmlname:回调后返回页面
+    htmltype:回调页面类型，具体是哪个项目做的回调-->
+</body>
+</html>

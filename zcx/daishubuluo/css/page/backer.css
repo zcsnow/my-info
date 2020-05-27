@@ -1,0 +1,37 @@
+
+/*container*/
+.backer_list ul{
+    padding-top: 1.2rem;
+    width: 100%;
+    background-color: #fff;
+}
+.backer_list li{
+    width: 100%;
+    height: 1.04rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: .7rem 0 .86rem .54rem;
+}
+.backer_list li img{
+    float: left;
+    width: 1.04rem;
+}
+.backer_list li dl{
+    padding-left: 1.35rem;
+}
+.backer_list li dl dd{
+    float: left;
+    width: 47%;
+    font-size: .37rem;
+    color: #666;
+    line-height: .55rem;
+}
+.backer_list li dl dd.gray{
+    color: #999;
+}
+.end-prompt{
+    width: 100%;
+    font-size: .4rem;
+    color: #ccc;
+    text-align: center;
+    line-height: 1rem;
+}

@@ -1,0 +1,207 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+html,body{overflow: hidden;}
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin:0 auto;
+	background-color: #fff;
+}
+
+.header-search{
+	position: fixed;
+	top: 0.91rem;
+	width: 100%;
+	display: flex;
+	padding: .2rem 0;
+	background-color: #f5f5f5;
+	z-index: 100;
+
+	.wifi{
+		display: block;
+		width: .66rem;
+		padding-left: .37rem;
+		@include bg2('lianwang', 0.26rem, 0.26rem);
+		background-position: .09rem center;
+		font-size: .28rem;
+		color: #807E7D;
+		height: .46rem;
+		line-height: .46rem;
+		border-radius: .08rem;
+		border: .02rem solid #B3B0AF;
+		position:absolute;
+		left: .44rem;
+		top: .22rem;
+	}
+
+	p{
+		position: relative;
+		background-color: #fff;
+		width: 6.42rem;
+		height: .6rem;
+		line-height: .6rem;
+		border-radius: .08rem;
+		padding-left:0.4rem;
+		margin: 0 0.34rem;
+		@include bg2('icon_search', .34rem, .34rem);
+		background-position: 2.4rem center;
+		text-align: center;
+		color: #999;
+
+		input{
+			position: absolute;
+			top: 0;
+			background-color: #fafafa;
+			font-size: .28rem;
+			height: .58rem;
+			border: 0;
+			width: 6.2rem;
+			left: 0.7rem;
+			padding-left: 0.2rem;
+			/* 清除默认CSS */
+			appearance: none;
+			-moz-appearance: none;
+			-webkit-appearance: none;
+		}
+		::-webkit-input-placeholder {
+			color:#B3B0AF;
+		}
+		　　:-moz-placeholder {
+			color:#B3B0AF;
+		}
+		　　::-moz-placeholder {
+			color:#B3B0AF;
+		}
+		　　:-ms-input-placeholder {
+			color:#B3B0AF;
+		}
+	}
+
+	.user{
+		position:absolute;
+		right: .22rem;
+		top: .22rem;
+		display: block;
+		width: 0.98rem;
+		height: .54rem;
+		@include bg2('icon_topbar_my', .54rem, .54rem);
+		background-position: .2rem center;
+	}
+}
+
+.list-box {
+	display:flex;/*设为伸缩容器*/  
+  	flex-flow:row;/*伸缩项目单行排列*/
+}
+.city-menu {
+	width: 2.06rem;
+    height: 100%;
+	position:fixed;
+	background: #f5f5f5;
+    overflow-y: scroll; 
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+	
+	ul {
+		width: 100%;
+		padding-bottom: 1.91rem;
+		li {
+			height: 1.36rem;
+			line-height: 1.36rem;
+			text-align: center;
+			color: #333333;
+			font-size: .32rem;
+			border-bottom: 1px solid #E6E6E6;
+			padding: 0 0.2rem;
+			cursor: pointer;
+			&.active {
+				background-color: #fff;
+				a {
+					color: #F72F42;
+					font-weight: bold;
+				}
+			}
+			a {
+				display: block;
+				width: 100%;
+				height: 1.36rem;
+				overflow: hidden;
+			}
+		}
+	}
+	
+}
+.city-list-box{
+	width: 5.44rem;
+    height: 100%;
+    position:fixed;
+	/* right:0; */
+	margin-left:2.06rem;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+ul.city-list {
+	position: relative;
+	padding-bottom: 2.35rem;
+	li{
+		display: inline-block;
+		width: 2.06rem;
+		height: 2.14rem;
+		margin: .44rem 0 0 .44rem;
+
+		a{
+			position: relative;
+			display: block;
+			width: 2.06rem;
+			margin: 0 auto;
+			border-radius: .08rem;
+			overflow: hidden;
+			>img{
+				width: 2.06rem;
+				height: 2.14rem;
+				display: block;
+				margin: 0 auto;
+				@include bg2('Bitmap', 1.1rem, 1.1rem);
+				background-position: center;
+				background-color: #F5F5F5;
+				border: 1px solid #F5F5F5;
+			}
+			h5{
+				width: 2.06rem;
+				height: 2.14rem;
+				position: absolute;
+				top:0;
+				background-color: rgba(0, 0, 0, 0.1);
+				color: #fff;
+				font-size: .36rem;
+				line-height: 2.14rem;
+				font-weight: normal;
+				text-align: center;
+				overflow: hidden;
+				white-space: nowrap;
+			}
+			p{
+				margin-top: .16rem;
+				color: #807E7D;
+				line-height: .24rem;
+				font-size: .24rem;
+				span{
+					display: inline-block;
+				  	color: #FF7733;
+				}
+			}
+		}
+		.button{
+			margin: .2rem auto 0rem auto;
+			width: 1.5rem;
+			height: .56rem;
+			color: #F72F42;
+			line-height: .56rem;
+			border: .02rem solid #F72F42;
+			text-align: center;
+			border-radius: 50px;
+		}
+	}
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>电影</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+    <div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'.1rem'}">
+        <header-nav v-if="showNav" title="电影" page-url="movie-list.html"></header-nav>
+        <section v-if="typeof movieData.status === 'undefined' && !isWaiting" class="no-data">
+            此电影已过期不存在<br>
+            <a href="movie-list.html">观看其他电影</a>
+        </section>
+        <div v-else>
+            <div v-if="Object.keys(movieData).length!=0">
+                <div class="movie-box" >
+                    <div class="img-bg">
+                        <div class="movie-img"><img style="width: 100%;" :src="baseUrl+movieData.image" /></div>
+                    </div>
+                    <div class="movie-info">
+                        <h3>{{movieData.name}}</h3>
+                        <p>{{movieData.theme}}</p>
+                        <p>导演：{{movieData.director}}</p>
+                        <p>主演：{{movieData.actor}}</p>
+                        <p>上映时间：{{movieData.screening_info}}</p>
+                        <h4>剧情介绍</h4>
+                        <div class="movie-desc"  :class="fold?'fold':'unfold'" @click="showOrHide">
+                            {{movieData.content}}
+                            <a href="javascript:;" class="toggle-btn">{{toggle_btn_text}}</a>
+                        </div>
+                        
+                    </div>
+                    <div class="view-tip">
+                        <h4>观影提示</h4>
+                        <p>由于飞机气流颠簸等不可抗力，影片可能出现卡顿等现象，请您谅解。 </p>
+                        <!-- <p>此商品为实效产品，购票中仅限本次航班中观看，不可退款。</p> -->
+                    </div>
+                </div>
+            </div>
+            <div v-if="buyNavShow" class="buy-nav" >
+                <div v-if="playBtnShow" class="btn" :class="btn_disabled?'disabled':''"  @click="playStart"  v-html="btn_text"></div>
+                <div v-else  class="btn" :class="btn_disabled?'disabled':''"  @click="payMovie" v-html="btn_text"></div>
+                <p v-if="btnTipShow" class="btn-tip" :class="btn_disabled?'disabled':''" v-html="btn_tip"></p>
+                
+            </div>
+        </div>
+        <!--加载中-->
+        <!-- <loading v-if="isWaiting" :status="2" :type="1"></loading> -->
+
+        <!--执行toast弹出层-->
+        <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+    </div>
+</body>
+</html>

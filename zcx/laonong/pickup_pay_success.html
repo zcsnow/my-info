@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<title>支付成功</title>
+<meta content-type="text/html" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link href="css/base.css?0" rel="stylesheet" />
+<link href="font_css/font-awesome.min.css" rel="stylesheet" />
+<link href="css/page/pickup.css?0" rel="stylesheet" />
+</head>
+<body class="white-body">
+<div class="container">
+
+    <div class="pickup-pay">
+        <div class="header-tip">
+            <img src="images/pickup_bg2.jpg"/>
+            <h2><i><img src="images/pickup_icon1.png"></i>支付成功</h2>
+        </div>
+        <p class="goods-name">[老农部落]自营番茄 <time>有效期：2016-10-01</time></p>
+        <div class="verify-code">
+            <h3>验证码：0003545674613</h3>
+            <a href="javascript:;" class="share-btn js-share-btn">转送微信好友</a>
+        </div>
+        <div class="rule-box">
+            <img src="images/pickup_up.png">
+            <p>
+            <strong>使用规则：</strong></br>
+            1、购物卡有效期为1年,需在有效期内使用,过期将失效。有效期内可多次使用; </br>
+            2、购物卡不支退款</br>
+            3、购物卡多买多送</br>
+            4、发送给朋友请尽快提货</br>
+            </p>
+            <img src="images/pickup_down.png">
+        </div>
+        
+        <!-- 分享弹出层 -->
+    	<div class="js-share-pop"><img src="images/share-img.png" /></div>
+    </div>
+
+
+</div>
+<script src="js/jquery1.7.min.js"></script>
+<script>
+$(function() {
+	 //分享弹层
+	  $('body').on("click",'.js-share-btn',function(e){
+		  $('.js-share-pop').show();	
+	  });
+	  $('body').on("click",'.js-share-pop',function(e){
+		  $('.js-share-pop').hide();	
+	  });
+	
+});
+
+
+
+</script>
+
+
+</body>
+</html>

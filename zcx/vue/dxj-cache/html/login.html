@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>登录</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak>
+  <header>
+    <span @click="goBack"></span>
+  </header>
+  <section>登录</section>
+  <div class="form">
+    <p class="clr">
+      <span class="phone"></span>
+      <input type="tel" placeholder='请输入手机号' v-model="phone" maxlength="11" />
+    </p>
+    <p class="clr">
+      <span class="key"></span>
+      <input type="password" placeholder='请输入密码' v-model="password" maxlength="16" />
+    </p>
+    <a :class="phone.length==11 && password.length>=6?'button active':'button'" @click="login()">登录</a>
+  </div>
+  <div class="form_tip">还没有帐号？<a :href="pageUrl!='' && pageUrl!=null?'register.html?pageUrl=' + pageUrl:'register.html'">立即注册</a></div>
+  <!--加载中-->
+  <loading v-if="isWaiting" :status="2"></loading>
+  <!--执行toast弹出层-->
+  <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

@@ -1,0 +1,424 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin:0 auto;
+	background-color: #f5f5f5;
+}
+body,html{overflow-x: hidden}
+
+section{
+	width: 100%;
+	padding-top: .3rem;
+
+	.network{
+		padding: .34rem .44rem .6rem;
+		overflow: hidden;
+
+		img{
+			display: block;
+			width: 100%;
+			@include bg2('Bitmap', 1.1rem, 1.1rem);
+			background-position: center;
+			background-color: #F5F5F5;
+			border-radius: .08rem;
+		}
+	}
+
+	.ad1swiper{
+		width: 6.63rem;
+		margin: 0.34rem auto 0.68rem;
+		padding: 0.27rem 0.26rem 0.24rem;
+		box-sizing: border-box;
+		background-color: #fff;
+		border-radius: 0.08rem;
+		i{ 
+			display: block;
+			float: left;
+			width: 0.96rem;
+			height: 0.36rem;
+			margin-right: 0.58rem;
+			@include bg2('announcement', .96rem, .36rem);
+		}
+		.swiper-container {
+			display: block;
+			width: 4.38rem;
+			height: 0.36rem;
+			overflow: hidden;
+			.swiper-slide {
+				a{
+					display: block;
+					overflow: hidden;
+					text-overflow:ellipsis;
+					white-space:nowrap;
+					text-align: left;
+					line-height: 0.36rem;
+					font-size: 0.28rem;
+					color: #666666;
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+
+	.ad2swiper{
+		width: 6.62rem;
+		height: 3.2rem;
+		margin: 0.48rem auto 0.68rem;
+		overflow: hidden;
+		@include bg2('Bitmap', 1.1rem, 1.1rem);
+		background-position: center;
+		background-color: #fff;
+		border-radius: 0.08rem;
+		.swiper-container {
+			border-radius: 0.08rem;
+			.swiper-pagination {bottom: 6px;
+				.swiper-pagination-bullet{
+					width: 12px !important;
+					height: 4px !important;
+					border: none !important;
+					border-radius: 9px !important;
+					background: rgba(255,255,255,0.5) !important;
+					opacity: 1 !important;
+					margin: 0 .06rem !important;
+					transition: background .3s, width .3s;
+				}
+				.swiper-pagination-bullet-active{
+					background: #fff !important;
+				}
+			}
+			
+
+			img{
+				display: block;
+				width: 6.62rem;
+				height: 3.2rem;
+			}
+		}
+	}
+
+	.list-box{
+		width: 100%;
+		&.top40 {
+			padding-top: .4rem;
+		}
+		h3{
+			text-align: right;
+			font-weight: normal;
+			height: .64rem;
+			line-height: .68rem;
+			padding-right: .3rem;
+			/* margin-bottom: .2rem; */
+			background-position: .44rem center;
+
+			a{
+				color: #666;
+				font-size: .28rem;
+				padding-right: .4rem;
+				@include bg2('icon_more', .16rem, .26rem);
+				background-position: .65rem center;
+				display: inline-block;
+			}
+
+			//特殊CSS处理
+			&.artists{
+				@include bg2('yishumingjia', 1.41rem, .34rem);
+			}
+			&.artists.ss{
+				@include bg2('guohuayishujia', 1.77rem, .34rem);
+			}
+			&.artists.hn{
+				@include bg2('youhuayishujia', 1.78rem, .34rem);
+			}
+			&.artists.dw{
+				@include bg2('shufayishujia', 1.78rem, .34rem);
+			}
+			&.artists.rw{
+				@include bg2('guwanyishujia', 1.78rem, .34rem);
+			}
+			&.artworks{
+				@include bg2('yishupinzhanlanzhanlan', 1.76rem, .34rem);
+			}
+		}
+		.nav{
+			position: relative;
+			span{
+				display: block;
+				position: absolute;
+				width: 1rem;
+				background: -webkit-linear-gradient(left,rgba(255,255,255,0.3),#f5f5f5); /* Safari 5.1 - 6 */
+				background: -o-linear-gradient(right,rgba(255,255,255,0.3),#f5f5f5); /* Opera 11.1 - 12*/
+				background: -moz-linear-gradient(right,rgba(255,255,255,0.3),#f5f5f5); /* Firefox 3.6 - 15*/
+				background: linear-gradient(to right, rgba(255,255,255,0.3), #f5f5f5); /* 标准的语法 */
+				height: .5rem;
+				top: .2rem;
+				right: 0;
+			}
+		}
+		nav{
+			padding:0.20rem .44rem;
+			line-height: .5rem;
+			background-color: #F5F5F5;
+			white-space: nowrap;
+			overflow-x: auto;
+
+			a{
+				display: inline-block;
+				color: #666;
+				line-height: .5rem;
+				margin: 0 .3rem;
+				border-bottom: 2px solid #F5F5F5;
+
+				&.active{
+					border-bottom: 2px solid #F72F42;
+					color: #F72F42;
+					font-weight: bold;
+				}
+
+				&:first-child{
+					margin-left: 0;
+				}
+			}
+		}
+
+		&.fixed{
+			.nav{
+				position: fixed;
+				top: 0.91rem;
+				z-index: 10;
+				left: 0;
+				right: 0;
+			}
+			.artwork-item-list{
+				margin-top: 0.9rem;
+			}
+		}
+
+		/* .swiper-container {
+			padding: 0 .44rem;
+			height: 100%;
+		} */
+
+		.more{
+			display: block;
+			text-align: center;
+			padding-left: .58rem;
+			line-height: .8rem;
+			@include bg2('yishupin_shuaxin', .36rem, .36rem);
+			background-position: 3.1rem center;
+			margin-bottom: .2rem;
+		}
+	}
+
+	.travel-list{
+		// width: 100%;
+		// height: 3.88rem;
+
+		/* .swiper-slide {
+			width: 6.62rem;
+			height: 3.2rem;
+			background-color: #fff;
+			border-radius: .16rem;
+			overflow: hidden;
+			box-shadow: 0 2px 10px 4px rgba(0,0,0,0.04);
+
+			
+			display: flex;
+			//-webkit-box-pack: center;
+			//-ms-flex-pack: center;
+			//-webkit-justify-content: center;
+			justify-content: center;
+			//-webkit-box-align: center;
+			//-ms-flex-align: center;
+			//-webkit-align-items: center;
+			//align-items: center;
+		} */
+
+		width: 6.62rem;
+		height: 3.2rem;
+		margin: 0rem auto 0.04rem;
+		overflow: hidden;
+		@include bg2('Bitmap', 1.1rem, 1.1rem);
+		background-position: center;
+		background-color: #fff;
+		border-radius: 0.08rem;
+		.swiper-container {
+			border-radius: 0.08rem;
+			.swiper-pagination {bottom: 6px;
+				.swiper-pagination-bullet{
+					width: 12px !important;
+					height: 4px !important;
+					border: none !important;
+					border-radius: 9px !important;
+					background: rgba(255,255,255,0.5) !important;
+					opacity: 1 !important;
+					margin: 0 .06rem !important;
+					transition: background .3s, width .3s;
+				}
+				.swiper-pagination-bullet-active{
+					background: #fff !important;
+				}
+			}
+
+			img{
+				display: block;
+				width: 6.62rem;
+				height: 3.2rem;
+			}
+		}
+
+
+		a {
+			display: block;
+			width: 100%;
+
+			img {
+				display: block;
+				width: 6.62rem;
+				height: 3.2rem;
+				@include bg2('Bitmap', 1.1rem, 1.1rem);
+				background-position: center;
+				background-color: #F5F5F5;
+			}
+		}
+	}
+
+	.navLink{
+		padding: 0 .44rem;
+
+		a{
+			float: left;
+			width: 3.06rem;
+			height: 1.36rem;
+			margin-bottom: .34rem;
+			background-position: center;
+
+			&.b1{
+				@include bg2('yishupin_guohua', 3.06rem, 1.36rem);
+			}
+
+			&.b2{
+				@include bg2('yishupin_youhua', 3.06rem, 1.36rem);
+			}
+
+			&.b3{
+				@include bg2('yishupin_shufa', 3.06rem, 1.36rem);
+			}
+
+			&.b4{
+				@include bg2('yishupin_guwan', 3.06rem, 1.36rem);
+			}
+
+			&:nth-child(2n){
+				margin-left: .5rem;
+			}
+		}
+	}
+
+	.noticeswiper{
+		width: 6.63rem;
+		margin: 0.32rem auto 0.12rem;
+		padding: 0.27rem 0.26rem 0.24rem;
+		box-sizing: border-box;
+		background-color: #fff;
+		border-radius: 0.08rem;
+		i{ 
+			display: block;
+			float: left;
+			width: 1.2rem;
+			height: 0.36rem;
+			margin-right: 0.4rem;
+			@include bg2('notice', 1.2rem, .36rem);
+		}
+		.swiper-container {
+			display: block;
+			width: 4.42rem;
+			height: 0.36rem;
+			overflow: hidden;
+			.swiper-slide {
+				a{
+					display: block;
+					overflow: hidden;
+					text-overflow:ellipsis;
+					white-space:nowrap;
+					text-align: left;
+					line-height: 0.36rem;
+					font-size: 0.28rem;
+					color: #666666;
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+
+	.movie-list2{
+		width: 100%;
+		height: 4rem;
+		.container {
+			padding: 0 .33rem;
+			a{
+				display: block;
+				float: left;
+				margin: 0 .11rem .34rem;
+		
+				img{
+					display: block;
+					width: 2.06rem;
+					height: 2.8rem;
+					border-radius: .08rem;
+					@include bg2('Bitmap', 1.1rem, 1.1rem);
+					background-position: center;
+					background-color: #F5F5F5;
+				}
+		
+				h5{
+					width: 2.06rem;
+					color: #333333;
+					text-align: left;
+					line-height: .7rem;
+					height: .7rem;
+					font-size: .32rem;
+					font-weight: normal;
+					overflow:hidden;
+					text-overflow:ellipsis;
+					white-space:nowrap;
+				}
+				span {
+					width: 2.06rem;
+					display:block;
+					color: #666666;
+					height: .56rem;
+					font-size: .26rem;
+					overflow: hidden;
+					line-height: .28rem;
+				}
+			}
+		}
+	}
+
+
+
+}
+
+.footer {
+	height:.6rem;
+}
+
+.no-data{
+	padding: 1rem 0 3.2rem;
+	background-position: center 2.6rem;
+	line-height: 1.8rem;
+	a{
+		top: -1rem;
+	}
+}
+

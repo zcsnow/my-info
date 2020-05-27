@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <title>CNCBK商城APP</title>
+    <meta content-type="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link href="css/base.css" rel="stylesheet" />
+    <link href="css/style.css?4" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+    	<div class="down-app-box">
+            <img src="images/down_load.png" style="margin-top:-5%">
+        	<a href="javascript:;" class="down-app-btn">下载APP</a>
+        </div>
+    </div>
+    
+    <div class="js-share-pop" style="position: fixed; background: rgba(0, 0, 0, 0.7);top: 0px; height: 100%; width: 100%; z-index: 9999; display: none"><img src="images/share-img.png?1"></div>
+                
+    <script src="js/jquery1.7.min.js"></script>
+    <script>
+	var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+	var weixin = u.indexOf('MicroMessenger') > -1;
+	$('.down-app-btn').on('click',function(e){
+		if(isAndroid){
+			//alert("Android");
+			if(weixin){
+				
+				$('.js-share-pop').show();
+			}else{
+			    window.location.href="http://app.api.cncbk.net/CNCBKH5/CNCBK1.0.6.apk";
+			}
+			
+		}else{
+			//alert("App正在审核中");
+			//return false;
+			if(weixin){
+				$('.js-share-pop').show();
+			}else{
+			    window.location.href="https://itunes.apple.com/cn/app/cncbk%E5%95%86%E5%9F%8E-%E4%BA%91%E8%81%94%E6%84%8F%E6%97%97%E4%B8%8B%E7%94%B5%E5%95%86%E7%BB%BC%E5%90%88%E5%B9%B3%E5%8F%B0/id1213871712?mt=8";
+			}
+			
+		}
+	});
+	
+
+	$('.js-share-pop').on('click', function () {
+		$('.js-share-pop').hide();
+	});
+    </script>
+    
+</body>
+</html>

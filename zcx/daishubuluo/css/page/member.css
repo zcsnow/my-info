@@ -1,0 +1,19 @@
+
+/*个人中心*/
+.member-box {padding-top: 1.16rem;}
+
+.member-menu{background-color: #fff; margin-top: .4rem; padding: .27rem .53rem 0;}
+.member-menu a{color: #666; display: block; height: 1.2rem; line-height: 1.2rem; border-bottom: 1px solid #ebebeb;}
+.member-menu a:last-child{border-bottom: none;}
+.member-menu a h3{ float: left; font-weight: normal; font-size: .37rem; color: #444;}
+.member-menu a span{ display: block; float: right; font-size: .35rem; color: #999;}
+.member-menu a span .user-icon{width: 1.04rem; display: inline-block; vertical-align: top;}
+.member-menu a span i{display: inline-block; width: .2rem; margin-left: .4rem; vertical-align: middle;}
+
+#select_layer {position: fixed; width: 100%; bottom: 0; z-index: 99999; height: 3.8rem; display: none;}
+#select_layer ul {width: 100%;}
+#select_layer ul li {background:#fff;  padding: 0 .53rem; text-align: center;}
+#select_layer ul li a{border-bottom: 1px solid #ebebeb; display: block; height: 1.17rem; font-size: .37rem; color: #999; line-height: 1.17rem;}
+#select_layer ul li.cancel-btn{border-top: .27rem solid #f5f5f5;}
+
+

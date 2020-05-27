@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>空中大象电影节</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+   <header-nav v-if="showNav" title="空中大象电影节"></header-nav>
+   <section>
+      <h2><img src="../images/tmp/top-2@2x.png"></h2>
+
+      <div class="list-box" v-if="movieData.length">
+        <ul class="movie-list">
+          <li v-for="(item,index) in movieData">
+            <a :href="'article.html?tag='+item.tag" class="clearfix">
+              <div>
+                <dl>
+                  <dt><img v-lazy="'/app/dxj'+item.author_head" /></dt>
+                  <dd>
+                    <span>{{item.author}}</span>
+                    <p>{{item.author_desc}}</p>
+                  </dd>
+                </dl>
+                <h5>{{item.title}}</h5>
+                <p>{{item.title_second}}</p>
+              </div>
+              <img v-lazy="'/app/dxj'+item.image" />
+            </a>
+          </li>
+        </ul>
+        <p v-show="isLoad" class="updata_loading">
+          <i></i>加载中...
+        </p>
+      </div>
+  </section>
+  <section v-if="!movieData.length && !isWaiting" class="no-data">网络不给力，请检查后重试哦~<br /><a href="javascript:void(0)" onclick="window.location.reload()">点击刷新</a></section>
+  <!--加载中-->
+  <loading v-if="isWaiting" :status="2"></loading>
+  <!--执行toast弹出层-->
+  <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

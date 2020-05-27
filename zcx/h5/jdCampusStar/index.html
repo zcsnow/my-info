@@ -1,0 +1,316 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>京东校园之星</title>
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link href="css/swiper.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css?18" />
+</head>
+<body>
+  <!--<audio src="images/bgmusic.mp3?5" id="bgMusic" autoplay loop preload="auto"></audio>
+  <audio src="images/shake_sound.mp3" id="shakeMedia" preload="auto"></audio>
+  <div class="music on"><img src="images/music0.png?2"></div>-->
+  <div class="loading-box">
+      <div class="load-img"><img src="images/loading_img3.png"></div>
+      <div class="load-ani-bg"><img src="images/loading_gif_bg.png"></div>
+      <div class="load-ani"><img src="images/loading_gif2.gif"></div>
+      <div class="loading-bar">
+          <div id="progressbar"></div>
+      </div>
+      <!--<div class="load-txt" id="progressText"></div>-->
+      <!--<div class="load-txt" id="progressText">Loading<span class="dotting"></span></div>-->
+  </div>
+  
+  <div class="page page0">
+     <div class="bg"></div>
+     <div class="pop">
+     	<img src="images/p0_pop_bg.png">
+        <div class="pop-btn"><img src="images/p0_pop_btn.png"></div>
+     </div>
+  </div>
+  
+  <div class="page page1">
+     <div class="bg bgAni"></div>
+     <div class="ele1"><img src="images/p1_img1.png"></div>
+     <div class="ele2"><img src="images/p1_img2.png"></div>
+     <div class="btn upMove0"></div>
+  </div>
+  
+  <div class="page page2">
+  		<div class="swiper-container slider" id="homeSlider">
+            <div class="swiper-wrapper">
+                <!--slide1-->
+                <div class="swiper-slide slide1">
+                    <div class="bg"></div>
+                    <div class="btn upMove0"><img src="images/p2_btn1.png"></div>
+                </div>
+                <!--slide2-->
+                <div class="swiper-slide slide2">
+					<div class="bg"></div> 
+                    <div class="btn upMove0"><img src="images/p2_btn2.png"></div>
+                </div>
+                <!--slide3-->
+                <div class="swiper-slide slide3">
+                	<div class="bg"></div>
+                    <div class="btn upMove0"><img src="images/p2_btn3.png"></div>
+                </div>
+                <!--slide4-->
+                <div class="swiper-slide slide4">
+                	<div class="bg"></div>
+                    <div class="btn upMove0"><img src="images/p2_btn4.png"></div>
+                </div>
+                <!--slide5-->
+                <div class="swiper-slide slide5">
+                	<div class="bg"></div>
+                    <div class="btn upMove0"><img src="images/p2_btn5.png"></div>
+                </div>
+                <!--slide6-->
+                <div class="swiper-slide slide6">
+                	<div class="bg"></div>
+                    <div class="btn upMove0"><img src="images/p2_btn6.png"></div>
+                </div>
+                <!--slide7-->
+                <div class="swiper-slide slide7">
+                	<div class="bg"></div>
+                    <div class="btn upMove0"><img src="images/p2_btn7.png"></div>
+                </div>
+             </div>
+             <div class="swiper-button-next"><img src="images/next_btn.png?2"></div>
+             <div class="swiper-button-prev"><img src="images/prev_btn.png?2"></div>
+        </div>
+  </div>
+ 
+   <div class="page page3" id="container">
+        <!-- 键盘音效 -->
+        <audio id="musicBtn01" preload="auto">
+            <source src="images/1.wav" type="audio/ogg">
+        </audio>		
+        <!-- 特种音效 -->
+        <audio id="music4" preload="auto">
+            <source src="images/bgmusic.mp3" type="audio/ogg">
+        </audio>
+        
+		<div id="start">
+            <div class="pop">
+              <img src="images/p3_pop1_bg.png">
+              <div class="pop-btn start_inner"><img src="images/p3_pop1_btn.png"></div>
+            </div>
+		</div>
+        
+		<div class="status" id="status"></div>
+		<div class="score" id="score">0</div>
+		<div class="time" id="time">120</div>
+
+		<div class="gameRestart" id="gameRestart">重新开始</div>
+
+		<div class="keyContainer">
+			<div id="p01"><img src="images/p3_blue_btn.png"> <span><img src="images/p3_blue_hit.png"></span> </div>
+			<div id="p02"><img src="images/p3_yellow_btn.png"> <span><img src="images/p3_yellow_hit.png"></span></div>
+			<div id="p03"><img src="images/p3_red_btn.png"> <span><img src="images/p3_red_hit.png"></span></div>
+			<div id="p04"><img src="images/p3_purple_btn.png"> <span><img src="images/p3_purple_hit.png"></span></div>
+		</div>
+	</div>
+   
+  
+  <div class="page page4">
+    <div class="team-area"><img src="images/p4_dongbei.png"></div>
+    <div class="vote-box clr">
+          <div class="img-list">
+              <div class="img-box">
+                <img src="images/p4_dongbei_img1.jpg">
+              </div>
+              <div class="img-des">
+                  <h2>周淼</h2>
+                  <em class="vote-num"><strong>票数</strong>15401</em>
+                  <div class="vote-info js-vote-btn"><img src="images/p4_btn.png"></div>                      
+              </div>
+          </div>
+          <div class="img-list">
+              <div class="img-box">
+                <img src="images/p4_dongbei_img2.jpg">
+              </div>
+              <div class="img-des">
+                  <h2>戴领</h2>
+                  <em class="vote-num"><strong>票数</strong>15401</em>
+                  <div class="vote-info js-vote-btn"><img src="images/p4_btn.png"></div>      
+              </div>
+          </div>
+          <div class="img-list">
+              <div class="img-box">
+                <img src="images/p4_dongbei_img3.jpg">
+              </div>
+              <div class="img-des">
+                  <h2>哈密特</h2>
+                  <em class="vote-num"><strong>票数</strong>15401</em>
+                  <div class="vote-info js-vote-btn"><img src="images/p4_btn.png"></div>      
+              </div>
+          </div>
+          <div class="img-list">
+              <div class="img-box">
+                <img src="images/p4_dongbei_img4.jpg">
+              </div>
+              <div class="img-des">
+                  <h2>刘高兴</h2>
+                  <em class="vote-num"><strong>票数</strong>15401</em>
+                  <div class="vote-info js-vote-btn"><img src="images/p4_btn.png"></div>      
+              </div>
+          </div>
+          
+       </div>
+  </div>
+  
+  <div class="page page5">
+    <div class="rank-list-box">
+        <div class="rank-top clr">
+        	<div class="rank-num">
+                <i class="tag"><img src="images/p5_img2.png"></i>
+            	<div class="avatar"><img src="images/p4_xibei_img1.jpg"></div>
+                <span>刘若和</span>
+                <em>15341</em>
+            </div>
+            <div class="rank-num">
+                <i class="tag"><img src="images/p5_img1.png"></i>
+            	<div class="avatar"><img src="images/p4_xibei_img2.jpg"></div>
+                <span>张世强</span>
+                <em>24356</em>
+            </div>
+            <div class="rank-num">
+                <i class="tag"><img src="images/p5_img3.png"></i>
+            	<div class="avatar"><img src="images/p4_xibei_img3.jpg"></div>
+                <span>王文权</span>
+                <em>9876</em>
+            </div>
+        </div>
+        <div class="rank-list-bg clr">
+        	<img src="images/p5_pop_bg.png">
+ 			<div class="rank-list-scroll clr">
+            <ul class="rank-list clr">
+                <li>
+                  <i>4</i>
+                  <div class="avatar"><img class="img" src="images/p4_huazhong_img1.jpg"></div>
+                  <span>阿福哥</span> 
+                </li>
+                <li>15648</li>
+            </ul>
+            <ul class="rank-list clr">
+                <li>
+                  <i>5</i>
+                  <div class="avatar"><img class="img" src="images/p4_huazhong_img2.jpg"></div>
+                  <span>阿福哥</span> 
+                </li>
+                <li>15648</li>
+            </ul>
+            <ul class="rank-list clr">
+                <li>
+                  <i>6</i>
+                  <div class="avatar"><img class="img" src="images/p4_huazhong_img3.jpg"></div>
+                  <span>阿福哥</span> 
+                </li>
+                <li>15648</li>
+            </ul>
+            <ul class="rank-list clr">
+                <li>
+                  <i>7</i>
+                  <div class="avatar"><img class="img" src="images/p4_huazhong_img4.jpg"></div>
+                  <span>阿福哥</span> 
+                </li>
+                <li>15648</li>
+            </ul>
+            <ul class="rank-list clr">
+                <li>
+                  <i>8</i>
+                  <div class="avatar"><img class="img" src="images/p4_huanan_img1.jpg"></div>
+                  <span>阿福哥</span> 
+                </li>
+                <li>15648</li>
+            </ul>
+            <ul class="rank-list clr">
+                <li>
+                  <i>9</i>
+                  <div class="avatar"><img class="img" src="images/p4_huanan_img2.jpg"></div>
+                  <span>阿福哥</span> 
+                </li>
+                <li>15648</li>
+            </ul>
+            <ul class="rank-list clr">
+                <li>
+                  <i>10</i>
+                  <div class="avatar"><img class="img" src="images/p4_huanan_img3.jpg"></div>
+                  <span>阿福哥</span> 
+                </li>
+                <li>15648</li>
+            </ul>
+            <ul class="rank-list clr">
+                <li>
+                  <i>11</i>
+                  <div class="avatar"><img class="img" src="images/p4_huanan_img4.jpg"></div>
+                  <span>阿福哥</span> 
+                </li>
+                <li>15648</li>
+            </ul>
+        </div>
+        </div>
+        
+        <div class="js-share-btn"><img src="images/p5_btn.png"></div>
+        <div class="js-share-txt"><img src="images/p5_txt.png"></div>
+
+
+     </div>
+  </div>
+
+  
+  <div class="js-share-pop"><img src="images/share_img.png"></div>
+  <div class="mask"></div>
+
+  <div class="pop-tip-box">
+      <p class="pop-tip-msg"></p>
+  </div>
+  
+<script src="js/jquery-1.7.js"></script> 
+<script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
+<script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
+<script src="js/lazysizes.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/swiper.animate.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+<script src="/Resources/wxShare.js" type="text/javascript"></script>
+<script src="/Resources/JSCookie.js" type="text/javascript"></script>
+<script src="js/test.js"></script> 
+<script type="text/javascript">
+//微信分享
+var shareTitleArr = [
+	'我给他定了一张去马代的票！', 
+	'他要是火了，那就是我一手捧红的', 
+	'我给他投了这么多票！你呢！', 
+	'节奏大师10级的功夫终于派上用场了！',
+];
+var randomKey = Math.floor(Math.random() * shareTitleArr.length);
+var shareTitle = shareTitleArr[randomKey];
+console.log(shareTitle);
+
+var sharLink = window.location.href; 
+var shareInfo = {
+	title:'京东校园之星',     
+	desc: shareTitle,
+	imgUrl:'http://h5.hyh6.com/CompanyProject/jdCampusStar/images/fenxiang.jpg', 
+}; 
+wxShare(sharLink,shareInfo);
+
+</script>
+<script>
+//百度统计
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5b0cf71f192cb25508340a5c87eaff37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+	<head>
+	<title>启辰智跑团</title>
+	<meta content-type="text/html" charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<link href="css/base.css?2" rel="stylesheet" />
+    <link href="font_css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/fliptimer.css" rel="stylesheet" />
+	<link href="css/app.css?1" rel="stylesheet" />
+	</head>
+	<body class="bg4">
+    <div class="container">
+      <!--头部-->
+      <header class="header">
+         <div class="header-logo"><a href="index.html"><img src="images/logo.png"></a></div>
+         <div class="mask-line" onclick="history.go(-1)"><img src="images/bar-back-btn.png"></div>
+      </header>
+      
+      <div class="nav-box js-nav-box">
+        <header class="header-open">
+         	<div class="header-logo"><a href="index.html"><img src="images/logo.png"></a></div>
+         	<div class="mask-line js-bar-btn"><img src="images/bar-btn.png"></div>
+        </header>
+        <ul class="nav clr">
+            <li><a href="signin.html">登录</a></li>
+            <li><a href="register.html">注册</a></li>
+            <li><a href="active.html">活动咨询</a></li>
+            <li><a href="member.html">个人中心</a></li>
+          </ul>
+      </div>
+
+      <div class="main">
+			<div class="car-box">
+            	<h2><img src="images/title1.png"></h2>
+				<div class="time">
+                	<div class="dowebok">
+                        <div class="seconds"></div>
+                    </div>
+                    <div class="total-time">倒计时<strong>7</strong>秒</div>
+                </div>
+                <div class="man-car">
+                    <div class="line"></div>
+                	<div class="car"><img src="images/car.png"></div>
+                    <div class="man"><img src="images/hand.png"></div>
+                </div>
+                <span class="play-btn"><img src="images/start_btn.png"></span>
+                <div class="game-tip"><img src="images/txt2.png"></div>
+            </div>
+
+      </div>
+      
+      <div class="pop-tip-box">
+            <p class="pop-tip-msg"></p>
+      </div>
+      
+    </div>
+    <script src="js/jquery1.7.min.js"></script>
+    <script src="js/jquery.fliptimer.js"></script>
+	<script src="js/base.js?3"></script>
+    <script src="js/car.js?3"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>名家列表</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+  <header-nav v-if="showNav" title="名家列表" page-url="artwork-list.html"></header-nav>
+    <section>
+      <div v-for="(item,index) in artList" :class="index==0?'list-box':'list-box top40'" v-if="artData['list'+item.index]">
+        <h3 :class="'artists ' + item.titleImg"></h3>
+        <ul class="artists-ul clearfix">
+          <li v-for="(item2,index2) in artData['list'+item.index]">
+            <a :href="'artwork-detail.html?id='+item2.id">
+              <span class="bgImage-box"><img v-lazy="baseUrl+item2.bgImage" /></span>
+              <span class="authorImg-box"><img v-lazy="baseUrl+item2.image" class="authorImg" /></span>
+              <h5>{{item2.name}}</h5>
+              <p>{{item2.achievement}}</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!--加载中-->
+    <loading v-if="isWaiting" :status="2"></loading>
+    <!--执行toast弹出层-->
+    <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

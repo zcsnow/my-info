@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>东行记</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak>
+    <section>
+
+      <header>
+        <h1>东行记</h1>
+        <p @click="goSearch">
+          输入查询内容
+          <!--<input type="search" value="" placeholder="输入查询内容">-->
+        </p>
+      </header>
+      <div class="banner">
+
+        <div class="swiper-container" id="swiper1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="(item,index) in banner">
+              <a :href="item.url">
+                <img :src="'/app/dxj'+item.image" />
+              </a>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <nav class="flex">
+        <a class="flex-child game" href="games.html">游戏</a>
+        <a class="flex-child book" href="book-list.html">读书</a>
+        <a class="flex-child travel" href="travel-list.html">旅行</a>
+        <a class="flex-child shop" href="javascript:void(0)" @click="goFree">免税店</a>
+      </nav>
+
+      <div class="list-box" v-if="game.length">
+        <div class="game-list">
+          <div class="swiper-container" id="swiper3">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" v-for="(item,index) in game">
+                <a :href="isCeair?'/app'+item.url:item.url">
+                  <img v-lazy="item.image" />
+                  <p><i>{{item.title}}</i>{{item.category}}</p>
+                  <span>开始玩</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-box" v-if="book.length">
+        <h3 class="book"><a href="book-list.html">更多</a></h3>
+        <ul class="book-list">
+          <li v-for="(item,index) in book">
+            <a :href="item.category==1?'book-sale.html?tag='+item.tag:'book-reader.html?tag='+item.tag">
+              <img :src="'/app/dxj'+item.image" />
+              <p><span><i></i>{{item.title}}</span>{{item.author}}</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="list-box" v-if="car.length">
+        <h3 class="car"><a href="car-list.html">更多</a></h3>
+        <ul class="car-list clr">
+          <li v-for="(item,index) in car">
+            <a :href="'article.html?tag='+item.tag">
+              <img :src="'/app/dxj'+item.image" />
+              <p>{{item.title}}</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="list-box" v-if="travel.length">
+        <h3 class="travel"><a href="travel-list.html">更多</a></h3>
+        <div class="travel-list">
+          <div class="swiper-container" id="swiper2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" v-for="(item,index) in travel">
+                <a :href="'article.html?tag='+item.tag">
+                  <img :src="'/app/dxj'+item.image" />
+                  <h5>{{item.title}}</h5>
+                  <p>{{item.title_second}}</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="list-box" v-if="video.length">
+        <h3 class="video"></h3>
+        <ul class="video-list">
+          <li v-for="(item,index) in video">
+            <!-- <a href="javascript:void(0)" @click="playVideo(item.video)"> -->
+            <a href="javascript:void(0)" @click="playVideoPage(item.title,item.image,item.video)">
+              <img :src="'/app/dxj'+item.image" />
+              <i></i>
+              <dl>
+                <dt>{{item.title}}</dt>
+                <!--<dd><span>{{item.views}}</span>次播放</dd>-->
+              </dl>
+            </a>
+          </li>
+        </ul>
+        <p v-show="isLoad" class="updata_loading">
+          <i></i>加载中...
+        </p>
+      </div>
+    </section>
+
+    <!--视频加载失败提示-->
+    <div :class="isError?'load_error':'load_error hide'">
+      <i></i>
+      <p>"网络连接失败!"</p>
+    </div>
+
+    <!--加载中-->
+    <loading v-if="isWaiting" :status="2"></loading>
+    <!--执行toast弹出层-->
+    <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

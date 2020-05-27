@@ -1,0 +1,56 @@
+@import 'base';
+
+
+.no-data p{
+	padding-top: .5rem;
+	line-height: .4rem;
+	font-size: .28rem;
+}
+
+section{
+	padding: .24rem 0 .44rem;
+
+	ul{
+		padding: 0 .44rem;
+
+		li{
+			margin-top: .24rem;
+			padding: .56rem .64rem 0 .38rem;
+			height: 2.38rem;
+
+			&:nth-child(odd){
+				@include bg2('icon_gerenzhongxin_yhkl', 6.62rem, 2.94rem);
+			}
+
+			&:nth-child(even){
+				@include bg2('icon_gerenzhongxin_yhkr', 6.62rem, 2.94rem);
+			}
+
+			i{
+				width: .68rem;
+				height: .68rem;
+				margin-right: .14rem;
+				@include bg2('icon_gerenzhongxin_yinhang', .68rem, .68rem);
+				float: left;
+			}
+
+			div{
+				color: #fff;
+				font-size: .36rem;
+
+				p{
+					line-height: .68rem;
+				}
+
+				span{
+					display: block;
+					text-align: right;
+					margin-top: .38rem;
+					line-height: .42rem;
+					@include bg2('icon_xingxing', 3.03rem, .34rem);
+					background-position: center;
+				}
+			}
+		}
+	}
+}

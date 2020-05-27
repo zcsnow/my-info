@@ -1,0 +1,355 @@
+html, body, ul, p {
+				margin: 0;
+				padding: 0;
+				font-family: "微软雅黑", "宋体", "arial, helvetica, sans-serif";
+			}
+			.clr:after { content: ""; display: block; height: 0; clear: both; visibility: hidden; zoom: 1 }
+            .clr{zoom:1}
+			li {
+				list-style: none;
+			}
+			a {
+				text-decoration: none;
+			}
+			.popup {
+				color: #fff;
+				list-style: none;
+				position: fixed;
+				right: -300px;
+				top: 20px;
+				z-index: 8;
+				opacity: .5;
+				
+			}
+			.popup-inner {
+				position: relative;
+				font-size: 18px;
+				font-weight: 700;
+				width: 260px;
+				height: 50px;
+				line-height: 50px;
+				box-shadow: 0 0 5px #000;
+				background-color: rgb(0, 0, 0);
+				filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+				background-color: rgba(0, 0, 0, .7);
+				border: 1px solid transparent;
+				cursor: pointer;
+				margin-bottom: 20px;
+				z-index: 2;
+				text-align:center;
+			}
+			.popup-inner:hover {
+				border: 1px solid #fff;
+			}
+			.sign-up-all {
+				position: absolute;
+				height: 100%;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background: url(../img/sign-up-bg.png) no-repeat scroll top left;
+				background-size: cover;
+			}
+			.sign-up-wrap {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -426px;
+				margin-left: -376px;
+				/*transform: translate(-50%, -50%);*/
+				width: 754px;
+				height: 852px;
+				padding-top: 26px;
+				background-color: rgb(4, 4, 4);
+				background-color: rgba(4, 4, 4, .8);
+	            filter:alpha(opacity=80);  
+			}
+			.logo {
+				width: 670px;
+				padding-left: 60px;
+				overflow: hidden;
+				position: relative;
+			}
+			.logo-a {
+				float: left;
+			}
+			.logo-p {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				color: #fff;
+				font-size: 16px;
+			}
+			.logo-p-a {
+				color: #007ac0;
+			}
+			.logo-p-img {
+				vertical-align: middle;
+			}
+			.sign-up-inner {
+				width: 634px;
+				margin: 0 auto;
+				color: #fff;
+			}
+			.sign-up {
+				position: relative;
+				margin-top: 34px;
+				margin-bottom: 26px;
+				height: 32px;
+				font-size: 22px;
+			}
+			.sign-up-p {
+				float: left;
+			}
+			.login-logo-lang {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				height: 32px;
+				width: 70px;
+				color: #f7f7f7;
+				background-color: transparent;
+				outline: none;
+				border: none;
+				cursor: pointer;
+				border-top: 1px solid transparent;
+				border-right: 1px solid transparent;
+				border-left: 1px solid transparent;
+			}
+			.login-logo-lang.active {
+				background-color: rgba(30, 30, 36, .6);
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+				border-top: 1px solid #2899da;
+				border-right: 1px solid #2899da;
+				border-left: 1px solid #2899da;
+			}
+			.logo-lang-content {
+				display: none;
+				height: 64px;
+				position: absolute;
+				right: 0;
+				top: 100%;
+				z-index: 1;
+				border-bottom-left-radius: 4px;
+				border-bottom-right-radius: 4px;
+				border-right: 1px solid #2899da;
+				border-bottom: 1px solid #2899da;
+				border-left: 1px solid #2899da;
+			}
+			.logo-lang-content a {
+				display: block;
+				height: 32px;
+				line-height: 32px;
+				width: 68px;
+				color: #fff;
+				font-size: 14px;
+				text-align: center;
+				text-decoration: none;
+				background-color: rgb(30, 30, 36);
+				background-color: rgba(30, 30, 36, .8);
+			}
+			.button-caret {
+				display: inline-table;
+				vertical-align: baseline;
+				width: 10px;
+				height: 6px;
+				background: url(../img/login-caret.png) no-repeat scroll top left;
+			}
+			.ipt-name, .ipt-mail, .ipt-area, .ipt-bank, .ipt-phone, .references {
+				position: relative;
+				/*margin-bottom: 22px;*/
+			}
+			.ipt-name:after,
+			.ipt-mail:after,
+			.ipt-area:after,
+			.ipt-bank:after,
+			.ipt-phone:after {
+				content: '';
+				display: block;
+				height: 0;
+				clear: both;
+				visibility: hidden;
+			}
+			.ipt-section {
+				float: left;
+				width: 294px;
+				height: 40px;
+			}
+			.ipt-section input,.ipt-section2 input{
+				width: 270px;
+				height: 20px;
+				padding: 10px 12px;
+				background-color: #2f2f33;
+				color: #fff;
+				border: none;
+			}
+			.ipt-section2 {
+				float: right;
+				width: 294px;
+				height: 40px;
+			}
+			.ipt-section-select {
+				width: 294px;
+				height: 40px;
+				*height: 24px;
+				line-height:40px;
+				padding: 10px 12px;
+				*padding: 0 12px;
+				background-color: #2f2f33;
+				color: #fff;
+				border: none;
+			}
+			.ipt-identify {
+				position: relative;
+			}
+			.ipt-identify-input {
+				float: right;
+				width: 274px;
+				height: 20px;
+				padding: 10px 12px;
+				background-color: #2f2f33;
+				color: #fff;
+				border: none;
+			}
+			.ipt-identify-code {
+				position: absolute;
+				top: 14px;
+				height: 15px;
+				line-height: 12px;
+				right: 10px;
+				color: #007ac0;
+				background-color: transparent;
+				border: none;
+				border-left: 1px solid #007ac0;
+				outline: none;
+				cursor: pointer;
+			}
+			.upload {
+				font-size: 18px;
+				margin-top: 30px;
+				margin-bottom: 20px;
+			}
+			.idcard {
+				overflow: hidden;
+			}
+			.idcard-positive, .idcard-opposite {
+				position: relative;
+				height: 156px;
+				width: 50%;
+				float: left;
+				font-size: 14px;
+				color: #f1f1f1;
+				overflow: hidden;
+			}
+			.idcard-spinner {
+				position: absolute;	
+				top: 26px;
+				left: 0;
+				width: 180px;
+				height: 130px;
+				line-height: 130px;
+				background-color: #fff;
+				text-align: center;
+				font-size: 50px;
+				z-index: 1;	
+				display: none;	
+			}
+			/*.idcard-file {
+				position: absolute;	
+				margin-left: -100px;
+				top: 26px;
+				left: 0;
+				width: 280px;
+				height: 130px;
+				opacity: 0;
+				z-index: 2;		
+				cursor: pointer;
+				font-size: 180px;	
+				overflow: hidden;
+			}
+			.idcard-img {
+				position: absolute;
+				top: 26px;
+				left: 0;
+				width: 180px;
+				height: 130px;
+			}*/
+			.sign-up-submit {
+				display: block;
+				margin: 50px auto 0;
+				width: 294px;
+				height: 36px;
+				border-radius: 2px;
+				border: none;
+				outline: none;
+				font-size: 18px;
+				color: #fff;
+				background-color: rgb(40, 153, 218);
+				background-color: rgba(40, 153, 218, .8);
+				opacity: 0.8;
+	            /* older safari/Chrome browsers */  
+	            -webkit-opacity: 0.8;  
+	            /* Netscape and Older than Firefox 0.9 */  
+	            -moz-opacity: 0.8;  
+	            /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/  
+	            -khtml-opacity: 0.8;  
+	            /* IE9 + etc...modern browsers */  
+	            opacity: .8;  
+	            /* IE 4-9 */  
+	            filter:alpha(opacity=80);  
+	            /*This works in IE 8 & 9 too*/  
+	            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";  
+	            /*IE4-IE9*/  
+	            filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+			}
+			/*兼容IE*/
+			img {
+				border: none;
+			}
+			/*等待时旋转图片*/
+			/*@keyframes spinnerImg{
+				from {
+					transform: rotate(0deg);
+				}
+				to {
+					transform: rotate(360deg);
+				}
+			}
+			.idcard-spinner-img {
+			    -moz-animation: spinnerImg 2s infinite linear;
+			    -o-animation: spinnerImg 2s infinite linear;
+			    -webkit-animation: spinnerImg 2s infinite linear;
+			    animation: spinnerImg 2s infinite linear;
+			}*/
+			#global_location select {
+				height: 40px;
+				*height: 24px;
+				background-color: #2f2f33;
+    			color: #fff;
+    			border: none;
+				font-size:13px;
+    			padding: 10px 12px;
+				*padding: 0 12px;
+			}
+			#file-list, #file-list2 {
+				width: 180px;
+				height:130px;
+				position: absolute;
+				overflow:hidden;
+				top: 26px;
+				left: 0;
+				background-color: #fff;
+				z-index: 1;
+				display: none;/**/
+			}
+			#file-list img, #file-list2 img {
+				width: 100%;
+				height: auto;
+			}
+			
+.ipt-box{margin-bottom: 22px;}
+			
+.upload-btn{ display:block;width:180px; height:130px; background:url(../img/idcard.png) no-repeat center center; margin-top:7px;cursor: pointer;}
+.upload-btn>input{width: 180px;background:none;display:block;height: 130px;opacity:0; filter:alpha(opacity=0);font-size: 180px;cursor: pointer; position:absolute; z-index:2} 

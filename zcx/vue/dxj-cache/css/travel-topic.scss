@@ -1,0 +1,126 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin:0 auto;
+	background-color: #fff;
+}
+section{
+    nav{
+        background-color: #FAFAFA;
+        line-height: .8rem;
+        display: flex;
+
+        a{
+            flex: 1;
+            text-align: center;
+            color: #4D4B4B;
+            position: relative;
+
+            &.active{
+                font-size: .32rem;
+                color: #F72F42;
+
+                i{
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    margin: 0 0 0 -.2rem;
+                    width: .4rem;
+                    line-height: 0;
+                    border-bottom: .06rem solid #F72F42;
+                }
+            }
+        }
+    }
+}
+#main{
+	min-height: calc(100vh - .91rem);
+	background-color: #f6f5f4;
+}
+.travel-list{
+	display: inline-block;
+	padding-bottom: .44rem;
+	width: 7.5rem;
+	overflow: hidden;
+	>li{
+		list-style: none;
+		padding: .44rem .44rem 0;
+		background: #FFF;
+		img{
+			width: 6.62rem;
+			height: 3.45rem;
+			display: block;
+			@include bg2('Bitmap', 1.1rem, 1.1rem);
+			background-position: center;
+			background-color: #F5F5F5;
+		}
+		h3{
+			margin-top: 0.13rem;
+			font-size: 0.32rem;
+			font-weight: normal;
+			color: #1A1919;
+			height: 0.6rem;
+			line-height: 0.6rem;
+			overflow: hidden;
+			text-overflow:ellipsis;
+			white-space: nowrap;
+		}
+		article{
+			font-weight: normal;
+			line-height: 0.4rem;
+			height: 0.4rem;
+			overflow: hidden;
+			color: #B3B0AF;
+		}
+	}
+}
+
+
+.topic-head{
+	position: relative;
+	background: #FFF;
+	img{
+		display: inline-block;
+		width: 7.5rem;
+		height: 3.9rem;
+	}
+	h1{
+		position: absolute;
+		z-index: 99;
+		width: 5.6rem;
+		height: 1.8rem;
+		overflow: hidden;
+		top: 1.05rem;
+		left: .95rem;
+		background: #000;
+		opacity:.5;
+		text-align: center;
+	}
+	span{
+		position: absolute;
+		z-index: 100;
+		display: inline-block;
+		text-align: center;
+		width: 5.4rem;
+		height: 1.6rem;
+		line-height: 1.6rem;
+		font-size: .36rem;
+		color: #FFF;
+		top: 1.13rem;
+		left: 1.03rem;
+		border: 1px solid #FFF;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+	}
+	p{
+		width: 6.62rem;
+		font-size: .28rem;
+		line-height: .36rem;
+		color: #4D4B4B;
+		padding: .44rem .44rem 0;
+	}
+}

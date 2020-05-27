@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>财经</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+  <header-nav v-if="showNav" :title="title"></header-nav>
+    <section>
+
+      <div class="banner" v-if="travel.length">
+        <div class="swiper-container" id="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="(item,index) in travel" @click="eventLog({eventId:'home_trip_'+ (index+1) +'_click',eventType:'1',eventIsAD:'1',contentType:'焦点图',contentTitle:item.title})">
+              <a :href="item.url">
+                <img :src="apiHost+'/app/dxj'+item.image" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-box" v-if="finance.length">
+        <ul class="today-list">
+          <li v-for="(item,index) in finance">
+            <a href="xmlyFM-detail.html" class="clearfix">
+              <p class="img">
+                <img v-lazy="apiHost+'/app/dxj'+item.image" />
+                <span><i>{{item.views}}</i></span>
+              </p>
+              <div>
+                <h5>{{item.title}}</h5>
+                <p>{{item.title_second}}</p>
+                <span>{{item.author}}</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!--加载中-->
+    <loading v-if="isWaiting" :status="2"></loading>
+    <!--执行toast弹出层-->
+    <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

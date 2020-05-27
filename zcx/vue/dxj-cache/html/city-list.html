@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>目的地</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak :style="{'padding-top':showNav?'1.91rem':'0'}">
+  <insert-screen-ad type="2"></insert-screen-ad>
+  <header-nav v-if="showNav" :title="title" page-url="city-list.html" style="background: #f5f5f5; border-bottom: none"></header-nav>
+  <div class="header-search">
+    <p @click="goSearch">输入城市查询</p>
+  </div>
+ 
+  <!-- <header-nav v-if="showNav" :title="title" page-url="index.html"></header-nav> -->
+  <div v-if="areaData.area" class="list-box">
+    <div class="city-menu">
+      <ul>
+        <li v-for="(item,index) in areaData.area" :class="'list'+item.id==tag?'active':''">
+          <a @click='changeAreaTypes($event)' :data-index="index">{{item.name}}</a>
+        </li>
+      </ul>
+    </div>
+    <div id="city-list-box" class="city-list-box">
+    <ul v-if="areaData.area" class="city-list clr">
+      <li v-for="(item,index) in cityData" v-if="item.id">
+        <a :href="'city-topic.html?tag='+item.id+'&contentType=目的地&contentTitle='+item.name">
+          <img v-lazy="item.image?baseUrl+item.image:'../images/e.gif'" />
+          <h5>{{item.name}}</h5>
+          <!--<p><span>{{item.views}}</span>浏览</p>-->
+        </a>
+      </li>
+      <p v-show="isLoad" class="updata_loading">
+        <i></i>加载中...
+      </p>
+      <section v-if="!cityData.length && !isWaiting" class="no-data">当前地区无数据~<br /><a href="javascript:void(0)" @click='reloadArea()'>点击刷新</a></section>
+    </ul>
+  </div>
+  </div>
+  <!-- <section v-if="noDataIShow" class="no-data">网络不给力，请检查后重试哦~<br /><a href="javascript:void(0)" onclick="window.location.reload()">点击刷新</a></section> -->
+  <!--加载中-->
+  <!-- <loading v-if="isWaiting" :status="2"></loading> -->
+  <!--执行toast弹出层-->
+  <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

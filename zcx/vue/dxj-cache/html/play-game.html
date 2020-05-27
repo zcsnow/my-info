@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>游戏</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak>
+  <a href="javascript:void(0)" v-if="showNav" @click="goBack" class="goBack">返回</a>
+  <iframe id="game_window" name="game_window" scrolling="no" frameborder="0" :style="{'width':iframeW,'height':iframeH}" :src="gamePath"></iframe>
+</div>
+</body>
+</html>

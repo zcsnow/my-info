@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+	<head>
+	<title>启辰智跑团</title>
+	<meta content-type="text/html" charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<link href="css/base.css?2" rel="stylesheet" />
+    <link href="font_css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/swiper.min.css" rel="stylesheet" />
+	<link href="css/app.css?1" rel="stylesheet" />
+	</head>
+	<body class="bg2">
+    <div class="container">
+      <!--头部-->
+      <header class="header">
+         <div class="header-logo"><a href="index.html"><img src="images/logo.png"></a></div>
+         <div class="mask-line" onclick="history.go(-1)"><img src="images/bar-back-btn.png"></div>
+      </header>
+      
+      <div class="nav-box js-nav-box">
+        <header class="header-open">
+         	<div class="header-logo"><a href="index.html"><img src="images/logo.png"></a></div>
+         	<div class="mask-line js-bar-btn"><img src="images/bar-btn.png"></div>
+        </header>
+        <ul class="nav clr">
+            <li><a href="signin.html">登录</a></li>
+            <li><a href="register.html">注册</a></li>
+            <li><a href="active.html">活动咨询</a></li>
+            <li><a href="member.html">个人中心</a></li>
+          </ul>
+      </div>
+
+      <div class="main">
+      
+			<div class="post-form">
+                <div class="form-group1">
+                    <label>发帖：</label>
+                    <textarea class="textarea" placeholder="禁止发布广告、色情、谩骂等违反相关法律的文章"></textarea>
+                </div>
+                <div class="form-group2">
+                    <div class="upload-list clr">
+                        <div class="fuc">
+                            <input id="file" type="file" class="real-btn" name="file" required="">
+                            <div class="error_tip" style="position:absolute; bottom:-18px"></div>
+                            <span class="btn-take-photo"><img src="images/icon03.png"></span>
+                        </div>
+                    </div>
+                    <label><strong>*</strong>上传图片（最多三张图片）</label>
+               </div>
+               <button class="post-btn">发表</button>
+            </div>
+            
+            <div class="pop-tip-box">
+                <p class="pop-tip-msg"></p>
+              </div> 
+     </div>
+    <script src="js/jquery1.7.min.js"></script>
+    <script src="js/lazysizes.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+	<script src="js/base.js?3"></script>
+    <script src="js/active.js?3"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="yes" name="apple-touch-fullscreen">
+<meta content="telephone=no,email=no" name="format-detection">
+<script src="js/flexible.js"></script>
+<title>确认协议</title>
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/public.css" rel="stylesheet" />
+    <link href="css/page/countersign.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container" id="container">
+    <header>
+        <span class="go-back" onclick="javascript:history.go(-1);"></span>
+        确认协议
+    </header>
+
+    <!-- main  -->
+	  <div class="main">
+
+        <div class="top_no"></div>
+        <div class="top_notice">此协议仅供预览，并非签约。付款以后，平台会通知您进行电子协议的签约。</div>
+        <div class="content">
+            <h3>XXXXXX协议</h3>
+            <p>
+                委托方（甲方）：XXXXXX<br />
+                身份证号／护照号：XXXXXX<br />
+                联系电话：13900000000
+            </p>
+            <p>
+                受托方（乙方）：XXXXXX<br />
+                地址：XXXXXX<br />
+                联系电话：13900000000
+            </p>
+            <p>
+                1.风险提示：本协议约定的委托投资事项存在的投资风险由甲方自行承担。本协议约定的委托投资事项存在的投资风险由甲方自行承担。本协议约定的委托投资事项存在的投资风险。<br />
+                2.风险提示：本协议约定的委托投资事项存在的投资风险由甲方自行承担。<br />
+                3.风险提示：本协议约定的委托投资事项存在的投资风险由甲方自行承担。<br />
+                4.风险提示：本协议约定的委托投资事项存在的投资风险由甲方自行承担。
+            </p>
+            <p>
+                委托方：XXXXXX<br />
+                签约日期：XXXX年XX月XX日<br />
+                受托方：XXXXXX<br />
+                签约日期：XXXX年XX月XX日
+            </p>
+        </div>
+        <div class="check_btn">本人已认真阅读并充分理解《XXXXXX》和《XXXXXX》的条款与内容，本人确认具有识别及承担相关风险的能力。</div>
+        <a class="sbumit_btn" href="javascript:void(0);">查看协议并勾选确认</a>
+
+    </div>
+</div>
+<script src="js/jquery1.7.min.js"></script>
+<script src="js/plugin/fastclick.min.js"></script>
+<script>
+    $(function(){
+
+        $(".check_btn").click(function(){
+            $(this).hasClass("on") ? $(this).removeClass("on") : $(this).addClass("on");
+            $(".sbumit_btn").hasClass("on") ? $(".sbumit_btn").removeClass("on") : $(".sbumit_btn").addClass("on");
+        });
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>分类</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+  <header-nav v-if="showNav" :title="title"></header-nav>
+  <div v-if="mallCategoryList" class="list-box">
+    <div class="free-goods-menu">
+      <ul>
+        <li v-for="(item,index) in mallCategoryList" :class="item.id==tag?'active':''"  @click="eventLog({eventId:'Duty-freeStore_CategoryList_category_'+tag+'_click',eventType:'1'})">
+          <a @click='changeMallCategory($event)' :data-index="index">{{item.title}}</a>
+        </li>
+      </ul>
+    </div>
+    <div id="free-goods-list-box" class="free-goods-list-box">
+        <div v-if="mallCategoryData.brand.length" :class="mallCategoryData.brand.length && mallCategoryData.brand.length?'brand border-bottom':'brand'">
+            <h3 class="title"><span>推荐品牌</span><a @click='goFreeBandList($event)' :data-category-id="tag" :data-category-name="categoryName">更多</a></h3>
+            <div class="brand-list">
+                <div v-for="(item,index) in mallCategoryData.brand"  @click="eventLog({eventId:'Duty-freeStore_CategoryList_brand_'+ tag + '_' + item.id +'_click',eventType:'1'})">
+                    <a>
+                        <div>
+                            <img @click='goFreeGoodsList($event)' v-lazy="item.image?baseUrl+item.image:'../images/e.gif'" :data-category-id="tag" :data-category-name="categoryName" :data-brand-id="item.id" :data-brand-name="item.title" />
+                        </div>
+                        <span  @click='goFreeGoodsList($event)' :data-category-id="tag" :data-category-name="categoryName" :data-brand-id="item.id" :data-brand-name="item.title">{{item.title}}</span>
+                    </a>
+                    <div class="line" v-if="(index+1)!=mallCategoryData.brand.length&&(index+1)%3==0">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-if="mallCategoryData.goods.length" class="goods">
+            <h3 class="title"><span>商品</span><a @click='goFreeGoodsList($event)' :data-category-id="tag" :data-category-name="categoryName">更多</a></h3>
+            <ul v-if="mallCategoryData.goods" class="free-goods-list clr">
+                <li v-for="(item,index) in mallCategoryData.goods" v-if="item.id"  @click="eventLog({eventId:'Duty-freeStore_CategoryList_commodity_'+ tag + '_' + item.id +'_click',eventType:'1'})">
+                    <a :href="'free-goods-detail.html?id='+item.id">
+                        <img v-lazy="item.image?baseUrl+item.image:'../images/e.gif'" />
+                        <p class="h5">{{item.titleEn}}</p>
+                        <p class="h3">{{item.title}}</p>
+                        <span>{{item.price}}</span>
+                    </a>
+                </li>
+            </ul>
+            <p v-show="isLoad" class="updata_loading">
+                <i></i>加载中...
+            </p>
+        </div>
+        <section v-if="!mallCategoryData.brand.length && !mallCategoryData.goods.length && !isLoad && !isWaiting" class="no-data">当前分类无数据~<br /><a href="javascript:void(0)" @click='reloadMallCategory()'>点击刷新</a></section>
+  </div>
+  <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

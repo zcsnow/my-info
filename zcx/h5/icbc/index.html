@@ -1,0 +1,174 @@
+<!Doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta id="viewport" name="viewport" content="width=540,user-scalable=no,target-densitydpi=high-dpi">
+<script data-main="js/main" src="js/require.js?3"></script>
+<script src="js/jquery1.7.min.js?3"></script>
+
+<title>奔跑融易购</title>
+<style type="text/css">
+    body{margin:0px;padding:0px;overflow: hidden;}
+	.ryg-icon{ display:block; position:fixed; bottom:0; width:100%; padding:10% 20%; box-sizing:border-box;}
+	.ryg-icon img{ width:100%}
+	.rule-box{ display:block; position:fixed;left:50%; top:50%; width:400px; min-height:400px; padding:20px; box-sizing:border-box; z-index:999; background:#fff; transform:translateY(-50%);-webkit-transform:translateY(-50%); margin-left:-200px; border:1px solid #666; box-shadow:0 0 5px #000; display:none;}
+	.rule-box h2{ line-height:40px; font-size:36px; text-align:center;}
+	.rule-box p{ line-height:32px; font-size:22px;}
+	.mask{ background:rgba(0,0,0,0.8); position:fixed; top:0; bottom:0; left:0; right:0; z-index:998; display:none;}
+	
+	.coupon-messages{ width:440px; margin:0 auto; border-bottom:5px solid #43d4ef; border-radius:5px;position: absolute; left: 50%; top:50%; transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%); background:#fff; overflow:hidden;}
+.coupon-messages>h2{ text-align:center; position:relative; color:#fff; background:#43d4ef; height:50px; padding:25px 0; font-weight:normal;line-height:40px; font-size:36px; margin:0;}
+.coupon-messages>h2 span{ display:block; }
+.coupon-messages>h2 .close-btn{ display:block; width:20px; height:20px; position:absolute; right:30px; top:10px;}
+.coupon-messages>p{ color:#787879; line-height:32px; font-size:22px; padding: 20px; margin:0; max-height: 550px;  overflow-y: auto; }
+.music{width: 26px;height: 26px;position: absolute;right:150px;top:15px;z-index: 999; display:none;}
+</style>
+
+</head>
+<body>
+	<div class="music on">
+		<audio src="images/sound.mp3" loop id="media" preload=""></audio>
+		<img src="images/music1.png">
+	</div>
+    <div style="text-align:center;">
+        <canvas id="linkScreen" width="1600" height="274" style="width: 1600px; height: 274px;">很遗憾，您的浏览器不支持HTML5，请使用支持HTML5的浏览器。</canvas>
+    </div>
+    <div id="share" style="display:none">
+      <img id="logo" width="100%" src="http://t1.qpic.cn/mblogpic/31d57f086327cd503c82/460" style="position:absolute;top:0;left:0;">
+      <img width="100%" src="images/share.png" style="position:absolute;top:0;left:0;" onclick="document.getElementById('share').style.display='none';">
+      </div>
+      <div class="ryg-icon"><img src="images/logo.png" /></div>
+      
+      <!--<div class="mask"></div>
+      <div class="rule-box">
+      	<h2>活动规则</h2>
+      	<p>发撒旦法商店发啊撒旦法商店发撒点粉啊撒旦法商店发撒点粉安师大发撒旦法商店发撒旦法商店发撒点粉啊撒旦法商店发撒旦法商店发撒旦法撒旦法商店发啊撒旦法商店发撒旦法商店发安师大发送大法师地方</p>
+      </div>-->
+      <div class="mask">
+        <div class="coupon-messages">
+            <h2><span>活动规则</span><a href="javascript:;" class="close-btn"><img src="images/close_btn.png"></a></h2>
+            <p class="coupon-msg">
+                1.活动资格：<br>
+                用户关注融e购微信公众号参与活动，在活动页面点击开始游戏即可参加。每个用户每天游戏次数不限，抽奖次数为1次，分享至朋友圈可增加一次抽奖机会。<br>
+                2.奖品获得：<br>
+                奖品获得是指客户在“奔跑吧融e购”活动中参与游戏，游戏结束后可进行大转盘抽奖，界面显示中奖信息并在“我的奖品”菜单中出现该奖品串码信息即可算中奖。<br>
+                3.奖品领取：<br>
+                在活动中获得的奖品需通过登录融e购商城（网址mall.icbc.com.cn）或下载融e购客户端激活并使用。<br>
+                4.活动期间严禁通过外挂软件等不正当手段进行刷奖、套取奖品等操作，若经查实，立即取消其参加活动的资格及获奖资格。<br>
+                5.本次活动不会公开、编辑或透露用户的个人信息。<br>
+                6.因微信系统等不可控因素影响，活动主办方有权对活动时间安排及活动规则作适当调整。由于不可控因素导致领奖失败等情况，主办方及承办方不承担任何责任。<br>
+                7.在法律许可范围内，工行融e购有权修订本活动条款及细则（包括但不限于活动流程、活动奖品、领奖方式等）、暂停或取消本活动、并经相关途径（如工行融e购网站、短信、媒体、 “工行融e购”微信公众号等）公告后生效。本活动最终解释权归中国工商银行融e购所有。<br>
+            </p>
+        </div>
+       </div>
+	
+	<script language="javascript">
+var mebtnopenurl = 'http://china-dafencun.com/wx/xlcs1/';
+window.shareData = {
+        "imgUrl": "http://t1.qpic.cn/mblogpic/31d57f086327cd503c82/460",
+        "timeLineLink": "http://china-dafencun.com/wx/ygbns/",
+        "tTitle": "奔跑融易购",
+        "tContent": "玩起来怎么都停不下来的啊！"
+};
+
+function dp_submitScore(m,t){
+}
+
+function dp_share(t){
+    document.title = t/1000+"秒！不行了，我都快变双重人格了！这游戏实在太虐心了！";
+    //document.getElementById("share").style.display="";
+    window.shareData.tTitle = document.title;
+}
+
+function dp_share2(t){
+    document.title = t/1000+"秒！不行了，我都快变双重人格了！这游戏实在太虐心了！";
+    //document.getElementById("share").style.display="block";
+    window.shareData.tTitle = document.title;
+}
+
+
+function lottery_btn(){
+    window.location="lottery.html";
+}
+
+function dp_Ranking(){
+    window.location="my_coupon.html";
+}
+function help_text(){
+    $('.mask').show();
+	//$('.rule-box').show();
+}
+
+$('.mask').click(function(e){
+	e.stopPropagation();
+	e.preventDefault();
+	$('.mask').hide();
+	//$('.rule-box').hide();
+});
+$('.coupon-messages').click(function(e){
+	e.preventDefault();
+	e.stopPropagation();
+});
+$('.close-btn').click(function(){
+	$('.mask').hide();
+});
+
+function showAd(){
+	$('.ryg-icon').show();
+	$('.music').hide();
+	$('.music').addClass('on');
+	$('.music img').attr('src','images/music1.png');
+	$("#media")[0].pause();
+}
+function hideAd(){
+	$('.ryg-icon').hide();
+	$('.music').show();
+	$("#media")[0].play();
+}
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    
+    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+        WeixinJSBridge.invoke('sendAppMessage', {
+            "img_url": window.shareData.imgUrl,
+            "link": window.shareData.timeLineLink,
+            "desc": window.shareData.tContent,
+            "title": window.shareData.tTitle
+        }, function(res) {
+            document.location.href = mebtnopenurl;
+        })
+    });
+
+    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+        WeixinJSBridge.invoke('shareTimeline', {
+            "img_url": window.shareData.imgUrl,
+            "img_width": "640",
+            "img_height": "640",
+            "link": window.shareData.timeLineLink,
+            "desc": window.shareData.tContent,
+            "title": window.shareData.tTitle
+        }, function(res) {
+            document.location.href = mebtnopenurl;
+        });
+    });
+}, false);
+$(function(){
+	
+	$('.music').click(function(){
+		if($('.music').hasClass('on')){
+			$('.music').removeClass('on');
+			$('.music img').attr('src','images/music0.png');
+			$("#media")[0].pause();
+		}else{
+		    $('.music').addClass('on');
+		    $('.music img').attr('src','images/music1.png');
+		    $("#media")[0].play();
+		}
+	});
+});
+
+
+</script>
+
+<script type="text/javascript" charset="utf-8" async data-requirecontext="_" data-requiremodule="main" src="js/main.js"></script>
+</body>
+</html>

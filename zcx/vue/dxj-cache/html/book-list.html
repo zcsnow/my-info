@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>阅读</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+   <header-nav v-if="showNav" :title="title"></header-nav>
+   <section>
+   <div class="banner" v-if="banner.length">
+      <div class="swiper-container" id="swiper1">
+          <div class="swiper-wrapper" v-if="banner.length>1">
+              <div class="swiper-slide" v-for="(item,index) in banner" :data-title="item.title" :data-url="item.url">
+                <a href="javascript:void(0)">
+                  <img :src="item.image?baseUrlAd+item.image:'../images/e.gif'" />
+                </a>
+              </div>
+          </div>
+          <div class="swiper-wrapper" v-else>
+              <div class="swiper-slide" v-for="(item,index) in banner" @click="eventLog({eventId:'read_adbanner_'+ (parseInt(index)+1) +'_click',eventType:'1',eventIsAD:'1',contentType:'焦点图',contentTitle:item.title})" >
+                <a :href="item.url?item.url:'javascript:void(0)'">
+                    <img :src="item.image?baseUrlAd+item.image:'../images/e.gif'" />
+                </a>
+              </div>
+          </div>
+          <div class="swiper-pagination"></div>
+      </div>
+  </div>
+  <div class="list-box" v-if="readhomeData.listBookOnline.length">
+    <h3 class="jinghuajiexuan"><a href="read-list.html?type=2"  @click="eventLog({eventId:'read_Ebook_more_click',eventType:'1'})">更多</a></h3>
+    <ul class="book-list">
+      <li v-for="(item,index) in readhomeData.listBookOnline">
+        <div>
+          <a :href="'book-reader.html?tag='+item.tag+'&contentType=阅读-电子书&contentTitle='+item.title">
+            <img v-lazy="baseUrlReadhome+item.image" />
+            <p><b>{{item.title}}</b><span>{{item.author}}</span></p>
+            <span class="button">开始阅读</span>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="list-box" v-if="bookTjData.length">
+    <h3 class="shupingtuijian"></h3>
+    <ul class="book-tj-list">
+      <li v-for="(item,index) in bookTjData">
+        <a :href="'article.html?tag='+item.tag+'&contentType=阅读-书评&contentTitle='+item.title" class="clearfix">
+          <div>
+            <h5>{{item.title}}</h5>
+            <p>{{item.title_second}}</p>
+             <span><i>{{item.views}}</i>浏览</span>
+          </div>
+          <img v-lazy="baseUrl+item.image" />
+        </a>
+      </li>
+    </ul>
+    <p v-show="isLoad" class="updata_loading">
+      <i></i>加载中...
+    </p>
+  </div>
+  </section>
+  <section v-if="!banner.length && !readhomeData.listBookOnline.length && !bookTjData.length && !isWaiting" class="no-data">网络不给力，请检查后重试哦~<br /><a href="javascript:void(0)" onclick="window.location.reload()">点击刷新</a></section>
+  <!--加载中-->
+  <!-- <loading v-if="isWaiting" :status="2"></loading> -->
+  <!--执行toast弹出层-->
+  <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

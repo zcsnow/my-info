@@ -1,0 +1,378 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin:0 auto;
+	background-color: #fff;
+}
+
+.list-box{
+	width: 100%;
+	position: relative;
+
+	nav{
+		padding: 0;
+		margin: .44rem;
+		width: auto;
+
+		a{
+			display: inline-block;
+			color: #807E7D;
+			margin: 0 .3rem;
+			font-size: .32rem;
+			line-height: .6rem;
+			border-bottom: 1px solid #fff;
+
+			&.active{
+				border-bottom: 1px solid #FA4723;
+				color: #F72F42;
+			}
+
+			&:first-child{
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+#white-player-center{
+	.main-album-art{
+	  display: block;
+	  margin:0 auto 1.09rem;
+	  box-shadow: 0 0.24rem 0.48rem rgba(0, 0, 0, 0.12);
+	  width: 4.9rem;
+	  height: 4.9rem;
+	}
+	.song-meta-data{
+	  width: 6.5rem;
+	  margin:0.64rem auto 0.44rem;
+	  font-size: 0.44rem;
+	  color: #1A1919;
+	  line-height: 0.44rem;
+	  text-align: center;
+	}
+	.time-progress{
+	  margin-bottom: 0.6rem;
+	  .current-time{
+		color: #AAAFB3;
+		font-size: 0.24rem;
+		display: block;
+		float: left;
+		margin-left: 0.4rem;
+	  }
+	  .duration{
+		color: #AAAFB3;
+		font-size: 0.24rem;
+		display: block;
+		float: right;
+		margin-right: 0.4rem;
+	  }
+  
+	  #progress-container{
+		width: 6.5rem;
+		margin: 0 auto;
+		position: relative;
+		height: 0.44rem;
+		cursor: pointer;
+  
+		progress#song-played-progress{
+		  width: 100%;
+		  position: absolute;
+		  left: 0;
+		  top: 0.20rem;
+		  right: 0;
+		  z-index: 60;
+		  -webkit-appearance: none;
+		  appearance: none;
+		  height: 0.02rem;
+		  background: transparent;
+		  border: none; /* Needed for Firefox */
+		}
+  
+		progress#song-played-progress[value]::-webkit-progress-bar{
+		  background: none;
+		}
+  
+		progress#song-played-progress[value]::-webkit-progress-value{
+		  background-color: rgba(239, 64, 65, 0.6);
+		}
+  
+		progress#song-buffered-progress{
+		  position: absolute;
+		  left: 0;
+		  top: 0.20rem;
+		  right: 0;
+		  width: 100%;
+		  z-index: 10;
+		  -webkit-appearance: none;
+		  appearance: none;
+		  height: 0.02rem;
+		  background: transparent;
+		  border: none;
+		  background-color: rgba(239,64,65,0.6);
+		  
+		}
+		
+  
+		progress#song-buffered-progress[value]::-webkit-progress-bar{
+		  background-color: #E1E1E1;
+		}
+  
+		progress#song-buffered-progress[value]::-webkit-progress-value{
+		  background-color: #999;
+		  transition: width .1s ease;
+		}
+
+
+		progress.amplitude-song-played-progress{
+			background-color: #313252;
+			-webkit-appearance: none;
+			appearance: none;
+			width: 100%;
+			height: 5px;
+			display: block;
+			cursor: pointer;
+			border: none;
+		  
+			&:not([value]) {
+			  background-color: #313252;
+			}
+		  }
+		  
+		  progress[value]::-webkit-progress-bar {
+			background-color: #313252;
+		  }
+		  
+		  progress[value]::-moz-progress-bar {
+			background-color: #00a0ff;
+		  }
+		  
+		  progress[value]::-webkit-progress-value {
+			background-color: #00a0ff;
+		  }
+		  
+
+  
+		input[type=range] {
+		  -webkit-appearance: none;
+		  width: 100%;
+		  position: absolute;
+		  z-index: 998;
+		  top: 0;
+		  height: 0.44rem;
+		  cursor: pointer;
+		  background-color: inherit;
+		}
+		input[type=range]:focus {
+		  outline: none;
+		}
+		input[type=range]::-webkit-slider-runnable-track {
+		  width: 100%;
+		  height: 0px;
+		  cursor: pointer;
+		  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+		  border-radius: 0px;
+		  border: 0px solid #010101;
+		}
+		input[type=range]::-webkit-slider-thumb {
+			height: 0.44rem;
+			width: 0.22rem;
+			border-radius: 0.32rem;
+			border: 1px solid #FA6733;
+			background: #FA6733;
+			cursor: pointer;
+			-webkit-appearance: none;
+			margin-top: -0.22rem;
+		}
+		input[type=range]:focus::-webkit-slider-runnable-track {
+		  background: #FA6733;
+		}
+
+
+		
+	  }
+  
+	  
+	}
+  }
+
+  
+
+  #white-player-controls{
+	text-align: center;
+	padding-bottom: 35px;
+	position: relative;
+	#showPlaylist{
+	  position: absolute;
+	  left:0.4rem;
+	  top: 0.2rem;
+	  height: .8rem;
+	  width: .8rem;
+	  cursor: pointer;
+	  @include bg2('FM_liebiao', .4rem, .4rem);
+	  vertical-align: middle;
+	  margin-right: 0.5rem;
+	  background-position: center;
+	  span{
+		  display: block;
+		  width: 0.88rem;
+		  font-size: 0.22rem;
+		  color: #666666;
+		  line-height: 0.24rem;
+		  margin-top: 0.75rem
+	  }
+	}
+	#previous{
+	  display: inline-block;
+	  height: .8rem;
+	  width: .8rem;
+	  cursor: pointer;
+	  @include bg2('FM_zhihui', .4rem, .4rem);
+	  vertical-align: middle;
+	  margin-right: 0.5rem;
+	  background-position: center;
+	}
+	#next{
+		display: inline-block;
+		height: .8rem;
+		width: .8rem;
+		cursor: pointer;
+		@include bg2('FM_zhengc', .4rem, .4rem);
+		background-position: center;
+		vertical-align: middle;
+		margin-left: 0.5rem;
+	}
+  
+	#play-pause{
+	  display: inline-block;
+	  width: 1.2rem;
+	  height: 1.2rem;
+	  cursor: pointer;
+	  vertical-align: middle;
+	  background-position: center;
+	  &.amplitude-paused{
+		@include bg2('FM_dabofang', 1.12rem, 1.12rem);
+	  }
+	  &.amplitude-playing{
+		@include bg2('FM_dazanting', 1.12rem, 1.12rem);
+	  }
+	}
+  
+	
+  
+  }
+
+  .mask{
+	position: fixed;
+	top:0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.6);
+	z-index: 9998;
+	display: none;
+  }
+  #white-player-playlist-container{
+	position: fixed;
+	// background-color: rgba(0,0,0,0.6);
+	top:60%;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 9999;
+	display: none;
+
+
+	.white-player-playlist{
+		background-color: rgba(255,255,255,0.92);
+		padding: 0 0.44rem;
+		position: fixed;
+		top:60%;
+		right: 0;
+		left: 0;
+		bottom: 1.14rem;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+		li{
+			padding: .34rem 0;
+			border-bottom: 1px solid #C5C5C5;
+			font-size: 0.28rem;
+			color: #333333;
+			line-height: 0.32rem;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			em{
+				display: inline-block;
+				width: .4rem;
+				color: #999;
+				font-size: .30rem;
+				height: .32rem;
+				line-height: 0.32rem;
+				text-align: center;
+				vertical-align: -1px;
+			}
+			// 	&.active{
+			// 		text-indent: 9999px;
+			// 		overflow: hidden;
+			// 		@include bg2('FM_dangqianbofang', .40rem, .40rem);
+			// 		background-position: left center;
+			// 	}
+			// }
+			
+			.music{display: none;width: 0.3rem; margin:0 0.1rem; height: 1px;position: relative;}
+			.music i{width: 0.04rem;height: 0.2rem;position: absolute;bottom:0;background-color: #F72F42;}
+			.music i:nth-of-type(1){left:0;}
+			.music i:nth-of-type(2){left:0.08rem;}
+			.music i:nth-of-type(3){left:0.16rem;}
+			.music i:nth-of-type(4){left:0.24rem;}
+			.music.active i:nth-of-type(1){-webkit-animation:wave 0.66s linear infinite;animation:wave 0.66s linear infinite;}
+			.music.active i:nth-of-type(2){-webkit-animation:wave 0.8s linear infinite;animation:wave 0.8s linear infinite;}
+			.music.active i:nth-of-type(3){-webkit-animation:wave 0.7s linear infinite;animation:wave 0.7s linear infinite;}
+			.music.active i:nth-of-type(4){-webkit-animation:wave 0.5s linear infinite;animation:wave 0.5s linear infinite;}
+			@-webkit-keyframes wave{
+				0%{height:0.08rem}
+				50%{height: 0.32rem}
+				100%{height: 0.12rem}
+			}
+			&.amplitude-active-song-container {
+				// background-color: hsla(7,82%,63%,.3);
+				.music{display: inline-block;}
+				em{display: none;}
+			}
+
+
+		}
+		
+	  }
+	.white-player-playlist-top{
+		border-bottom: 1px solid #C5C5C5;
+		background-color: rgba(255, 255, 255, 0.92);
+		padding: 7px 0.44rem;
+		font-size: 0.30rem;
+		line-height: 32px;
+		color: #333333;
+		position: fixed;
+		right: 0;
+		left: 0;
+		top: 60%;
+		margin-top: -47px;
+		z-index: 10;
+	}
+	.white-player-close{
+		border-top: 1px solid #C5C5C5;
+		background-color: rgba(255,255,255,0.92);
+		padding: 0.34rem 0.44rem;
+		font-size: 0.32rem;
+		color: #333333;
+		text-align: center;
+		position: fixed;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		z-index: 10;
+	}
+  }

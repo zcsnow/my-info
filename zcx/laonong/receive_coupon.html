@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="height100">
+<head>
+<title>婴芭莎</title>
+<meta content-type="text/html" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link href="css/base.css?0" rel="stylesheet" />
+<link href="font_css/font-awesome.min.css" rel="stylesheet" />
+<link href="css/page/coupon.css?0" rel="stylesheet" />
+</head>
+<body class="height100">
+<div class="container receive_coupon height100">
+        <img src="images/coupon_title1.png">
+        <div class="online-box">
+           
+            <div class="form-box">
+                <input class="tip-input" id="J_mobileNum" type="tel" value="" placeholder="请输入手机号" maxlength="11" required>
+                <div class="yzm-box">
+                  <div class="login_list"><input id="J_yzm" type="tel" value="" placeholder="请输入验证码" maxlength="6" required></div>
+                  <em id="passwordGetCode" data-waiting="秒" style="color:#d1507b">获取验证码</em>
+                </div>
+				<p class="prompt"></p> 
+                
+            </div>
+            
+            <a class="js-start-btn enter-btn" href="javascript:;" style="background:#d1507b;">领取优惠券</a>
+
+        </div>
+        <img src="images/coupon_text.png">
+
+</div>
+
+<script src="js/jquery1.7.min.js"></script>
+<script>
+$(function(){
+
+	function ErrorTip(text) {
+		$(".prompt").css({height:'20px',marginTop:'10px'});
+		$(".prompt").html(text);
+	
+	};
+	
+	function removeErrorTip(){
+	  $(".prompt").html("");
+	  $(".prompt").css({height:'0',marginTop:'0'});
+	}
+	//验证输入内容是否正确
+	var isMobile=/^1\d{10}$/; //手机号码验证规则
+	$(".js-start-btn").click(function(){
+		if ($.trim($("#J_mobileNum").val()) == "" || !isMobile.test($("#J_mobileNum").val())){
+			var text = "请输入正确手机号";
+			ErrorTip(text);
+			return;
+		};	
+		if ($.trim($("#J_yzm").val()) == ""){
+			var text = "验证码输入不正确";
+			ErrorTip(text);
+			return;
+		};
+		
+
+		removeErrorTip();
+		
+		return;		
+	});	
+	
+	
+	//判断手机输入框内容长度
+	$("#J_mobileNum").on("keyup", function(){
+		var len = $(this).val().length;
+		if(len == 11){
+			$(this).blur();
+		}
+	});
+	$("#J_yzm").on("keyup", function(){
+		var len = $(this).val().length;
+		if(len == 6){
+			$(this).blur();
+		}
+	});
+	
+	//获取验证码
+	var flag = 0;
+	$("#passwordGetCode").click(function() {
+	
+		if ($.trim($("#J_mobileNum").val()) == "" || !isMobile.test($("#J_mobileNum").val())){
+			MobileErrorTip();
+			return;
+		}else{			
+			removeErrorTip();
+		}
+		
+		if(flag!=0){
+			return false;
+		}
+		
+		flag = 1;
+		var delay = 30, trigger = this, revert = $(trigger).text();
+
+		$("#passwordGetCode").addClass('btn_gradient_gray');
+		$(trigger).attr({'disabled': true }).text(delay + $(trigger).attr("data-waiting")).parents("label").addClass("waiting");
+		var counter = setInterval(function() {
+			$(trigger).text($(trigger).text().replace(delay, --delay));
+			if(delay == 0) {
+				flag = 0;
+				window.clearInterval(counter);
+				$(trigger).text(revert).removeAttr("disabled").parents("label").removeClass("waiting");
+				$("#passwordGetCode").removeClass('btn_gradient_gray');
+				$("#passwordGetCode").html("重新获取");
+				$("#passwordGetCode").addClass('recode');
+			}
+		}, 1000);
+	});
+	
+	
+});
+
+</script>
+</body>
+</html>

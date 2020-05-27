@@ -1,0 +1,11 @@
+{
+	"status":"110",
+	"msg":"can see",
+	"data" : {
+		"movieStartTime":"1533539100000",
+		"sysTime":"1533544200000",
+		"stock":10,
+		"orderID":11,
+		"isBought":1
+	}
+}

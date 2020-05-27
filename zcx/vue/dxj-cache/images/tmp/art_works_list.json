@@ -1,0 +1,49 @@
+{
+    "status": 200,
+    "msg": "成功",
+    "data": {
+        "author": "焦元阜",
+        "title": "中国艺术研究院",
+        "sub_title": "《树的构成之一》",
+        "backgroundImg": "http://10.10.56.45/s/050d68ac/vedio/movies/1068259517455922360/455922360.jpg",
+        "avatar": "http://dongxingji.cn/h5apps/274/img/img.jpg",
+        "description": "<p>\r\n\t1981年开业，共有321间房。\r\n</p>\r\n<p>\r\n\t\r\n</p>\r\n<p>\r\n\t塞班岛凯悦酒店坐落于传奇的麦可海滩（Micro Beach），环抱 14 英亩的热带花园和礁湖，于北马里亚纳群岛独辟一片豪华的宁静。\r\n</p>\r\n<p>\r\n\t\r\n</p>\r\n<p>\r\n\t就餐场所包括：Giovanni＇s，提供意大利美味；Teppanyaki，提供日本料理；Miyako，提供寿司；Kili Cafe and Terrace，提供国际佳肴。此外还有各贵宾厅在室内和室外氛围中提供的美味鸡尾酒以及 D.J.＇s Corner 供应的外带快餐、点心和饮料。\r\n</p>\r\n<p>\r\n\t\r\n</p>\r\n<p>\r\n\t酒店 318 间客房均带有可观赏花园景观或太平洋全景的阳台，并融现代化便利体验和豪华设施于一体，其中包括办公桌、有线电视和带语音信箱的直拨电话。\r\n</p>",
+        "list": [{
+            "image": "http://10.10.56.45/s/050d68ac/vedio/food/3148894279251788/279251788.jpg",
+            "title": "悦航艺术馆-贾新光·谈绘画技巧",
+            "big_image": "http://10.10.56.45/app/dxj/cache/image/travelad/2/20180417165927_692.jpg",
+            "created": "2018-12-24",
+            "author": "焦元阜",
+            "desc":"这是一副布画油画作品，作品以花之恋为主题，运用1234"
+        }, {
+            "image": "http://10.10.56.45/s/e8c45073/dxjad/short_video/ad_video/3321596950015150/950015150.jpg",
+            "title": "悦航艺术馆-贾新光·中西文化的融合汇聚",
+            "big_image": "http://img.zcool.cn/community/012c1559b2441ea801211d258355d3.jpg@1280w_1l_2o_100sh.png",
+            "created": "2018-12-24",
+            "author": "焦元阜",
+            "desc":"这是一副布画油画作品，作品以花之恋为主题，运用345345"
+        }, {
+            "image": "http://10.10.56.45/s/050d68ac/vedio/pet/1108791961988485/1961988485.jpg",
+            "title": "逆风的方向更适合飞翔",
+            "big_image": "http://img1.imgtn.bdimg.com/it/u=1373668732,2899423419&fm=26&gp=0.jpg",
+            "created": "2018-12-24",
+            "author": "焦元阜",
+            "desc":"这是一副布画油画作品，作品以花之恋为主题，运用567567"
+        }, {
+            "image": "http://10.10.56.45/s/050d68ac/vedio/food/31488941546686510/1546686510.jpg",
+            "title": "自制海泥清洁面膜，不可错过的去黑头妙招",
+            "big_image": "http://img2.imgtn.bdimg.com/it/u=2793022034,1983425530&fm=26&gp=0.jpg",
+            "created": "2018-12-24",
+            "author": "焦元阜",
+            "desc":"这是一副布画油画作品，作品以花之恋为主题，运用dfgh"
+        }, {
+            "image": "http://10.10.56.45/s/050d68ac/vedio/movies/10682595171702701304/1702701304.jpg",
+            "title": "绝地求生之深海越狱",
+            "big_image": "http://10.10.56.45/s/e8c45073/dxjad/short_video/ad_video/3321596950015150/950015150.jpg",
+            "created": "2018-12-24",
+            "author": "焦元阜",
+            "desc":"这是一副布画油画作品，作品以花之恋为主题，运用vncvbn"
+        }]
+
+    }
+}

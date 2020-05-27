@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>东行记</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak>
+    <entry-adv logo-src="../images/tmp/logo"></entry-adv>
+    <insert-screen-ad type="1"></insert-screen-ad>
+    <section>
+      <header>
+        <a href="http://www.ce-air.com/?inet=1&browse=hmouter" class="wifi">连网</a>
+        <h1>东行记</h1>
+        <!-- <p @click="goSearch">
+          输入查询内容 -->
+          <!--<input type="search" value="" placeholder="输入查询内容">-->
+        <!-- </p> -->
+        <a href="member.html" class="user"></a>
+      </header>
+      <div v-if="hotSearch.length>0" class="hotSearch">
+        <div class="h3">
+          大家都在看
+          <a href="search-hot.html">全部</a>
+        </div>
+        <ul>
+          <li v-for="(item,index) in hotSearch">
+            <a :href="'article.html?tag=' + item.tag">
+              <span>{{item.title}}</span>
+              <i :class="'icon_' + item.label"></i>
+            </a>
+          </li>
+          <span class="line"></span>
+        </ul>
+      </div>
+      <div class="banner">
+          <div class="swiper-container" id="swiper1">
+              <div class="swiper-wrapper" v-if="banner.length>1">
+                  <div class="swiper-slide" v-for="(item,index) in banner"  :data-title="item.title" :data-url="item.url" >
+                    <a href="javascript:void(0)">
+                      <img :src="baseUrl+item.image" />
+                    </a>
+                  </div>
+              </div>
+              <div class="swiper-wrapper" v-else>
+                  <div class="swiper-slide" v-for="(item,index) in banner" @click="eventLog({eventId:'home_adbanner_'+ (parseInt(index)+1) +'_click',eventType:'1',eventIsAD:'1',contentType:'焦点图',contentTitle:item.title})" >
+                    <a :href="item.url?item.url:'javascript:void(0)'">
+                      <img :src="baseUrl+item.image" />
+                    </a>
+                  </div>
+              </div>
+              <div class="swiper-pagination"></div>
+          </div>
+      </div>
+
+      <nav class="clearfix" v-if="navIcon.length>0">
+        <a v-for="(item,index) in navIcon" :href="item.url" @click="eventLog({eventId:'首页-icon-'+item.title,contentType:item.title,contentTitle:item.title})"><img v-lazy="baseUrl+item.image" />
+          <span>{{item.title}}</span>
+        </a>
+      </nav>
+      <!-- <div class="nav-box1" v-if="navIcon.length>0">
+        <div class="nav-box-content">
+            <a v-for="(item,index) in navIcon" :href="item.url" @click="eventLog({eventId:'首页-icon-'+item.id})"><i><img alt="" :src="baseUrl+item.image"></i><span>{{item.title}}</span></a>
+        </div>
+      </div> -->
+      <div class="nav-box2" v-if="navIcon2.length>0">
+        <div class="nav-box-content">
+            <a v-for="(item,index) in navIcon2" :href="item.url" @click="eventLog({eventId:'首页-icon2-'+item.id,eventType:'1'})"><img alt="" :src="baseUrl+item.image"></a>
+        </div>
+      </div>
+
+      <div class="my-card-box">
+          <i class="my-card" @click="enterShoppingCard"></i>
+          <div class="card-ad">
+              <a href="newcomer-strategy.html?browse=hmouter">
+                <img src="../images/tmp/home_min_banner.png" />
+              </a>
+          </div>
+          <a :href="scoreExchangeUrl" class="shopping-ceair">
+            <!-- <a href="http://shopping.ceair.com?browse=hmouter" class="shopping-ceair"> -->
+              <img src="../images/tmp/shop_card.png" />
+          </a>
+        </div>
+
+        
+      <div class="noticeswiper clr"  v-if="notice.length">
+        <i></i>
+        <div class="swiper-container" id="noticeSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-no-swiping" v-for="(item,index) in notice">
+              <a :href="item.url?item.url:'javascript:void(0)'">{{item.title}}</a>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      
+      <!-- <div class="card-enter-box" v-if="cardEnterisShow&&couponOpen==1&&couponBalance!='null'">
+        <div class="one-card" v-if="!isLogin"><a href="newcomer-strategy.html"  @click="eventLog({eventId:'home_shoppingcard_topic'})"><img src="../images/tmp/card_enter1.png" /></a></div>
+        <div class="two-card clearfix" v-else>
+          <a href="newcomer-strategy.html"  @click="eventLog({eventId:'home_shoppingcard_topic'})"><img src="../images/tmp/card_enter2.png" /></a>
+          <a href="javascript:void(0)" @click="enterShoppingCard">
+            <img src="../images/tmp/card_enter3.png" />
+            <span class="clearfix"><em :class="(couponBalance==0||couponBalance==-1)?'':'red'"  v-text="(couponBalance==0||couponBalance==-1)?'立即查看':'￥'+couponBalance"></em><i></i></span>
+          </a>
+        </div>
+        
+      </div> -->
+
+      
+
+
+
+      <div class="network" v-if="topAd.length" v-for="(item,index) in topAd">
+        <a :href="item.url?item.url:'javascript:void(0)'"><img v-lazy="baseUrl+item.image" /></a>
+      </div>
+
+      <!-- <div class="list-box" v-if="movie.length">
+        <h3 class="movie"><a href="movie-list.html" @click="eventLog({eventId:'home_movie_more_click'})">更多</a></h3>
+        <div class="movie-list">
+          <div class="swiper-container" id="swiper4">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" v-for="(item,index) in movie"  @click="eventLog({eventId:'home_destination_'+ (index+1) +'_click',contentType:'电影',contentTitle:item.name})">
+                <a :href="'movie-detail.html?tag='+item.tag">
+                  <img v-lazy="baseUrl+item.image" />
+                  <h5>{{item.name}}</h5>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+      <div class="list-box" v-if="city.length">
+          <h3 class="city"><a :href="whitherMoreHref" @click="eventLog({eventId:'home_destination_more_click',eventType:'1'})">更多</a></h3>
+          <div class="city-list">
+            <div class="swiper-container" id="swiper3">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for="(item,index) in city"  @click="eventLog({eventId:'home_destination_'+ (index+1) +'_click',eventType:'1',eventIsAD:'1',contentType:'目的地',contentTitle:item.name})">
+                  <!-- <a :href="'city-topic.html?tag='+item.id+'&contentType=目的地&contentTitle='+item.name"> -->
+                  <a :href="item.url?item.url:'javascript:void(0)'">
+                    <img v-lazy="baseUrl+item.image" />
+                    <h5>{{item.name}}</h5>
+                    <i v-if="item.label" class="tag">{{item.label}}</i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <!-- 中部横幅 -->
+      <div class="central-banner-box" v-if="homeMiddleAd.id">
+        <a class="central-banner-left" :href="homeMiddleAd.left_url">
+            <img :src="baseUrl+homeMiddleAd.left_image" />
+        </a>
+        <a class="central-banner-middle" :href="homeMiddleAd.middle_url">
+          <img :src="baseUrl+homeMiddleAd.middle_image" />
+        </a>
+        <a class="central-banner-right" :href="homeMiddleAd.right_url">
+            <img :src="baseUrl+homeMiddleAd.right_image" />
+        </a>
+      </div>
+
+      <div class="list-box" v-if="newVideo.length">
+          <h3 class="new-video"><a :href="movieMoreHref" @click="eventLog({eventId:'home_newVideo_more_click',eventType:'1'})">更多</a></h3>
+          <div class="movie-list">
+            <div class="swiper-container" id="swiper4">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for="(item,index) in newVideo"  @click="eventLog({eventId:'home_destination_'+ (index+1) +'_click',eventType:'1',contentType:'娱乐影音',contentTitle:item.title})">
+                  <a :href="'new-video-detail.html?id='+item.id">
+                    <img v-lazy="baseUrl+item.image" />
+                    <h5>{{item.title}}</h5>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      
+
+      <div class="list-box" v-if="travel.length">
+          <h3 class="travel"><a :href="travelMoreHref" @click="eventLog({eventId:'home_trip_more_click',eventType:'1'})">更多</a></h3>
+          <div class="travel-list">
+              <div class="swiper-container" id="swiper2">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide" v-for="(item,index) in travel" @click="eventLog({eventId:'home_trip_'+ (index+1) +'_click',eventType:'1',eventIsAD:'1',contentType:'焦点图',contentTitle:item.title})">
+                    <a :href="aHerf(item.url)+'contentType=旅行&contentTitle='+item.title">
+                      <img v-lazy="baseUrl+item.image" />
+                      <h5>{{item.title}}</h5>
+                      <p>{{item.title_second}}</p> 
+                    </a>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="list-box" v-if="homeCarAd.length">
+        <h3 class="car"><a :href="carMoreHref" @click="eventLog({eventId:'home_car_more_click',eventType:'1'})">更多</a></h3>
+        <ul class="car-list clr">
+          <li v-for="(item,index) in homeCarAd">
+              <a :href="aHerf(item.url)+'contentType=精选汽车&contentTitle='+item.title">
+                <img v-lazy="baseUrl+item.image">
+                <p>{{item.title}}</p>
+            </a>
+          </li>
+ 
+        </ul>
+      </div>
+
+      <!-- //信息流板块 -->
+      <div class="list-box" v-if="infoRecommendArr.length">
+        <h3 class="recommend"></h3>
+        <div class="recommend-list"  v-for="(item,index) in infoRecommendArr">
+            <div v-if="item.id">
+                <div class="recommend-type1" v-if="item.imageType==0">
+                    <a :href='item.type=="content"? "article.html?tag="+item.contentId : "new-video-detail.html?id="+item.contentId '>
+                        <h5>{{item.title}}</h5>
+                        <em class="type">#{{item.categoryName}}</em>
+                        <img  v-lazy="baseUrl+item.image[0]">
+                    </a>
+                </div>
+                <div class="recommend-type2" v-if="item.imageType==1">
+                    <div class="recommend-type2-list">
+                      <a :href='item.type=="content"? "article.html?tag="+item.contentId : "new-video-detail.html?id="+item.contentId '>
+                        <h5>{{item.title}}</h5>
+                        <ul>
+                          <li><img v-lazy="baseUrl+item.image[0]" /></li>
+                        </ul>
+                        <em class="type">#{{item.categoryName}}</em><em class="view-num" v-if="item.views"><b>{{item.views}}</b>次阅读</em>
+                      </a>
+                    </div>
+                </div>
+                <div class="recommend-type2" v-if="item.imageType==2">
+                    <div class="recommend-type2-list" >
+                        <a :href='item.type=="content"? "article.html?tag="+item.contentId : "new-video-detail.html?id="+item.contentId '>
+                          <h5>{{item.title}}</h5>
+                          <ul class="clr">
+                            <li v-for="(imgItem,imgIndex) in item.image" :class="item.image.length>2?'three':'two'">
+                              <img v-lazy="baseUrl+imgItem" />
+                            </li>
+                          </ul>
+                          <em class="type">#{{item.categoryName}}</em><em class="view-num" v-if="item.views"><b>{{item.views}}</b>次阅读</em>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="recommend-video"  v-if="item.vidoeId">
+                <div class="recommend-video-list">
+                  <a href="javascript:void(0)" @click="playVideoPage(item.title,item.image,item.video,item.isAD)">
+                    <h5>{{item.title}}</h5>
+                    <!-- <span><img v-lazy="item.isAD?apiHost+dxjAdDir+item.image:apiHost+dxjApi+item.image" /></span> -->
+                    <span>
+                      <img :src="item.isAD?apiHost+dxjAdDir+item.image:apiHost+dxjVideoMp4Dir+item.image" />
+                      <i></i>
+                      <!-- <b v-if="item.type==0">广告</b> -->
+                    </span>
+                    <em>#精彩视频频道</em>
+                  </a>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+
+      
+
+      <div class="list-box" v-if="false">
+        <a name="video" id="video"></a>
+        <h3 class="video"></h3>
+        <ul class="video-list">
+          <li v-for="(item,index) in video">
+            <a href="javascript:void(0)" @click="playVideoPage(item.title,item.image,item.video,item.isAD)">
+              <!-- <span><img v-lazy="item.isAD?apiHost+dxjAdDir+item.image:apiHost+dxjApi+item.image" /></span> -->
+              <span><img v-lazy="item.isAD?apiHost+dxjAdDir+item.image:apiHost+dxjVideoMp4Dir+item.image" /></span>
+              <dl>
+                <dt>{{item.title}}</dt>
+                <!--<dd><span>{{item.views}}</span>次播放</dd>-->
+              </dl>
+              <b v-if="item.type==0">广告</b>
+              <i></i>
+            </a>
+          </li>
+        </ul>
+        <p v-show="isLoad" class="updata_loading">
+          <i></i>加载中...
+        </p>
+      </div>
+      <a class="goTop" href="javascript:void(0)" v-show="isTop" @click="scrollTop">scrollTop</a>
+      <!-- <luck-draw></luck-draw> -->
+    </section>
+
+    <!--加载中-->
+    <!-- <loading v-if="isWaiting" :status="2"></loading> -->
+    <!--执行toast弹出层-->
+    <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

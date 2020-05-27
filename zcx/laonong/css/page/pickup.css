@@ -1,0 +1,54 @@
+.height100{height: 100%; overflow:hidden;/**/}
+
+.mask-footer-pick{ position:fixed; bottom:0; z-index:99; width:100%; height:56px; background:#fff; padding:10px 0; box-sizing:border-box; text-align:center;}
+.mask-footer-pick>a{display:inline-block; width:50%; height:36px;background:#c62026; color:#fff; line-height:36px; text-align:center; border-radius:5px; }
+
+.pickup-box{ background:#30054a;}
+.pickup-box>h2{ font-size:13px;color:#fff;text-align:center;overflow:hidden;white-space:nowrap; text-overflow:ellipsis; margin-top:-68px; line-height:14px}
+.pickup-box>h3{ font-size:12px;color:#f4ed39;text-align:center;overflow:hidden;white-space:nowrap; text-overflow:ellipsis; margin:10px 0 20px;}
+.pickup-box .card-list{ padding:0 10px;}
+.pickup-box .card-list li{ margin-bottom:20px}
+.pickup-box .card-list li .card-img{ display:block; position:relative;}
+.pickup-box .card-list li img.img-mask{ position:absolute; top:0 ; bottom:0; width:100%; height:100%;}
+.pickup-box .card-list li .card-text{ font-size:18px; color:#fff; text-align:center;overflow:hidden;white-space:nowrap; text-overflow:ellipsis; margin:15px 0}
+.pickup-box .card-list li .card-buy-btn{ display:block; width:46%; margin:0 auto;}
+.pickup-box .back-top{display:block; width:14%; margin:30px auto 0; padding-bottom:10px}
+
+
+.pickup-pay .header-tip{ position:relative;}
+.pickup-pay .header-tip h2{ width:100%; position:absolute; left:50%; top:50%;-webkit-transform:translate(-50%,-50%); transform:translate(-50%,-50%);text-align:center;font-size:24px; color:#1091ae;font-weight:normal;}
+.pickup-pay .header-tip h2 i{ display:inline-block; width:35px; margin-right:10px; vertical-align:-9px;}
+.pickup-pay .goods-name{position:relative;font-size:15px; color:#5e5e5e; border-bottom:1px dashed #a5a5a5; line-height:35px;text-align:left;overflow:hidden;white-space:nowrap; padding-left:20px; padding-right:140px;text-overflow: ellipsis;}
+.pickup-pay .goods-name time{ position:absolute; right:0; top:0px; background:#fff; padding-right:20px;font-size:12px;}
+.pickup-pay .verify-code h3{text-align:center;font-size:18px; color:#5e5e5e; margin-top:50px;font-weight:normal;}
+.pickup-pay .verify-code>a{ display:block; width:50%; border-radius:5px; margin:12px auto; line-height:40px; background:#c62026; color:#fff;text-align:center;font-size:18px;}
+.pickup-pay .rule-box{ margin:45px 22px;}
+.pickup-pay .rule-box p{font-size:12px; padding:0px 12px; margin:0 1px; color:#6f480a; background:#ffd38b; line-height:24px;}
+.pickup-pay .rule-box p srtong{font-size:13px; font-weight:normal;}
+
+.card-order{ background:#f9f9f9; border-radius:5px;border:1px solid #d2d2d2; margin:20px 10px 0;}
+.card-order li{ border-bottom:1px dashed #c9c9c9; line-height:30px; padding:0 15px 0 85px; font-size:14px; color:#3d3c3b; position:relative;}
+.card-order li:last-child{ border-bottom:none;}
+.card-order li>span{ position:absolute; left:15px; width:70px; text-align:right; display:inline-block;}
+.card-order li b{ font-weight:normal;}
+.r-info{ position:absolute; right:15px; }
+.r-info>img{ width:63px;display: inline-block; margin-top:-2px}
+.r-info>img.js-share-btn{ margin-right:5px;}
+.card-order.card-order1 li{ padding:0 15px;}
+.card-order.card-order1 li>strong{ display:block; float:left; font-weight:normal; width:72px;}
+.card-order.card-order1 li>sup{ display:inline-block; width:8px; font-size:0; }
+.card-order.card-order1 li>sup img{ display:inline-block;}
+.card-order.card-order1 li>sup:last-child{ margin-right:5px;}
+
+.js-share-pop { position: fixed; right: 0; top: 0; height: 100%; width: 100%; background: rgba(0,0,0,0.7); z-index: 1999; display: none; }
+
+
+.fillNumber { width:104px; padding: 5px 0; margin-right:10px; }
+.fillNumber>a, .fillNumber>input, .fillNumber>span { float: left;}
+.fillNumber>a.disabled { color: #ccc; }
+.fillNumber>a { width: 18px; height: 18px;border: 1px solid #b2b2b2; border-radius:50%; line-height: 18px;text-align: center; font-size: 18px; color: #838383; }
+.fillNumber>span { width: 30px; line-height: 20px; display: inline-block; text-align: center; }
+
+
+.order-info { background:#fff; width:90%; margin:0 auto; border:2px solid #ed7f02; border-radius:10px;}
+.order-info p{ line-height:36px; padding:0 15px; border-bottom:1px dashed #cdcdcd; color:#000; font-size:14px;}

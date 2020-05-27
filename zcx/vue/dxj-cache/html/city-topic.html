@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>目的地</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+  <insert-screen-ad type="3" :city-id="tag"></insert-screen-ad>
+  <header-nav v-if="showNav" :title="title" page-url="city-list.html"></header-nav>
+  <div :class="isFixed?'list-box fixed':'list-box'">
+    <div class="top-img banner">
+      <a :href="banner[cityType-1].url">
+        <img :src="banner[cityType-1].image?baseUrlBanner+banner[cityType-1].image:'../images/tmp/city@3x.jpg'" />
+      </a>
+    </div>
+    <nav class="flex">
+      <a :class="item.active?'active':''" v-for="(item,index) in banner" @click='changeCityTypes($event)' :data-index="index">{{item.title}}</a>
+    </nav>
+    <ul v-if="cityType==index+1" v-for="(item,index) in banner" class="city-list">
+      <li v-for="(item2,index2) in cityDataCache[index]">
+          <a :href="'article.html?tag='+item2.tag+'&contentType=目的地-'+cityName+'-'+banner[cityType-1].title+'&contentTitle='+item2.title">
+            <img v-lazy="item2.image?baseUrl+item2.image:'../images/e.gif'" />
+            <div>
+              <h3>{{item2.title}}</h3>
+              <span><i>{{item2.views}}</i>热度</span>
+            </div>
+            <p>{{item2.subhead}}</p>
+          </a>
+      </li>
+      
+    </ul>
+    
+    <div v-if="!isWaiting && !cityDataCache[cityType-1].length" class="no-data">网络不给力，请检查后重试哦~<br /><a href="javascript:void(0)" onclick="window.location.reload()">点击刷新</a></div>
+  </div>
+  
+  <!--加载中-->
+  <!-- <loading v-if="isWaiting" :status="2"></loading> -->
+  <!--执行toast弹出层-->
+  <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

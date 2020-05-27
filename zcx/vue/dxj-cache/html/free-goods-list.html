@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<title>商品列表</title>
+<script src="/libs/airpana.js"></script>
+</head>
+
+<body>
+    <div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+        <header-nav v-if="showNav"></header-nav>
+        <div class="bg" v-if="isSelect" @click='select(false)'></div>
+        <div class="brand-list-select" v-if="isSelect">
+            <div class="brand-list active" :style="{'padding-top':showNav?'1.21rem':'.3rem'}">
+                <div @click='select(false)' class="brand-list-box" v-if="categoryName!='null' && brandName!='null'">
+                    <a>{{categoryName}}</a>
+                    <span></span>
+                    <a>
+                        {{brandName}}
+                        <span class="active"></span>
+                    </a>
+                </div>
+                <div class="category-list-box">
+                    <div class="category-list">
+                        <p>
+                            <a v-for="(item,index) in mallCategoryList" :class="item.id==categoryId?'active':''" @click='changeMallCategory($event)' :data-index="index">{{item.title}}</a>
+                        </p>
+                    </div>
+                    <div class="title">
+                        所有品牌
+                    </div>
+                    <div class="category-list">
+                        <p>
+                            <a :class="brandId==''?'active':''" @click='changeMallBrand($event)' :data-index="-1">所有品牌</a>
+                            <a v-for="(item,index) in mallBrandListData" :class="item.id==brandId?'active':''" @click='changeMallBrand($event)' :data-index="index">{{item.title}}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="brand-list">
+                <div @click='select(true)' class="brand-list-box" v-if="categoryName!='null' && brandName!='null'">
+                    <a>{{categoryName}}</a>
+                    <span></span>
+                    <a>
+                        {{brandName}}
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+            <div id="free-goods-list-box" class="free-goods-list-box">
+                <ul class="free-goods-list">
+                    <li v-for="(item,index) in mallGoodsListData"  @click="eventLog({eventId:'Duty-freeStore_CommodityList_commodity_'+ item.id +'_click',eventType:'1'})" >
+                        <a :href="'free-goods-detail.html?id='+item.id">
+                            <img v-lazy="baseUrl+item.image" />
+                            <p class="h5">{{item.titleEn}}</p>
+                            <p class="h3">{{item.title}}</p>
+                            <span>{{item.price}}</span>
+                        </a>
+                    </li>
+                </ul>
+                <p v-show="isLoad" class="updata_loading">
+                    <i></i>加载中...
+                </p>
+                <section v-if="!mallGoodsListData.length && !isLoad && !isWaiting" class="no-data">当前品牌无数据~</section>
+                
+            </div>
+        </div>
+        <!--加载中-->
+        <!-- <loading v-if="isWaiting" :status="2"></loading> -->
+        <!--执行toast弹出层-->
+        <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+    </div>
+</body>
+
+</html>

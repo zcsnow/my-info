@@ -1,0 +1,38 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+
+img {
+	display: block;
+	width: 100%;
+}
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin:0 auto;
+	background-color: #fff;
+}
+
+.step-info{
+	position: relative;
+	a{
+		position: absolute;
+		color: #fff;
+		text-align: center;
+		width: 1.63rem;
+		height: 0.58rem;
+		line-height: 0.58rem;
+		background: #545454;
+    	border-radius: 0.12rem;
+		&.exchange-btn{
+			top: 16.16rem;
+    		left: 4.95rem;
+		}
+		&.login-btn{
+			top: 18.22rem;
+			left: 4.95rem;
+		}
+	}
+	
+
+}

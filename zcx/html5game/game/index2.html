@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>形状碎波</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<style type="text/css">
+html {
+ height: 100%;
+}
+
+body {
+ overflow: hidden;
+ margin: 0;
+ height: 100%;
+ background-color: #000000;
+ font-family: Arial,sans-serif;
+}
+
+#wrapper {
+ display: inline-block;
+ margin: 20px 0 0;
+}
+
+#gadgets {
+ display: none;
+}
+
+#stats_panel {
+ position: absolute;
+ z-index: 100;
+ background-color: rgba(255, 255, 255, 0.2);
+ border: 2px solid #999999;
+ width: 170px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
+}
+
+#stats_panel, #stats_panel li {
+ margin: 0;
+ padding: 0;
+}
+
+#stats_panel li {
+ list-style: none;
+ color: #FFFFFF;
+}
+
+#stats_panel li span {
+ margin: 2px;
+ font-size: 12px;
+}
+
+#stats_panel li span:first-child {
+ display: inline-block;
+ width: 90px;
+ padding-left: 5px;
+ display: inline-block;
+}
+
+#fps, #mps, #status, #mouseX, #mouseY {
+ font-weight: bold;
+}
+
+#score_panel, #life_panel {
+ color: #FFFFFF;
+ font-weight: bold;
+ font-size: 32px;
+}
+
+#score, #life {
+ margin-left: 20px;
+}
+
+#menu_panel {
+ color: #FFFFFF;
+ width: 800px;
+ height: 400px;
+ text-align: center;
+}
+
+#menu_panel p {
+ margin: 0;
+}
+
+#menu_panel .title {
+ padding: 50px 0 10px;
+ font-size: 82px;
+}
+
+#menu_panel .version {
+ font-size: 12px;
+ color: #999999;
+}
+
+#menu_panel .highscore {
+ padding: 20px 0;
+ font-size: 24px;
+}
+
+#highscore {
+ padding-left: 20px;
+}
+
+.menu_item {
+ font-size: 32px;
+ font-weight: bold;
+}
+
+#menu_panel .menu_item {
+ margin: 0;
+ padding: 0;
+}
+
+#menu_panel .menu_item li {
+ margin: 0;
+ padding: 50px 0;
+ list-style: none;
+ display: inline-block;
+ width: 200px;
+}
+
+#about_panel {
+ color: #CCCCCC;
+ font-size: 18px;
+}
+
+#about_panel a {
+ color: #FFFFFF;
+}
+
+#about_panel a:hover {
+ text-decoration: none;
+}
+
+#hint_panel {
+ color: #999999;
+ font-size: 16px;
+ text-align: center;
+}
+
+#help_panel {
+ color: #FFFFFF;
+ font-size: 14px;
+ padding: 20px;
+}
+
+#help_panel h1 {
+ font-size: 24px;
+ font-weight: bold;
+ margin: 0;
+ padding: 0;
+ color: #CCCCCC;
+ border-bottom: 2px solid #999999;
+}
+
+#help_panel table tr td {
+ margin: 0;
+ padding: 0 0 0 125px;
+ width: 275px;
+ height: 100px;
+ line-height: 130%;
+}
+
+#help_panel table tr {
+}
+
+#help_panel p {
+ font-size: 16px;
+ margin: 0;
+ padding: 5px 10px;
+}
+
+#help_panel strong {
+ color: #FFFF00;
+}
+
+#help_panel table {
+ margin: 10px 0 0;
+}
+
+#help_panel .menu_item {
+ position: absolute;
+ text-align: right;
+ top: 290px;
+ left: 600px;
+}
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="gin.js"></script>
+<script type="text/javascript" src="game.js"></script>
+</head>
+<body id="device">
+<div id="gadgets">
+    <ul id="stats_panel">
+        <li><span>帧</span><span id="fps">-</span></li>
+        <li><span>鼠标移动/秒</span><span id="mps">-</span></li>
+        <li><span>鼠标位置</span>(<span id="mouseX">-</span>,<span id="mouseY">-</span>)</li>
+        <li><span>演示状态</span><span id="status">-</span></li>
+    </ul>
+    <div id="score_panel">得分:<span id="score">0</span></div>
+    <div id="life_panel">生命:<span id="life">5</span></div>
+    <div id="menu_panel">
+        <p class="title">形状碎波</p>
+        <p class="version">ver 1.0.0</p>
+        <p class="highscore">最高记录:<span id="highscore">0</span></p>
+        <ul class="menu_item">
+            <li>开始</li>
+            <li>帮助</li>
+        </ul>
+    </div>
+    
+   <div id="hint_panel">按住鼠标按钮，上方的三角形切片发挥</div>
+   <div id="help_panel">
+      <h1>形状碎波 - 如何玩</h1>
+      <p>这个游戏的目的就是要打破尽可能多的多边形，你可以用鼠标。<strong>不要错过任何多边形</strong>和<strong>不触及任何圆</strong>。否则，你将失去1点生命 - 你最多<strong>只有5点生命</strong>！
+      </p>
+      <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+              <td>它是三角形，基本多边形。它打破时，你会看到随机片段。</td>
+              <td>这是四边形。当它坏了，它会<strong>创建2个三角形</strong>在<strong>不同的方向</strong>。选择一个明智的时间来打破它。你可以看到多边形甚至更多的边缘，如果你保持足够长的时间。那么，你知道，他们会变得更加残酷。</td>
+          </tr>
+          <td>这是三角形与死亡的圆标志。三角形本身并不危险。只要打破它。但它打破后，将创建一个圆圈。不要去碰它！</td>
+          <td></td>
+          <tr></tr>
+          <td> 这是圆，也有死亡的炸弹。这是唯一的形状，您<strong>不应该碰</strong>。如果你这样做，你将失去1点生命。</td>
+          <td></td>
+          <tr></tr>
+      </table>
+      <div class="menu_item">返回</div>
+   </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+    "endAdList": [],
+    "movieId": "[B@67ek3914",
+    "startAdList": [{
+        "adurl": "/dxjad/ad_video/ad1.mp4",
+        "isShow": true,
+        "seq": 1,
+        "time": 54,
+        "url": "https://www.baidu.com/"
+    }],
+    "stopAdList": [{
+        "adurl": "/dxjad/ad_image/adtest.jpg",
+        "isShow": true,
+        "url": "6"
+    }, {
+        "adurl": "/dxjad/ad_image/adtest1.jpg",
+        "isShow": true,
+        "url": "12"
+    }, {
+        "adurl": "/dxjad/ad_image/adtest2.jpg",
+        "isShow": true,
+        "url": ""
+    }]
+}

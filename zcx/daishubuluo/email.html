@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>袋鼠部落</title>
+<meta name="keywords" content="keywords" />
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="description" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="css/page/email.css">
+</head>
+<body class="f5-bg">
+<div class="container">
+    <header class="header-box">
+        <a href="javascript:history.go(-1);" class="left-icon"><img src="images/left_icon.png"></a>
+        <span>电子邮件</span> 
+    </header>
+
+      <div class="email-box">
+          
+          <div class="email-info">
+              <input type="text" id="J_email" name="J_email" placeholder="请输入常用邮件地址" required />
+              <em class="check-tip">未验证</em>
+          </div>
+          <p class="email-tip">
+            1.请确保邮箱地址真实正确<br>
+            2.未验证邮箱，请尽快去个人中心进行验证
+          </p>
+
+          <a href="javascript:;" class="email-submit-btn">保存</a>
+              
+      </div>
+  
+
+  
+</div>
+<script src="js/jquery1.7.min.js"></script>
+<script src="js/plugin/j.dialogs.js"></script>
+<script>
+  
+  $(".email-submit-btn").click(function(e){
+    var emailre = /^[a-zA-Z0-9]+([-_.][a-zA-Z0-9]+)*@([a-zA-Z0-9]+[-.])+[A-Za-zd]{2,5}$/; 
+    console.log(emailre.test($("#J_email").val()));
+    if (emailre.test($("#J_email").val())){
+      return jShare('保存成功',"","");
+    }else{
+      return jShare('邮箱格式不对',"","");
+    }
+    
+  }); 
+</script>
+</body>
+</html>

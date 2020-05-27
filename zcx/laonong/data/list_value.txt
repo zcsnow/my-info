@@ -1,0 +1,38 @@
+﻿[{
+     "prodId" : "1",
+	 "prodBrandName" : "男式系列男式系列男式系列男式男式系列男式系列男式系列男式男式系列男式系列男式系列男式",
+     "prodName" : "男士8卡片格黑色皮夹",
+     "prodPrice" : "100",
+     "prodNum" : "1",
+     "prodImg":"http://pic15.shangpin.com/f/p/14/11/20/20141120190704561174-140-186.jpg",
+     "prodOriginalPrice":"350",
+	 "prodTime":"1"
+},{
+     "prodId" : "2",
+	 "prodBrandName" : "男式系列",
+     "prodName" : "男士长袖衬衫男士8卡片格黑色皮夹男士8卡片格黑色皮夹",
+     "prodPrice" : "210",
+     "prodNum" : "0",
+     "prodImg":"http://pic13.shangpin.com/f/p/14/12/25/20141225175255530699-140-186.jpg",
+     "prodOriginalPrice":"430",
+	 "prodTime":"0"
+},{
+     "prodId" : "3",
+	 "prodBrandName" : "男式系列",
+     "prodName" : "男士羊毛大衣",
+     "prodPrice" : "50",
+     "prodNum" : "10",
+     "prodImg":"http://pic13.shangpin.com/f/p/14/05/17/20140517170636697230-140-186.jpg",
+     "prodOriginalPrice":"150",
+	 "prodTime":"0"
+},{
+     "prodId" : "4",
+	 "prodBrandName" : "女式系列",
+     "prodName" : "2012早秋新品-女士弹力半身裙",
+     "prodPrice" : "350",
+     "prodNum" : "1",
+     "prodImg":"http://pic12.shangpin.com/f/p/14/10/21/20141021233141750145-140-186.jpg",
+     "prodOriginalPrice":"700",
+	 "prodTime":"0"
+  }
+]

@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="renderer" content="webkit" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta content="telephone=no" name="format-detection">
+		<title>sign-up</title>
+        <link rel="stylesheet" href="css/ie-layout.css" />
+        <link rel="stylesheet" type="text/css" href="css/verify.css">
+        <link rel="stylesheet" href="css/sign_up_new.css?3" />
+	</head>
+	<body>
+		<div class="sign-up-all">
+            <div class="box-center">
+            <div class="logo-wrapper">
+                <img src="img/logo.png">
+            </div>
+
+            <div class="container clr">
+                <div class="sign-up-wrap">
+                    <div class="sign-up-inner" id="sign_form">
+                        <div class="sign-up">个人信息</div>
+                        <div class="ipt-box clr">
+                            <!-- <input type="hidden" name="street" value=" "/>
+                            <div class="ipt-section">
+                                <input class="prompt-input" type="text" phdata="验证码" id="referee" name="tgcode" value="" />
+                            </div> -->
+                            <div id="mpanel1" class="clr"></div>
+                        </div>
+                        <div class="ipt-box clr">
+                            <div class="ipt-section">
+                                <input class="prompt-input" type="text" phdata="姓名" required id="name" name="name"/>
+                            </div>
+                            
+                        </div>
+                        <div class="ipt-box clr">
+                            <div id="global_location" class="ipt-area">
+                                <select class="country"  id="area" data-first-title="选择国家"  name="nation"></select>
+                                <select class="state" style="display: none" data-required="true" name="province"></select>
+                                <select class="city" style="display: none" data-required="true" name="city"></select>
+                                <select class="region" style="display: none" data-required="true" name="street"></select>
+                            </div>
+                        </div>
+
+                        <div class="ipt-box clr">
+                            <div class="ipt-section">
+                                <input class="prompt-input" type="email" phdata="邮箱" required  id="email" name="email"/>
+                            </div>
+                        </div>
+
+                        <div class="ipt-box clr">
+                            <div class="ipt-section" style="float: left; width: 90px;">
+                                <input id="area-code" class="prompt-input" type="num" phdata="区号" required style="width: 66px;" value="" name=""/>
+                            </div>
+                            <div class="ipt-section" style="float: left; width: 200px; margin-left: 4px;">
+                                <input class="prompt-input" type="num" phdata="手机号" required maxlength="11" id="phoneNum" style="width: 176px;" name="phone"/>
+                            </div>
+                        </div>
+                        
+                        <div class="ipt-box clr">
+                            <div class="ipt-section">
+                                <div class="ipt-identify">
+                                    <input class="ipt-identify-useEml" type="hidden" value="true" />
+                                    <input class="ipt-identify-input prompt-input" type="num" phdata="手机验证码" required id="phoneCode" maxlength="6" name="smscode"/>
+                                    <button class="ipt-identify-code" type="button" tabindex="-1">获取验证码</button>
+                                </div>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+
+                <div class="sign-up-wrap">
+                        <div class="sign-up-inner" id="sign_form">
+                            <div class="sign-up">账户信息</div>
+                            <!-- <div class="ipt-box clr">
+                                <div class="ipt-section">
+                                    <select class="ipt-section-select" name="actType" required id="actType" data-first-title="账户类型">
+                                        <option value="迷你账户">迷你账户</option>
+                                        <option value="标准账户">标准账户</option>
+                                        <option value="专家账户">专家账户</option>
+                                    </select>
+                                </div>
+                            </div> -->
+                            <div class="ipt-box clr">
+                                <div class="ipt-section">
+                                    <select class="ipt-section-select" name="leveage" required id="leveage">
+                                        <option value="" style="display: none;color: #999" disabled selected>选择杠杆</option>
+                                        <option value="100">100</option>
+                                        <option value="200">200</option>
+                                        <option value="400">400</option>
+                                        <option value="500">500</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="ipt-box clr">
+                                <div class="ipt-section">
+                                    <input class="prompt-input" type="password" phdata="密码" required id="password" name="password"/>
+                                </div>
+                            </div>
+                            <div class="ipt-box clr">
+                                <div class="ipt-section">
+                                    <input class="prompt-input" type="password" phdata="确认密码" required id="passwordSure" name="passwordSure"/>
+                                </div>
+                            </div>
+                            <div class="ipt-box clr">
+                                <div class="ipt-section">
+                                    <input class="prompt-input" type="text" phdata="邀请码(若无,可不填)" id="referee" name="tgcode" value="" />
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="sign-up-wrap">
+                        <a class="logo" href="login.jsp">返回登录<img class="logo-img" src="http://110.45.151.58:8080/NewMTFourManager/member/img/back-to.png"/></a>
+                        <div class="sign-up-inner" id="sign_form">
+                            <div class="sign-up">确认信息</div>
+                            <div class="privacy-policy">
+                                <input class="privacy-policy-checkbox" type="checkbox" />
+                                <span class="privacy-policy-span">我已阅读并同意
+                                    <a href="http://110.45.151.58:8080/NewMTFourManager/member/protocol/web/risk.html"  target="_blank" class="privacy-policy-span1">风险协议书</a>
+                                    <a href="http://110.45.151.58:8080/NewMTFourManager/member/protocol/web/client.html" target="_blank" class="privacy-policy-span2">客户协议书</a>
+                                    <a href="http://110.45.151.58:8080/NewMTFourManager/member/protocol/web/client.html" target="_blank" class="privacy-policy-span2">避免利益冲突条款</a>
+                                    <a href="http://110.45.151.58:8080/NewMTFourManager/member/protocol/web/client.html" target="_blank" class="privacy-policy-span2">隐私政策</a>							
+                                    <a href="http://110.45.151.58:8080/NewMTFourManager/member/protocol/web/client.html" target="_blank" class="privacy-policy-span2">网站使用条款</a>
+                                    <a href="http://110.45.151.58:8080/NewMTFourManager/member/protocol/web/client.html" target="_blank" class="privacy-policy-span2">反洗黑钱政策</a>
+                                    和
+                                    <a href="http://110.45.151.58:8080/NewMTFourManager/member/protocol/web/client.html" target="_blank" class="privacy-policy-span2">订单执行规则</a>
+                                </span>
+                            </div>
+                            <input id="check-btn" class="sign-up-submit" type="submit" value="注册" style="margin-top: 16px;" />
+                            <p class="submit-tip">点击注册按钮后，订单执行规则风险协议书 客户协议书 避免利益冲突条款 隐私政策 网站使用条款 反洗黑钱政策 和 订单执行规则风险协议书 客户协议书 避免利益冲突条款 隐私政策 网站使用条款 反洗黑钱政策 和 订单执行规则</p>
+                        </div>
+                </div>
+              
+              
+            </div>
+		
+            <!--错误提示-->
+            
+
+            
+            </div>
+        </div>
+        <ul class="popup"></ul>
+        <div class="loading"><img src="img/wait_loading.gif" alt=""></div>
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<!--<script type="text/javascript" src="js/ie-sign-up.js"></script>-->
+        <script type="text/javascript" src="js/jquery.cxselect.min.js"></script>
+		<script type="text/javascript" src="js/jquery.promptInput.js?1"></script>
+		<script type="text/javascript" src="js/plupload.full.min.js"></script>
+        <script type="text/javascript" src="js/uploadPreview.js"></script>
+        <script type="text/javascript" src="js/verify.min.js"></script>
+        <script type="text/javascript" src="js/sign_up2.js?4"></script>
+	</body>
+</html>

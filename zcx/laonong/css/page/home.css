@@ -1,0 +1,18 @@
+/*轮播图*/
+#homeSlider .swiper-pagination{ bottom:5px}
+#homeSlider .swiper-pagination-bullet{width: 30px;height: 7px;background:rgba(255,255,255,0.5);cursor: pointer;margin: 0 3px;border-radius:10px;opacity:1;}
+#homeSlider .swiper-pagination-bullet-active{/*background: #22422d;*/background:rgba(255,255,255,1);}
+/*快捷入口*/
+.quick-entry {margin: 10px 0 20px;overflow: hidden;}
+.quick-entry a {float: left;width: 25%;font-size: 13px;color: #262626; text-align:center;overflow:hidden;white-space:nowrap; text-overflow:ellipsis;}
+.quick-entry a i {display: block;margin-bottom: 4px; padding:10px 20px 4px;}
+/*品牌专题列表*/
+.ln-title{margin:10px 6px 13px; text-align:center; font-weight:normal; font-size:14px; color:#b0b0b0;line-height:30px; height:30px;}
+.ln-title em{ display:inline-block; margin:0 5px; color:#555;font-size:15px;}
+.one-list{ margin:0 10px 20px;}
+.one-list a{ display:block;}
+
+.more-btn{ display:block; background:#fff;margin:20px 10px 10px; border:1px solid #e5e5e5; color:#777;font-size:14px; line-height:16px;padding:10px 0; text-align:center; position:relative;  }
+.more-btn:before{ content:"\f105"; position:absolute; left:90%; font-family:'FontAwesome';font-size:20px;}
+
+

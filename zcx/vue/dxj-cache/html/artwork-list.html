@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>艺术品</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+  <header-nav v-if="showNav" :title="title" page-url="index.html"></header-nav>
+    <section>
+
+      <div class="list-box" v-if="bannerData.length">
+        <div class="travel-list">
+          <div class="swiper-container" id="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" v-for="(item,index) in bannerData" @click="eventLog({eventId:'home_artwork_'+ (index+1) +'_click',eventType:'1',eventIsAD:'1',contentType:'焦点图',contentTitle:item.title})">
+                <a :href="item.url?item.url:'javascript:void(0)'">
+                  <img :src="baseUrlAd+item.image" />
+                </a>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <p class="navLink clearfix">
+        <a href="artworks.html#1" class="b1"></a>
+        <a href="artworks.html#2" class="b2"></a>
+        <a href="artworks.html#3" class="b3"></a>
+        <a href="artworks.html#4" class="b4"></a>
+      </p>
+
+      <!-- <div class="network" v-if="Object.keys(ad1).length!=0">
+        <a :href="ad1.url"><img v-lazy="apiHost+'/app/dxj'+ad1.image" /></a>
+      </div> -->
+      <div class="ad1swiper clr"  v-if="ad1.length">
+          <i></i>
+          <div class="swiper-container" id="adswiper1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide swiper-no-swiping" v-for="(item,index) in ad1">
+                <a :href="item.url?item.url:'javascript:void(0)'">{{item.title}}</a>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+      </div>
+
+      <div class="list-box" v-if="artists.length">
+        <h3 class="artists"><a href="artwork-art.html">更多</a></h3>
+        <ul class="artists-ul clearfix">
+          <li v-for="(item,index) in artists">
+            <a :href="'artwork-detail.html?id='+item.id">
+              <span class="bgImage-box"><img v-lazy="baseUrlArtists+item.bgImage" /></span>
+              <span class="authorImg-box"><img v-lazy="baseUrlArtists+item.image" class="authorImg" /></span>
+              <h5>{{item.name}}</h5>
+              <p>{{item.achievement}}</p>
+            </a>
+          </li>
+        </ul>
+        <a href="javascript:void(0)" class="more" @click="changeOne">换一批</a>
+      </div>
+
+      <!-- <div class="network" v-if="Object.keys(ad2).length!=0">
+        <a :href="ad2.url"><img v-lazy="apiHost+'/app/dxj'+ad2.image" /></a>
+      </div> -->
+      <div class="ad2swiper"  v-if="ad2.length">
+          <div class="swiper-container" id="adswiper2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" v-for="(item,index) in ad2">
+                <a :href="item.url?item.url:'javascript:void(0)'">
+                  <img :src="baseUrlAd+item.image" />
+                </a>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+      </div>
+
+      <div :class="isFixed?'list-box nav-list-box fixed':'list-box nav-list-box'">
+        <h3 class="artworks"><a href="artworks.html">更多</a></h3>
+        <nav>
+            <a :class="{'active':item.active}" href="javascript:void(0)" @click="tabFn(index)" v-for="(item,index) in artworkTypes">{{item.title}}</a>
+        </nav>
+        <div>
+        <ul class="artwork-item-list">
+          <li v-for="(item,index) in artworkList" @click="lookWorkDetail(item)">
+            <a href="javascript:void(0)" >
+              <!-- <span><img v-lazy="apiHost+dxjApi+item.image" /></span> -->
+              <span><img v-lazy="baseUrlArtList+item.smallImage" /></span>
+              <dl>
+                <dt>{{item.title}}</dt>
+                <dd>{{item.authorName}} {{item.createTime}}</dd>
+              </dl>
+            </a>
+          </li>
+        </ul>
+        <!--网络不给力或无数据时提示-->
+        <div v-if="noDataIShow" class="no-data">暂无数据，请查看其它</div>
+      </div>
+        
+        
+        <p v-show="isLoad" class="updata_loading">
+          <i></i>加载中...
+        </p>
+
+        <!--网络不给力或无数据时提示-->
+        <!-- <div v-if="noDataIShow" class="no-data">暂无数据，请查看其它</div> -->
+
+      </div>
+    </section>
+
+    
+    <!--加载中-->
+    <loading v-if="isWaiting" :status="2"></loading>
+    <!--执行toast弹出层-->
+    <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+    <!--小图片点击放大预览-->
+    <img-preview v-if="isImgPreviewShow"  @closeimgpreview="hideImgPreview" :preview-data="previewData"></img-preview>
+</div>
+</body>
+</html>

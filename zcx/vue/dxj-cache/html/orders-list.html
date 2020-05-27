@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>我的订单</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+    <header-nav v-if="showNav" title="我的订单" page-url="member.html"></header-nav>
+    <section v-if="ordersList.length">
+      <a :href="'orders-detail.html?tag='+item.orderID" class="clearfix" v-for="(item,index) in ordersList">
+        <img v-lazy="'/app/dxj'+item.moviePic" />
+        <div>
+          <h3 :class="item.isRefunded == 1?'clearfix done':'clearfix'"><span>{{item.movieName}}</span>{{item.isRefunded == 0?item.isOverTime == 1?"已过期":"已付款": "已退款"}}</h3>
+          <p>
+            类型：电影<br />
+            价格：&yen;{{item.paymentAmount}}<br />
+            下单时间：{{item.orderTime}}
+          </p>
+        </div>
+      </a>
+    </section>
+    <section v-if="!isWaiting && !ordersList.length" class="no-data">暂未查到订单信息</section>
+    <!--加载中-->
+    <loading v-if="isWaiting" :status="2"></loading>
+    <!--执行toast弹出层-->
+    <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+  </div>
+</div>
+</body>
+</html>

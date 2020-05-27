@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>游戏</title>
+    <script src="/libs/airpana.js"></script>
+</head>
+<body>
+    <div id="main" v-cloak>
+        <header-nav v-if="showNav" :title="title"></header-nav>
+        <section v-if="this.jsonArray.length" :style="{'padding-top':showNav?'.91rem':'0'}">
+
+            <ul class="gameList clearfix">
+                <li v-for="(item,index) in pageArray">
+                    <a href="javascript:void(0)" @click="playGame(item.game_link,item.id,item.game_name)">
+                        <img :src="item.pictures" />
+                        <p>{{item.game_name}}</p>
+                        <span>开始玩</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!--执行toast弹出层-->
+        <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+    </div>
+</body>
+</html>

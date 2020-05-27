@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>同方律师事务所</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../css/pc.css">
+</head>
+<body>
+    <div class="header">
+       <div class="content clr">
+         <div class="header-logo">
+         	<a href="index.html"><img src="../images/logo.png" width="300"></a>
+         </div>
+         <ul class="nav clr">
+          <li><a href="index.html">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+		  <li><a href="about.html" class="cur">关于同方</a></li>
+          <li><a href="field.html">专业领域</a></li>
+          <li><a href="team.html">律师团队</a></li>
+          <li><a href="discuss.html">专业讨论</a></li>
+          <li><a href="party.html">党团建设</a></li>
+          <li><a href="culture.html">同方文化</a></li>
+          <li><a href="join.html">加入同方</a></li>
+         </ul>
+         <div class="header-right-box">
+            <div class="search-input">
+            	<input type="text" class="" placeholder="搜索" />
+                <em class="search-icon js-search-icon"><img src="../images/search-icon.png" width="16"></em>
+            </div>
+			<span class="search-btn js-search-btn">搜索</span> | <span class="lang-btn">EN</span>
+         </div>
+       </div>
+    </div>
+    <div class="about-bg">
+    <div class="clr about-box">
+        <h2>关于<span>同方</span></h2>
+    	<div class="menu-box">
+        	<ul class="menu-list">
+            	<li><a href="about.html">同方介绍</a></li>
+                <li><a href="structure.html">组织机构</a></li>
+                <li><a href="branch.html">分支机构</a></li>
+                <li><a href="honor.html">同方荣誉</a></li>
+                <li><a href="responsible.html">社会责任</a></li>
+                <li><a href="event.html">同方大事记</a></li>
+                <li><a href="union.html">中世律所联盟</a></li>
+                <li class="cur"><a href="contact.html">联系我们</a></li>
+            </ul>
+            <!-- <div class="contact-menu">
+              <h3><i></i>联系我们<em>Contact us</em></h3>
+              <ul class="menu-phone">
+                  <li><i><img src="../images/icon1_1.png"></i>电话：024-82705555</li>
+                  <li><i><img src="../images/icon2_2.png"></i>传真：024-22781101</li>
+              </ul>
+            </div> -->
+        </div>
+        
+        <div class="about-content">
+          <h4>联系我们</h4>
+          <div id="content-1" class="mCustomScrollbar">
+              
+              <div class="contact-box clr">
+                  <h5>沈阳</h5>
+                  <ul class="map-info clr">
+                    <li><i><img src="../images/icon1.png"></i><em>电话：</em><span>0312-123456</span></li>
+                    <li><i><img src="../images/icon2.png"></i><em>传真：</em><span>0312-123465</span></li>
+                    <li><i><img src="../images/icon3.png"></i><em>地址：</em><span>沈阳新中街188号</span></li>
+                  </ul>
+                  <div class="map-box">
+                    <div  class="map-con" id="allmap1"></div>
+                  </div>
+              </div>
+              <div class="contact-box clr">
+                  <h5>北京</h5>
+                  <ul class="map-info clr">
+                    <li><i><img src="../images/icon1.png"></i><em>电话：</em><span>0312-123456</span></li>
+                    <li><i><img src="../images/icon2.png"></i><em>传真：</em><span>0312-123465</span></li>
+                    <li><i><img src="../images/icon3.png"></i><em>地址：</em><span>北京新中街188号</span></li>
+                  </ul>
+                  <div class="map-box">
+                    <div  class="map-con" id="allmap2"></div>
+                  </div>
+              </div>
+              <div class="contact-box clr">
+                  <h5>大连</h5>
+                  <ul class="map-info clr">
+                    <li><i><img src="../images/icon1.png"></i><em>电话：</em><span>0312-123456</span></li>
+                    <li><i><img src="../images/icon2.png"></i><em>传真：</em><span>0312-123465</span></li>
+                    <li><i><img src="../images/icon3.png"></i><em>地址：</em><span>大连新中街188号</span></li>
+                  </ul>
+                  <div class="map-box">
+                    <div  class="map-con" id="allmap3"></div>
+                  </div>
+              </div>
+              
+          </div>
+        </div>
+        
+    </div>
+    </div>
+    
+    <!--footer-->
+    <div class="footer">
+        <div class="content clr">
+              <p class="f-left">备案号：辽ICP备11020633号-1</p>
+              <p class="about-text">Copyright © 2011-2013 tf-lawyer.com.cn All Rights Reserved.</p>
+              <p class="f-right">技术支持：厷广互动</p>
+              
+         </div>
+    </div>
+    
+
+    
+	<script src="../js/jquery1.7.min.js"></script>
+    <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>    
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+    <script src="../js/pc_base.js"></script>
+    <script type="text/javascript">
+	  // 地图功能
+	  var map1 = new BMap.Map("allmap1",{
+		  enableHighResolution: true //是否开启高清
+	  });
+	  var point1 = new BMap.Point(116.404, 39.915);
+	  map1.centerAndZoom(point1, 12); //初始化地图
+	  map1.enableInertialDragging(); //开启关系拖拽
+	  map1.enableScrollWheelZoom();  //开启鼠标滚动缩放
+	  // 创建地址解析器实例
+	  var myGeo1 = new BMap.Geocoder();
+	  // 将地址解析结果显示在地图上,并调整地图视野
+	  myGeo1.getPoint("沈阳市", function(point){
+		if (point) {
+		  map1.centerAndZoom(point, 16);
+		  map1.addOverlay(new BMap.Marker(point));
+		}else{
+		  alert("您选择地址没有解析到结果!");
+		}
+	  }, "沈阳市");
+	  // 地图功能
+	  var map2 = new BMap.Map("allmap2",{
+		  enableHighResolution: true //是否开启高清
+	  });
+	  var point2 = new BMap.Point(116.404, 39.915);
+	  map2.centerAndZoom(point2, 12); //初始化地图
+	  map2.enableInertialDragging(); //开启关系拖拽
+	  map2.enableScrollWheelZoom();  //开启鼠标滚动缩放
+	  // 创建地址解析器实例
+	  var myGeo2 = new BMap.Geocoder();
+	  // 将地址解析结果显示在地图上,并调整地图视野
+	  myGeo2.getPoint("北京市", function(point){
+		if (point) {
+		  map2.centerAndZoom(point, 16);
+		  map2.addOverlay(new BMap.Marker(point));
+		}else{
+		  alert("您选择地址没有解析到结果!");
+		}
+	  }, "北京市");
+	  // 地图功能
+	  var map3 = new BMap.Map("allmap3",{
+		  enableHighResolution: true //是否开启高清
+	  });
+	  var point3 = new BMap.Point(116.404, 39.915);
+	  map3.centerAndZoom(point3, 12); //初始化地图
+	  map3.enableInertialDragging(); //开启关系拖拽
+	  map3.enableScrollWheelZoom();  //开启鼠标滚动缩放
+	  // 创建地址解析器实例
+	  var myGeo3 = new BMap.Geocoder();
+	  // 将地址解析结果显示在地图上,并调整地图视野
+	  myGeo3.getPoint("大连市", function(point){
+		if (point) {
+		  map3.centerAndZoom(point, 16);
+		  map3.addOverlay(new BMap.Marker(point));
+		}else{
+		  alert("您选择地址没有解析到结果!");
+		}
+	  }, "大连市");
+
+  </script>
+    
+</body>
+</html>

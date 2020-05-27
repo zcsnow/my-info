@@ -1,0 +1,145 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>新年星愿，有愿望才幸福</title>
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css?3" />
+</head>
+<body>
+  <!-- <audio src="images/bgmusic.mp3" id="bgMusic" loop preload="auto"></audio> -->
+  <!-- <div class="music on"><img src="images/music0.png?2"></div> -->
+  <div class="loading-box">
+      <div class="flower"></div>
+      <div class="text_bg"><img src="images/bg3.png"></div>
+      <div class="logo"><img src="images/logo1.png"></div>
+      <div class="load-img plane"><img src="images/plane.png"></div>
+      <div id="progressbar"><em>0</em><i>%</i></div>
+      <div class="load-txt"><img src="images/loading_img3.png"></div>
+      <div class="bottom"><img src="images/bg_bottom2.png"></div>
+  </div>
+  <!-- <canvas id='cas'>浏览器不支持canvas</canvas> -->
+  <!-- <canvas  id='cas' class="raining"></canvas> -->
+  <div class="comet"><img src="images/liuxing.png"></div>
+  <div class="big-plane"><img src="images/plane.png"></div>
+  <div class="particles"></div>
+  <div class="particles"></div>
+  <div class="particles"></div>
+  <div class="plane-text"><img src="images/page0_txt4.png"></div>
+  <div class="page page0">
+        <div class="flower"></div>
+        <div class="logo"><img src="images/logo1.png"></div>
+        
+        <div class="text">
+            <span class="text1"><img src="images/page0_txt1.png"></span>
+            <span class="text2"><img src="images/page0_txt2.png"></span>
+            <span class="text3"><img src="images/page0_txt3.png"></span>
+        </div>
+        
+        <span class="btn start-btn"><img src="images/start_btn.png"></span>
+        
+        <div class="bottom"><img src="images/bg_bottom1.png"></div>
+
+        
+    </div>
+
+  <div class="page page1">
+      <div class="logo"><img src="images/logo1.png"></div>
+      <ul id="wish_box"></ul>
+      <span class="btn page1-btn1"><img src="images/btn0.png"></span>
+      <div class="star-plane"><img src="images/plane.png"></div>
+      <span class="logo1">飞机已抵达星愿天空<br>点击星星查看他人的星愿／点击下方许愿</span>
+      <div class="bottom"><img src="images/bg_bottom1.png"></div>
+  </div>
+  
+  <div class="page page2">
+    <div class="flower"></div>
+    <div class="light_bg"><img src="images/bg4.png"></div>
+    <div class="logo"><img src="images/logo1.png"></div>
+    <div class="name-box">
+        <h3>我的星愿</h3>
+        <i><img src="images/star_title.png"></i>
+        <textarea class="textarea" id="wish_val" placeholder="认真写下你想说的话" maxlength="60"></textarea>
+        <div class="input-name"><input class="" type="text" id="name_val" value="" placeholder="匿名" maxlength="8"></div>
+        <span class="btn js-submit-wish-btn"><img src="images/btn1.png"></span>
+        <div class="fly-star"><img src="images/star_bg11.png"></div>
+    </div>
+    <div class="bottom"><img src="images/bg_bottom1.png"></div>
+</div>
+
+
+  <!-- 结果页 -->
+  <div class="page page3">
+        <div class="flower"></div>
+        <div class="light_bg"><img src="images/bg4.png"></div>
+        <div class="logo"><img src="images/logo1.png"></div>
+        <canvas id="reusltCanvas"></canvas>
+        <div class="result-box">
+            <img id="result_bg" src="images/result_bg.jpg?2"/>
+            <div class="wish-content">
+                <h2></h2>
+                <div class="star-bg">
+                    <p></p>
+                    <img src="images/star_bg.png">
+                </div>
+                <!-- <div class="star-shine-bg lightFlash"><img src="images/star_bg_shine.png"></div> -->
+            </div>
+            <div class="save-txt"><img src="images/save_txt.png"></div>
+            <div class="btn-box clr">
+                <span class="btn js-share-btn"><img src="images/btn2.png"></span>
+                <span class="btn js-replay-btn"><img src="images/back_btn.png"></span>
+            </div>
+            <div class="save"></div>
+        </div>
+        <div class="bottom"><img src="images/bg_bottom1.png"></div>
+  </div>
+  
+  
+  <div class="js-share-pop"><img src="images/share_img.png"></div>
+  <div class="mask"></div>
+
+  <div class="pop-tip-box">
+      <p class="pop-tip-msg"></p>
+  </div>
+  
+<script src="js/jquery-1.7.js"></script> 
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/appShare.js"></script>
+<script src="js/wxShare.js"></script>
+<!-- <script src="js/flower.js"></script>  -->
+<script src="js/test.js"></script> 
+<script src="js/hammer.min.js"></script> 
+<script>
+//微信分享
+var sharLink = window.location.href; 
+var shareInfo = {
+	title:'我刚许下了2019年的新年愿望，你还不行动起来？',     
+    desc:'点击进入>>>这片心愿天空还差一个你',
+    linetitle: "2019，新年星愿，有愿望才幸福。",
+	imgUrl:'http://topic.dongxingji.cn/h5/20190128/images/fenxiang.jpg?7', 
+}; 
+wxShare(sharLink,shareInfo);
+
+//app分享
+var appShareData = {
+   "title": '2019，新年星愿，有愿望才幸福。', 
+   "content": '点击进入>>>这片心愿天空还差一个你',
+   "url": "http://topic.dongxingji.cn/h5/20190128/index.html",
+   "img": 'http://topic.dongxingji.cn/h5/20190128/images/fenxiang.jpg?7'
+  }
+ 
+  //获取native分享方法
+  callN("shareTopic",appShareData);
+</script>
+
+<script src="http://sdk.talkingdata.com/app/h5/v1?appid=4BCB2AA57DBC4C7A804DEC1012A7BCE4&vn=2019新年星愿，有愿望才幸福"></script>
+<script>
+TDAPP.onEvent("HNY_Load");
+</script>
+
+</body>
+</html>

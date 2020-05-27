@@ -1,0 +1,399 @@
+
+/*按钮 style*/
+.login-submit-btn {
+  width: 8.4rem;
+  margin: 0 auto;
+  color: #fff;
+  height: 0.96rem;
+  line-height: 0.96rem;
+  display: block;
+  background-color: #e83828;
+  border-radius: 0.07rem;
+  text-align: center;
+  font-size: 0.43rem;
+  font-weight: 500;
+}
+
+/*input rarido*/
+.auto-login-radio {
+  font-size: 0.32rem;
+  line-height: 0.6rem;
+  height: 0.6rem;
+  color: #999;
+  display: inline-block;
+  margin: 0.28rem 0.28rem 0.28rem 0.78rem;
+}
+.auto-login-radio::before {
+  content: "";
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  display: inline-block;
+  margin-right: 0.15rem;
+  width: 0.41rem;
+  height: 0.41rem;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.auto-login-radio.on::before {
+  border: 1px solid #e83828;
+  background: #e83828 url("../../images/check-icon.png") no-repeat center center;
+  background-size: 90% auto;
+}
+
+.login-form input {
+  border: none;
+  outline: 0;
+  background: transparent;
+  font-size: 0.43rem;
+  color: #999;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/*登录*/
+.login-body {
+  overflow: hidden;
+}
+.login-body .top-img {
+  width: 2.64rem;
+  min-height: 3.38rem;
+  margin: 0.8rem auto 0.64rem;
+}
+.login-body .top-img img {
+  width: 100%;
+}
+.login-body .login-form {
+  background-color: #fafafa;
+}
+.login-body .login-form li {
+  height: 1.17rem;
+  padding: 0 0.34rem 0 0.76rem;
+  border-bottom: 1px solid #f0f0f0;
+  box-sizing: border-box;
+}
+.login-body .login-form li:last-child {
+  border-bottom: none;
+}
+.login-body .login-form li .input-box {
+  padding: 0.37rem 0;
+  height: 0.41rem;
+  line-height: 0.41rem;
+  overflow: hidden;
+}
+.login-body .login-form .login-img .code-img-btn, .login-body .login-form .login-psw .psw-btn {
+  height: 100%;
+  float: right;
+  padding: 0 0.42rem;
+}
+.login-body .login-form .login-psw #show-psw {
+  display: none;
+}
+.login-body .login-form .login-psw .psw-btn {
+  width: 0.55rem;
+  background: url("../../images/psw_off@2x.png") no-repeat center center;
+  background-size: 100% auto;
+  background-origin: content-box;
+}
+.login-body .login-form .login-psw .psw-btn.on {
+  background: url("../../images/psw_on@2x.png") no-repeat center center;
+  background-size: 100% auto;
+  background-origin: content-box;
+}
+.login-body .login-form .login-img .code-img-btn {
+  padding: 0;
+  width: 1.89rem;
+}
+.login-body .login-form .login-img .code-img-btn img {
+  margin-top: 0.12rem;
+}
+.login-body .user-action {
+  width: 8.4rem;
+  margin: 0 auto;
+}
+.login-body .user-action {
+  margin: 0.4rem auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.login-body .user-action a {
+  color: #666;
+  font-size: 0.37rem;
+}
+
+/*验证手机*/
+.mobileVerifiy-body {
+  overflow: hidden;
+  padding-top: 1.2rem;
+}
+.mobileVerifiy-body > p {
+  font-size: 0.32rem;
+  line-height: 0.41rem;
+  padding: 0.37rem 0.76rem;
+  color: #999;
+  font-weight: 300;
+}
+.mobileVerifiy-body > p span {
+  color: #666;
+}
+.mobileVerifiy-body .login-form {
+  background-color: #fafafa;
+}
+.mobileVerifiy-body .login-form li {
+  height: 1.17rem;
+  padding: 0 0 0 0.76rem;
+  border-bottom: 1px solid #f0f0f0;
+  box-sizing: border-box;
+}
+.mobileVerifiy-body .login-form li:last-child {
+  border-bottom: none;
+}
+.mobileVerifiy-body .login-form li .input-box {
+  padding: 0.37rem 0;
+  height: 0.41rem;
+  line-height: 0.41rem;
+  overflow: hidden;
+}
+.mobileVerifiy-body .login-form .login-img .sms-code-btn {
+  height: 100%;
+  width: 2.75rem;
+  float: right;
+  background: #e83828;
+  color: #fff;
+  line-height: 1.17rem;
+  font-size: 0.32rem;
+  text-align: center;
+}
+.mobileVerifiy-body .login-form .login-img .sms-code-btn.disabled {
+  color: #999;
+  background: #ccc;
+  pointer-events: none;
+}
+.mobileVerifiy-body .login-submit-btn {
+  margin-top: 0.4rem;
+}
+
+/*.login-psw .input-box input{*/
+/*border-right: 1px solid #f0f0f0;*/
+/*}*/
+/*忘记密码*/
+.resetPsw-body {
+  padding-top: 1.6rem;
+}
+.resetPsw-body .login-form {
+  background-color: #fafafa;
+}
+.resetPsw-body .login-form li {
+  height: 1.17rem;
+  padding: 0 0.34rem 0 0.76rem;
+  border-bottom: 1px solid #f0f0f0;
+  box-sizing: border-box;
+}
+.resetPsw-body .login-form li:last-child {
+  border-bottom: none;
+}
+.resetPsw-body .login-form li .input-box {
+  padding: 0.37rem 0;
+  height: 0.41rem;
+  line-height: 0.41rem;
+  overflow: hidden;
+}
+.resetPsw-body .login-form .login-img .code-img-btn {
+  height: 100%;
+  float: right;
+  padding: 0 0.42rem;
+}
+.resetPsw-body .login-form .login-img .code-img-btn {
+  padding: 0;
+  width: 1.89rem;
+}
+.resetPsw-body .login-form .login-img .code-img-btn img {
+  margin-top: 0.12rem;
+}
+.resetPsw-body .login-submit-btn {
+  margin-top: 0.4rem;
+}
+
+/*短信验证*/
+.smsVerifiy-body {
+  overflow: hidden;
+  padding-top: 1.2rem;
+}
+.smsVerifiy-body > p {
+  font-size: 0.32rem;
+  line-height: 0.41rem;
+  padding: 0.37rem 0.76rem;
+  color: #999;
+  font-weight: 300;
+}
+.smsVerifiy-body > p span {
+  color: #666;
+}
+.smsVerifiy-body .login-form {
+  background-color: #fafafa;
+}
+.smsVerifiy-body .login-form li {
+  height: 1.17rem;
+  padding: 0 0 0 0.76rem;
+  border-bottom: 1px solid #f0f0f0;
+  box-sizing: border-box;
+}
+.smsVerifiy-body .login-form li:last-child {
+  border-bottom: none;
+}
+.smsVerifiy-body .login-form li .input-box {
+  padding: 0.37rem 0;
+  height: 0.41rem;
+  line-height: 0.41rem;
+  overflow: hidden;
+}
+.smsVerifiy-body .login-form .login-img .sms-code-btn {
+  height: 100%;
+  width: 2.75rem;
+  float: right;
+  background: #e83828;
+  color: #fff;
+  line-height: 1.17rem;
+  font-size: 0.32rem;
+  text-align: center;
+}
+.smsVerifiy-body .login-form .login-img .sms-code-btn.disabled {
+  color: #999;
+  background: #ccc;
+  pointer-events: none;
+}
+.smsVerifiy-body .login-submit-btn {
+  margin-top: 0.4rem;
+}
+
+/*设置密码*/
+.setPsw-body {
+  overflow: hidden;
+  padding-top: 1.2rem;
+}
+.setPsw-body > p {
+  font-size: 0.32rem;
+  line-height: 0.41rem;
+  padding: 0.37rem 0.76rem;
+  color: #999;
+  font-weight: 300;
+}
+.setPsw-body .login-form {
+  background-color: #fafafa;
+}
+.setPsw-body .login-form li {
+  height: 1.17rem;
+  padding: 0 0 0 0.76rem;
+  border-bottom: 1px solid #f0f0f0;
+  box-sizing: border-box;
+}
+.setPsw-body .login-form li:last-child {
+  border-bottom: none;
+}
+.setPsw-body .login-form li .input-box {
+  padding: 0.37rem 0;
+  height: 0.41rem;
+  line-height: 0.41rem;
+  overflow: hidden;
+}
+.setPsw-body .login-submit-btn {
+  margin-top: 0.4rem;
+}
+
+/*用户注册*/
+.register-body {
+  padding-top: 1.6rem;
+}
+.register-body .login-form {
+  background-color: #fafafa;
+}
+.register-body .login-form li {
+  height: 1.17rem;
+  padding: 0 0.34rem 0 0.76rem;
+  border-bottom: 1px solid #f0f0f0;
+  box-sizing: border-box;
+}
+.register-body .login-form li:last-child {
+  border-bottom: none;
+}
+.register-body .login-form li .input-box {
+  padding: 0.37rem 0;
+  height: 0.41rem;
+  line-height: 0.41rem;
+  overflow: hidden;
+}
+.register-body .login-form .login-img .code-img-btn {
+  height: 100%;
+  float: right;
+  padding: 0 0.42rem;
+}
+.register-body .login-form .login-img .code-img-btn {
+  padding: 0;
+  width: 1.89rem;
+}
+.register-body .login-form .login-img .code-img-btn img {
+  margin-top: 0.12rem;
+}
+.register-body .login-submit-btn {
+  margin-top: 0.4rem;
+}
+.register-body .auto-login-radio {
+  margin-right: 0;
+}
+.register-body .protocol {
+  color: #999;
+  font-size: 0.32rem;
+}
+.register-body .protocol a {
+  text-decoration: underline;
+  color: #999;
+}
+
+.select-overlay {
+  display: -webkit-box;
+  display: box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.select-overlay .show_window_con {
+  padding: 0.2rem 0.58rem;
+  border-radius: 0.07rem;
+  background-color: #323232;
+  display: none;
+}
+
+.select-overlay .show_window_con p {
+  color: #fff;
+  font-size: 0.32rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.select-overlay.active {
+  position: fixed;
+  z-index: 9999;
+}
+
+.select-overlay.active .show_window_con {
+  display: block;
+}
+
+/*# sourceMappingURL=login.css.map */

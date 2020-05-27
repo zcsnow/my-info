@@ -1,0 +1,110 @@
+html, body, #container { width: 100%; height: 100%; overflow-x:hidden }
+#container { width: 100%; position: relative; top: 0; left: 0; overflow: hidden; height:100%; max-width:640px;}
+.hide { display: none;}
+.show{ display: block;}
+.absolute{ position:absolute}
+
+@-webkit-keyframes windrotate {  
+0% { transform:translateX(-50%) rotate(0);-webkit-transform:translateX(-50%) rotate(0);}
+100% {transform:translateX(-50%) rotate(360deg);-webkit-transform:translateX(-50%) rotate(360deg)}
+}
+
+@-webkit-keyframes tweenx1 {  
+0% {background-position:0 0;}
+100% {background-position:-2160px 0;}
+}
+
+@-webkit-keyframes tweenx2 {  
+0% {background-position:0 0;}
+100% {background-position:-2160px 0;}
+}
+
+@-webkit-keyframes tweenx3 {  
+0% {background-position:0 0;}
+100% {background-position:-2160px 0;}
+}
+
+
+
+/*loading*/
+.loading-box{position:absolute; width:100%; height:100%;overflow:hidden; left:0; top:0; -webkit-transform-style:preserve-3d; z-index:2}
+.loading-box .logo-box{ background:#fff; position:relative; z-index:1; height:200px}
+.loading-box .logo{width: 36%;position:absolute;top: 16%;left: 32%;z-index:100;}
+.loading-box .wave-box{background:#537ccb; position:absolute; top:20%; bottom:0; z-index:9; width:100%;}
+.loading-box .loading-img{height: 200px;position: relative;width: 100%;margin-top: 5%;}
+.loading-box .wind1{width: 60px;position: absolute;left: 50%; transform:translateX(-50%);-webkit-transform:translateX(-50%);top: 55px;z-index: 9;-webkit-animation: 14s linear infinite windrotate;animation: 14s linear infinite windrotate;}
+.loading-box .wind2{width: 114px;position: absolute;left: 50%;transform:translateX(-50%);-webkit-transform:translateX(-50%);top: 30px;}
+.loading-box .line{width: 127px;position: absolute;left: 50%;transform:translateX(-50%);-webkit-transform:translateX(-50%);top: 134px;}
+.loading-box .load-txt{width: 18%;position: absolute;left: 50%;transform:translateX(-50%);-webkit-transform:translateX(-50%);top: 154px;}
+.wave1 {z-index: 9; position: absolute; height:71px; width:100%; z-index: 3; width: 100%; top:-60px; background: url(../img/wave1.png) repeat-x 0 0; -webkit-animation: 14s linear 0s none infinite tweenx1; animation: 14s linear 0s none infinite tweenx1; }
+.wave2 {z-index: 9;position: absolute; height:180px; width: 100%; bottom:0; background: url(../img/wave2.png) repeat-x 0 0;background-size:2160px 274px; -webkit-animation: 12s linear 0s none infinite tweenx2;  animation: 12s linear 0s none infinite tweenx2; }
+.wave3 {z-index: 9; position: absolute; height:200px; width:100%; bottom:0; background: url(../img/wave3.png) repeat-x 0 0; background-size:2160px 274px; -webkit-animation: 10s linear 0s none infinite tweenx3; animation: 10s linear 0s none infinite tweenx3; }
+
+
+.fuc .real-btn{position: absolute;width:100%;left:0;height: 110px; z-index:9;opacity: 0;-webkit-tap-highlight-color:rgba(0, 0, 0, 0)}
+.fuc .upload-icon{position: absolute;width:100%;left:0;height: 110px;pointer-events:none; display:block;z-index:2; }
+.upload-icon img{}
+.upload-icon img.auto-size{transform: translateX(-50%);-webkit-transform: translateX(-50%);height: 100%;max-width: inherit; left: 50%;position: absolute;}
+.show-img{ display: none; }
+.show-img img{ width: 100%; }
+
+#pictureUpload{/*overflow: hidden;*/position: absolute;top: 0;left: 0; bottom:0;width: 100%;height: 100%;z-index: 11;}
+#pictureUpload-bg{position: absolute;left: 0 ;top:0;width: 100%;height:100%;background-repeat: no-repeat;background-position: center;background-size:auto 100%;}
+#pictureUpload-bg img{ position:absolute; max-width:inherit; /*width:auto; max-height:100%; top:0; left:50%; transform:translateX(-50%)*/}
+#pictureUpload-mask{width: 100%;height: 100%;position: absolute;left: 0;top: 0;bottom:0;}
+#pictureUpload-help{clear: both;;margin:0 auto;}
+#pictureUpload-help p{font-size:14px;color:#666;line-height:22px;}
+#select{background-color: #ccc;}
+#button{display: -moz-box;display: -webkit-box;position: absolute;top: 0px;left: 0;width: 100%;z-index: 999;}
+#button > div{-moz-box-flex: 1;-webkit-box-flex: 1;height: 31px;line-height: 31px;background-color: #ccc;color: #fff;font-size: 14px;border-radius: 2px;text-align: center;margin-right:10px;}
+#button > div:nth-child(4){margin-right: 0px;}
+#button > div.active{background-color: #FE8B2E;}
+#canvasWrap{position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 1; visibility:hidden}
+#canvasWrap canvas{position: absolute; top: 0;left: 0;width: 100%;height: 100%;z-index: 12;}
+
+.page1 {position:absolute;width:100%;bottom: 0%;height:100%;display:none}
+
+.page1 .upload-box{width: 100%;position: absolute;z-index: 0;top: 0;left: 0;bottom: 0;}
+.page1 .upload-container{position:absolute;width: 100%;height:100%;top:0;bottom: 0;overflow:hidden;}
+.page1 .real-btn{position:absolute; top:0; left:0; width:100%; height:100%;z-index:9;opacity: 0;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
+.page1 .upload-icon{position:absolute; top:0; left:0; width:100%; height:100%;pointer-events:none;/**/display:block;z-index:20;}
+.page1 .template-img-mask{width: 100%;position: absolute;bottom: 0;left: 0;z-index: 8;}
+.page1 .location-box{width: 70%;padding-left: 10px;height: 22px;position: absolute;bottom: 0%;right: 0%;background: rgba(255,255,255,.3);line-height: 22px;border-top-left-radius: 15px;overflow: hidden;z-index: 999;}
+.page1 .location-box i{display: inline-block;width: 12px;vertical-align: -3px;margin-right: 2px;}
+.page1 .location-box input{display: inline-block;vertical-align: 1px;font-size: 11px;text-decoration: underline;width: 84%;background: none;border: none;box-sizing: border-box;outline: 0;}
+.page1 .location-box input::-webkit-input-placeholder {color:#444;text-decoration: underline;}
+.page1 .stamp-box{width: 25%;position: absolute;top: 55.5%;right: 5.5%;z-index: 99;}
+.page1 .input-box{width: 62%;position: absolute;bottom: 19%;right: 6%;z-index:999;}
+.page1 .input-box.input-box2{bottom: 10.5%;}
+.page1 .input-box input{display: block;color: #107e0e;font-size: 12px;width: 100%;background: #fff;border:1px solid #107e0e;box-sizing: border-box;outline: 0;padding:5px;line-height: 14px;}
+.page1 .input-box input::-webkit-input-placeholder {color:#448f30;}
+.bottom-logo{width: 40%;position: absolute;bottom: 1%;left: 30%;z-index:999;}
+.ewm{width: 20%;position: absolute;bottom: 9%;left: 6%;z-index:999;}
+
+.page1 .textarea-box{width: 100%;height: 65px;position: absolute;top: 69.5%;display:none;overflow: hidden;}
+.page1 .textarea{width:100%;background-color: transparent;border:0;overflow:hidden;height: 65px;padding: 0 32px 0 37px;box-sizing:border-box;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);-webkit-appearance: none;outline: none;resize:none;line-height: 22px;font-size: 12px;color: #103d7e;}
+.page1 .textarea::-webkit-input-placeholder {color:rgba(100,100,100,.5);}
+.page1 .write-btn{width: 32%;display: block;position: absolute;left: 35%;bottom: 4.5%;}
+.template-box{width: 66%;margin: 0 auto 0;padding-top: 5%;position:relative;}
+.template-btn{width: 63%;margin: 4% auto 0;position: relative;z-index: 10;}
+#fileElem{position:absolute; top:0; left:0; width:100%; height:100%;z-index:9;opacity: 0;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
+.title{width: 100%;margin: 0 auto 5%;}
+.template-box .template-img{width: 100%;box-shadow: 0 0 10px #444;position: relative;z-index: 10;}
+.template-box .template-img img{width: 100%;}
+
+
+
+.pop-tip-box { position:fixed;left:50%;top:45%;transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%); z-index:1001;background:url(../img/errow_bg.png) no-repeat bottom center; background-size:contain; color: #fff; width: 220px ;border-radius: 0.3em; text-align:center; display:none;}
+.pop-tip-box .pop-tip-msg { font-size: 13px; padding:30px 20px; line-height:20px;font-weight: bold;color: #512e1a; }
+
+.page2{position:absolute;width:100%;height:100%;z-index: 99;display:none/*  */}
+.result-box{width: 76%;margin: 0 auto 0;padding-top: 6%;position:relative;}
+.result-box img{}
+.page2 .save-btn{width: 76%;position:absolute;bottom: 5%;left: 12%;z-index: 2;}
+
+
+
+.s4{position: absolute;right: 30px;top:0;-webkit-animation:wobble 1.5s linear  0s infinite;}
+.errowDom,.waitingDom{position: fixed;width: 100%;height: 100%;top:0;left: 0;z-index: 1000;display: none;background-color: rgba(0,0,0,0.8);}
+.errow span,.waiting span{position: absolute;top: 50%;line-height: 20px;width: 80%;left: 10%;text-align: center;font-weight: bold;color: #fff;transform: translateY(-50%);}
+.errow,.waiting{position: absolute;top:50%;width: 50%;left: 50%;text-align: center;-webkit-transform: translate(-50%,-50%);transform: translate(-50%,-50%);}

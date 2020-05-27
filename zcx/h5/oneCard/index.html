@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>你的手机隐藏着黑科技！</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache,no-store,must-revalidate">
+    <meta http-equiv="Cache" content="no-cache">
+	<link rel="stylesheet" href="css/global.css?1">
+	<link rel="stylesheet" href="css/index.css?16">
+</head>
+<body>
+	<div id="container">
+		<div id="page1">
+			<div id="wxMsg">
+				<div class="time cur">
+					<img class="cur" style="z-index:99;" id="time" src="img/p1_time.png?2"/>
+				</div>
+                <div class="load-bottom">
+					<img src="img/load-bottom.png?1"/>
+				</div>
+				<a id="open" class="upDownMove" href="javascript:;" style="z-index:99;"></a>
+			</div>
+			
+		</div>
+        
+        <div id="page-video">
+            <div class="NFC-card1 sizeChange"><img src="img/p3_img1.png?1"></div>
+            <p class="text-tip">点击NFC模块<br>生成您的手机一卡通</p>
+            <div class="animate-box">
+                <!--<video id="movie" class="movieControl" autoplay preload="auto" x-webkit-airplay="true" playsinline webkit-playsinline x5-video-player-type="h5"><source src="https://ks3-cn-beijing.ksyun.com/sysres-bj/mvoie/201611/4120005.mp4" ></source></video>-->
+                <video id="movie" class="movieControl" autoplay preload="auto" x-webkit-airplay="true" playsinline webkit-playsinline x5-video-player-type="h5"><source src="mp3/animate1.mp4?1" ></source></video>
+                <video id="movie2" class="movieControl" autoplay preload="auto" x-webkit-airplay="true" playsinline webkit-playsinline x5-video-player-type="h5"><source src="mp3/animate2.mp4" ></source></video>
+            </div>
+        </div> 
+        
+        
+        <div id="page6">
+
+            <div class="video-box">
+              <div class="video-content">
+                <video id="video" preload="auto" poster="img/p6_img.jpg" -webkit-playsinline webkit-playsinline x5-video-player-type='h5'>
+                   <!--<source src="mp3/video.mp4?6" ></source>-->
+                   <source src="https://ks3-cn-beijing.ksyun.com/sysres-bj/mvoie/201611/4120002.mp4" ></source>
+                   
+                </video>
+              </div>
+            </div>
+            <div class="btn-box clr">
+              <div class="p6-pop-btn">立即开通</div>
+              <div class="js-share-btn">快速分享</div>
+            </div>
+
+            
+            <div class="mask"></div>
+            <div class="pop-box">
+                <span class="close-btn"><img src="img/close.png"></span>
+                <h3>“手机一卡通”</h3>
+                <p class="popp-msg">
+                 手机一卡通是一卡通公司与手机品牌商或移动通信运营商合作发行的新型一卡通，其将一卡通相关应用加载于NFC智能手机中，实现一卡通与手机的合二为一。目前，手机一卡通已支持小米、华为、三星、努比亚、一加等手机品牌的多款NFC机型。
+                </p>
+                <p class="popp-msg"><strong>长按下方二维码查询您的手机是否为适配机型，了解详细开通方法。</strong></p>
+                <span class="ewm"><img src="img/ewm.jpg"></span>
+                <span style="display:block; text-align:center; font-size:14px;">北京市政交通一卡通</span>
+            </div>   
+            
+            
+        </div> 
+       
+        
+        <div class="music on">
+            <!--<audio src="img/muisc.mp3?3" id="media" loop preload="auto"></audio>-->
+            <audio src="https://ks3-cn-beijing.ksyun.com/sysres-bj/mvoie/201611/4120003.mp3" id="media" loop preload="auto"></audio>
+            <img src="img/music0.png?2">
+        </div>
+
+        <div class="js-share-pop" style="position: fixed; top: 0px; height: 100%; width: 100%; z-index: 9999;display: none"><img src="img/share-img.png"></div>
+        
+	</div>
+    
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery-2.1.1.js" ></script>
+<script type="text/javascript" src="js/jquery.touchy.js" ></script>
+<script type="text/javascript" src="js/iphone-inline-video.browser.js"></script>
+<script type="text/javascript" src="js/main.js?15" ></script>
+
+<script src="/Resources/wxShare.js" type="text/javascript"></script>
+<script src="/Resources/JSCookie.js" type="text/javascript"></script>
+<script type="text/javascript">
+//微信分享
+var sharLink = window.location.href; 
+var shareInfo = {
+	title:'手机就是一卡通！出门不带卡，充值免排队！',     
+	desc:'你真的很了解自己的手机吗？其实他还有你没发现的黑科技！',
+	imgUrl:'http://h5.hyh6.com/CompanyProject/oneCard/img/fenxiang.png?2', 
+}; 
+wxShare(sharLink,shareInfo);
+//百度统计
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5b0cf71f192cb25508340a5c87eaff37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>

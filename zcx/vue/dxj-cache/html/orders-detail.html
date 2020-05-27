@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>我的订单</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" :style="{'padding-top':showNav?'.91rem':'0rem'}">
+    <header-nav v-if="showNav" title="我的订单" page-url="orders-list.html"></header-nav>
+    <section v-if="!isWaiting">
+      <a :href="'movie-detail.html?tag='+ordersData.movieID">
+        <h4 :class="ordersData.isRefunded == 1?'clearfix done':'clearfix'"><span>{{ordersData.orderID}}</span>{{ordersData.isRefunded == 0?"已付款": "已退款"}}<i v-if="ordersData.isOverTime == 1">(已过期，仅支持当次航班)</i></h4>
+        <div class="clearfix detail">
+          <h3 class="clearfix"><span>{{ordersData.movieName}}<i>电影</i></span></h3>
+          <p>
+            价格：{{ordersData.paymentAmount}}元<br />
+            下单时间：{{ordersData.orderTime}}<br />
+            航班：{{ordersData.flightInfo}}
+          </p>
+          <img v-lazy="'/app/dxj'+ordersData.moviePic" />
+        </div>
+      </a>
+    </section>
+    <!--加载中-->
+    <loading v-if="isWaiting" :status="2"></loading>
+    <!--执行toast弹出层-->
+    <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+  </div>
+</div>
+</body>
+</html>

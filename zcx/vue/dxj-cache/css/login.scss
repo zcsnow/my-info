@@ -1,0 +1,122 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin: 0 auto;
+	background-color: #fff;
+	min-height: 100vh;
+	@include bg2('pic', 7.5rem, 5rem);
+  background-position: center bottom;
+}
+
+header {
+	display: block;
+	width: 7.5rem;
+	height: 1rem;
+	position: relative;
+	span{
+		content:"";
+		display: block;
+		height: 1rem;
+		width: 1rem;
+		@include bg2('icon_back', .38rem, .38rem);
+	  background-position: center;
+		position:absolute;
+	}
+}
+
+section {
+	display: block;
+	width: 6.8rem;
+	margin-top: .46rem;
+	margin-left: .7rem;
+	font-size: .64rem;
+	color: #4D4B4B;
+}
+
+.form {
+	display: block;
+	width: 6.1rem;
+	padding-left: .7rem;
+	padding-top: .28rem;
+	p {
+		display: block;
+		border-bottom: 1px solid #CCC;
+		padding: .1rem 0;
+		span {
+			display: block;
+			float: left;
+			height: .42rem;
+			width: .42rem;
+			padding: .3rem 0;
+			vertical-align: middle;
+	  	background-position: center;
+			position:absolute;
+			&.phone{
+				@include bg2('icon_phone', .42rem, .42rem);
+			}
+			&.key{
+				@include bg2('icon_key', .42rem, .42rem);
+			}
+		}
+		input{
+			float: left;
+			height: .62rem;
+			width: 5.5rem;
+			line-height: .62rem;
+			font-size: .28rem;
+			border: none;
+			margin-left: .62rem;
+			padding: .2rem 0;
+			background-color: transparent;
+		}
+	}
+	a.clause {
+		display: block;
+		height: .4rem;
+		color: #807E7D;
+		font-size: .28rem;
+		line-height: .4rem;
+		padding-top: .2rem;
+		span {
+			float: left;
+			display: block;
+			height:.36rem;
+			width:.36rem;
+			padding-right: .16rem;
+			vertical-align: middle;
+			@include bg2('mz_s', .36rem, .36rem);
+		  background-position: center;
+		}
+	}
+	a.button {
+		display: block;
+		width: 6.1rem;
+		height: .78rem;
+		margin-top: .6rem;
+		font-size: .3rem;
+		color: #FFF;
+		line-height: .78rem;
+		text-align: center;
+		background-color: #CCCCCC;
+		border-radius: .06rem;
+		&.active {
+			background-color: #F72F42;
+		}
+	}
+}
+
+.form_tip {
+	display: block;
+	width: 7.5rem;
+	margin-top: .21rem;
+	line-height: .28rem;
+	color: #B3B0AF;
+	text-align: center;
+	a {
+		color: #F72F42;
+	}
+}

@@ -1,0 +1,35 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin:0 auto;
+	background-color: #fff;
+}
+
+.brand-list {
+    li {
+        display: block;
+        padding: 0 .44rem;
+        a {
+            display: block;
+            height: 1.18rem;
+            overflow: hidden;
+            border-bottom: 1px solid #ececec;
+            img{
+                float: left;
+                width: .98rem;
+                height: .98rem;
+                margin-top: .1rem;
+                margin-right: .34rem;
+            }
+            span{
+                display: block;
+                font-size: .32rem;
+                line-height: 1.18rem;
+            }
+        }
+    }
+}

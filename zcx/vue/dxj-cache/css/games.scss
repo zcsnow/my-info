@@ -1,0 +1,202 @@
+@import "base";
+
+body {
+    font-family: PingFangSC-Regular;
+    font-size: .28rem;
+    margin: 0 auto;
+}
+
+section{
+    width: 100%;
+    padding: 0 0 .5rem;
+
+    .banner{
+        width: 7.5rem;
+        height: 3.2rem;
+        overflow: hidden;
+        @include bg2('Bitmap', 1.1rem, 1.1rem);
+        background-position: center;
+        background-color: #F5F5F5;
+
+        img{
+            display: block;
+            width: 7.5rem;
+            height: 3.2rem;
+            @include bg2('Bitmap', 1.1rem, 1.1rem);
+            background-position: center;
+            background-color: #F5F5F5;
+        }
+    }
+
+    nav{
+        background-color: #FAFAFA;
+        line-height: .8rem;
+        display: flex;
+
+        a{
+            flex: 1;
+            text-align: center;
+            color: #4D4B4B;
+            position: relative;
+
+            &.active{
+                font-size: .32rem;
+                color: #F72F42;
+
+                i{
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    margin: 0 0 0 -.2rem;
+                    width: .4rem;
+                    line-height: 0;
+                    border-bottom: .06rem solid #F72F42;
+                }
+            }
+        }
+    }
+
+    .gameTitle{
+        font-size: .36rem;
+        color: #1A1919;
+        text-align: center;
+        line-height: .42rem;
+        padding: .35rem 0 .1rem;
+        font-weight: normal;
+
+        img{
+            width: .4rem;
+            margin-right: .2rem;
+            vertical-align: bottom;
+        }
+    }
+
+    .gameList{
+        width: 100%;
+        padding-bottom: .2rem;
+
+        li{
+            float: left;
+            padding: .3rem .1rem .1rem;
+            width: 2.3rem;
+
+            img{
+                display: block;
+                width: 1.3rem;
+                height: 1.3rem;
+                margin: 0 auto;
+                border-radius: .2rem;
+                @include bg2('Bitmap', 1.1rem, 1.1rem);
+                background-position: center;
+                background-color: #F5F5F5;
+            }
+
+            p{
+                color: #1A1919;
+                text-align: center;
+                padding: .18rem 0 .08rem;
+                line-height: .45rem;
+                height: .4rem;
+                overflow: hidden;
+            }
+
+            span{
+                display: block;
+                width: 1.3rem;
+                line-height: .6rem;
+                border: 1px solid #F72F42;
+                border-radius: .5rem;
+                color: #F72F42;
+                margin: 0 auto;
+                text-align: center;
+            }
+        }
+    }
+
+    .list-box{
+        width: 100%;
+        border-top: .2rem solid #f5f5f5;
+
+        &:last-child{
+            border-bottom: none 0;
+        }
+
+        h3{
+            text-align: right;
+            font-weight: normal;
+            height: 1.1rem;
+            line-height: 1.1rem;
+            background-position: .2rem center;
+
+            span{
+                float: left;
+                padding-left: .2rem;
+                font-size: .36rem;
+            }
+
+            a{
+                display: inline-block;
+                width: .8rem;
+                @include bg2('icon_more', .16rem, .26rem);
+                background-position: center;
+            }
+        }
+
+        .typeList{
+            width: 100%;
+
+            li{
+                border-top: 1px solid #E6E6E6;
+                padding: .3rem 0;
+                margin: 0 .2rem;
+
+                a{
+                    width: 100%;
+                    display: block;
+                }
+
+                img{
+                    float: left;
+                    width: 1.3rem;
+                    height: 1.3rem;
+                    border-radius: .2rem;
+                    margin-right: .24rem;
+                    @include bg2('Bitmap', 1.1rem, 1.1rem);
+                    background-position: center;
+                    background-color: #F5F5F5;
+                }
+
+                p{
+                    display: inline-block;
+                    color: #1A1919;
+                    font-size: .36rem;
+                    padding: .08rem 0 .08rem;
+                    line-height: .6rem;
+                    max-width: 4rem;
+
+                    i{
+                        display: block;
+                        color: #807E7D;
+                        font-size: .28rem;
+                        line-height: .28rem;
+                        height: .56rem;
+                        overflow: hidden;
+                    }
+                }
+
+                span{
+                    float: right;
+                    display: block;
+                    width: 1.3rem;
+                    line-height: .6rem;
+                    border: 1px solid #F72F42;
+                    border-radius: .5rem;
+                    color: #F72F42;
+                    text-align: center;
+                    margin-top: .35rem;
+                }
+            }
+        }
+    }
+
+}

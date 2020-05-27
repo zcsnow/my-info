@@ -1,0 +1,199 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin:0 auto;
+	background-color: #fff;
+}
+.banner{
+    width: 7.5rem;
+    height: 7.5rem;
+    overflow: hidden;
+    @include bg2('Bitmap', 1.1rem, 1.1rem);
+    background-position: center;
+    background-color: #fff;
+    .swiper-container {
+        .swiper-pagination {bottom: 6px;
+            .swiper-pagination-bullet{
+                width: 12px !important;
+                height: 4px !important;
+                border: none !important;
+                border-radius: 9px !important;
+                background: #E0E0E0 !important;
+                opacity: 1 !important;
+                margin: 0 .06rem !important;
+                transition: background .3s, width .3s;
+            }
+            .swiper-pagination-bullet-active{
+                background: #2E2E2E !important;
+            }
+        }
+
+        img{
+            display: block;
+            width: 7.5rem;
+            height: 7.5rem;
+        }
+    }
+}
+.article {
+	width: 6.9rem;
+	margin: 0 auto;
+	.titleEn {
+		margin-top: .66rem;
+		font-size: .32rem;
+		line-height: .36rem;
+		color: #333333;
+	}
+	.title {
+		font-size: .32rem;
+		line-height: .44rem;
+		margin-top: .18rem;
+		color: #333333;
+	}
+	.subtitle {
+		font-size: .24rem;
+		line-height: .24rem;
+		margin-top: .08rem;
+		color: #666666;
+	}
+	.pice {
+		font-size: .26rem;
+		color: #333333;
+		margin-top: .44rem;
+		span{
+			margin-right: .11rem;
+			font-family: PingFangSC-Light;
+			font-size: .64rem;
+			line-height: .64rem;
+			em{
+				font-family: PingFangSC-Regular;
+				font-size: 0.36rem;
+			}
+		}
+	}
+	.labels {
+		margin-top: .25rem;
+		span {
+			display: inline-block;
+			padding: 0 0.2rem;
+			text-align: center;
+			color: #232321;
+			line-height: .46rem;
+			background-color: #FFF0E8;
+			border: 1px solid #ffd1d1;
+			border-radius: 2px;
+			margin-right: .30rem;
+			margin-bottom: 0.2rem;
+		}
+		
+	}
+	.tip {
+		border: 1px solid #EDEDED;
+		height: 1.12rem;
+		margin-top: .44rem;
+		padding: 0 .33rem;
+		color: #333333;
+		font-size: .32rem;
+		line-height: 1.12rem;
+		span{
+			display: inline;
+			margin-left: .09rem;
+			font-size: .26rem;
+			color: #999999;
+		}
+	}
+	.h3 {
+		width: 100%;
+		height: .38rem;
+		display: block;
+		margin-top: .68rem;
+		font-size: .28rem;
+		line-height: .38rem;
+		color: #fff;
+		i{
+			display: block;
+			float: left;
+			width: .08rem;
+			height: .38rem;
+			background: #232321;
+		}
+		span{
+			display: block;
+			float: left;
+			background: #232321;
+			margin-left: .08rem;
+			padding: 0 .08rem;
+			line-height: 0.38rem;
+			border-right: .06rem solid #fff;
+		}
+	}
+	>h2{
+		margin-top: 0.3rem;
+		font-size: 0.44rem;
+		color: #1A1919;
+		line-height: 0.6rem;
+	}
+	.info{
+		margin-top: 0.2rem;
+		color: #807E7D;
+		font-size: 0.24rem;
+		font-weight: normal;
+		span{
+			font-size: 0.24rem;
+			display: inline-block;
+			float: right;
+			line-height: 0.33rem;
+			color: #B3B0AF;
+			>i{
+				color: #FF7733;
+			}
+		}
+	}
+	>article{
+		font-size: 0.28rem;
+		margin-top: 0.5rem;
+		padding-bottom: 0.3rem;
+		line-height: 0.46rem;
+		color: #999999;
+		word-wrap:break-word;
+		span{
+			display: inline;
+		}
+		video{
+			display: inline;
+		}
+		img{
+			margin: 0 auto !important;
+			display: inherit;
+			min-height: 1.1rem;
+			max-width: 6.6rem !important;
+			@include bg2('Bitmap', 1.1rem, 1.1rem);
+			background-position: center;
+			background-color: #F5F5F5;
+		}
+		p{
+			margin: 0.18rem 0rem;
+		}
+		i, em{
+			font-style: italic;
+		}
+		b, strong{
+			font-weight: bold;
+		}
+	}
+}
+.card {
+	position: fixed;
+	display: block;
+    width: 1.34rem;
+	height: 1.57rem;
+	z-index: 10;
+    bottom: 1.2rem;
+	right: .3rem;
+	@include bg2('wodekabao', 1.34rem, 1.57rem);
+            background-position: center;
+}

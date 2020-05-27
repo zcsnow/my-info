@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>电影</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+    <div id="main" v-cloak >
+        <header-opacity-nav v-if="showNav" :title="movieData.columnTitle" page-url="new-video.html"></header-opacity-nav>
+        <section v-if="typeof movieData.status === 'undefined' && !isWaiting" class="no-data">
+            此影音已过期不存在<br>
+            <a href="new-video.html">观看其他影音</a>
+        </section>
+        <div v-else>
+            <section v-if="movieData.status === 1" class="no-data">
+                    该视频已下架<br>
+                    <a href="new-video.html">观看其他影音</a>
+            </section>
+            <div v-else>
+                <div v-if="Object.keys(movieData).length!=0">
+                    <div class="new-video-box" >
+                        <div class="img-bg clr" :style="{'padding-top':showNav?'1.6rem':'0.68rem'}">
+                            <div class="new-video-img"><img style="width: 100%;" :src="baseUrl+movieData.image" /></div>
+                            <div class="new-video-text">
+                                <h3 v-if="movieData.title">{{movieData.title}}</h3>
+                                <span v-if="movieData.titleSecond">{{movieData.titleSecond}}</span>
+                                <p v-if="movieData.area||movieData.theme||movieData.subjectMatter">{{movieData.area}} {{movieData.theme}} {{movieData.subjectMatter}}</p>
+                                <p v-if="movieData.screening_info">{{movieData.screening_info}}</p>
+                                <p v-if="movieData.length">片长{{movieData.length}}分钟</p>
+                            </div>
+                        </div>
+                        <div class="new-video-info">
+                            <div class="content-box" v-if="movieData.series.length>0">
+                                <h4>选集<em class="episodes">共{{movieData.series.length}}集</em></h4>
+                                <div class="video-sets-list">
+                                    <div class="swiper-container" id="videoSetsSwiper">
+                                        <div class="swiper-wrapper" >
+                                            <div class="swiper-slide" v-for="(item,index) in movieData.series" @click="playStart(movieData,item,index)">
+                                                <a v-if="movieData.series.length==1" class="one" href="javascript:;"> <i class="play-icon"></i> 点击播放</a>
+                                                <a v-else href="javascript:;"><em>第{{index+1}}集：</em>{{item.name}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-box" v-if="movieData.content">
+                                <h4>剧情介绍</h4>
+                                <div class="new-video-desc"  :class="fold?'fold':'unfold'" @click="showOrHide">
+                                    {{movieData.content}}
+                                    <a href="javascript:;" class="toggle-btn">{{toggle_btn_text}}</a>
+                                </div>
+                            </div>
+                            <div class="content-box" v-if="movieData.director||movieData.starring||movieData.writer||movieData.producer">
+                                <h4>演职员</h4>
+                                <div class="new-video-desc">
+                                    <p v-if="movieData.director">导演：{{movieData.director}}</p>
+                                    <p v-if="movieData.starring">主演：{{movieData.starring}}</p>
+                                    <p v-if="movieData.writer">编剧：{{movieData.writer}}</p>
+                                    <p v-if="movieData.producer">制片人：{{movieData.producer}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="view-tip" v-if="movieData.tip">
+                            <h4>观影提示</h4>
+                            <p v-html="movieData.tip"></p>
+                            <!-- <p>由于飞机气流颠簸等不可抗力，影片可能出现卡顿等现象，请您谅解。 </p> -->
+                            <!-- <p>此商品为实效产品，购票中仅限本次航班中观看，不可退款。</p> -->
+                        </div>
+                        <div v-if="!(isEmpty(movieData.ad_sponsor.image))" class="ad-img"><img :src="baseUrl+movieData.ad_sponsor.image" /></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--执行toast弹出层-->
+        <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin:0 auto;
+	background-color: #f5f5f5;
+	position: relative;
+	overflow: hidden;
+}
+.payWay-list-box{
+    .order-countdown{
+        background: #fff8dc;
+        color: #beb7a5;
+        font-size: .28rem;
+        line-height: 0.4rem;
+        padding: 0.2rem 0.44rem;
+        em{
+            font-size: .32rem;
+            color: #F72F42;
+            display: inline-block;
+            margin: 0 4px;
+            font-weight: bold;
+        }
+    }
+    .payWay-list{
+        background-color: #fff;
+        /* margin-top: .2rem; */
+        li{
+            font-size: .32rem;
+            color: #1A1919;
+            letter-spacing: 0;
+            line-height: 1.14rem;
+            padding: 0 0.44rem;
+            border-bottom: 1px solid #D8D8D8;
+            position: relative;
+            
+            div{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+
+                em{
+                    font-size: .26rem;
+                    color: #807E7D;
+                    letter-spacing: 0;
+                    position: relative;
+                    display: inline-block;
+                    line-height: 1.14rem;
+                    position: absolute;
+                    top: 0;
+                    right: 0.44rem;
+                    background: #fff;
+                    /* border: none;
+                    background: transparent; */
+                }
+                .card-list{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    line-height: 1.14rem;
+                    width: 100%;
+                    border: none;
+                    background: transparent;
+                    opacity: 0;
+                }
+                
+            }
+            &.active{
+                @include bg2('icon_c', 0.39rem, 0.24rem);
+                background-position: 6.67rem center;
+            }
+            
+        }
+    }
+    p{
+        padding: 0 0.44rem;
+        font-size: .28rem;
+        color: #807E7D;
+        letter-spacing: 0;
+        position: relative;
+        line-height: 1rem;
+        a{
+            display: inline-block;
+            color: #43baff;
+            margin-left: 0.2rem;
+        }
+    }
+}
+.pay-btn{
+    height: 0.8rem;
+    background-color: #F72F42;
+    border-radius: 1rem;
+    color: #fff;
+    font-size: .32rem;
+    text-align: center;
+    line-height: 0.8rem;
+    margin: 1.1rem 0.44rem 0.3rem;
+    z-index: 9999;
+    &.disabled{
+        background-color: #ccc;
+    }
+}
+.protocol-box{
+    width: 100%;
+    text-align: center;
+}
+a.clause {
+    display: inline-block;
+    height: .4rem;
+    color: #807E7D;
+    font-size: .28rem;
+    line-height: .4rem;
+    padding-top: .2rem;
+    margin: 0 auto;
+    span {
+        display: inline-block;
+        height:.36rem;
+        width:.36rem;
+        padding-right: .2rem;
+        vertical-align: -0.08rem;
+        @include bg2('icon_ok', 0.36rem, 0.36rem);
+
+    }
+    em{
+        font-size: .28rem;
+        color: #43baff;
+        letter-spacing: 0;
+        line-height: 40px;
+    }
+}
+	

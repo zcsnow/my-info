@@ -1,0 +1,54 @@
+{
+	"status":"200",
+	"msg":"success",
+	"data" : {
+		"payWayList":[
+			{
+				"serviceName":"airPay"    
+				
+			},
+			{
+				"serviceName":"tokenConsume",      
+				"bankCardList":[        
+					{
+						"tokenSeq":1,       
+						"cardNum":"627887********9870",         
+						"issuer":"建设银行",        
+						"moblie":"13111111111"    
+					},{
+						"tokenSeq":2,
+						"cardNum":"627887********2222",
+						"issuer":"招商银行",
+						"moblie":"13111111111"
+					}
+				] 
+				
+			},
+			{
+				"serviceName":"tokenConsume3",      
+				"bankCardList":[      
+					{
+						"tokenSeq":1,      
+						"cardNum":"627887********9870",       
+						"issuer":"建设银行",        
+						"moblie":"13111111111"      
+					},{
+						"tokenSeq":2,
+						"cardNum":"627887********2222",
+						"issuer":"招商银行",
+						"moblie":"13111111111"
+					}
+				] 
+				
+			},
+			{
+                "serviceName":"alipay"      
+            },
+            {
+                "serviceName":"wechatpay"     
+            }
+		],
+		"orderAmount":"19.9",
+		"movieName":"电影名"
+	}
+}

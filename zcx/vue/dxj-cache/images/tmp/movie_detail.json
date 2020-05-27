@@ -1,0 +1,21 @@
+{
+    "status": 200,
+    "msg": "成功",
+    "data": {
+        "id": "6",
+        "name": "西虹市首富",
+        "price": "35.00",
+        "theme": "喜剧",
+        "area": "中国大陆",
+        "length": "118",
+        "screening_info": "2018-08-07 大陆上映",
+        "image": "http://image.dongxingji.cn/cache/image/Whither/11/20180615112157_589.jpg",
+        "content": "该片讲述了混迹于丙级业余足球队的守门员王多鱼(沈腾饰)，因比赛失利被开除离队，却因继承二爷遗产而获得大笔财富，由此引发一系列令人哭笑不得的事件。",
+        "director": "闫非，彭大魔",
+        "actor": "沈腾，宋芸桦，张一鸣，常远，张晨光",
+        "url": "www.baidu.com",
+        "created": "2018-8-13",
+        "collection": 0,
+        "like": 0
+    }
+}

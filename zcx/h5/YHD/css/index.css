@@ -1,0 +1,64 @@
+.clr:after { content: ""; display: block; height: 0; clear: both; visibility: hidden; zoom: 1 }
+.IIV::-webkit-media-controls-play-button,
+.IIV::-webkit-media-controls-start-playback-button{ opacity: 0; pointer-events: none; width: 5px; }
+.fastAnimated { -webkit-animation-duration: 0.3s; animation-duration: 0.3s; -webkit-animation-fill-mode: both; animation-fill-mode: both }
+
+
+/*loading*/
+.loading-box{position:absolute;width:100%;height:100%;background: url(../images/loading_bg.jpg) #fff top center no-repeat;background-size:100% auto;overflow:hidden;left:0;top:0;-webkit-transform-style:preserve-3d;z-index:999;}
+.loading-box .load-img1{width: 47%;position: absolute;left: 25.3%;margin-top: 18%;margin-left: -23.5%;/* transform: translate(-50%,-50%); *//* -webkit-transform: translate(-50%,-50%); */z-index: 3;opacity: 0;}
+.loading-box .load-img2{width: 49%;position: absolute;left: 75%;margin-top: 40.5%;margin-left: -24.5%;/* transform: translate(-50%,-50%); *//* -webkit-transform: translate(-50%,-50%); */z-index: 3;opacity: 0;}
+.loading-box .load-img3{width: 76%;position: absolute;left: 54%;top: 71%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);z-index: 5; opacity: 0;}
+.loading-box .load-img4{width: 7%;position: absolute;left: 58%;margin-top: 2.5%;margin-left: -3.5%;/* transform: translate(-50%,-50%); *//* -webkit-transform: translate(-50%,-50%); */z-index: 3;opacity: 0;}
+.loading-box .load-img5{width: 7%;position: absolute;left: 43.7%;margin-top: 67%;margin-left: -3.5%;/*transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);*/z-index: 3;opacity: 0;}
+.loading-box .load-img6{width: 40%;position: absolute;left: 49%;top: 30%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);z-index: 4; opacity: 0;}
+.loading-box .loading-bar{background: #fff;width: 86%;height: 12px;border-radius: 80px;overflow: hidden;position: absolute;left: 50%;top: 91%;border: 1px solid #000000;transform: translate(-50%,-50%);}
+.loading-box #progressbar {background:url(../images/loading_img.png) #000 no-repeat 100% center;background-size:auto 12px;width:0%;height: 12px;position: absolute;top: 0;left: 0px;right: 0;box-sizing: border-box;border-top-left-radius: 100px;border-bottom-left-radius: 100px;}
+.loading-box .play-btn{width: 18%;position: absolute;left: 85%;top: 95%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);z-index: 4;}
+.loading-box .load-img3.loadImg3Ani{-webkit-animation: btnFlash 1s alternate infinite;animation: btnFlash 1s alternate infinite; opacity:1}
+
+.playAin{-webkit-animation: btnFlash 1s alternate infinite;animation: btnFlash 1s alternate infinite;}
+@-webkit-keyframes btnFlash{
+0% {transform: translate(-50%,-50%) scale(0.96,0.96);-webkit-transform: translate(-50%,-50%) scale(0.96,0.96);opacity:0.5;}
+100% {transform: translate(-50%,-50%) scale(1,1);-webkit-transform: translate(-50%,-50%) scale(1,1);opacity:1;}
+}
+
+@-webkit-keyframes fadeInLeftBig1 { 
+	0% {opacity:0;-webkit-transform:translate3d(-2000px, -50%, 0);transform:translate3d(-2000px, -50%, 0)}
+	100% {opacity:1;-webkit-transform:translate3d(-50%, -50%, 0);transform:translate3d(-50%, -50%, 0)}
+}
+.fadeInLeftBig1 { -webkit-animation-name: fadeInLeftBig1; animation-name: fadeInLeftBig1 }
+@-webkit-keyframes fadeInRightBig1 { 
+	0% {opacity:0;-webkit-transform:translate3d(2000px, -50%, 0);transform:translate3d(2000px, -50%, 0)}
+	100% {opacity:1;-webkit-transform:translate3d(-50%, -50%, 0);transform:translate3d(-50%, -50%, 0)}
+}
+.fadeInRightBig1 { -webkit-animation-name: fadeInRightBig1; animation-name: fadeInRightBig1 }
+
+.video-box{position: absolute; background-color:#fff; width:100%;height:100%;left: 0;top: 0;overflow: hidden;z-index:9; display:none;}
+.video-box .movieControl{position: absolute;top: 0;left: 0;width: 100%; height:100%;z-index: 9;object-fit: fill; z-index:1; visibility:hidden}
+.video-box .skip {position:fixed;width: 12%;left:2%;bottom: 8%;z-index:999;}  
+
+.select-box{position:absolute;width:100%;height:100%;background:#fff;overflow:hidden;left:0;top:0;z-index:20;display:none;border: 2px solid #000;box-sizing:  border-box;}
+.select-box .ele1{width: 100%;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);z-index: 4;margin-top: -37.5%; opacity: 0;}
+.select-box .ele2{width: 100%;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);margin-top: 37.5%;z-index: 4; opacity: 0;}
+.select-box .hand-tip1{width: 14%;position: absolute;left: 84%;top: 50%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);z-index: 4;margin-top: -38.5%;opacity: 0;}
+.select-box .hand-tip2{width: 14%;position: absolute;left: 14%;top: 50%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);z-index: 4;margin-top: 30%;opacity: 0;}
+
+.page-last{z-index:10;width:100%;height:100%;position:absolute;background-color:#fff;background-image:url(../images/p2_bg.jpg);background-repeat:no-repeat;background-position: center center;background-size: 100% auto;display:none;}
+.page-last .btn {width: 68%;position:absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);z-index:5;}
+.page-last .btn1{top: 70%;}
+.page-last .btn2{top: 80%;}
+.page-last .btn3{top: 90%;}
+
+.mask{ position:fixed; left:0; width:100%; top:0; height:100%; background:#fff; background:rgba(0,0,0,0.8); z-index:999;display:none;/**/}
+.js-share-pop{position: fixed; top: 0px; background:rgba(0,0,0,.7); height: 100%; width: 100%; z-index: 9999; display:none}
+.js-share-pop img{position: absolute;width: 100%;left: 0%;top: 0;}
+
+
+@-webkit-keyframes handMove{
+	0%{-webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%);opacity:0.3}
+	50%{-webkit-transform: translate(-55%,-50%); transform: translate(-55%,-50%);opacity:1}
+	100%{-webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%);opacity:0.3}
+}
+.handMove{-webkit-animation: handMove 2s infinite ease-in-out;animation: handMove 2s infinite ease-in-out;}
+

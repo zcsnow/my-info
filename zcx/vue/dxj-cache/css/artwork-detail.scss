@@ -1,0 +1,195 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin:0 auto;
+	background: #F5F5F5;;
+}
+body,html{overflow-x: hidden}
+.art-detail-box{
+	width: 100%;
+	position: relative;
+	.top-img{
+		width: 100%;
+		height: 3.2rem;
+		background-color:#a1b3c5; 
+		overflow: hidden;
+		img{
+			width: 100%;
+			display: block;
+		}
+	}
+	nav{
+		position: relative;
+		width: 7.5rem;
+		z-index: 999;
+		a{
+			color: #666666;
+			width: 25%;
+			height: 1rem;
+			font-size: .32rem;
+			line-height: 1rem;
+			text-align: center;
+			&.active{
+				color: #CBB492;
+			}
+		}
+	}
+
+	&.fixed{
+		.top-img{
+			margin-bottom: 1rem;
+		}
+		nav{
+			position: fixed;
+			top: 0;
+			background: #F5F5F5;;
+		}
+	}
+
+	.art-info{
+		width: 6.88rem;
+		height: 2.58rem;
+		position: relative;
+		background: #D2E0EF;
+		padding-left: 0.44rem;
+		padding-top: 0.64rem;
+		box-sizing: border-box;
+		margin-top: -0.52rem;
+		
+		h3{
+			font-size: 0.32rem;
+			line-height: 0.36rem;
+			font-weight: normal;
+			color: #333;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			margin-right: 2.46rem
+		}
+		span{
+			display: block;
+			display: -webkit-box; 
+			/* autoprefixer: off */
+			-webkit-box-orient: vertical; // 参考 https://github.com/postcss/autoprefixer/issues/776
+			/* autoprefixer: on */
+           
+			font-size: 0.28rem;
+			line-height: 0.36rem;
+			margin-top: 0.34rem;
+			color: #666;
+			text-overflow: ellipsis;
+			word-break: break-all;
+			/* white-space: nowrap; */
+			overflow: hidden;
+			margin-right: 2.46rem;
+			-webkit-line-clamp: 2;
+		}
+		p{
+			font-size: 0.32rem;
+			color: #181818;
+			line-height: 0.36rem;
+			font-weight: bold;
+			margin-top: 0.34rem;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			margin-right: 2.46rem
+		}
+		i{
+			position: absolute;
+			top: 0.64rem;
+			right: 0.43rem;
+			width: 1.18rem;
+			height: 1.18rem;
+			@include bg2('Bitmap', 0.8rem, 0.8rem);
+			background-position: center;
+			background-color: #fff;
+			border-radius: 50%;
+			border:2px solid #fff;
+			overflow: hidden;
+			img{width: 100%;height: 100%;}
+		}
+	}
+}
+.tab-content{
+	width: 100%;
+	display: inline-block;
+	.article {
+		width: 5.8rem;
+		margin: 0.3rem auto 0.4rem;
+		font-size: 0.26rem;
+		color: #666666;
+		line-height: 0.40rem;
+	}
+	.article img {
+		margin: 0 auto;
+		display: block;
+		max-width: 100%;
+	}
+	.article p {
+		margin: .32rem 0
+	}
+	
+	.art-list{
+		padding: 0 .44rem;
+	
+		li{
+			position: relative;
+			background-color: #fff;
+			border-radius: .08rem;
+			overflow: hidden;
+			box-shadow: 0 2px 10px 4px rgba(0,0,0,.04);
+			margin-bottom: .45rem;
+			padding: 0 0 0.44rem;
+	
+			img{
+				display: block;
+				width: 6.62rem;
+				height: 4rem;
+				@include bg2('Bitmap', 1.1rem, 1.1rem);
+				background-position: center;
+				background-color: #F5F5F5;
+			}
+			h3{
+				font-size: 0.32rem;
+				color: #181818;
+				line-height: 0.32rem;
+				margin-top: 0.26rem;
+				padding: 0 0.24rem;
+			}
+			p{
+				font-size: 0.24rem;
+				color: #666666;
+				line-height: 0.24rem;
+				margin-top: 0.12rem;
+				padding: 0 0.24rem;
+			}
+	
+		}
+	}
+	
+}
+a.goBack{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50px;
+	height: 50px;
+	@include bg2('back', 12px, 19px);
+	background-position: center;
+	text-indent: -9rem;
+	z-index: 9999;
+}
+
+.no-data{
+	padding-top: 4.8rem;
+	background-position: center 4rem;
+	line-height: 1.8rem;
+	a{
+		top: -1rem;
+	}
+}

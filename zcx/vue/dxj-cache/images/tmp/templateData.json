@@ -1,0 +1,101 @@
+
+{
+    "status": 200,
+    "msg": "成功",
+    "data": {
+        "id": 1,        
+        "title": "测试模板",
+        "remarks":"备注",
+        "moduleDataList":[
+            {
+                "moduleId":"moduleId657",
+                "moduleType": "img",      
+                "subType": 1,      
+                "list":[
+                    {
+                        "title":"是大法官",
+                        "titleSecond":"水电费公司的",
+                        "image":"http://10.10.56.45/app/dxj/cache/image/homead/110/20190110175258_635.jpg",
+                        "url":""
+                    },{
+                        "title":"戊二醛翁",
+                        "titleSecond":"热同一人头",
+                        "image":"http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg",
+                        "url":"http://10.10.56.45/app/dxj/cache/image/homead/110/20190110175258_635.jpg"
+                    }
+                ],
+                "startTime":1561717020,
+                "endTime":1574870400
+            },{
+                "moduleId":"moduleId486",   
+                "moduleType": "title",      
+                "title":"阿迪王",
+                "titleSecond":"士大夫撒旦",
+                "naviName":"导航名称",
+                "url":"http://10.10.56.45/app/dxj/cache/image/homead/110/20190110175258_635.jpg"
+            },
+            {
+                "moduleId":"moduleId658",
+                "moduleType": "img",      
+                "subType": 1,      
+                "list":[
+                    {
+                        "title":"戊二醛翁11",
+                        "titleSecond":"热同一人头22",
+                        "image":"http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg",
+                        "url":"http://10.10.56.45/app/dxj/cache/image/homead/110/20190110175258_635.jpg"
+                    }
+                ],
+                "startTime":1561717020,
+                "endTime":1574870400
+            },
+            {
+                "moduleId":"moduleId127",   
+                "moduleType": "navi",      
+                "subType": 1,     
+                "showNumType": 1,       
+                "list":[
+                    {
+                        "title":"阿斯顿发",
+                        "url":"http://10.10.56.45/app/dxj/cache/image/homead/110/20190110175258_635.jpg",
+                        "image":"http://10.10.56.45/app/dxj/cache/image/homead/110/20190110175258_635.jpg"
+                    },{
+                        "title":"奥术大师多",
+                        "url":"http://10.10.56.45/app/dxj/cache/image/homead/110/20190110175258_635.jpg",
+                        "image":"http://10.10.56.45/app/dxj/cache/image/homead/110/20190110175258_635.jpg"
+                    }
+                ]
+            },{
+                "moduleId":"moduleId227",   
+                "moduleType": "text",       
+                "content":"撒打发斯蒂芬手动阀手动阀是打发斯蒂芬",
+                "url":"http://10.10.56.45/app/dxj/cache/image/homead/110/20190110175258_635.jpg"
+            },{
+                "moduleId":"moduleId691",    
+                "moduleType": "notice",      
+                "subType":1,      
+                "content":"阿手动阀是打发斯蒂芬",
+                "url":"http://10.10.56.45/app/dxj/cache/image/homead/110/20190110175258_635.jpg"
+            },{
+                "moduleId":"moduleId567",    
+                "moduleType": "img_text",      
+                "subType": 1,      
+                "style": 1,    
+                "showTitle" : 1,
+                "showTitleSecond" : 1,
+                "list":[
+                    {
+                        "title":"阿斯顿发噶是的发送到",
+                        "titleSecond":"戊二醛翁二群无",
+                        "image":"http://10.10.56.45/app/dxj/cache/image/homead/110/20190110175258_635.jpg"
+                    },{
+                        "title":"是是大法官大法官",
+                        "titleSecond":"电饭锅和对方过后发",
+                        "image":"http://10.10.56.45/app/dxj/cache/image/homead/110/20190110175258_635.jpg"
+                    }
+                ]
+            }
+        ]
+    }
+    
+}

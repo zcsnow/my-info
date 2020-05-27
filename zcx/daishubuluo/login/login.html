@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录</title>
+<meta name="keywords" content="keywords" />
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="description" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<script src="../js/flexible.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/public.css">
+    <link rel="stylesheet" type="text/css" href="../css/page/login.css">
+
+</head>
+
+<body>
+<!--<div class="loading" style="display:none"></div>-->
+<!-- 返回上一页 -->
+<div class="go-back-noheader" onclick="javascript:history.go(-1);"><a href="javascript:void(0);"><img src="../images/16@2x.png"></a></div>
+<!-- /返回上一页 -->
+
+<!-- 返回首页 -->
+<!--<div class="go2index"><a href=""><img src="images/index_btn.png" class="icon"></a></div>-->
+<!-- /返回首页 -->
+
+<section class="login-body">
+    <div class="top-img"><img src="../images/logo.png" /></div>
+    <ul class="login-form">
+        <li>
+            <div class="input-box"><input type="tel" placeholder="手机号码" id="mobile" maxlength="11" /></div>
+        </li>
+        <li class="login-psw">
+            <span class="psw-btn"></span>
+            <div class="input-box">
+                <input type="text" placeholder="登录密码" id="show-psw" />
+                <input type="password" placeholder="登录密码" id="hide-psw" />
+            </div>
+        </li>
+        <li class="login-img">
+            <span class="code-img-btn"><img src="../images/code_img.png" /></span>
+            <div class="input-box"><input type="text" placeholder="图形码" id="codeImg" /></div>
+        </li>
+    </ul>
+    <p class="auto-login-radio" id="auto-login">自动登录</p>
+    <a href="javascript:;" class="login-submit-btn" id="submit-btn">登录</a>
+    <p class="user-action">
+        <a href="reset_psw.html">忘记密码？</a>
+        <a href="register.html">新用户注册</a>
+    </p>
+</section>
+
+<script src="../js/jquery1.7.min.js"></script>
+<script src="../js/page/login.js"></script>
+</body>
+</html>

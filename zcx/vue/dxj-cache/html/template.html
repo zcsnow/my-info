@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>模板专题</title>
+</head>
+<body>
+<div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'.1rem'}">
+    <header-nav v-if="showNav" title="模板专题"></header-nav>
+
+    <!--小图片点击放大预览-->
+    <!-- <img-preview v-if="isImgPreviewShow"  @closeimgpreview="hideImgPreview" :preview-data="previewData"></img-preview> -->
+    <img-Temlate1  v-for="(item,index) in templateData"  v-bind:key="item.id"  :temlate-data="templateData"></img-Temlate1>
+
+    <div class="template-container">
+      <!-- 图片组件1显示效果 -->
+      <div class="imgTemlate1">
+          <a href="javascript:;"><img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg"></a>
+      </div>
+      <!-- 图片组件2显示效果 -->
+      <div class="imgTemlate2">
+          <a href="javascript:;">
+            <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+            <div class="text">
+                <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+                <p>原来你是这样的爱尔兰！</p>
+            </div>
+          </a>
+          <a href="javascript:;">
+            <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+            <div class="text">
+                <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+                <p>原来你是这样的爱尔兰！</p>
+            </div>
+          </a>
+          <a href="javascript:;">
+            <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+            <div class="text">
+                <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+                <p>原来你是这样的爱尔兰！</p>
+            </div>
+          </a>
+          <a href="javascript:;">
+            <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+            <div class="text">
+                <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+                <p>原来你是这样的爱尔兰！</p>
+            </div>
+          </a>
+      </div>
+      <!-- 图片组件3显示效果 -->
+      <div class="imgTemlate3">
+          <div class="swiper-container" id="bigSwiperSlider1">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="javascript:;">
+                        <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="javascript:;">
+                        <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+                    </a>
+                  </div>
+              </div>
+              <div class="swiper-pagination"></div>
+          </div>
+
+      </div>
+      <!-- 图片组件4显示效果 -->
+      <div class="imgTemlate4">
+          <div class="swiper-container" id="smallSwiperSlider1">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide"><a href="javascript:;"><img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190611/20190611112725_222.jpg" ></a></div>
+                  <div class="swiper-slide"><a href="javascript:;"><img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190614/20190614142330_603.jpg" ></a></div>
+                  <div class="swiper-slide"><a href="javascript:;"><img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190610/20190610090000_778.jpg" ></a></div>
+                  <div class="swiper-slide"><a href="javascript:;"><img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190611/20190611112725_222.jpg" ></a></div>
+              </div>
+              <div class="swiper-pagination"></div>
+          </div>
+      </div>
+      <!-- 图片组件5显示效果 -->
+      <div class="imgTemlate5">
+          <div class="swiper-container" id="swiperSlider1">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide"><a href="javascript:;"><img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190611/20190611112725_222.jpg" ></a></div>
+                  <div class="swiper-slide"><a href="javascript:;"><img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190614/20190614142330_603.jpg" ></a></div>
+                  <div class="swiper-slide"><a href="javascript:;"><img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190610/20190610090000_778.jpg" ></a></div>
+              </div>
+              <div class="swiper-pagination"></div>
+          </div>
+      </div>
+      <!-- 图片组件6显示效果 -->
+      <div class="imgTemlate6">
+          <div class="swiper-container"  id="marqueeSlider1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="javascript:;">
+                    <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190611/20190611112725_222.jpg" class="main-img">
+                    <span>标题标题标题标题标题标题</span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="javascript:;">
+                    <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190614/20190614142330_603.jpg" class="main-img">
+                    <span>标题标题标题标题标题标题</span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="javascript:;">
+                    <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190610/20190610090000_778.jpg" class="main-img">
+                    <span>标题标题标题标题标题标题</span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="javascript:;">
+                    <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190611/20190611112725_222.jpg" class="main-img">
+                    <span>标题标题标题标题标题标题</span>
+                </a>
+              </div>
+                
+            </div>
+          </div>
+      </div>
+      <!-- 图片组件7显示效果 -->
+      <div class="imgTemlate7">
+          <a class="left" href="javascript:;">
+            <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190611/20190611112725_222.jpg">
+          </a>
+          <a class="right1" href="javascript:;">
+            <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190611/20190611112353_641.jpg">
+          </a>
+          <a class="right2" href="javascript:;">
+            <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190611/20190611112353_641.jpg">
+          </a>
+      </div>
+      <!-- 图片组件8显示效果 -->
+      <div class="imgTemlate8">
+          <a class="big-img" href="javascript:;">
+            <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+          </a>
+          <ul>
+            <li><a href="javascript:;"><img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190611/20190611112353_641.jpg"></a></li>
+            <li><a href="javascript:;"><img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190611/20190611112353_641.jpg"></a></li>
+            <li><a href="javascript:;"><img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190611/20190611112353_641.jpg"></a></li>
+          </ul>
+          
+      </div>
+      <!-- 标题组件 显示效果 -->
+      <div class="titleTemlate">
+          <h3 class="title"><span>标题标题</span></h3>
+          <p class="sub-title">副标题副标题</p>
+          <a class="more">更多</a>
+      </div>
+      <!-- 导航组件 图文4个显示效果 -->
+      <div class="nav navTemlate1">
+          <a href="javascript:;"><i><img alt="" src="http://10.10.56.45/app/dxj/cache/image/icon/138/20181218150740_633.png"></i><span>标题文字</span></a>
+          <a href="javascript:;"><i><img alt="" src="http://10.10.56.45/app/dxj/cache/image/icon/138/20181218150740_633.png"></i><span>标题文字</span></a>
+          <a href="javascript:;"><i><img alt="" src="http://10.10.56.45/app/dxj/cache/image/icon/138/20181218150740_633.png"></i><span>标题文字</span></a>
+          <a href="javascript:;"><i><img alt="" src="http://10.10.56.45/app/dxj/cache/image/icon/138/20181218150740_633.png"></i><span>标题文字标题文字</span></a>
+      </div>
+      <!-- 导航组件 图文5个显示效果 -->
+      <div class="nav navTemlate2">
+          <a href="javascript:;"><i><img alt="" src="http://10.10.56.45/app/dxj/cache/image/icon/138/20181218150740_633.png"></i><span>标题文字标题文字</span></a>
+          <a href="javascript:;"><i><img alt="" src="http://10.10.56.45/app/dxj/cache/image/icon/138/20181218150740_633.png"></i><span>标题文字</span></a>
+          <a href="javascript:;"><i><img alt="" src="http://10.10.56.45/app/dxj/cache/image/icon/138/20181218150740_633.png"></i><span>标题文字</span></a>
+          <a href="javascript:;"><i><img alt="" src="http://10.10.56.45/app/dxj/cache/image/icon/138/20181218150740_633.png"></i><span>标题文字</span></a>
+          <a href="javascript:;"><i><img alt="" src="http://10.10.56.45/app/dxj/cache/image/icon/138/20181218150740_633.png"></i><span>标题文字</span></a>
+      </div>
+      <!-- 导航组件 只有文字显示效果 -->
+      <div class="nav navTemlate3">
+          <a href="javascript:;">标题文字</a>
+          <a href="javascript:;">标题文字</a>
+          <a href="javascript:;">标题文字</a>
+          <a href="javascript:;">标题文字</a>
+      </div>
+      <!-- 纯文本组件 显示效果 -->
+      <div class="textTemlate">
+          1、根据海关对入境居民旅客携带物品的规定：每位入境居民旅客可享有最多8000元免税额度；
+          2、根据海关对入境居民旅客携带物品的规定：每位入境居民旅客可享有最多8000元免税额度；
+      </div>
+      <!-- 公告组件 显示效果 -->
+      <div class="announcementTemlate">
+          <i></i>
+          <div class="marquee js-marquee">我是最后一个让我掉下眼泪的 不止昨夜的酒让我依依不舍的 不止你的温柔</div>   
+          
+      </div>
+      <!-- 图文 一行一个 上图下文 显示效果 -->
+      <div class="imgTextContent1_1">
+          <a href="javascript:;">
+              <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+              <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+              <p>原来你是这样的爱尔兰！</p>
+          </a>
+      </div>
+      <!-- 图文 一行一个 下图上文 显示效果 -->
+      <div class="imgTextContent1_2">
+          <a href="javascript:;">
+              <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+              <p>原来你是这样的爱尔兰！</p>
+              <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+          </a>
+      </div>
+      <!-- 图文 一行一个 左图右文 显示效果 -->
+      <div class="imgTextContent1_3">
+          <a href="javascript:;">
+              <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+              <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+              <p>原来你是这样的爱尔兰！</p>
+              
+          </a>
+          <a href="javascript:;">
+              <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+              <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+              <p>原来你是这样的爱尔兰！</p>
+              
+          </a>
+          <a href="javascript:;">
+              <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+              <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+              <p>原来你是这样的爱尔兰！</p>
+              
+          </a>
+      </div>
+      <!-- 图文 一行一个 右图左文 显示效果 -->
+      <div class="imgTextContent1_4">
+          <a href="javascript:;">
+              <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+              <p>原来你是这样的爱尔兰！</p>
+              <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+          </a>
+          <a href="javascript:;">
+              <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+              <p>原来你是这样的爱尔兰！</p>
+              <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+          </a>
+          <a href="javascript:;">
+              <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+              <p>原来你是这样的爱尔兰！</p>
+              <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+          </a>
+      </div>
+      <!-- 图文 一行两个 上图下文 显示效果 -->
+      <div class="imgTextContent2_1">
+          <ul>
+            <li>
+              <a href="javascript:;">
+                  <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190611/20190611112353_641.jpg">
+                  <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+                  <p>原来你是这样的爱尔兰！原来你是这样的爱尔兰！</p>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;">
+                  <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190611/20190611112353_641.jpg">
+                  <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+                  <p>原来你是这样的爱尔兰！</p>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;">
+                  <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190611/20190611112353_641.jpg">
+                  <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+                  <p>原来你是这样的爱尔兰！</p>
+              </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190611/20190611112353_641.jpg">
+                    <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+                    <p>原来你是这样的爱尔兰！</p>
+                </a>
+              </li>
+          </ul>
+      </div>
+      <!-- 图文 左右滑动 上图下文 显示效果 -->
+      <div class="imgTextContent3_1">
+          <div class="swiper-container" id="imgTextContent3_1_bigSwiperSlider1">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="javascript:;">
+                        <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+                        <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+                        <p>原来你是这样的爱尔兰！</p>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="javascript:;">
+                        <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+                        <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+                        <p>原来你是这样的爱尔兰！</p>
+                    </a>
+                  </div>
+              </div>
+              <div class="swiper-pagination"></div>
+          </div>
+
+      </div>
+      <!-- 图文 左右滑动 下图上文 显示效果 -->
+      <div class="imgTextContent3_2">
+          <div class="swiper-container" id="imgTextContent3_2_bigSwiperSlider1">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="javascript:;">
+                        <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+                        <p>原来你是这样的爱尔兰！</p>
+                        <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="javascript:;">
+                        <h5>张若昀&amp;唐艺昕婚礼举办国放出重磅消息，7月1日起实行！</h5>
+                        <p>原来你是这样的爱尔兰！</p>
+                        <img src="http://10.10.56.45/s/dxj_v3/dxj/cache/image/video/20190613/20190613173057_478.jpg">
+                    </a>
+                  </div>
+              </div>
+              <div class="swiper-pagination"></div>
+          </div>
+
+      </div>
+    
+    
+      <section v-if="!details && !isWaiting" class="no-data">网络不给力，请检查后重试哦~<br /><a href="javascript:void(0)" onclick="window.location.reload()">点击刷新</a></section>
+    </div>
+    <!--加载中-->
+    <!-- <loading v-if="isWaiting" :status="2"></loading> -->
+    <!--执行toast弹出层-->
+    <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+  </div>
+</div>
+</body>
+</html>

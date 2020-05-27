@@ -1,0 +1,122 @@
+/*container*/
+.top_no{
+    padding-top: 1.2rem;
+}
+.qr_code{
+    padding: .333rem .4rem .467rem;
+    margin: 0.667rem .533rem 0;
+    background-color: #fff;
+    border-radius: .133rem;
+    overflow: hidden;
+}
+.qr_code .qr_img{
+    float: left;
+    width: 3.6rem;
+}
+.qr_code p.center_no{
+    float: left;
+    width: .8rem;
+    height: 3.6rem;
+    position: relative;
+}
+.center_no i{
+    width: 1px;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f2f4f6;
+    position: absolute;
+    left: 50%;
+}
+.center_no:before{
+    content: "";
+    width: 0.41rem;
+    height: 0.41rem;
+    border-radius: 50%;
+    vertical-align: middle;
+    background-color: #f5f5f5;
+    position: absolute;
+    left: 25%;
+    top: -15%;
+}
+.center_no:after{
+    content: "";
+    width: 0.41rem;
+    height: 0.41rem;
+    border-radius: 50%;
+    vertical-align: middle;
+    background-color: #f5f5f5;
+    position: absolute;
+    left: 25%;
+    top: 110%;
+}
+.qr_code div h4{
+    color: #444;
+    font-size: .373rem;
+    padding-bottom: .2rem;
+}
+.qr_code div p{
+    color: #999;
+    font-size: .32rem;
+    line-height: .48rem;
+}
+.qr_code div img{
+    width: .75rem;
+    margin: .35rem 0 .02rem;
+}
+
+.qa_list{
+    margin-top: .4rem;
+    background-color: #fff;
+    padding: .466rem .933rem 0;
+}
+.maxH{
+    max-height: 6.1rem;
+    overflow: hidden;
+}
+.qa_list dl{
+    display: flex;
+    padding-bottom: .333rem;
+}
+.qa_list dl:nth-child(2n){
+    border-bottom: 1px solid #f2f4f6;
+    margin-bottom: .32rem;
+}
+.qa_list dl:last-of-type{
+    margin-bottom: auto;
+}
+.qa_list dt, .qa_list dd{
+    flex:1;
+    justify-content: center;
+    align-items:center;
+}
+.qa_list dt{
+    text-align: left;
+    color: #666;
+    font-size: .43rem;
+}
+.qa_list dd{
+    flex: 17;
+    color: #999;
+    font-size: .32rem;
+    line-height: .43rem;
+}
+.qa_more_btn{display: block; line-height: 1.16rem; text-align: center; color: #e83828;font-size: .32rem;}
+.qa_more_btn i{display: inline-block;font-size: 8px; margin-left: 5px;vertical-align: 1px;}
+.qa_more_btn i img{width: .4rem;}
+.qa_more_btn.cur i {transform: rotate(180deg);-webkit-transform: rotate(180deg);}
+
+/* footer */
+footer{
+    width: 100%;
+    height: 1.16rem;
+    line-height: 1.16rem;
+    margin-top: .4rem;
+    background-color: #fff;
+    text-align: center;
+    color: #666;
+    font-size: .37rem;
+}
+footer a{
+    color: #e83828;
+}
+

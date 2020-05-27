@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>东行记</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+  <div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+      <header-nav v-if="showNav" title="空中免税商城" page-url="index.html"></header-nav>
+
+      <section>
+      <div class="banner"  v-if="banner.length">
+          <div class="swiper-container" id="swiper1">
+              <div class="swiper-wrapper" v-if="banner.length>1">
+                  <div class="swiper-slide" v-for="(item,index) in banner"  :data-title="item.title" :data-url="item.url" >
+                    <a href="javascript:void(0)">
+                      <img :src="baseUrl+item.image" />
+                    </a>
+                  </div>
+              </div>
+              <div class="swiper-wrapper" v-else>
+                  <div class="swiper-slide" v-for="(item,index) in banner" @click="eventLog({eventId:'Duty-freeStore_home_banner_'+ (parseInt(index)+1) +'_click',eventType:'1',eventIsAD:'1'})" >
+                    <a :href="item.url?item.url:'javascript:void(0)'">
+                      <img :src="baseUrl+item.image" />
+                    </a>
+                  </div>
+              </div>
+              <div class="swiper-pagination"></div>
+          </div>
+      </div>
+
+      <!-- <div class="card-enter-box" v-if="cardEnterisShow&&couponOpen==1&&couponBalance!='null'">
+        <div class="one-card" v-if="!isLogin"><a href="newcomer-strategy.html"  @click="eventLog({eventId:'home_shoppingcard_topic'})"><img src="../images/tmp/card_enter1.png" /></a></div>
+        <div class="two-card clearfix" v-else>
+          <a href="newcomer-strategy.html"  @click="eventLog({eventId:'home_shoppingcard_topic'})"><img src="../images/tmp/card_enter2.png" /></a>
+          <a href="javascript:void(0)" @click="enterShoppingCard">
+            <img src="../images/tmp/card_enter3.png" />
+            <span class="clearfix"><em :class="(couponBalance==0||couponBalance==-1)?'':'red'"  v-text="(couponBalance==0||couponBalance==-1)?'立即查看':'￥'+couponBalance"></em><i></i></span>
+          </a>
+        </div>
+        
+      </div> -->
+
+
+      <div class="my-card-box">
+        <i class="my-card" @click="enterShoppingCard"></i>
+        <div class="card-ad">
+            <div class="swiper-container" id="swiper6">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide" v-for="(item,index) in mimiAd" @click="eventLog({eventId:'Duty-freeStore_home_minibanner_'+ (parseInt(index)+1) +'_click',eventType:'1',eventIsAD:'1'})" >
+                    <a :href="item.url?item.url:'javascript:void(0)'">
+                      <img :src="baseUrl+item.image" />
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+        </div>
+        
+        <a :href="scoreExchangeUrl" class="shopping-ceair">
+        <!-- <a href="http://shopping.ceair.com?browse=hmouter" class="shopping-ceair"> -->
+            <img src="../images/tmp/shop_card.png" />
+        </a>
+      </div>
+
+      <div class="list-box popular-recommend-box" v-if="popularGoods.length">
+        <h3 class="title"><span>人气推荐</span></h3>
+        <div class="movie-list">
+          <div class="swiper-container" id="swiper2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" v-for="(item,index) in popularGoods"  @click="eventLog({eventId:'Duty-freeStore_home_PopularityList_'+ (parseInt(index)+1) +'_click',eventType:'1'})">
+                <a :href="'free-goods-detail.html?id='+item.id">
+                  <img v-lazy="baseUrl+item.image" />
+                  <h5>{{item.title}}</h5>
+                  <span>{{item.price}}</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-box category-list" v-if="category.length">
+          <h3 class="title"><span>类目热销榜</span><a href="free-goods-sort.html" @click="eventLog({eventId:'Duty-freeStore_home_RecommendedClassification_more_click',eventType:'1'})">更多</a></h3>
+          <div class="city-list">
+            <div class="swiper-container" id="swiper3">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for="(item,index) in category"  @click="eventLog({eventId:'Duty-freeStore_home_RecommendedClassification_'+ (parseInt(index)+1) +'_click',eventType:'1'})">
+                  <a :href="'free-goods-sort.html?tag='+item.id">
+                    <img v-lazy="baseUrl+item.image" />
+                    <h5>{{item.title}}</h5>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="integral-use" v-if="subject.length">
+              <div v-for="(item,index) in subject">
+                <h3 class="title" v-if="subject[index].subjectAd.title"><span>{{subject[index].subjectAd.title}}</span></h3>
+                <a :href="subject[index].subjectAd.url?subject[index].subjectAd.url:'javascript:void(0)'" class="topic-box"  @click="eventLog({eventId:'Duty-freeStore_home_OperationAdvertisement_click',eventType:'1'})">
+                    <img  v-lazy="baseUrl+subject[index].subjectAd.image" />
+                </a>
+                <div class="movie-list" v-if="subject[index].subjectGoods.length">
+                  <div class="swiper-container subject-swiper" >
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" v-for="(itemGoods,indexGoods) in subject[index].subjectGoods"  @click="eventLog({eventId:'Duty-freeStore_home_OperationAdvertisementGoods_'+ (parseInt(indexGoods)+1) +'_click',eventType:'1'})">
+                          <a :href="'free-goods-detail.html?id='+itemGoods.id">
+                              <img v-lazy="baseUrl+itemGoods.image" />
+                              <h5>{{itemGoods.title}}</h5>
+                              <span>{{itemGoods.price}}</span>
+                            </a>
+                      </div>
+                    </div>
+                  </div>
+        
+                </div>
+              </div>
+        </div>
+        
+
+    </section>
+
+    <!--加载中-->
+    <!-- <loading v-if="isWaiting" :status="2"></loading> -->
+    <!--执行toast弹出层-->
+    <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

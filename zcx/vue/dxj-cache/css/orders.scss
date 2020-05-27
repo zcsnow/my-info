@@ -1,0 +1,135 @@
+@import 'base';
+
+section{
+	padding: 0 .44rem .44rem;
+
+	a{
+		display: block;
+		margin-top: .44rem;
+		border-radius: 4px;
+		box-shadow: 0 2px 23px 2px rgba(0,0,0,0.09);
+		overflow: hidden;
+
+		>img{
+			width: 1.64rem;
+			height: 2.24rem;
+			float: left;
+			margin-right: .24rem;
+			@include bg2('Bitmap', 1.1rem, 1.1rem);
+			background-position: center;
+			background-color: #F5F5F5;
+		}
+
+		div{
+			padding-right: .3rem;
+
+			h3{
+				height: .9rem;
+				line-height: .9rem;
+				text-align: right;
+				font-size: .32rem;
+				font-weight: normal;
+				color: #4D4B4B;
+
+				&.done{color: #FD8B51;}
+
+				span{
+					float: left;
+					overflow:hidden;
+					text-overflow:ellipsis;
+					white-space:nowrap;
+					width: 2.5rem;
+					text-align: left;
+					font-size: .36rem;
+					font-weight: bold;
+					color: #1A1919;
+				}
+			}
+
+			p{
+				font-size: .28rem;
+				color: #807E7D;
+				line-height: .4rem;
+			}
+
+			&.detail{
+				padding: .24rem .3rem .44rem;
+				position: relative;
+
+				h3{
+					text-align: left;
+					height: auto;
+
+					span{
+						width: 4rem;
+						line-height: .48rem;
+						overflow: visible;
+						white-space: normal;
+
+						i{
+							display: inline-block;
+							width: .66rem;
+							height: .34rem;
+							line-height: .34rem;
+							overflow: hidden;
+							text-align: center;
+							background: #FFC324;
+							border: 1px solid #FFD548;
+							border-radius: 4px;
+							font-size: .24rem;
+							color: #fff;
+							margin: 0 0 0 .15rem;
+							position: relative;
+							top: .06rem;
+						}
+					}
+				}
+
+				p{
+					float: left;
+					margin-top: .2rem;
+					line-height: .48rem;
+				}
+
+				img{
+					position: absolute;
+					top: .24rem;
+					right: .3rem;
+					width: 1.2rem;
+					height: 1.62rem;
+					@include bg2('Bitmap', 1.1rem, 1.1rem);
+					background-position: center;
+					background-color: #F5F5F5;
+				}
+			}
+		}
+
+		h4{
+			padding: .1rem .3rem .2rem;
+			line-height: 1rem;
+			text-align: right;
+			font-size: .32rem;
+			font-weight: normal;
+			color: #4D4B4B;
+			@include bg2('icon_wddd_henghx', 6.62rem, .2rem);
+			background-position: bottom;
+
+			&.done{color: #FD8B51;}
+
+			span{
+				float: left;
+				color: #1A1919;
+			}
+
+			i{
+				width: 100%;
+				float: right;
+				color: #FD8B51;
+				font-size: .24rem;
+				line-height: .24rem;
+				position: relative;
+				top: -.2rem;
+			}
+		}
+	}
+}

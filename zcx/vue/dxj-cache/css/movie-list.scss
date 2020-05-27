@@ -1,0 +1,189 @@
+@import 'base';
+
+#main{
+	min-height: calc(100vh - .91rem);
+}
+
+.movie-head{
+	padding: .44rem .44rem 0;
+	height: 6.1rem;
+	@include bg2('bj', 7.5rem, 6.54rem);
+	background-position: center bottom;
+
+	a{
+		display: block;
+		position: relative;
+
+		img{
+			display: block;
+			width: 6.62rem;
+			height: 3.76rem;
+			background-color: #F5F5F5;
+		}
+
+		i{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 6.62rem;
+			height: 3.76rem;
+			z-index: 10;
+			@include bg2('movie_play', 1rem, 1rem);
+			background-position: center;
+		}
+
+		p{
+			margin-top: .3rem;
+			font-size: .32rem;
+			line-height: .4rem;
+			color: #F72F42;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			text-align: center;
+		}
+	}
+}
+
+.movie-list{
+	padding: 0 .44rem .28rem;
+	//min-height: 4rem;
+
+	li{
+		background: #FFF;
+		padding: .3rem;
+		position: relative;
+		margin-bottom: .45rem;
+
+		&::before{
+			content: "";
+			display: block;
+			position: absolute;
+			top: -4px;
+			left: -4px;
+			overflow: hidden;
+			width: 20px;
+			height: 20px;
+			@include bg2('bj_list', 34px, 43px);
+		}
+
+		&::after{
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: -4px;
+			right: -4px;
+			overflow: hidden;
+			width: 20px;
+			height: 20px;
+			@include bg2('bj_list', 34px, 43px);
+			background-position: right bottom;
+		}
+
+		a{
+			display: block;
+
+			img{
+				width: 2.06rem;
+				height: 2.8rem;
+				float: left;
+				margin-right: .3rem;
+				@include bg2('Bitmap', 1.1rem, 1.1rem);
+				background-position: center;
+				background-color: #F5F5F5;
+			}
+
+			div{
+				position: relative;
+				height: 2.8rem;
+
+				h3{
+					overflow:hidden;
+					text-overflow:ellipsis;
+					white-space:nowrap;
+					//line-height: .36rem;
+					font-size: .36rem;
+					color: #1A1919;
+					margin-bottom: .25rem;
+				}
+
+				p{
+					font-size: .28rem;
+					color: #807E7D;
+					line-height: .4rem;
+					height: .8rem;
+					overflow: hidden;
+				}
+
+				span{
+					position: absolute;
+					bottom: 0;
+					width: 2.1rem;
+					height: .6rem;
+					line-height: .6rem;
+					text-align: center;
+					color: #fff;
+					background-color: #F72F42;
+					border-radius: .6rem;
+				}
+			}
+
+			p.sponsor {
+				width: 5.8rem;
+				height: .68rem;
+				padding: 0 0 0 .2rem;
+				margin-top: .28rem;
+				background: #F5F5F5;
+				border-radius: .12rem;
+				font-size: .26rem;
+				color: #4A4949;
+				line-height: .68rem;
+				img {
+					max-width: 1.28rem;
+					max-height: .48rem;
+					@include bg2('Bitmap', .48rem, .48rem);
+					background-position: center;
+					background-color: #F5F5F5;
+					margin-top: .1rem;
+					margin-right: .12rem;
+					display: inline-block;
+				}
+				span {
+					display: inline-block;
+					overflow: hidden;
+					max-width: 4.15rem;
+					margin-top: .1rem;
+					padding-left: .12rem;
+					height: .48rem;
+					line-height: .48rem;
+					border-left: 1px solid #CCCCCC;
+					white-space: nowrap;
+					text-overflow:ellipsis;
+				}
+			}
+		}
+	}
+}
+
+.notice{
+	background-color: #222;
+	padding: 0 .44rem .5rem;
+	min-height: 4rem;
+
+	h5{
+		line-height: .8rem;
+		color: #ccc;
+		font-size: .32rem;
+		font-weight: normal;
+	}
+
+	article{
+		color: #B3B0AF;
+		line-height: .4rem;
+		font-size: .28rem;
+	}
+}
+
+.updata_loading{
+	color: #fff;
+}

@@ -1,0 +1,83 @@
+.f5-bg{ background: #f5f5f5;}
+
+/*顶部导航栏 */
+.header-box{ width:100%; max-width:720px; position:fixed; padding:10px 5px;border-bottom:1px solid #d2d2d2; z-index:100; background:#fafafa;}
+.header-box span{display: block;white-space: nowrap;overflow: hidden; text-align:center;font-size: 16px; color:#444; line-height:24px;}
+.header-box a{display:block; width:8px; height:16px; padding:14px 18px;position:absolute;top:0; }
+.header-box a.left-icon{ left:0;}
+.header-box a.right-icon{right:0; }
+
+/*支付*/
+.pay-box {padding-top: 45px;}
+.pay-box h2{text-align:center;font-size:18px; color:#444;font-weight:normal; }
+.pay-box .pay-tip-icon{ display:block; width:35px; margin: 15% auto 4%}
+.pay-box .pay-back-btn{ color: #e83828; text-align: center;display: block;width: 60%; margin: 8% auto; border-radius: 5px;background-color: #ffffff;border: solid 1px #e6e6e6;line-height: 38px; font-size: 13px;}
+.pay-box .thank-txt{ color: #999; text-align: center; font-size: 14px; margin-top: 15px;}
+
+.pay-confirm .pay-info{ padding:15px 5%;line-height: 18px;position:relative;background: #fff;border-top: 10px solid #f5f5f5;}
+.pay-confirm .pay-info h3{font-size: 13px; color:#999; font-weight: normal; position: relative; }
+.pay-confirm .pay-info h3:nth-of-type(2){ margin-top: 10px; border-top: 1px solid #ebebeb; padding-top: 10px;}
+.pay-confirm .pay-info h3 em{font-size: 12px; color:#999; float: right;}
+.pay-confirm .pay-info h3 em b{font-weight: normal;font-size: 16px}
+.pay-confirm .pay-info h3 em.gray{color: #999;}
+.pay-confirm .pay-info h3 em.red{color: #e83828;}
+.pay-confirm .pay-info h3 em.red b{ font-size: 24px}
+
+.pay-confirm .default-arrow{background: url(../../images/right_icon.png) no-repeat right bottom; background-size: 8px 16px; }
+.pay-confirm .pay-info.default-box>label {display: inline-block;font-size: 13px;color: #444;}
+.pay-confirm .pay-info.default-box>input{border:none;background: rgba(0,0,0,0);height: 18px; line-height:18px;width: 60%;z-index: 0;font-size: 13px;padding: 0 5px;}
+.pay-confirm .pay-info.default-box h3 { color: #444; }
+.pay-confirm .pay-info.default-box h3 em{font-size: 13px; color:#444; float: right;color:#999;  }
+.pay-confirm .pay-info.default-box h3 em b{font-weight: normal;font-size: 14px; display: inline-block; margin-left: 20px; }
+.pay-confirm .pay-info.default-box h3 em.select-tip{font-size: 13px; color:#666666;  margin-right:20px; }
+.pay-confirm .not-enough-tip{ display: block; font-size: 12px; line-height: 18px; color:#999; padding: 10px 5% 0;}
+.pay-confirm .pay-help-btn{ float:right;color: #e83828; margin-right: 5%; margin-top: 10px;}
+
+.pay-confirm .pay-info .card-num-box{ margin-top: 10px; border-top: 1px solid #ebebeb; padding-top: 10px;}
+.pay-confirm .pay-info .card-num-box>label {display: inline-block;font-size: 13px;color: #444;}
+.pay-confirm .pay-info .card-num-box>input{ float: right;text-align: right; border:none;background: rgba(0,0,0,0);height: 18px; line-height:18px;width: 72%;z-index: 0;font-size: 13px;padding: 0 5px;}
+.pay-confirm .card-info-submit-btn{display:block;width: 60%;background: #e83828;margin:25px auto 15px;line-height: 38px;text-align:center;color:#fff;font-size:12px;border-radius: 5px;}
+
+.pay-mode-box{width: 100%; height: 44px;position: fixed; bottom:60px;max-width:720px;border-top: 2px solid #f8f8f8; z-index: 100; }
+.pay-mode-box .btn{background:#5674b9; display: block; float:left;width: 50%; text-align: center;font-size: 13px; line-height: 44px; color: #fff;}
+.bottom-fixed{width: 100%; height: 44px;position: fixed; bottom: 0;max-width:720px;border-top: 2px solid #f8f8f8; background-color: #fff; z-index: 100; }
+.bottom-fixed .btn{position: absolute; width: 100%; text-align: center; top: 0; right: 0; font-size: 13px; line-height: 44px; color: #fff; background-color: #E83828}
+
+#card_layer {position: fixed;width: 100%;max-width: 720px;height: 279px;bottom: 0;margin: 0 auto;z-index: 99999;background:#fff;box-shadow: 0 -1px 1px rgba(100,100,100,0.1);display: none;}
+#card_layer h3 {width:100%;font-size: 13px;color: #e83828;line-height: 39px;max-width:720px;position:fixed;padding: 0 7%;border-bottom: 1px solid #ebebeb;z-index:100;}
+#card_layer ul {width: 100%;overflow-y: auto;position: absolute;top: 40px;right: 0;bottom: 0;z-index: 0;}
+#card_layer ul li {border-bottom: 1px solid #ebebeb;height: 39px;font-size: 13px;color: #444;line-height: 39px;padding: 0 5%;position: relative;z-index: 999999;}
+#card_layer ul li.cur {background: url(../../images/card_cur.png) no-repeat 80px center; background-size: 11px 8px;color: #e83828;}
+
+
+
+
+
+
+
+
+
+
+.mask{ position:fixed; left:0; width:100%; top:0; height:100%; background:#000; background:rgba(0,0,0,0.7); opacity:0.8; z-index:999;display:none;}
+.pop-box{position:fixed; width:90%;left:5%;top:50%; transform:translateY(-50%) scale(0.7);-webkit-transform:translateY(-50%) scale(0.7); z-index:1001;opacity: 0;-webkit-transition: all 0.3s;transition: all 0.3s; visibility: hidden;-webkit-backface-visibility: hidden;backface-visibility: hidden;}
+.pop-box.show {-webkit-transform:translateY(-50%) scale(1);transform:translateY(-50%) scale(1);opacity: 1;visibility: visible;}
+.pop-content{width: 80%; position: absolute;left:50%;top:45%; transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);  padding:5%;border-radius: 3px;background-color: #fff}
+.pop-txt {line-height: 30px; color: #666; font-size: 15px; text-align: center;border-bottom: 1px solid #ebebeb; padding-bottom: 10px;}
+.pop-close-btn{background-color: #E83828; display: block; width:220px;line-height: 18px; color: #fff;text-align: center;font-size: 14px; border-radius:3px;  padding:10px 0; margin: 15px auto 0;}
+
+/* 删除提示框 */
+#popup_container{width: 280px; background-color: #fff;border-radius: 0.3em; box-shadow: 0 0.1em 5px rgba(0, 0, 0, 0.4);text-align:center;}
+#popup_container .title_closeBtn{width:25px;line-height:25px; position:absolute; top:5px;right:5px;font-size:28px; color:#333; background:rgba(153,153,153,0.7); border-radius:50%;}
+#popup_container #popup_content{padding: 12px 20px; }
+#popup_container #popup_message{ padding:10px 0;}
+#popup_container #popup_message p {line-height: 1.2; }
+#popup_container #popup_panel{ margin:10px 0 20px;}
+#popup_container #popup_panel button{width:90px;line-height:30px;margin:0 5px;font-size:14px; border-radius: 2px;background: #de4747; color: #fff; border:1px solid #de4747; outline:0; }
+#popup_container #popup_panel #popup_cancel {background: #f2f2f2; color: #555; border: 1px solid #aaa; }
+
+/*弱提示*/
+#popup_container.tip_pop { background: #323232; color: #fff; width: 180px }
+#popup_container.tip_pop #popup_message { font-size: 14px; padding: 0; }
+
+
+

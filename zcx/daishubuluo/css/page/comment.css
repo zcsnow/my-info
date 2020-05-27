@@ -1,0 +1,173 @@
+
+.main{
+    padding-bottom: 1.16rem;
+}
+
+/*container*/
+.comment_list ul{
+    padding-top: 1.2rem;
+    width: 100%;
+    background-color: #fff;
+}
+.comment_list li:first-child{
+    padding: .7rem .28rem .4rem .56rem;
+}
+.comment_list li{
+    padding: 0 .28rem .4rem .56rem;
+}
+.comment_list li img{
+    float: left;
+    width: 1.04rem;
+}
+.comment_list li dl{
+    padding-left: 1.35rem;
+    height: 1.04rem;
+}
+.comment_list li dl dd{
+    float: left;
+    min-width: 1.78rem;
+    font-size: .37rem;
+    color: #363636;
+    line-height: 1.04rem;
+    padding-right: .226rem;
+}
+.comment_list li dl dd.gray{
+    color: #999;
+}
+.comment_list li dl dd.comment_r_btn{
+    float: right;
+    padding: 0;
+    min-width: auto;
+}
+.comment_list li dl dd.comment_r_btn a{
+    display: block;
+    width: 1.04rem;
+    height: 1.04rem;
+    background: url("../../images/comment@2x.png") no-repeat center;
+    background-size: .54rem;
+}
+.comment_list li dl dd.comment_r_btn img{
+    width: .54rem;
+    float: none;
+    margin: 0 auto;
+}
+
+.comment_list pre.comment_txt{
+    color: #666;
+    font-size: .32rem;
+    line-height: .48rem;
+    padding: .32rem .28rem .32rem 0;
+}
+.comment_list section.sub_comment{
+    padding-right: .28rem;
+}
+.comment_list li section.sub_comment dl{
+    padding: .27rem .27rem 0;
+    height: auto;
+    background-color: #f0f0f0;
+}
+.comment_list li section.sub_comment dl:last-child{
+    padding: .27rem;
+}
+.comment_list li section.sub_comment dl dt{
+    font-weight: normal;
+    color: #666;
+    line-height: .56rem;
+    font-size: .37rem;
+}
+.comment_list li section.sub_comment dl dt span{
+    color: #999;
+    display: inline-block;
+    margin-left: .2rem;
+}
+.comment_list li section.sub_comment dl dd{
+    float: none;
+    color: #888;
+    line-height: .38rem;
+    font-size: .32rem;
+    padding: 0;
+}
+
+.end-prompt{
+    width: 100%;
+    font-size: .4rem;
+    color: #ccc;
+    text-align: center;
+    line-height: 1rem;
+}
+
+.footer_btn{
+    width: 100%;
+    background-color: #fff;
+    height: 1.16rem;
+    line-height: 1.16rem;
+    text-align: center;
+    font-size: .37rem;
+    color: #e83828;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+.footer_btn i{
+    display: inline-block;
+    width: .5rem;
+    height: 1.16rem;
+    vertical-align: bottom;
+    background: url("../../images/comment_edit@2x.png") no-repeat center;
+    background-size: .35rem;
+}
+
+/* 发表评论 */
+.make_top{
+    padding: 1.6rem 0 0;
+}
+.make_content{
+    margin: 0 .53rem;
+    -webkit-border-radius: .13rem;
+    border-radius: .13rem;
+    background-color: #fff;
+}
+.make_box{
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.make_box textarea{
+    padding: .27rem;
+    border: 0 none;
+    width: 94%;
+    font-size: .32rem;
+}
+.make_box span{
+    position: absolute;
+    right: .27rem;
+    bottom: .27rem;
+    font-size: .32rem;
+    color: #999;
+}
+.make_box span i{
+    color: #e83828;
+    font-style: normal;
+}
+.make_btn{
+    padding: .27rem;
+}
+.make_btn a{
+    float: left;
+    width: 4rem;
+    height: .9rem;
+    line-height: .9rem;
+    border: 1px solid #d7d7d7;
+    background-color: #fff;
+    text-align: center;
+    font-size: .32rem;
+    color: #666;
+    -webkit-border-radius: .07rem;
+    border-radius: .07rem;
+}
+.make_btn a.bg{
+    margin-left: .27rem;
+    border-color: #e83828;
+    background-color: #e83828;
+    color: #fff;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>专题</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" class="bg_gray" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+   <header-nav v-if="showNav" title="专题"></header-nav>
+   <div>
+    <div class="topic-head" v-for="(item,index) in headArray">
+      <img v-lazy="item.image?baseUrl+item.image:'../images/e.gif'">
+      <h1></h1>
+      <span>{{item.title}}</span>
+      <p v-if="item.description">{{item.description}}</p>
+    </div>
+    <ul class="travel-list" v-if="jsonArray.length">
+      <li v-for="(item,index) in jsonArray">
+        <a :href="'article.html?tag='+item.tag+'&contentType=旅行-专题&contentTitle='+item.title">
+          <img v-lazy="item.image?baseUrl+item.image:'../images/e.gif'">
+          <h3 class="bg_white">
+            {{item.title}}
+          </h3>
+          <article class="bg_white">
+            {{item.title_second}}
+          </article>
+        </a>
+      </li>
+    </ul>
+    <div v-if="!isWaiting && !jsonArray.length" class="no-data">网络不给力，请检查后重试哦~<br /><a href="javascript:void(0)" onclick="window.location.reload()">点击刷新</a></div>
+   </div>
+    <!--加载中-->
+    <!-- <loading v-if="isWaiting" :status="2"></loading> -->
+    <!--执行toast弹出层-->
+    <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

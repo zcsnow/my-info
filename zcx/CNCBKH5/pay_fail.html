@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <title>支付失败</title>
+    <meta content-type="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link href="css/base.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body style="background:#f5f5f5;">
+    <div class="container">
+    	<div class="pay_success">
+        	<h2><i><img src="images/pay_fail_icon.png"></i>支付失败</h2>
+            <p class="info">
+            	订单编号：<span id="orderid"></span>
+            </p>
+            <p class="info">
+                支付金额：<span id="money"></span>
+            </p>
+            <div class="payment_submit clr">
+                <button class="btn2 js-btn1">查看订单</button>
+                <button class="btn1 js-btn3">重新支付</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/jquery1.7.min.js"></script>
+    <script src="js/page/config.js"></script>
+    <script>
+	  $(function () {
+	      var id = parseInt(GetQueryString('order_id'));
+
+	      var orderid = GetQueryString('orderid');
+	      var money = GetQueryString('money');
+	      $("#orderid").html(orderid);
+	      $("#money").html("¥" + money);
+
+		  //obj. toString() 
+		  //console.log(typeof(orderId));
+		  //查看订单
+		  $('.js-btn1').on('click',function(){
+		  		
+				if(isAndroid){
+					 //alert(orderId);
+					 test.failLookOrder(id);
+				}else{
+					//alert("ios");
+					window.webkit.messageHandlers.failLookOrder.postMessage(id);
+				}
+		  });
+		  //重新支付
+		  $('.js-btn3').on('click',function(){
+		  		
+				if(isAndroid){
+					 //alert("Android");
+					 test.rePay();
+				}else{
+					//alert("ios");
+					window.webkit.messageHandlers.rePay.postMessage(null);
+				}
+		  });
+	  });
+    </script>
+    
+</body>
+</html>

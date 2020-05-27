@@ -1,0 +1,11 @@
+{
+
+    "IS_LOGIN": 1,
+    "ISOWNER": 1,
+    "USERNAME": "kk",
+    "CUSTNAME": "уехЩ",
+    "MOBILE": "13800138000",
+    "CARNO":"12345678",
+    "Times":2
+
+}  

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>搜索</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak>
+  <nav>
+    <form action="#" onsubmit="return false;">
+      <input type="search" value="" v-model="keyword" placeholder="输入查询内容" @keyup.13="show($event)">
+      <i v-if="keyword!=''" @click="clearKeyword()"></i>
+      <span @click="clearCitySearchResultList()">取消</span>
+    </form>
+  </nav>
+  <div class="list-box">
+    <section class="search-list" v-if="citySearchResultList.length">
+      <ul>
+        <li v-for="(item,index) in citySearchResultList"  v-if="item.id">
+          <a :href="'city-topic.html?tag='+item.id+'&contentType=目的地&contentTitle='+item.name">
+              <img v-lazy="item.image?baseUrl+item.image:'../images/e.gif'" />
+              <h5>{{item.name}}</h5>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="no-data" v-if="!citySearchResultList.length && !resou">暂无搜索结果</section>
+  <!--加载中-->
+  <loading v-if="isWaiting" :status="2"></loading>
+  <!--执行toast弹出层-->
+  <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

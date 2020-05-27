@@ -1,0 +1,345 @@
+$radiuswidth: 0.04rem; // 圆角
+$orangecolor_ac: #f09030;
+// 日常-内容色值
+$cont_arr: #1a1919 #4b4b4b #807e7d #b3b0af #ccc9c8 #ffffff #ff7733 #ff9933 #5f98fa;
+// 日常-载体色值
+$bg_line_arr: #cccbca #e6e6e6 #f0eeed #faf8f7 #ffffff;
+// 日常-辅助色值
+$link_tip_arr: #ff8c1a #38cfd9 #ffc324 #43baff #13c083 #ff454e;
+
+// 大众点评色值
+$aDZColor: #FF6633 #ff8c1a #ffbb00 #43baff #13c083 #ff454e #38cfd9 #5f98fa;
+
+@function px2rem($value){
+	@return ($value/100) * 1rem;
+}
+@mixin bg($img,$x:100%,$y:100%){
+	background-repeat: no-repeat;
+	background-image: url('../images/#{$img}');
+	background-size: $x $y;
+}
+@mixin bg2($img,$x:100%,$y:100%){
+	background-repeat: no-repeat;
+	background-image: url('../images/#{$img}@2x.png');
+	background-image: -webkit-image-set(
+		url('../images/#{$img}@2x.png') 2x,
+		url('../images/#{$img}@3x.png') 3x);
+	background-size: $x $y;
+}
+@mixin common-fixed($top:0){
+	position: fixed;
+	top: $top;
+	left: 50%;
+	width: 7.5rem;
+	margin-left: -3.75rem;
+}
+@mixin eps{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+// 1px 的解决方案
+$ui_value: 1px solid nth($bg_line_arr,2);
+
+%ui-border{
+	border: $ui_value;
+}
+%ui-border-n{
+	border: 0;
+}
+%ui-border-t{
+	border-top: $ui_value;
+}
+%ui-border-r{
+	border-right: $ui_value;
+}
+%ui-border-b{
+	border-bottom: $ui_value;
+}
+%ui-border-l{
+	border-left: $ui_value;
+}
+%ui-border-tb{
+	border-top: $ui_value;
+	border-bottom: $ui_value;
+}
+%ui-border-radius{
+	border: $ui_value;
+	border-radius: $radiuswidth;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2){
+	%ui-border,%ui-border-t,%ui-border-r,%ui-border-b,%ui-border-l,%ui-border-tb,%ui-border-radius{
+		border: 0;
+	}
+	%ui-border{
+		position: relative;
+		&:after{
+			z-index: 10;
+			content: "";
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-image: linear-gradient(to top, transparent 0%, transparent 50%, nth($bg_line_arr,2) 100%),linear-gradient(to right, transparent 0%, transparent 50%, nth($bg_line_arr,2) 100%),linear-gradient(to bottom, transparent 0%, transparent 50%, nth($bg_line_arr,2) 100%),linear-gradient(to left, transparent 0%, transparent 50%, nth($bg_line_arr,2) 100%);
+			background-size: 100% 1px,1px 100%,100% 1px,1px 100%;
+			background-repeat: no-repeat;
+			background-position: top,right,bottom,left;
+			padding: 1px;
+			box-sizing: border-box;
+			pointer-events: none;
+		}
+	}
+	%ui-border-radius{
+		position: relative;
+		&:before{
+			content: "";
+			width: 200%;
+			height: 200%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border: $ui_value;
+			transform: scale(0.5);
+			transform-origin: 0 0;
+			padding: 1px;
+			box-sizing: border-box;
+			border-radius: $radiuswidth*2;
+			pointer-events: none;
+		}
+	}
+	%ui-border-t{
+		background-repeat: repeat-x;
+		background-position: left top;
+		background-image: linear-gradient(to top, transparent 0%, transparent 50%, nth($bg_line_arr,2) 100%);
+		background-size: 100% 1px;
+	}
+	%ui-border-r{
+		background-repeat: repeat-y;
+		background-position: right top;
+		background-image: linear-gradient(to right, transparent 0%, transparent 50%, nth($bg_line_arr,2) 100%);
+		background-size: 1px 100%;
+	}
+	%ui-border-b{
+		background-repeat: repeat-x;
+		background-position: left bottom;
+		background-image: linear-gradient(to bottom, transparent 0%, transparent 50%, nth($bg_line_arr,2) 100%);
+		background-size: 100% 1px;
+	}
+	%ui-border-l{
+		background-repeat: repeat-y;
+		background-position: left top;
+		background-image: linear-gradient(to left, transparent 0%, transparent 50%, nth($bg_line_arr,2) 100%);
+		background-size: 1px 100%;
+	}
+	%ui-border-tb{
+		background-image: linear-gradient(to top, transparent 0%, transparent 50%, nth($bg_line_arr,2) 100%),linear-gradient(to bottom, transparent 0%, transparent 50%, nth($bg_line_arr,2) 100%);
+		background-position: top,bottom;
+		background-repeat: repeat-x;
+		background-size: 100% 1px;
+	}
+	%ui-border-n{
+		background: none;
+	}
+}
+@media screen and (-webkit-min-device-pixel-ratio: 3){
+	%ui-border,%ui-border-t,%ui-border-r,%ui-border-b,%ui-border-l,%ui-border-tb,%ui-border-radius{
+		border: 0;
+	}
+	%ui-border{
+		position: relative;
+		&:after{
+			z-index: 10;
+			content: "";
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-image: linear-gradient(to top, transparent 0%, transparent 66.66%, nth($bg_line_arr,2) 100%),linear-gradient(to right, transparent 0%, transparent 66.66%, nth($bg_line_arr,2) 100%),linear-gradient(to bottom, transparent 0%, transparent 66.66%, nth($bg_line_arr,2) 100%),linear-gradient(to left, transparent 0%, transparent 66.66%, nth($bg_line_arr,2) 100%);
+			background-size: 100% 1px,1px 100%,100% 1px,1px 100%;
+			background-repeat: no-repeat;
+			background-position: top,right,bottom,left;
+			padding: 1px;
+			box-sizing: border-box;
+			pointer-events: none;
+		}
+	}
+	%ui-border-radius{
+		position: relative;
+		&:before{
+			content: "";
+			width: 300%;
+			height: 300%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border: $ui_value;
+			transform: scale(0.333333);
+			transform-origin: 0 0;
+			padding: 1px;
+			box-sizing: border-box;
+			border-radius: $radiuswidth*3;
+			pointer-events: none;
+		}
+	}
+	%ui-border-t{
+		background-repeat: repeat-x;
+		background-position: left top;
+		background-image: linear-gradient(to top, transparent 0%, transparent 66.66%, nth($bg_line_arr,2) 100%);
+		background-size: 100% 1px;
+	}
+	%ui-border-r{
+		background-repeat: repeat-y;
+		background-position: right top;
+		background-image: linear-gradient(to right, transparent 0%, transparent 66.66%, nth($bg_line_arr,2) 100%);
+		background-size: 1px 100%;
+	}
+	%ui-border-b{
+		background-repeat: repeat-x;
+		background-position: left bottom;
+		background-image: linear-gradient(to bottom, transparent 0%, transparent 66.66%, nth($bg_line_arr,2) 100%);
+		background-size: 100% 1px;
+	}
+	%ui-border-l{
+		background-repeat: repeat-y;
+		background-position: left top;
+		background-image: linear-gradient(to left, transparent 0%, transparent 66.66%, nth($bg_line_arr,2) 100%);
+		background-size: 1px 100%;
+	}
+	%ui-border-tb{
+		background-image: linear-gradient(to top, transparent 0%, transparent 66.66%, nth($bg_line_arr,2) 100%),linear-gradient(to bottom, transparent 0%, transparent 66.66%, nth($bg_line_arr,2) 100%);
+		background-position: top,bottom;
+		background-repeat: repeat-x;
+		background-size: 100% 1px;
+	}
+	%ui-border-n{
+		background: none;
+	}
+}
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
+
+.flex{
+	display: flex;
+	box-align: center;
+	align-items: center;
+	.flex-child{
+		display: block;
+		flex: 1;
+	} 
+}
+
+.flex2{
+	@extend .flex;
+	box-orient: vertical;
+	flex-direction: column;
+}
+
+
+[v-cloak]{display:none;}
+
+
+//无数据展示
+.no-data{
+	padding-top: 5rem;
+	@include bg2('logo', 1.34rem, 1.34rem);
+	background-position: center 4rem;
+	line-height: 2rem;
+	font-size: 0.32rem;
+	color: #807E7D;
+	text-align: center;
+
+	a{
+		display: inline-block;
+		line-height: 1rem;
+		color: #f72f42;
+		position: relative;
+		top: -1.3rem;
+		min-width: 2.5rem;
+	}
+}
+
+//特殊轮播
+
+.swiper-pagination-bullet{
+	width: 12px !important;
+	height: 4px !important;
+	border:1px solid #fff !important;
+	border-radius: 3px !important;
+	background: transparent !important;
+	opacity: 0.9 !important;
+	margin: 0 .05rem !important;
+	transition: background .3s, width .3s;
+}
+.swiper-pagination-bullet-active{
+	background: #fff !important;
+}
+
+
+//下拉加载
+.load_error{
+	z-index: 100;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -2.23rem;
+	margin-top: -1.1rem;
+	width: 4.45rem;
+	height: 2.2rem;
+	padding: 0.45rem;
+	border-radius: $radiuswidth;
+	box-sizing: border-box;
+	background-color: rgba(130,130,130,.9);
+	text-align: center;
+	> i{
+		display: block;
+		width: 0.75rem;
+		height: 0.75rem;
+		margin: 0 auto 0.32rem;
+		@include bg('warn.png');
+	}
+	> p{
+		height: 0.4rem;
+		line-height: 0.4rem;
+		font-size: 0.24rem;
+		color: #fff;
+	}
+}
+
+.updata_loading{
+	height: 0.74rem;
+	line-height: 0.74rem;
+	text-align: center;
+	color: nth($cont_arr,1);
+	font-size: 0.28rem;
+
+	> i{
+		display: inline-block;
+		vertical-align: middle;
+		width: 0.28rem;
+		height: 0.28rem;
+		margin-top: -2px;
+		margin-right: 0.1rem;
+		border-radius: 50%;
+		border: 2px solid #666;
+		border-bottom-color: transparent;
+		animation: rotate 0.75s linear infinite;
+	}
+}
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

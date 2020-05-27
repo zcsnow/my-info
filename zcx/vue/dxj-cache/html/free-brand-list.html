@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<title>品牌列表</title>
+<script src="/libs/airpana.js"></script>
+</head>
+
+<body>
+    <div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+        <header-nav v-if="showNav" :title="title"></header-nav>
+        <div class="brand-list">
+            <ul>
+                <li v-for="(item,index) in mallBrandListData"  @click="eventLog({eventId:'Duty-freeStore_CommodityList_brand_'+ categoryId + '_' + item.id +'_click',eventType:'1'})">
+                    <a>
+                        <div>
+                            <img @click='goFreeGoodsList($event)' v-lazy="item.image?baseUrl+item.image:'../images/e.gif'"  :data-category-id="categoryId" :data-category-name="categoryName" :data-brand-id="item.id" :data-brand-name="item.title" />
+                        </div>
+                        <span  @click='goFreeGoodsList($event)' :data-category-id="categoryId" :data-category-name="categoryName" :data-brand-id="item.id" :data-brand-name="item.title">{{item.title}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--加载中-->
+        <!-- <loading v-if="isWaiting" :status="2"></loading> -->
+        <!--执行toast弹出层-->
+        <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+    </div>
+</body>
+
+</html>

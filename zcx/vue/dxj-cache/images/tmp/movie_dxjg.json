@@ -1,0 +1,14 @@
+{
+    "endAdList": [],
+    "movieId": "[B@67eg3914",
+    "startAdList": [
+        {
+            "adurl": "/images/tmp/video/dxjg2.mp4",
+            "isShow": true,
+            "seq": 1,
+            "time": 15,
+            "url": ""
+        }
+    ],
+    "stopAdList": []
+}

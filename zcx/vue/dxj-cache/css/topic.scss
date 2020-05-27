@@ -1,0 +1,33 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+
+img {
+	display: block;
+	width: 100%;
+}
+.ad_header {
+	position: fixed;
+}
+.ad_header h1{
+	width: 7.5rem;
+	margin: 0 auto;
+	font-size: 0.36rem;
+	font-weight:normal;
+	height: 0.91rem;
+	line-height: 0.91rem;
+	color: #1A1919;
+	position:relative;
+	text-align:center;
+}
+.ad_header span{
+	content:"";
+	display: block;
+	height:.98rem;
+	width:.98rem;
+	@include bg2('Slice', 0.53rem, 0.53rem);
+    background-position: center;
+	position:absolute;
+	left:0;
+	top:0;
+}

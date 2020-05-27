@@ -1,0 +1,160 @@
+@import 'base';
+body{font-family: PingFangSC-Regular;}
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+
+
+
+.movie-box{
+    .img-bg{
+        padding: 0.6rem 0;
+        box-sizing: border-box;
+        background: #2A2A2A;
+        .movie-img{
+            width: 3.4rem;
+            margin: 0 auto;
+            overflow: hidden;
+            img{
+                display: block;
+                min-height: 4.5rem;
+                @include bg2('Bitmap', 1.1rem, 1.1rem);
+                background-position: center;
+                background-color: #F5F5F5;
+            }
+        }
+    }
+    .movie-info{
+        padding: 0.44rem;
+        h3{
+            font-family: PingFangSC-Medium;
+            font-size: .44rem;
+            color: #1A1919;
+            letter-spacing: 0;
+            line-height: .44rem;
+            margin-bottom: 0.24rem;
+        }
+        p{
+            font-size: .28rem;
+            color: #807E7D;
+            letter-spacing: 0;
+            line-height: .3rem;
+            margin-bottom: 0.12rem;
+        }
+        h4{
+            font-size: .28rem;
+            color: #1A1919;
+            letter-spacing: 0;
+            line-height: 0.36rem;
+            font-weight: normal;
+            margin:0.68rem 0 0.24rem;
+        }
+        .movie-desc{
+            font-size: .28rem;
+            color: #1A1919;
+            letter-spacing: 0;
+            line-height: .42rem;
+            position: relative;
+            width:100%;
+            word-break: break-all;
+            text-overflow: ellipsis;
+            display: -webkit-box; 
+             
+            -webkit-box-orient: vertical; // 参考 https://github.com/postcss/autoprefixer/issues/776
+            
+
+            .toggle-btn{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                font-size: .28rem;
+                color: #FF9933;
+                letter-spacing: 0;
+                line-height: .42rem;
+                background: #fff;
+                padding: 0 0.1rem;
+            }
+            &.fold {
+                -webkit-line-clamp: 3;
+                /* height: 1.26rem; */
+                overflow: hidden;  
+                
+            }
+            &.unfold {
+                -webkit-line-clamp: 100;
+                /* height: auto; */
+                overflow: auto;  
+            }
+            
+        }
+        
+        
+    }
+    .view-tip{
+        background: #F5F5F5;
+        border-radius: 0.04rem;
+        padding:0.24rem 0.34rem;
+        box-sizing: border-box;
+        margin: 0.24rem 0.2rem 1.7rem;
+        h4{
+            font-size: .28rem;
+            color: #1A1919;
+            letter-spacing: 0;
+            line-height: 0.36rem;
+            font-weight: normal;
+        }
+        p{
+            font-size: .28rem;
+            color: #1A1919;
+            letter-spacing: 0;
+            line-height: 0.42rem;
+            margin-top: 0.24rem;
+        }
+    }
+    
+}
+
+
+.buy-nav{
+    position: fixed;
+	left: 0;
+	bottom: 0;
+    width: 100%;
+    padding: 0.18rem 0.44rem;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 -2px 3px 1px rgba(0,0,0,0.04);
+    z-index: 9998;
+    .price{
+        width: 1rem;
+        height: 1rem;
+        text-align: center;
+        line-height: 1rem;
+    }
+    .btn{
+        width: 100%;
+        height: 0.8rem;
+        background-color: #F72F42;
+        border-radius: 1rem;
+        color: #fff;
+        font-size: .32rem;
+        text-align: center;
+        line-height: 0.8rem;
+        z-index: 9999;
+        &.disabled{
+            background-color: #ccc;
+        }
+        span{display: inline-block; text-decoration: line-through; margin-right: 10px;}
+    }
+    
+    p{
+        font-size: .28rem;
+        color: #FF9933;
+        letter-spacing: 0;
+        
+        text-align: center;
+        margin-top: 0.12rem;
+        overflow: hidden;
+        &.disabled{
+            color: #ccc;
+        }
+    }
+}

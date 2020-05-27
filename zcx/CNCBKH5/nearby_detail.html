@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <title>周边详情</title>
+    <meta content-type="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link href="css/base.css" rel="stylesheet" />
+    <link href="css/style.css?4" rel="stylesheet" />
+</head>
+<body style="background:#f5f5f5">
+    <div class="container">
+        <header class="header-box">
+            <a href="javascript:history.go(-1);" class="left-icon"><img src="images/back_icon.png"></a>
+            <span>周边详情</span> 
+        </header>
+    	<div class="nearby-detail-box">
+          <img src="images/nearby.jpg" >
+          <ul class="result-list nearby-detail">
+             <!--<li class="nearby-first">
+               <a href="">
+                 <h3 class="maker"><span>老诚一锅(京旺家园店)</span></h3>
+                 <p><img style="width:30%" src="images/start_icon.png" ></p>
+               </a>
+             </li>
+             <li>
+               <a href="">
+                 <p><strong>地址：</strong>朝阳区崔各庄乡京旺家园中街三区(汉江川烤肉、小金星幼儿园、福成中餐厅、稻香村食品店)</p>
+                 <p><strong>电话：</strong>18810136606</p>
+               </a>
+             </li>
+             <li>
+               <a href="">
+                 <p><img style="width:100%" src="images/nearby2.png" ></p>
+               </a>
+             </li>-->
+         </ul>
+         </div>
+
+    </div>
+    
+    <script src="js/jquery1.7.min.js"></script>
+    <script src="js/page/config.js"></script>
+    <script>
+	var bid=GetQueryString('bid'); 
+	nearbyContent(bid);
+	function nearbyContent(newsId){
+		 $.ajax({
+			  type: "GET",
+			  async: false,
+			  url: baseUrl+"Product.aspx?op=GetBusinessInfo&bid="+bid,
+			  dataType: "jsonp", //数据类型为jsonp  
+			  jsonp: "callback", //服务端用于接收callback调用的function名的参数  
+			  jsonpCallback: "info",
+			  success: function (data) {
+				  var data = data.result;
+				  var result = '';
+				  result += '<li class="nearby-first">';
+				  result += '<a href="javascript:;">';
+				  result += '<h3 class="maker"><span>'+data.business_name+'</span></h3>';
+				  result += '<p><img style="width:30%" src="images/start_icon.png" ></p>';
+				  result += '</a>';
+				  result += '</li>';
+				  result += '<li>';
+				  result += '<a href="javascript:;">';
+				  result += '<p><strong>地址：</strong>'+data.address+'</p>';
+				  result += '<p><strong>电话：</strong>'+data.phone+'</p>';
+				  result += '</a>';
+				  result += '</li>';
+				  result += '<li><a href="javascript:;"><p><img style="width:100%" src="images/nearby2.png" ></p></a></li>';
+				  $('.nearby-detail').append(result);
+			  }
+		  });
+	}
+
+    </script>
+    
+</body>
+</html>

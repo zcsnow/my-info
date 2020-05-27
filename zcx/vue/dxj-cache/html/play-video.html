@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>视频</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak>
+  <div class="video-header">
+    <a href="javascript:void(0)" v-if="showNav" @click="goBack" class="goBack">返回</a>
+  </div>
+  <!-- <i v-if="isPlayer" @click="player()"></i> -->
+  <div class="video-box">
+    <video id="player" type="video/mp4" :src="videoUrl"  controls  x-webkit-airplay="allow"></video>
+  </div>
+  <!-- <video v-if="isIos" id="player" type="video/mp4" :src="videoUrl" webkit-playsinline playsinline x5-playsinline x5-video-player-type='h5' x-webkit-airplay="allow" style="width:100%; height:100vh;"></video> -->
+  <!-- <video v-if="!isIos" id="player" autoplay type="video/mp4" :src="videoUrl" controlsList="nodownload" controls webkit-playsinline playsinline   x-webkit-airplay="allow" style=" width:100%; height:100vh;"></video> -->
+  <!--加载中-->
+  <loading v-if="isWaiting" :status="2" :type="1"></loading>
+</div>
+</body>
+</html>

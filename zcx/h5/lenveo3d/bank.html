@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>联想金融行业</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link href="css/base.css" rel="stylesheet" />
+        <link href="css/app.css?1" rel="stylesheet" />
+	</head>
+	<body onLoad="initScripts()">
+        <div class="pro-container bank-bg">
+            <header class="header">
+                <div class="header-logo"><a href="index.html"><img src="img/logo1.png?1"></a></div>
+                <div class="mask-line"><a href="menu.html"><img src="img/back_btn.png"></a></div>
+            </header>
+            <div class="box" id="deviceBox">
+                <div class="ele1"><img src="img/bank_pro_txt1.png" /></div>
+                <div class="ele2"><img src="img/bank_pro_txt2.png" /></div>
+                <div class="ele3"><img src="img/finish_img1.jpg" /></div>
+
+                
+                <div class="pro-box">
+                <div class="ellipse-box">
+                    <div id="Ellipse">
+                     <img class="RotatingIcon layer" data-depth="0.3"  src="img/bank_pro_img1.png" data-href="http://h5.hyh6.com/CompanyProject/lenovo3d/menu.html" data-title="联想昭阳K22笔记本" data-desc="秒速开机，快速遇见下一步。极致便携，极速传输，46瓦时大容量设计，10小时续航（根据使用环境有所不同），搭配防水背光键盘，可有效降低意外溅水导致电脑损坏的概率。">
+                     <img class="RotatingIcon layer" data-depth="0.5"  src="img/bank_pro_img2.png" data-href="" data-title="便携式发卡机" data-desc="发放银行借记卡等，每个卡箱可存放50张">
+                     <img class="RotatingIcon layer" data-depth="0.4"  src="img/bank_pro_img3.png" data-href="" data-title="外派智能终端" data-desc="有S/M/L三种型号可选，集成了二代证双面扫描功能、凭条打印、电子签名、刷卡、接触式/非接触式IC卡、二代证、指纹仪等功能；">
+                     <img class="RotatingIcon layer" data-depth="0.3"  src="img/proImg/bank_pro_img4.png" data-href="" data-title="便携式产品领取机" data-desc="发放U盾或密码管理器，每个卡箱可存放20张密封U盾或密码管理器">
+                     <img class="RotatingIcon layer" data-depth="0.6"  src="img/proImg/bank_pro_img5.png" data-href="" data-title="集成式金融外派箱" data-desc="将外派终端所有设备统一归纳放入拉杆箱内，高度集成、适合外出营销，能让银行高效扩展客户、提升竞争力">
+                    </div>
+                   
+                    
+                </div>
+                	<!--<span class="control-btn stop-btn" onclick="IRJS_StopRotation('Ellipse');">暂停</span>-->
+                    <span class="control-btn prev-btn" onclick="IRJS_StartRotation('Ellipse',1);"><img src="img/prev_btn.png"></span>
+                    <span class="control-btn next-btn" onclick="IRJS_StartRotation('Ellipse',-1);"><img src="img/next_btn.png"></span>
+                    <span class="hand-btn"><img src="img/007.png"></span>
+                </div>
+            </div>
+        </div>
+        <div class="tip" data-txt="互联网金融的发展，引发了传统金融服务的巨大变革：传统网点客户主动上门意愿降低、柜面业务大幅下降，未来的网点需要新的生存之道。<br><br>联想认为，传统银行网点应从“坐商”转为“行商”，让金融服务主动走到客户面前，进而扩展客户、提升竞争力。"><img src="img/bank_pro_tip.png" /></div>
+         <!--大图预览弹层-->
+		<div class="blur-mask"></div>
+         <div class="pop-mask">
+             <div class="pop-box js-pop-box"></div>
+         </div>
+
+        </div>
+        
+        
+        <script src="js/jquery1.7.min.js"></script>
+        <script src="js/jquery.parallax.js"></script>
+        <script src="js/lazysizes.min.js"></script>
+        <script src="js/ImageRotator-min.js"></script>
+        <script src="js/proPage.js"></script>
+        
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+        <script src="/Resources/wxShare.js" type="text/javascript"></script>
+		<script src="/Resources/JSCookie.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        //微信分享
+        var fromcon = getUrlParam("from")
+        if (fromcon != "" && fromcon != null) {
+            window.location.href = "http://h5.hyh6.com/CompanyProject/lenovo3d/"; 
+        }
+        //微信分享
+        var sharLink = window.location.href; 
+        var shareInfo = {
+            title:'联想金融行业',     
+            desc:'联想金融行业',
+            imgUrl:'http://h5.hyh6.com/CompanyProject/lenovo3d/img/share.jpg', 
+        }; 
+        wxShare(sharLink,shareInfo);
+        //百度统计
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?5b0cf71f192cb25508340a5c87eaff37";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+		</script>
+	</body>
+</html>

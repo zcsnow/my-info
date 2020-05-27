@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>汽车频道</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak :style="{'padding-top':showNav?'.91rem':'0'}">
+   <header-nav v-if="showNav" :title="title"></header-nav>
+   <div class="banner" v-if="banner.length">
+      <div class="swiper-container" id="swiper1">
+          <div class="swiper-wrapper" v-if="banner.length>1">
+              <div class="swiper-slide" v-for="(item,index) in banner"  :data-title="item.title" :data-url="item.url" >
+                <a href="javascript:void(0)">
+                    <img :src="item.image?baseUrlAd+item.image:'../images/e.gif'" />
+                </a>
+              </div>
+          </div>
+          <div class="swiper-wrapper" v-else>
+              <div class="swiper-slide" v-for="(item,index) in banner" @click="eventLog({eventId:'car_adbanner_'+ (parseInt(index)+1) +'_click',eventType:'1',eventIsAD:'1',contentType:'焦点图',contentTitle:item.title})" >
+                <a :href="item.url?item.url:'javascript:void(0)'">
+                    <img :src="item.image?baseUrlAd+item.image:'../images/e.gif'" />
+                </a>
+              </div>
+          </div>
+          <div class="swiper-pagination"></div>
+      </div>
+  </div>
+  <div class="car-list" v-if="jsonArray.length">
+    <ul>
+      <li v-for="(item,index) in jsonArray">
+        <a :href="'article.html?tag='+item.tag+'&contentType=汽车&contentTitle='+item.title">
+          <img v-lazy="baseUrl+item.image">
+          <p>{{item.title}}</p>
+        </a>
+      </li>
+    </ul>
+    <p v-show="isLoad" class="updata_loading">
+      <i></i>加载中...
+    </p>
+  </div>
+  <section v-if="!banner.length && !jsonArray.length && !isLoad" class="no-data">网络不给力，请检查后重试哦~<br /><a href="javascript:void(0)" onclick="window.location.reload()">点击刷新</a></section>
+  <!--加载中-->
+  <!-- <loading v-if="isWaiting" :status="2"></loading> -->
+  <!--执行toast弹出层-->
+  <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

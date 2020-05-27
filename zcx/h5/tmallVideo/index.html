@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>令人窒息到瞳孔放大，秋名山车神也想体验一把…</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/index.css?21">
+</head>
+<body id="scene">
+    
+	<div id="container" >
+        <div class="music on"><img src="img/music0.png"></div>
+		<div class="loading_bg" id="loading">
+            <div class="loading_wrp">
+                <!--<div class="house"><img src="img/cat_bg.png"></div>-->
+                <div class="cat-bg-box">
+                	<div class="cat-bg1"><img src="img/earth_bg.png"></div>
+                    <div class="cat-bg cat-bg2"><img src="img/cat_bg1.png"></div>
+                    <div class="cat-bg cat-bg3"><img src="img/cat_bg2.png"></div>
+                    <div class="cat-bg cat-bg4"><img src="img/earth.png"></div>
+                </div>
+                
+                <div class="cat catAnimate"><img src="img/01.png"></div>
+                <div class="cat-eye"><img src="img/09.png"></div>
+                <!--<div class="cat1"><img src="img/gif1.gif"></div>-->
+                <!--<div class="cat3"><img src="img/gif2.gif"></div>
+                <div class="cat2"><img src="img/cat1.png"></div>-->
+                
+            </div>
+            <div class="eyeshidden" id="eyeshidden"><img src="img/eyes.png"></div>
+            <div class="eyes" id="glass"><img src="img/eyes.png"></div>
+            <div class="tip-txt"><img src="img/tip.png"></div>
+            <div id="loading_text">0%</div>
+        </div>
+        
+        
+         <div id="page2" class="page" >
+           <!--<div class="play-btn-box">
+              <span class="play-btn handTip">点击开始</span>
+           </div>-->
+           <div class="video-box layer"  data-depth="1">
+              <video id="movie" class="movieControl" preload="auto" x-webkit-airplay playsinline webkit-playsinline x5-video-player-type="h5" x5-video-player-fullscreen="false">
+              <source src="mp3/H5-6.mp4" ></source>
+              </video>
+           </div>
+        </div> 
+		<div class="tip-rotate"><img src="img/rotate_tip.png"></div>
+        
+        <div id="page3" class="page">
+        	<!----><img src="img/result3.jpg">
+            <div class="btn-box">
+                <div class="btn js-restart"><img src="img/restart_btn.png"></div>
+                <div class="btn js-share-btn"><img src="img/share_btn.png"></div>
+             </div>
+        </div>
+
+        
+        <div class="js-share-pop" style="position: fixed; top: 0px; height: 100%; width: 100%; background:rgba(0,0,0,.7); z-index: 9999; display: none;"><img src="img/share_img.png?1"></div>
+        
+	</div>
+    
+    
+
+<script src="js/jquery-2.1.1.js" ></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/jquery.parallax.js" ></script>
+<script  src="js/main.js?2" ></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+<script src="/Resources/wxShareCount.js?1" type="text/javascript"></script>
+<script src="/Resources/JSCookie.js" type="text/javascript"></script>
+<script type="text/javascript">
+//微信分享
+var sharLink = window.location.href; 
+var shareInfo = {
+	title:'令人窒息到瞳孔放大，秋名山车神也想体验一把…', 
+	linetitle:'令人窒息到瞳孔放大，秋名山车神也想体验一把…',     
+	desc:'奇妙到你可能怀疑自己的眼睛是假的…',
+	ItemKey:'tianmaovideo',
+	imgUrl:'http://h5.hyh6.com/CompanyProject/moveVideo/img/fenxiang.jpg', 
+}; 
+wxShare(sharLink,shareInfo);
+//百度统计
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5b0cf71f192cb25508340a5c87eaff37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>

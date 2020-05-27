@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <title>9.20 他为你转身 </title>
+    <meta content-type="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link href="css/base.css?0" rel="stylesheet" />
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link href="css/style.css?1123" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <audio src="images/music.mp3" id="media" loop preload="auto"></audio>
+        
+        <div class="share-page">
+            <div class="avtar-box">
+            	<div class="avtar"><img src="images/avatar.png"></div>
+            </div>
+            <p class="result-p"><img src="images/woman-text1.png"></p>
+            <!--<p class="p2"><a href="index.html"><img src="images/btn-img2.png"></a></p>-->
+            <p class="p2 js-share-btn"><img src="images/btn-img1.png"></p>
+            <p class="p3 info-btn"><img src="images/btn-img3.png"></p>
+            <p class="p4"><img src="images/result-img1.png"></p>
+            <!--<p class="p5"><img src="images/result-img2.png"></p>-->
+            
+            
+        </div>
+        
+        <div class="info-page">
+            <p class="p1"><img src="images/result-img3.png"></p>
+            <p class="p2"><img src="images/result-img1.png"></p>
+            <p class="p3"><img src="images/result-img2.png"></p>
+            <p class="p4"><img src="images/txt1.png"></p>
+            <p class="pop-btn">查看奖品</p>
+            <!--<p class="p6"><img src="images/ewm.png"></p>-->
+            <p class="p7"><a href="index.html"><img src="images/btn-img4.png"></a></p>
+        </div>
+        
+        <div class="pop-page">
+        	<span class="js-close-btn"><img src="images/close.png"></span>
+            <p class="p1"><img src="images/win-text.png"></p>
+            <p class="p2"><img src="images/ewm.png"></p>
+            <p class="p3"><a href="index.html"><img src="images/btn-img4.png"></a></p>
+            
+        </div>
+       
+        <!--分享弹层-->
+        <div class="js-share-pop" style="position: fixed; background: rgba(0, 0, 0, 0.7);top: 0px; height: 100%; width: 100%; z-index: 9999; display: none">
+            <img src="images/share-img.png">
+        </div>
+       
+    </div>
+    <script src="js/jquery1.7.min.js"></script>
+    <script>
+		$("#media")[0].play();
+    	$('.info-btn').on('click',function(){
+			$('.share-page').hide();
+			$('.info-page').show();
+		});
+		$('.pop-btn').on('click',function(){
+			$('.info-page').hide();
+			$('.pop-page').show();
+		});
+		$('.js-close-btn').on('click',function(){
+			$('.info-page').show();
+			$('.pop-page').hide();
+		});
+		
+		$('.js-share-btn').on('click', function () {
+			$('.js-share-pop').show();
+		});
+		$('.js-share-pop').on('click', function () {
+			$('.js-share-pop').hide();
+		});
+		
+    </script>
+    
+</body>
+</html>

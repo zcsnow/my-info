@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="yes" name="apple-touch-fullscreen">
+<meta content="telephone=no,email=no" name="format-detection">
+<script src="js/flexible.js"></script>
+<title>客服帮助</title>
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/public.css" rel="stylesheet" />
+    <link href="css/page/detail_services.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container" id="container">
+    <header>
+        <span class="go-back"></span>
+        客服帮助
+    </header>
+
+    <!-- main  -->
+	  <div class="main">
+
+        <div class="top_no"></div>
+        <div class="qr_code clr">
+            <img src="images/qr_code@2x.png" class="qr_img">
+            <p class="center_no"><i></i></p>
+            <div>
+                <h4>微信扫一扫</h4>
+                <p>
+                    1.关注公众号<br />
+                    2.回复：5678<br />
+                    3.识别二维码进项目群
+                </p>
+                <img src="images/zhiwen@2x.png">
+                <p>长按识别图中二维码</p>
+            </div>
+        </div>
+
+        <div class="qa_list">
+            <div class="qa_con maxH">
+            <dl>
+                <dt>
+                    Q
+                </dt>
+                <dd>
+                    这个项目好在哪里？这个项目好在哪里？这个项目好在哪里？这个项目好在哪里？这个项目好在哪里？这个项目好在哪里？这个项目好在哪里？
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    A
+                </dt>
+                <dd>
+                    这个项目就是很好啊，这个项目就是很好啊，这个项目就是很好啊。
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    Q
+                </dt>
+                <dd>
+                    这个项目好在哪里？这个项目好在哪里？这个项目好在哪里？这个项目好在哪里？这个项目好在哪里？这个项目好在哪里？这个项目好在哪里？
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    A
+                </dt>
+                <dd>
+                    这个项目就是很好啊，这个项目就是很好啊，这个项目就是很好啊。
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    Q
+                </dt>
+                <dd>
+                    这个项目好在哪里？这个项目好在哪里？这个项目好在哪里？这个项目好在哪里？这个项目好在哪里？这个项目好在哪里？这个项目好在哪里？
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    A
+                </dt>
+                <dd>
+                    这个项目就是很好啊，这个项目就是很好啊，这个项目就是很好啊。
+                </dd>
+            </dl>
+            </div>
+            <div class="qa_more_btn">更多<i><img src="images/down_icon_more.png"></i></div>
+        </div>
+
+        <!-- footer -->
+        <footer>还有疑问，请联系客服 <a href="tel:4008-966-966">4008-966-966</a></footer>
+    </div>
+</div>
+<script src="js/jquery1.7.min.js"></script>
+<script src="js/plugin/fastclick.min.js"></script>
+<script>
+    $(function(){
+
+        $(".qa_more_btn").on('click',function(){
+            if($(this).hasClass('cur')){
+                $(this).removeClass('cur');
+                $(this).parent(".qa_list").find(".qa_con").addClass("maxH");
+                $(this).html('更多<i><img src="images/down_icon_more.png"></i>');
+            }else{
+                $(this).addClass('cur');
+                $(this).parent(".qa_list").find(".qa_con").removeClass("maxH");
+                $(this).html('收起<i><img src="images/down_icon_more.png"></i>');
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script src="js/mobile_redirect.js"></script>
+<script src="js/jquery-1.7.min.js"></script>
+<script src="js/GameStates.js"></script>
+<script src="js/TitleScreen.js"></script>
+<script src="js/SplashScreen.js"></script>
+<script src="js/LevelScreen.js"></script>
+<script src="js/LevelWinScreen.js"></script>
+<script src="js/HelpScreen.js"></script>
+<script src="js/RecordScreen.js"></script>
+<script src="js/Tile.js"></script>
+<script src="js/FlipIt.js"></script>
+<style>
+body {margin: 0;padding: 0;}
+canvas {position: absolute;}
+#gameHolder {background-color: #333;margin: 60px auto;padding: 0;width: 640px;}
+div#scoreForm {display: none;width: 640px;height: 480px;background-image: url("assets/bg.png");}
+div#scoreForm input {font-size: 30px;color: #333;text-align: center;width: 300px;position: absolute;margin: 160px auto auto 180px;}
+img#submitBtn {margin: 240px auto auto 240px;}
+img#playBtn {margin: 10px auto auto 240px;}
+</style>
+
+<!----><style>
+@-moz-keyframes nodeInserted {
+from {opacity:0.99;}
+to {opacity: 1;}
+}
+@-webkit-keyframes nodeInserted {
+from {opacity:0.99;}
+to {opacity: 1;}
+}
+@-o-keyframes nodeInserted {
+from {opacity:0.99;}
+to {opacity: 1;}
+}
+@keyframes nodeInserted {
+from {opacity:0.99;}
+to {opacity: 1;}
+}
+embed, object {
+	animation-duration: .001s;
+	-ms-animation-duration: .001s;
+	-moz-animation-duration: .001s;
+	-webkit-animation-duration: .001s;
+	-o-animation-duration: .001s;
+	animation-name: nodeInserted;
+	-ms-animation-name: nodeInserted;
+	-moz-animation-name: nodeInserted;
+	-webkit-animation-name: nodeInserted;
+	-o-animation-name: nodeInserted;
+}
+</style>
+</head>
+
+<body onload="getData()" style="width:100%;background-color: #333;margin: 0;padding: 0">
+<div id="gameHolder">
+  <canvas id="canvasBG" width="640" height="480" style="border: solid 3px white"></canvas>
+  <canvas id="canvas" width="640" height="480"></canvas>
+  <div id="scoreForm" style="position: absolute;border: solid 3px white">
+    <input id="scoreTxt" type="text">
+    <img id="submitBtn" src="assets/submit.png" onmouseover="this.src='assets/submit_over.png'" onmouseout="this.src='assets/submit.png'"> 
+    <img id="playBtn" src="assets/continueBtn.png" onmouseover="this.src='assets/continueBtn_over.png'" onmouseout="this.src='assets/continueBtn.png'"> 
+  </div>
+</div>
+<div id="image_preload" style="display:none"> <img id="bg" src="assets/bg.png"> <img id="gear" src="assets/gear.png"> </div>
+</body>
+</html>

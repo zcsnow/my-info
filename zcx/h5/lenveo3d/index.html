@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>联想商用</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link href="css/base.css" rel="stylesheet" />
+        <link href="css/animate.min.css" rel="stylesheet" />
+        <link href="css/app.css?1" rel="stylesheet" />
+	</head>
+	<body>
+        <div class="loading-box">
+            <div class="loading-img"><img src="img/Interstellar.gif" /></div>
+            <div class="percent">0%</div>
+        </div>
+		<div class="video-box">
+            <video id="video" preload="auto" playsinline webkit-playsinline="true" x5-video-player-type="h5" x-video-player-fullscreen="true" x-webkit-airplay="true">
+                <source src="img/video.mp4?3" />
+            </video>
+            <!--<div class="tap">
+                <img class="star1" src="img/001.png" />
+                <img class="star2" src="img/001.png" />
+                <img class="star3" src="img/002.png" />
+                <p class=tip-text>按住继续播放</p>
+            </div>-->
+            <div class="skip"><img src="img/skip_btn.png"></div>
+            
+        </div>
+        <div class="start-btn play-btn playAnimate"></div>
+        <p class=tip-text>按住继续播放</p>
+        <!--<p class=tip-text-btn>点击开始播放</p>-->
+        
+        <div class="last-page finish-animate">
+            <div class="finish-box ">
+                <div class="ele1"><img src="img/finish_img1.png" /></div>
+                <div class="ele2"><img src="img/finish_img2.png" /></div>
+                <div class="ele3"><img src="img/finish_img3.png" /></div>
+                <div class="ele41"><img src="img/finish_img4_1.png" /></div>
+                <div class="ele42"><img src="img/finish_img4_2.png" /></div>
+                <div class="ele43"><img src="img/finish_img4_3.png" /></div>
+                <div class="ele44"><img src="img/finish_img4_4.png" /></div>
+                <!--<div class="ele4"><img src="img/finish_img4.png" /></div>-->
+                <div class="ele5"><img src="img/finish_img5.png" /></div>
+                <!--<img src="img/finish_printing.jpg" />-->
+                <div class="logo"><img src="img/logo1.png" /></div>
+            </div>
+            <ul class="guide-list">
+            	<li class="list-li1"><a href="bank.html"><img src="img/guide_img1.jpg" /><span><img src="img/more_btn.png" /></span></a></li>
+                <li class="list-li2"><a href="edu.html"><img src="img/guide_img2.jpg" /><span><img src="img/more_btn.png" /></span></a></li>
+                <li class="list-li3"><a href="energy.html"><img src="img/guide_img3.jpg" /><span><img src="img/more_btn.png" /></span></a></li>
+            </ul>
+        </div>
+
+        <script src="js/jquery1.7.min.js"></script>
+        <script src="js/lazysizes.min.js"></script>
+		<script src="js/main.js"></script>
+        
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+        <script src="/Resources/wxShare.js" type="text/javascript"></script>
+		<script src="/Resources/JSCookie.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        
+        //微信分享
+        var sharLink = window.location.href; 
+        var shareInfo = {
+            title:'联想商用',     
+            desc:'联想商用',
+            imgUrl:'http://h5.hyh6.com/CompanyProject/lenovo3d/img/share.jpg', 
+        }; 
+        wxShare(sharLink,shareInfo);
+        //百度统计
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?5b0cf71f192cb25508340a5c87eaff37";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+		
+	</body>
+</html>

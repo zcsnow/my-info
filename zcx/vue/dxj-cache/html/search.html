@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>搜索</title>
+  <script src="/libs/airpana.js"></script>
+</head>
+<body>
+<div id="main" v-cloak>
+  <nav>
+    <form action="#" onsubmit="return false;">
+      <input type="search" value="" v-model="keyword" placeholder="输入查询内容" @keyup.13="show($event)">
+      <i v-if="keyword!=''" @click="clearKeyword()"></i>
+      <span @click="clearJsonArray()">取消</span>
+    </form>
+  </nav>
+  <div class="list-box">
+    <section class="search-list" v-if="jsonArray.length">
+      <ul>
+        <li v-for="(item,index) in jsonArray">
+          <a v-html="item.title" :href="item.type=='video'?item.video:'article.html?tag=' + item.tag">{{item.title}}</a>
+        </li>
+      </ul>
+    </section>
+    <section class="ad-list" v-if="adTextArray.length">
+      <h3 class="resou"></h3>
+      <ul>
+        <li v-for="(item,index) in adTextArray">
+          <a v-html="item.title" :href="item.url">{{item.title}}</a>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <div class="list-box border-top" v-if="adImgArray.length">
+    <div class="ad-pic-list clr">
+      <a :href="item.url" v-for="(item,index) in adImgArray">
+        <img v-lazy="'/app/dxj'+item.image">
+        <p>{{item.title}}</p>
+      </a>
+    </div>
+  </div>
+  <section class="no-data" v-if="!jsonArray.length && !resou">暂无搜索结果</section>
+  <!--加载中-->
+  <loading v-if="isWaiting" :status="2"></loading>
+  <!--执行toast弹出层-->
+  <pop-layer v-if="isShow || show_msg" :is-show="isShow" :show_msg="show_msg"></pop-layer>
+</div>
+</body>
+</html>

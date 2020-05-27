@@ -1,0 +1,39 @@
+@import 'base';
+
+.clr:after{content:"";display:block;height:0;clear:both;visibility:hidden;zoom:1}
+
+body{
+	font-family: PingFangSC-Regular;
+	font-size: .28rem;
+	margin:0 auto;
+	background-color: #fff;
+
+
+	article{
+		padding: 0.44rem;
+		color: #666666;
+		line-height: 0.36rem;
+		color: #1A1919;
+		word-wrap:break-word;
+		span{
+			display: inline;
+		}
+		h1,h2,h3,h4,h5,h6{
+			font-size: 0.32rem;
+			color: #373737;
+			line-height: 0.36rem;
+			margin-bottom: 0.17rem;
+		}
+		p{
+			margin-bottom: 0.44rem;
+			line-height: 0.36rem;
+			color: #666666;
+		}
+		i, em{
+			font-style: italic;
+		}
+		b, strong{
+			font-weight: bold;
+		}
+	}
+}

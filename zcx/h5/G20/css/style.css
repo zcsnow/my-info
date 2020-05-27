@@ -1,0 +1,72 @@
+body, html{ width:100%;height: 100%;}
+body{background:url(../images/bg.jpg) #f2f2f2 no-repeat top center; background-size:100% auto;position: relative;}
+.container {max-width: 640px; margin: 0 auto;height: 100%; position:relative; }
+
+
+/*加载层*/
+.loading_bg{position:absolute; background:url(../images/bg.jpg) #f2f2f2 no-repeat top center; background-size:100% auto; width:100%; height:100%; overflow:hidden; left:0; top:0; -webkit-transform-style:preserve-3d; z-index:999}
+.loading_wrp{position:absolute; width:100%; height:90px; overflow:hidden; left:0; top:40%; margin-top:-45px;display:none;  }
+.loading-text-img{ width:160px; margin:5px auto 0;}
+.loading_wrp #loading_text{font-weight:normal; font-size:19px; margin-top:11px;  color:#333; text-align:center;}
+.loading-img{width:180px; margin:0 auto; display:block;}
+.loading{position:relative;width: 160px;height: 90px;margin:0 auto;}
+
+.swiper-container {height: 100%;}  
+.swiper-container.slider{height:100%; }
+.swiper-container.slider .swiper-slide{ box-sizing:border-box;height:100%; overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-transform-style: preserve-3d;transform-style: preserve-3d;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+
+.page{ padding-top:6%; padding-left:6%;}
+.page .txt1{width:51%;}
+.page .txt2{width:51%;}
+.page .txt3{width:51%;}
+.page .txt4{width:51%;}
+.page .txt5{width:51%;}
+.page1 .p1{width:66%; position:absolute; right:10%; bottom:0;z-index:-1}
+.page2 .p1{width:75%; position:absolute; right:0; bottom:0}
+.page3 .p1{width:100%; position:absolute; left:0; bottom:0}
+.page4 .p1{width:100%; position:absolute; left:0; bottom:0}
+.page4 .look-btn{width:90%; position:absolute; left:5%; bottom:10%}
+.page5{ display:none;}
+.page5 .p1{ position:relative;}
+.page5 .p1 .flower{width:38%; position:absolute; right:2px; bottom:4px}
+.page5 .p2{width:74%; margin: 4.5% auto 0}
+.page5 .p3{width:74%; margin: 0 auto}
+.page5 .p4{width:90%; margin: 4.5% auto}
+.page5 .select-sex{ width:200px; margin:3% auto 0;}
+.page5 .select-sex em { display:inline-block; color: #555; }
+.page5 .select-sex span{ display: inline-block; width: 30px; line-height: 21px; font-size: 14px; text-align: right; background-image: url(../images/radio.png); background-repeat: no-repeat; background-position: 20px -5px; background-size: 21px; padding: 5px 0 5px 25px; }
+.page5 .select-sex .cur { background-position: 20px -45px;}
+
+
+@-webkit-keyframes upDownMove{
+	0%{-webkit-transform:translateY(0); transform:translateY(0)}
+	50%{-webkit-transform:translateY(10px);transform:translateY(10px)}
+	100%{-webkit-transform:translateY(0px);transform:translateY(0px)}
+}
+#array{position:absolute; width:24px; text-align:center;bottom:5%; left:48%;z-index:99;-webkit-animation:upDownMove 3s infinite ease-in-out 2s;animation:upDownMove 3s infinite ease-in-out 2s;}
+
+
+.share-page{display:block; padding-top:16%;}
+.share-page .avtar-box{ width:36%; border:1px solid #ababab; border-radius:50%; padding:6px; margin: 0 auto;}
+.share-page .avtar-box .avtar{border-radius:50%; overflow:hidden;}
+.share-page .result-p{ width:76%; margin: 5% auto 0;}
+.share-page .p2{width:90%; margin: 6% auto 0}
+.share-page .p3{width:90%; margin: 3% auto 0}
+.share-page .p4{width:83%; margin: 6% auto 0}
+.share-page .p5{width:70%; margin: 2% auto 0}
+
+.info-page{display:none;padding-top: 20%;}
+.info-page .p1{width:68%; margin: 0 auto}
+.info-page .p2{width:68%;margin: 2% auto 0;}
+.info-page .p3{width:66%;margin: 2% auto 0;}
+.info-page .p4{width: 76%;margin: 6% auto 0;}
+.info-page .p5{width:68%; margin: 0 auto}
+.info-page .p6{width:27%; margin: 1.5% auto 0}
+.info-page .p7{width:90%;margin: 5% auto 0;}
+
+.pop-btn{width:30%; margin: 3% auto 0; text-align:center; color:#fff; background:#e4142a; line-height:30px;}
+.pop-page{display:none;position:fixed;padding-top: 2%;left:10%;right:10%;top:10%;bottom: 15%;border-radius:5px;box-shadow:0 0 5px rgba(0,0,0,.5);z-index:999;background:url(../images/pop-bg.png) no-repeat #fff bottom center;background-size:100% auto;}
+.pop-page .p1{ width:100%;margin: 0 auto;}
+.pop-page .p2{width: 40%;margin: 1% auto 0;}
+.pop-page .p3{width:90%;margin: 7% auto 0;}
+.js-close-btn{ display:block; position:absolute; right:5px; top:5px; width:30px; padding:5px;}

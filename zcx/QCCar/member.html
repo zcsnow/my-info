@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+	<head>
+	<title>启辰智跑团</title>
+	<meta content-type="text/html" charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<link href="css/base.css?2" rel="stylesheet" />
+    <link href="font_css/font-awesome.min.css" rel="stylesheet" />
+	<link href="css/app.css?1" rel="stylesheet" />
+	</head>
+	<body class="bg2">
+    <div class="container">
+      <!--头部-->
+      <header class="header">
+         <div class="header-logo"><a href="index.html"><img src="images/logo.png"></a></div>
+         <div class="mask-line" onclick="history.go(-1)"><img src="images/bar-back-btn.png"></div>
+      </header>
+      
+      <div class="nav-box js-nav-box">
+        <header class="header-open">
+         	<div class="header-logo"><a href="index.html"><img src="images/logo.png"></a></div>
+         	<div class="mask-line js-bar-btn"><img src="images/bar-btn.png"></div>
+        </header>
+        <ul class="nav clr">
+            <li><a href="signin.html">登录</a></li>
+            <li><a href="register.html">注册</a></li>
+            <li><a href="active.html">活动咨询</a></li>
+            <li><a href="member.html">个人中心</a></li>
+          </ul>
+      </div>
+
+      <div class="main">
+			<div class="member-box">
+            	<h2>个人中心</h2>
+                <div class="member-info">
+                	<div class="fuc">
+                        <input id="fileInput" type="file" class="real-btn" name="fileInput" required accept="image/*" onchange="selectFileImage(this);">
+                        <span class="upload-icon"><img src="images/avtar2.png"></span>
+                    </div>
+                    <div class="member-id">135****4213</div>
+                    <a href="member.html" class="member-tab member-post cur"><span>3</span><em>发布</em></a>
+                    <a href="member.html" class="member-tab member-like"><span>10</span><em>点赞</em></a>
+                    <div class="list-box">
+                	<div class="news-list clr">
+                      <h4>智跑朋友圈<time>2014-07-02</time></h4>
+                      <p>为保障8月1日至31日南京青奥会的环境质量，从现在起至8月底，我市将集中开展环境保护专项行动，对废气排放企业、水环境质量等进行临时管控。</p>
+                      <em class="delete-btn">删除</em> 
+                    </div>
+                    <div class="news-list clr">
+                      <h4>点亮启辰星<b>审核中</b></h4>
+                      <p>为保障8月1日至31日南京青奥会的环境质量，从现在起至8月底，我市将集中开展环境保护专项行动，对废气排放企业、水环境质量等进行临时管控。</p>
+                       
+                    </div>
+                    <div class="news-list clr">
+                      <h4>智跑朋友圈<time>2014-07-02</time></h4>
+                      <ul class="dynamic-img clr">
+                            <li><img data-src="images/img4.jpg" class="lazyload"></li>
+                            <li><img data-src="images/img5.jpg" class="lazyload"></li>
+                            <li><img data-src="images/img6.jpg" class="lazyload"></li>
+                       </ul>
+                      <em class="delete-btn">删除</em> 
+                    </div>
+                    
+                    </div>
+                </div>
+            </div>
+
+        
+        <div class="pop-tip-box">
+            <p class="pop-tip-msg"></p>
+        </div> 
+      
+        
+      </div>
+      
+    </div>
+    <script src="js/jquery1.7.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/lazysizes.min.js"></script>
+    <script src="js/html2canvas-0.5.js"></script>
+    <script src="js/exif.js"></script>
+    <script src="js/uploadImage.js"></script>
+	<script src="js/base.js?3"></script>
+</body>
+</html>
